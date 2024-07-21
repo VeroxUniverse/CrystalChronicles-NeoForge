@@ -12,23 +12,19 @@ import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalDrakeEntity;
 
 public class CrystalDrakeModel extends GeoModel<CrystalDrakeEntity> {
 
-    private static final ResourceLocation DRAKE_MODEL = CrystalChronicles.loader("geo/crystal_drake.geo.json");
-    public static final ResourceLocation DRAKE_TEXTURE = CrystalChronicles.loader("textures/entity/crystal_drake_red2.png");
-    public static final ResourceLocation DRAKE_ANIMATIONS = CrystalChronicles.loader("animations/crystal_drake.animation.json");
-
     @Override
     public ResourceLocation getModelResource(CrystalDrakeEntity animatable) {
-        return DRAKE_MODEL;
+        return ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "geo/crystal_drake.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(CrystalDrakeEntity animatable) {
-        return DRAKE_TEXTURE;
+        return ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "textures/entity/crystal_drake_red2.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(CrystalDrakeEntity animatable) {
-        return DRAKE_ANIMATIONS;
+        return ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "animations/crystal_drake.animation.json");
     }
 
     @Override

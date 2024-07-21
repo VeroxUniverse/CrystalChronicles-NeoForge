@@ -55,8 +55,4 @@ public class CrystalChronicles {
         }
     }
 
-    public static ResourceLocation loader(String string) {
-        return ResourceLocation.fromNamespaceAndPath(MODID, string);
-    }
-
 }
