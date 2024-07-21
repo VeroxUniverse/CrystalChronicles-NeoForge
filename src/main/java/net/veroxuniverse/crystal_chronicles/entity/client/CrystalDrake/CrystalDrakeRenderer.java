@@ -24,7 +24,7 @@ public class CrystalDrakeRenderer extends GeoEntityRenderer<CrystalDrakeEntity> 
 
     @Override
     public ResourceLocation getTextureLocation(CrystalDrakeEntity animatable) {
-        return ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "textures/entity/crystal_drake_red2.png");
+        return ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "textures/entity/crystal_drake_red.png");
     }
 
 }

@@ -19,7 +19,7 @@ public class CrystalDrakeModel extends GeoModel<CrystalDrakeEntity> {
 
     @Override
     public ResourceLocation getTextureResource(CrystalDrakeEntity animatable) {
-        return ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "textures/entity/crystal_drake_red2.png");
+        return ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "textures/entity/crystal_drake_red.png");
     }
 
     @Override

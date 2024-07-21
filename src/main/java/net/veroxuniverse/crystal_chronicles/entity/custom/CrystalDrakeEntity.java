@@ -99,7 +99,6 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
         return BrainActivityGroup.coreTasks(
                 new LookAtTarget<>(),
                 new LookAtTargetSink(35, 120),
-                new FloatToSurfaceOfFluid<>(),
                 new StrafeTarget<>().speedMod(0.75F),
                 new MoveToWalkTarget<>());
     }
