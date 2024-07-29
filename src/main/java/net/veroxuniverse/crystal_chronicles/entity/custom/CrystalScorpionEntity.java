@@ -38,16 +38,15 @@ import net.veroxuniverse.crystal_chronicles.entity.AnimatedMonsterEntity;
 
 import java.util.List;
 
-public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBrainOwner<CrystalDrakeEntity> {
-    public CrystalDrakeEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
+public class CrystalScorpionEntity extends AnimatedMonsterEntity implements SmartBrainOwner<CrystalScorpionEntity> {
+    public CrystalScorpionEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
-
     public static AttributeSupplier.Builder attributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 90.0D)
+                .add(Attributes.MAX_HEALTH, 30.0D)
                 .add(Attributes.ATTACK_DAMAGE, 12.0D)
-                .add(Attributes.FOLLOW_RANGE, 20.0D)
+                .add(Attributes.FOLLOW_RANGE, 16.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D);
     }
 
@@ -55,17 +54,17 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "move_controller", 5, state -> {
             if (state.isMoving() && !this.swinging){
-                state.setAnimation(RawAnimation.begin().then("crystal_drake.animation.walk", Animation.LoopType.LOOP));
+                state.setAnimation(RawAnimation.begin().then("crystal_scorpion.animation.walk", Animation.LoopType.LOOP));
                 return PlayState.CONTINUE;
             } else if (!state.isMoving() && !this.swinging) {
-                state.setAnimation(RawAnimation.begin().then("crystal_drake.animation.idle", Animation.LoopType.LOOP));
+                state.setAnimation(RawAnimation.begin().then("crystal_scorpion.animation.idle", Animation.LoopType.LOOP));
                 return PlayState.CONTINUE;
             }
             return PlayState.STOP;
         }));
         controllers.add(new AnimationController<>(this, "attack_controller", 5, state -> {
             if (this.swinging) {
-                state.setAnimation(RawAnimation.begin().then("crystal_drake.animation.attack", Animation.LoopType.PLAY_ONCE));
+                state.setAnimation(RawAnimation.begin().then("crystal_scorpion.animation.attack", Animation.LoopType.PLAY_ONCE));
                 return PlayState.CONTINUE;
             }
             state.getController().forceAnimationReset();
@@ -85,16 +84,16 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
     }
 
     @Override
-    public List<ExtendedSensor<CrystalDrakeEntity>> getSensors() {
+    public List<ExtendedSensor<CrystalScorpionEntity>> getSensors() {
         return ObjectArrayList.of(
-                new NearbyLivingEntitySensor<CrystalDrakeEntity>().setPredicate(
+                new NearbyLivingEntitySensor<CrystalScorpionEntity>().setPredicate(
                         (target, entity) -> target.isAlive() && entity.hasLineOfSight(target) && !(target instanceof AnimatedMonsterEntity)),
                 new HurtBySensor<>()
         );
     }
 
     @Override
-    public BrainActivityGroup<CrystalDrakeEntity> getCoreTasks() {
+    public BrainActivityGroup<CrystalScorpionEntity> getCoreTasks() {
         return BrainActivityGroup.coreTasks(
                 new LookAtTarget<>(),
                 new LookAtTargetSink(35, 120),
@@ -103,8 +102,8 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
     }
 
     @Override
-    public BrainActivityGroup<CrystalDrakeEntity> getIdleTasks() {
-        return BrainActivityGroup.idleTasks(new FirstApplicableBehaviour<CrystalDrakeEntity>(
+    public BrainActivityGroup<CrystalScorpionEntity> getIdleTasks() {
+        return BrainActivityGroup.idleTasks(new FirstApplicableBehaviour<CrystalScorpionEntity>(
                         new TargetOrRetaliate<>().alertAlliesWhen((mob, entity) -> this.isAggressive()),
                         new SetPlayerLookTarget<>().stopIf(target -> !target.isAlive() || target instanceof Player player && player.isCreative()),
                         new SetRandomLookTarget<>()),
@@ -113,7 +112,7 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
     }
 
     @Override
-    public BrainActivityGroup<CrystalDrakeEntity> getFightTasks() { // These are the tasks that handle fighting
+    public BrainActivityGroup<CrystalScorpionEntity> getFightTasks() { // These are the tasks that handle fighting
         return BrainActivityGroup.fightTasks(
                 new InvalidateAttackTarget<>(), // Cancel fighting if the target is no longer valid
                 new SetWalkTargetToAttackTarget<>(),      // Set the walk target to the attack target

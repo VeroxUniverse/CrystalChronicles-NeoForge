@@ -9,6 +9,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalDrakeEntity;
+import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalGolemEntity;
+import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalScorpionEntity;
 import net.veroxuniverse.crystal_chronicles.lib.CCEntityNames;
 
 public class CCEntityTypes {
@@ -25,6 +27,21 @@ public class CCEntityTypes {
                     .sized(3.2f, 2.2F)
                     .setTrackingRange(20)
                     .setShouldReceiveVelocityUpdates(true));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<CrystalGolemEntity>> CRYSTAL_GOLEM = registerEntity(
+            CCEntityNames.CRYSTAL_GOLEM,
+            EntityType.Builder.<CrystalGolemEntity>of(CrystalGolemEntity::new, MobCategory.MONSTER)
+                    .sized(0.8f, 1.2F)
+                    .setTrackingRange(20)
+                    .setShouldReceiveVelocityUpdates(true));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<CrystalScorpionEntity>> CRYSTAL_SCORPION = registerEntity(
+            CCEntityNames.CRYSTAL_SCORPION,
+            EntityType.Builder.<CrystalScorpionEntity>of(CrystalScorpionEntity::new, MobCategory.MONSTER)
+                    .sized(3.2f, 2.2F)
+                    .setTrackingRange(20)
+                    .setShouldReceiveVelocityUpdates(true));
+
 
 
     public static void register(IEventBus eventBus) {

@@ -15,6 +15,11 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.veroxuniverse.crystal_chronicles.entity.CCEntityTypes;
 import net.veroxuniverse.crystal_chronicles.entity.client.CrystalDrake.CrystalDrakeRenderer;
+import net.veroxuniverse.crystal_chronicles.entity.client.CrystalGolem.CrystalGolemRenderer;
+import net.veroxuniverse.crystal_chronicles.entity.client.CrystalScorpion.CrystalScorpionRenderer;
+import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
+import net.veroxuniverse.crystal_chronicles.registry.CCItems;
+import net.veroxuniverse.crystal_chronicles.registry.CCTabs;
 import org.slf4j.Logger;
 
 @Mod(CrystalChronicles.MODID)
@@ -27,7 +32,10 @@ public class CrystalChronicles {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        CCTabs.CREATIVE_MODE_TABS.register(modEventBus);
         CCEntityTypes.register(modEventBus);
+        CCBlocks.BLOCKS.register(modEventBus);
+        CCItems.ITEMS.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -52,6 +60,8 @@ public class CrystalChronicles {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             EntityRenderers.register(CCEntityTypes.CRYSTAL_DRAKE.get(), CrystalDrakeRenderer::new);
+            EntityRenderers.register(CCEntityTypes.CRYSTAL_SCORPION.get(), CrystalScorpionRenderer::new);
+            EntityRenderers.register(CCEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemRenderer::new);
         }
     }
 
