@@ -44,6 +44,7 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.entity.AnimatedMonsterEntity;
 
 import java.util.List;
@@ -61,34 +62,6 @@ public class CrystalWolfEntity extends AnimatedMonsterEntity implements SmartBra
                 .add(Attributes.ATTACK_DAMAGE, 12.0D)
                 .add(Attributes.FOLLOW_RANGE, 16.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D);
-    }
-
-    /*
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar.add(new AnimationController<>(this, "livingController", 2, state -> {
-            if (state.isMoving() && !swinging) return state.setAndContinue(RawAnimation.begin().thenLoop("crystal_wolf.animation.walk"));
-            return state.setAndContinue(RawAnimation.begin().thenLoop("crystal_wolf.animation.idle"));
-        }))
-        .add(new AnimationController<>(this, "attackController", 2, event -> {
-            swinging = false;
-            return PlayState.STOP;
-        }).triggerableAnim("attack", RawAnimation.begin().then("crystal_wolf.animation.attack", Animation.LoopType.PLAY_ONCE)));
-    }
-     */
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "move_controller", 0, state -> {
-            if (state.isMoving() && !this.swinging){
-                state.setAndContinue(RawAnimation.begin().then("crystal_wolf.animation.walk", Animation.LoopType.LOOP));
-                return PlayState.CONTINUE;
-            } else if (!state.isMoving() && !this.swinging) {
-                state.setAndContinue(RawAnimation.begin().then("crystal_wolf.animation.idle", Animation.LoopType.LOOP));
-                return PlayState.CONTINUE;
-            }
-            return PlayState.STOP;
-        }).triggerableAnim("attack", RawAnimation.begin().then("crystal_wolf.animation.attack", Animation.LoopType.PLAY_ONCE)));
     }
 
     @Override
@@ -136,10 +109,11 @@ public class CrystalWolfEntity extends AnimatedMonsterEntity implements SmartBra
                 new InvalidateAttackTarget<>()
                         .invalidateIf((target, entity) -> !target.isAlive() || !entity.hasLineOfSight(target)),
                 new SetWalkTargetToAttackTarget<>()
-                        .speedMod((entity, livingEntity) -> 0.75f),
-                new AnimatableMeleeAttack<>(30)
-                        .whenStarting(entity -> {
-                            this.triggerAnim("controller", "attack");
+                        .speedMod((mob, livingEntity) -> 0.75f),
+                new AnimatableMeleeAttack<>(20)
+                        .whenStarting(mob -> {
+                            this.triggerAnim("attackController", "attack");
+                            CrystalChronicles.LOGGER.info("Starting Attack");
                         })
         );
     }

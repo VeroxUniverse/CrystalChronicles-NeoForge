@@ -12,7 +12,7 @@ import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalWolfEntity;
 public class CrystalWolfRenderer extends GeoEntityRenderer<CrystalWolfEntity> {
     public CrystalWolfRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new CrystalWolfModel());
-        this.shadowRadius = 1.0f;
+        this.shadowRadius = 0.5f;
     }
 
     @Override

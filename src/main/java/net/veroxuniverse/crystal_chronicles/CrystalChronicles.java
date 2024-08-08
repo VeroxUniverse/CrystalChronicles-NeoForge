@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 @Mod(CrystalChronicles.MODID)
 public class CrystalChronicles {
     public static final String MODID = "crystal_chronicles";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
 
     public CrystalChronicles(IEventBus modEventBus, ModContainer modContainer) {

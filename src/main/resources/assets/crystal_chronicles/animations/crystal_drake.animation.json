@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"crystal_drake.animation.glide": {
+		"glide": {
 			"loop": true,
 			"animation_length": 0.5,
 			"bones": {
@@ -832,7 +832,7 @@
 				}
 			}
 		},
-		"crystal_drake.animation.idle": {
+		"idle": {
 			"animation_length": 4,
 			"bones": {
 				"body_2": {
@@ -1009,7 +1009,7 @@
 				}
 			}
 		},
-		"crystal_drake.animation.walk": {
+		"walk": {
 			"loop": true,
 			"animation_length": 1,
 			"bones": {
@@ -1543,7 +1543,7 @@
 				}
 			}
 		},
-		"crystal_drake.animation.attack": {
+		"attack": {
 			"animation_length": 3.25,
 			"bones": {
 				"right_leg": {

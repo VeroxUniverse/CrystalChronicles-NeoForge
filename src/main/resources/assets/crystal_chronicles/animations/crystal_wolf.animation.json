@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"crystal_wolf.animation.idle": {
+		"idle": {
 			"loop": true,
 			"animation_length": 4,
 			"bones": {
@@ -491,7 +491,7 @@
 				}
 			}
 		},
-		"crystal_wolf.animation.walk": {
+		"walk": {
 			"loop": true,
 			"animation_length": 0.8741,
 			"bones": {
@@ -1211,7 +1211,7 @@
 				}
 			}
 		},
-		"crystal_wolf.animation.attack": {
+		"attack": {
 			"animation_length": 0.5,
 			"bones": {
 				"crystal_wolf": {

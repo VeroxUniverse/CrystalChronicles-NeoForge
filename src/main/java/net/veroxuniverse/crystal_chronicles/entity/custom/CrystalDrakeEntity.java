@@ -52,26 +52,21 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
     }
 
     @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "move_controller", 5, state -> {
-            if (state.isMoving() && !this.swinging){
-                state.setAnimation(RawAnimation.begin().then("crystal_drake.animation.walk", Animation.LoopType.LOOP));
-                return PlayState.CONTINUE;
-            } else if (!state.isMoving() && !this.swinging) {
-                state.setAnimation(RawAnimation.begin().then("crystal_drake.animation.idle", Animation.LoopType.LOOP));
-                return PlayState.CONTINUE;
-            }
-            return PlayState.STOP;
-        }));
-        controllers.add(new AnimationController<>(this, "attack_controller", 5, state -> {
-            if (this.swinging) {
-                state.setAnimation(RawAnimation.begin().then("crystal_drake.animation.attack", Animation.LoopType.PLAY_ONCE));
-                return PlayState.CONTINUE;
-            }
-            state.getController().forceAnimationReset();
-            return PlayState.STOP;
-        }));
-
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar
+                .add(new AnimationController<>(this, "livingController", 0, state -> {
+                    if (state.isMoving() && !swinging)  {
+                        state.setAnimation(RawAnimation.begin().thenLoop("walk"));
+                        return PlayState.CONTINUE;
+                    }
+                    state.setAnimation(RawAnimation.begin().thenLoop("idle"));
+                    return PlayState.CONTINUE;
+                }))
+                .add(new AnimationController<>(this, "attackController", 0, event -> {
+                    swinging = false;
+                    return PlayState.STOP;
+                }).triggerableAnim("attack", RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE))
+                        .triggerableAnim("glide", RawAnimation.begin().then("glide", Animation.LoopType.PLAY_ONCE)));
     }
 
     @Override
@@ -98,8 +93,13 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
         return BrainActivityGroup.coreTasks(
                 new LookAtTarget<>(),
                 new LookAtTargetSink(35, 120),
-                new StrafeTarget<>().speedMod(0.75F),
-                new MoveToWalkTarget<>());
+                new StrafeTarget<>()
+                        .speedMod(0.75F)
+                        .whenStarting(entity -> {
+                            this.triggerAnim("attackController", "glide");
+                        }),
+                new MoveToWalkTarget<>()
+        );
     }
 
     @Override
@@ -113,23 +113,22 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
     }
 
     @Override
-    public BrainActivityGroup<CrystalDrakeEntity> getFightTasks() { // These are the tasks that handle fighting
+    public BrainActivityGroup<CrystalDrakeEntity> getFightTasks() {
         return BrainActivityGroup.fightTasks(
-                new InvalidateAttackTarget<>(), // Cancel fighting if the target is no longer valid
-                new SetWalkTargetToAttackTarget<>(),      // Set the walk target to the attack target
-                new AnimatableMeleeAttack<>(0)); // Melee attack the target if close enough
+                new InvalidateAttackTarget<>(),
+                new SetWalkTargetToAttackTarget<>()
+                        .whenStarting(entity -> {
+                    this.triggerAnim("attackController", "glide");
+                        }),
+                new AnimatableMeleeAttack<>(0)
+                        .whenStarting(entity -> {
+                            this.triggerAnim("attackController", "attack");
+                        })
+        );
     }
 
     @Override
     protected void registerGoals() {
-    }
-
-    protected boolean shouldDrown() {
-        return false;
-    }
-
-    protected boolean shouldBurnInDay() {
-        return false;
     }
 
     @Override

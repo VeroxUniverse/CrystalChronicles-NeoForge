@@ -56,12 +56,12 @@ public class CrystalGolemEntity extends AnimatedMonsterEntity {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "move_controller", 5, state -> {
+        controllers.add(new AnimationController<>(this, "move_controller", 0, state -> {
             if (state.isMoving()){
-                state.setAnimation(RawAnimation.begin().then("crystal_golem.animation.walk", Animation.LoopType.LOOP));
+                state.setAnimation(RawAnimation.begin().then("walk", Animation.LoopType.LOOP));
                 return PlayState.CONTINUE;
             } else if (!state.isMoving()) {
-                state.setAnimation(RawAnimation.begin().then("crystal_golem.animation.idle", Animation.LoopType.LOOP));
+                state.setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
                 return PlayState.CONTINUE;
             }
             return PlayState.STOP;
