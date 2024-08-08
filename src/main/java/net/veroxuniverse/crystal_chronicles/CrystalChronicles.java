@@ -1,6 +1,7 @@
 package net.veroxuniverse.crystal_chronicles;
 
 import com.mojang.logging.LogUtils;
+import mod.azure.azurelib.common.internal.common.AzureLib;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
@@ -17,6 +18,7 @@ import net.veroxuniverse.crystal_chronicles.entity.CCEntityTypes;
 import net.veroxuniverse.crystal_chronicles.entity.client.CrystalDrake.CrystalDrakeRenderer;
 import net.veroxuniverse.crystal_chronicles.entity.client.CrystalGolem.CrystalGolemRenderer;
 import net.veroxuniverse.crystal_chronicles.entity.client.CrystalScorpion.CrystalScorpionRenderer;
+import net.veroxuniverse.crystal_chronicles.entity.client.CrystalWolf.CrystalWolfRenderer;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 import net.veroxuniverse.crystal_chronicles.registry.CCTabs;
@@ -32,10 +34,11 @@ public class CrystalChronicles {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        CCTabs.CREATIVE_MODE_TABS.register(modEventBus);
+        AzureLib.initialize();
+        CCTabs.register(modEventBus);
         CCEntityTypes.register(modEventBus);
-        CCBlocks.BLOCKS.register(modEventBus);
-        CCItems.ITEMS.register(modEventBus);
+        CCBlocks.register(modEventBus);
+        CCItems.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -62,6 +65,7 @@ public class CrystalChronicles {
             EntityRenderers.register(CCEntityTypes.CRYSTAL_DRAKE.get(), CrystalDrakeRenderer::new);
             EntityRenderers.register(CCEntityTypes.CRYSTAL_SCORPION.get(), CrystalScorpionRenderer::new);
             EntityRenderers.register(CCEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemRenderer::new);
+            EntityRenderers.register(CCEntityTypes.CRYSTAL_WOLF.get(), CrystalWolfRenderer::new);
         }
     }
 

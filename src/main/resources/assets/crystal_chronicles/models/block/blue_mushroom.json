@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "crystal_chronicles:block/blue_mushroom"
+  },
+  "render_type": "cutout"
+}

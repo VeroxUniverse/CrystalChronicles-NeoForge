@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "crystal_chronicles:block/purple_mushroom"
+  },
+  "render_type": "cutout"
+}

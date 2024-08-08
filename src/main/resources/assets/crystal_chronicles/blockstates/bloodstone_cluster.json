@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "crystal_chronicles:block/bloodstone_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "crystal_chronicles:block/bloodstone_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "crystal_chronicles:block/bloodstone_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "crystal_chronicles:block/bloodstone_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "crystal_chronicles:block/bloodstone_cluster"
+    },
+    "facing=west": {
+      "model": "crystal_chronicles:block/bloodstone_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

@@ -11,6 +11,7 @@ import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.entity.CCEntityTypes;
 import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalDrakeEntity;
 import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalGolemEntity;
+import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalWolfEntity;
 
 public class CCEvents {
 
@@ -22,6 +23,7 @@ public class CCEvents {
             event.put(CCEntityTypes.CRYSTAL_DRAKE.get(), CrystalDrakeEntity.attributes().build());
             event.put(CCEntityTypes.CRYSTAL_SCORPION.get(), CrystalDrakeEntity.attributes().build());
             event.put(CCEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemEntity.attributes().build());
+            event.put(CCEntityTypes.CRYSTAL_WOLF.get(), CrystalWolfEntity.attributes().build());
         }
 
         @SubscribeEvent
@@ -33,6 +35,9 @@ public class CCEvents {
                     SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
             event.register(CCEntityTypes.CRYSTAL_GOLEM.get(),
+                    SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
+            event.register(CCEntityTypes.CRYSTAL_WOLF.get(),
                     SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                     Monster::checkMonsterSpawnRules, RegisterSpawnPlacementsEvent.Operation.REPLACE);
         }

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "crystal_chronicles:block/shale",
+    "down": "crystal_chronicles:block/shale",
+    "up": "crystal_chronicles:block/bloodstone_block",
+    "north": "crystal_chronicles:block/infected_shale_side",
+    "east": "crystal_chronicles:block/infected_shale_side",
+    "south": "crystal_chronicles:block/infected_shale_side",
+    "west": "crystal_chronicles:block/infected_shale_side"
+  }
+}

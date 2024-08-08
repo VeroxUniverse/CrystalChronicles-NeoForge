@@ -11,6 +11,7 @@ import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalDrakeEntity;
 import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalGolemEntity;
 import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalScorpionEntity;
+import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalWolfEntity;
 import net.veroxuniverse.crystal_chronicles.lib.CCEntityNames;
 
 public class CCEntityTypes {
@@ -39,6 +40,13 @@ public class CCEntityTypes {
             CCEntityNames.CRYSTAL_SCORPION,
             EntityType.Builder.<CrystalScorpionEntity>of(CrystalScorpionEntity::new, MobCategory.MONSTER)
                     .sized(3.2f, 2.2F)
+                    .setTrackingRange(20)
+                    .setShouldReceiveVelocityUpdates(true));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<CrystalWolfEntity>> CRYSTAL_WOLF = registerEntity(
+            CCEntityNames.CRYSTAL_WOLF,
+            EntityType.Builder.<CrystalWolfEntity>of(CrystalWolfEntity::new, MobCategory.MONSTER)
+                    .sized(1.2f, 0.8F)
                     .setTrackingRange(20)
                     .setShouldReceiveVelocityUpdates(true));
 
