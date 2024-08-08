@@ -113,7 +113,7 @@ public class CrystalWolfEntity extends AnimatedMonsterEntity implements SmartBra
                 new AnimatableMeleeAttack<>(20)
                         .whenStarting(mob -> {
                             this.triggerAnim("attackController", "attack");
-                            CrystalChronicles.LOGGER.info("Starting Attack");
+                            CrystalChronicles.LOGGER.info("Try Attack");
                         })
         );
     }

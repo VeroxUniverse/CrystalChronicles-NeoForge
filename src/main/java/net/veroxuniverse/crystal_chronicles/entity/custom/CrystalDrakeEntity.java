@@ -34,11 +34,13 @@ import net.minecraft.world.entity.ai.behavior.LookAtTargetSink;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.entity.AnimatedMonsterEntity;
 
 import java.util.List;
 
 public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBrainOwner<CrystalDrakeEntity> {
+
     public CrystalDrakeEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -65,8 +67,7 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
                 .add(new AnimationController<>(this, "attackController", 0, event -> {
                     swinging = false;
                     return PlayState.STOP;
-                }).triggerableAnim("attack", RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE))
-                        .triggerableAnim("glide", RawAnimation.begin().then("glide", Animation.LoopType.PLAY_ONCE)));
+                }).triggerableAnim("attack", RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE)));
     }
 
     @Override
@@ -94,10 +95,7 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
                 new LookAtTarget<>(),
                 new LookAtTargetSink(35, 120),
                 new StrafeTarget<>()
-                        .speedMod(0.75F)
-                        .whenStarting(entity -> {
-                            this.triggerAnim("attackController", "glide");
-                        }),
+                        .speedMod(0.75F),
                 new MoveToWalkTarget<>()
         );
     }
@@ -116,13 +114,11 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
     public BrainActivityGroup<CrystalDrakeEntity> getFightTasks() {
         return BrainActivityGroup.fightTasks(
                 new InvalidateAttackTarget<>(),
-                new SetWalkTargetToAttackTarget<>()
-                        .whenStarting(entity -> {
-                    this.triggerAnim("attackController", "glide");
-                        }),
+                new SetWalkTargetToAttackTarget<>(),
                 new AnimatableMeleeAttack<>(0)
-                        .whenStarting(entity -> {
+                        .whenStarting(pathfinderMob -> {
                             this.triggerAnim("attackController", "attack");
+                            CrystalChronicles.LOGGER.info("Try Attack");
                         })
         );
     }
