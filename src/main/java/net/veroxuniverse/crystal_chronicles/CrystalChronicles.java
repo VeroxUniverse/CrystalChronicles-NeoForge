@@ -14,11 +14,14 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.veroxuniverse.crystal_chronicles.effect.CCEffects;
 import net.veroxuniverse.crystal_chronicles.entity.CCEntityTypes;
 import net.veroxuniverse.crystal_chronicles.entity.client.CrystalDrake.CrystalDrakeRenderer;
 import net.veroxuniverse.crystal_chronicles.entity.client.CrystalGolem.CrystalGolemRenderer;
 import net.veroxuniverse.crystal_chronicles.entity.client.CrystalScorpion.CrystalScorpionRenderer;
 import net.veroxuniverse.crystal_chronicles.entity.client.CrystalWolf.CrystalWolfRenderer;
+import net.veroxuniverse.crystal_chronicles.item.CCItemProperties;
+import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 import net.veroxuniverse.crystal_chronicles.registry.CCTabs;
@@ -39,6 +42,8 @@ public class CrystalChronicles {
         CCEntityTypes.register(modEventBus);
         CCBlocks.register(modEventBus);
         CCItems.register(modEventBus);
+        CCArmorMaterials.register(modEventBus);
+        CCEffects.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -62,6 +67,8 @@ public class CrystalChronicles {
         public static void onClientSetup(FMLClientSetupEvent event) {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
+            CCItemProperties.addCustomItemProperties();
+
             EntityRenderers.register(CCEntityTypes.CRYSTAL_DRAKE.get(), CrystalDrakeRenderer::new);
             EntityRenderers.register(CCEntityTypes.CRYSTAL_SCORPION.get(), CrystalScorpionRenderer::new);
             EntityRenderers.register(CCEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemRenderer::new);

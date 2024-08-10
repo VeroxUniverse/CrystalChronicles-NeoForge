@@ -31,6 +31,9 @@ import mod.azure.azurelib.sblforked.api.core.sensor.vanilla.HurtBySensor;
 import mod.azure.azurelib.sblforked.api.core.sensor.vanilla.NearbyLivingEntitySensor;
 import mod.azure.azurelib.sblforked.util.BrainUtils;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -40,6 +43,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.behavior.LookAtTargetSink;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
@@ -109,11 +113,12 @@ public class CrystalWolfEntity extends AnimatedMonsterEntity implements SmartBra
                 new InvalidateAttackTarget<>()
                         .invalidateIf((target, entity) -> !target.isAlive() || !entity.hasLineOfSight(target)),
                 new SetWalkTargetToAttackTarget<>()
-                        .speedMod((mob, livingEntity) -> 0.75f),
-                new AnimatableMeleeAttack<>(20)
+                        .speedMod((mob, livingEntity) -> 1.2f),
+                new AnimatableMeleeAttack<>(5)
                         .whenStarting(mob -> {
-                            this.triggerAnim("attackController", "attack");
-                            CrystalChronicles.LOGGER.info("Try Attack");
+                            //this.triggerAnim("attackController", "attack");
+                            //CrystalChronicles.LOGGER.info("Try Attack");
+                            this.playSound(SoundEvents.FOX_BITE, 2.0F, 0.3F);
                         })
         );
     }
@@ -125,6 +130,39 @@ public class CrystalWolfEntity extends AnimatedMonsterEntity implements SmartBra
     @Override
     public boolean isBaby() {
         return false;
+    }
+
+    @Override
+    public int getCurrentSwingDuration() {
+        return 20;
+    }
+
+    @Override
+    protected SoundEvent getAmbientSound() {
+        if (this.isAggressive()) {
+            return SoundEvents.WOLF_GROWL;
+        } else {
+            return SoundEvents.WOLF_AMBIENT;
+        }
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.WOLF_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.WOLF_DEATH;
+    }
+
+    @Override
+    protected float getSoundVolume() {
+        return 0.4F;
+    }
+
+    public float getVoicePitch() {
+        return 0.5F;
     }
 
 }

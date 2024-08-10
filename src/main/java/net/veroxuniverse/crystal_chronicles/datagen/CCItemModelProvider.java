@@ -35,6 +35,14 @@ public class CCItemModelProvider extends ItemModelProvider {
         basicItem(CCItems.CELESTITE_SHARD.get());
         basicItem(CCItems.TOXITE_SHARD.get());
         basicItem(CCItems.PYRONITE_SHARD.get());
+        basicItem(CCItems.TOXIC_HELMET.get());
+        basicItem(CCItems.TOXIC_CHESTPLATE.get());
+        basicItem(CCItems.TOXIC_LEGGINGS.get());
+        basicItem(CCItems.TOXIC_BOOTS.get());
+        basicItem(CCItems.PYROMANCER_HELMET.get());
+        basicItem(CCItems.PYROMANCER_CHESTPLATE.get());
+        basicItem(CCItems.PYROMANCER_LEGGINGS.get());
+        basicItem(CCItems.PYROMANCER_BOOTS.get());
         
     }
 }

@@ -74,12 +74,12 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"rotation": [54, 2, 0],
-			"translation": [-0.25, 2.75, 4.75]
+			"rotation": [54, -24, 0],
+			"translation": [-0.5, 1.25, 5.5]
 		},
 		"thirdperson_lefthand": {
-			"rotation": [54, 2, 0],
-			"translation": [-0.25, 2.75, 4.75]
+			"rotation": [54, -24, 0],
+			"translation": [0.75, 1.25, 5.5]
 		},
 		"firstperson_righthand": {
 			"rotation": [13, 3, 19],

@@ -20,6 +20,7 @@ public class AnimatedMonsterEntity extends Monster implements GeoEntity {
         super(pEntityType, pLevel);
     }
 
+    /*
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar
@@ -33,6 +34,33 @@ public class AnimatedMonsterEntity extends Monster implements GeoEntity {
                     swinging = false;
                     return PlayState.STOP;
                 }).triggerableAnim("attack", RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE)));
+    }
+     */
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "livingController", 2, state -> {
+            if (state.isMoving() && !this.swinging){
+                state.setAnimation(RawAnimation.begin().then("walk", Animation.LoopType.LOOP));
+                return PlayState.CONTINUE;
+            } if (state.isMoving() && !this.swinging && isAggressive()){
+                state.setAnimation(RawAnimation.begin().then("run", Animation.LoopType.LOOP));
+                return PlayState.CONTINUE;
+            } else if (!state.isMoving() && !this.swinging) {
+                state.setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
+                return PlayState.CONTINUE;
+            }
+            return PlayState.STOP;
+        }));
+        controllers.add(new AnimationController<>(this, "attackController", 2, state -> {
+            if (this.swinging) {
+                state.setAnimation(RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE));
+                return PlayState.CONTINUE;
+            }
+            state.getController().forceAnimationReset();
+            return PlayState.STOP;
+        }));
+
     }
 
     @Override

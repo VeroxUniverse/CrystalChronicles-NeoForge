@@ -82,7 +82,15 @@ public class CCTabs {
                 output.accept(CCItems.ROGUE_LEGGINGS.get());
                 output.accept(CCItems.ROGUE_BOOTS.get());
                 output.accept(CCItems.GREATSWORD.get());
+                output.accept(CCItems.PYROMANCER_HELMET.get());
+                output.accept(CCItems.PYROMANCER_CHESTPLATE.get());
+                output.accept(CCItems.PYROMANCER_LEGGINGS.get());
+                output.accept(CCItems.PYROMANCER_BOOTS.get());
                 output.accept(CCItems.CHAKRAM.get());
+                output.accept(CCItems.TOXIC_HELMET.get());
+                output.accept(CCItems.TOXIC_CHESTPLATE.get());
+                output.accept(CCItems.TOXIC_LEGGINGS.get());
+                output.accept(CCItems.TOXIC_BOOTS.get());
                 output.accept(CCItems.SPEAR.get());
             }).build());
 

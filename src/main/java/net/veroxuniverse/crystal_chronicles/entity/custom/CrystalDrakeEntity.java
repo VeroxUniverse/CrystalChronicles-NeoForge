@@ -1,11 +1,6 @@
 package net.veroxuniverse.crystal_chronicles.entity.custom;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import mod.azure.azurelib.core.animation.AnimatableManager;
-import mod.azure.azurelib.core.animation.Animation;
-import mod.azure.azurelib.core.animation.AnimationController;
-import mod.azure.azurelib.core.animation.RawAnimation;
-import mod.azure.azurelib.core.object.PlayState;
 import mod.azure.azurelib.sblforked.api.SmartBrainOwner;
 import mod.azure.azurelib.sblforked.api.core.BrainActivityGroup;
 import mod.azure.azurelib.sblforked.api.core.SmartBrainProvider;
@@ -25,6 +20,10 @@ import mod.azure.azurelib.sblforked.api.core.behaviour.custom.target.TargetOrRet
 import mod.azure.azurelib.sblforked.api.core.sensor.ExtendedSensor;
 import mod.azure.azurelib.sblforked.api.core.sensor.vanilla.HurtBySensor;
 import mod.azure.azurelib.sblforked.api.core.sensor.vanilla.NearbyLivingEntitySensor;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.Brain;
@@ -34,7 +33,7 @@ import net.minecraft.world.entity.ai.behavior.LookAtTargetSink;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.minecraft.world.level.block.state.BlockState;
 import net.veroxuniverse.crystal_chronicles.entity.AnimatedMonsterEntity;
 
 import java.util.List;
@@ -51,23 +50,6 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
                 .add(Attributes.ATTACK_DAMAGE, 12.0D)
                 .add(Attributes.FOLLOW_RANGE, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D);
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        controllerRegistrar
-                .add(new AnimationController<>(this, "livingController", 0, state -> {
-                    if (state.isMoving() && !swinging)  {
-                        state.setAnimation(RawAnimation.begin().thenLoop("walk"));
-                        return PlayState.CONTINUE;
-                    }
-                    state.setAnimation(RawAnimation.begin().thenLoop("idle"));
-                    return PlayState.CONTINUE;
-                }))
-                .add(new AnimationController<>(this, "attackController", 0, event -> {
-                    swinging = false;
-                    return PlayState.STOP;
-                }).triggerableAnim("attack", RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE)));
     }
 
     @Override
@@ -115,12 +97,21 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
         return BrainActivityGroup.fightTasks(
                 new InvalidateAttackTarget<>(),
                 new SetWalkTargetToAttackTarget<>(),
-                new AnimatableMeleeAttack<>(0)
+                new AnimatableMeleeAttack<>(5)
                         .whenStarting(pathfinderMob -> {
-                            this.triggerAnim("attackController", "attack");
-                            CrystalChronicles.LOGGER.info("Try Attack");
+                            //this.triggerAnim("attackController", "attack");
+                            //CrystalChronicles.LOGGER.info("Try Attack");
                         })
         );
+    }
+
+    @Override
+    public int getCurrentSwingDuration() {
+        return 15;
+    }
+
+    public boolean causeFallDamage(float pFallDistance, float pMultiplier, DamageSource pSource) {
+        return false;
     }
 
     @Override
@@ -132,6 +123,28 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
         return false;
     }
 
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.ENDER_DRAGON_AMBIENT;
+    }
 
+    @Override
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return SoundEvents.ENDER_DRAGON_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.ENDER_DRAGON_DEATH;
+    }
+
+    @Override
+    protected void playStepSound(BlockPos pPos, BlockState pBlock) {
+        this.playSound(SoundEvents.IRON_GOLEM_STEP, 0.15F, 1.0F);
+    }
+
+    public float getVoicePitch() {
+        return 0.1F;
+    }
 
 }
