@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "crystal_chronicles:block/neuron_torch_wall"
+    },
+    "facing=north": {
+      "model": "crystal_chronicles:block/neuron_torch_wall",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "crystal_chronicles:block/neuron_torch_wall",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "crystal_chronicles:block/neuron_torch_wall",
+      "y": 180
+    }
+  }
+}

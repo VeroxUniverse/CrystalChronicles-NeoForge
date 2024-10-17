@@ -11,6 +11,8 @@ public class CCTags {
     public static class Blocks {
         public static final TagKey<Block> INCORRECT_FOR_CRYSTAL_TOOL = createTag("incorrect_for_crystal_tool");
         public static final TagKey<Block> NEEDS_CRYSTAL_TOOL = createTag("needs_crystal_tool");
+        public static final TagKey<Block> CC_BLOOD_BLOCK = createTag("cc_blood_block");
+        public static final TagKey<Block> CC_ARTREE_BLOCK = createTag("cc_artree_block");
 
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, name));

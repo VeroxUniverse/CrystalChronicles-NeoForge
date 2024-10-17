@@ -1,9 +1,11 @@
 package net.veroxuniverse.crystal_chronicles.item.weapon.staff;
 
+import io.redspace.ironsspellbooks.api.magic.SpellSelectionManager;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.api.spells.SpellData;
+import io.redspace.ironsspellbooks.player.ClientMagicData;
 import io.redspace.ironsspellbooks.registries.ComponentRegistry;
 import mod.azure.azurelib.common.internal.client.RenderProvider;
 import mod.azure.azurelib.core.animation.AnimatableManager;
@@ -12,8 +14,12 @@ import mod.azure.azurelib.core.animation.AnimationController;
 import mod.azure.azurelib.core.animation.RawAnimation;
 import mod.azure.azurelib.core.object.PlayState;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.level.Level;
 import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedSwordItem;
 
 import java.util.Arrays;
@@ -71,4 +77,5 @@ public class CCStaffItem extends AnimatedSwordItem implements IPresetSpellContai
             itemStack.set(ComponentRegistry.SPELL_CONTAINER, spellContainer.toImmutable());
         }
     }
+
 }

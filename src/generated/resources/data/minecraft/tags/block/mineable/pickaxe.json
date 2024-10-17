@@ -1,5 +1,11 @@
 {
   "values": [
-    "crystal_chronicles:bloodstone_cluster"
+    "crystal_chronicles:crustone",
+    "crystal_chronicles:crustone_bricks",
+    "crystal_chronicles:cracked_crustone_bricks",
+    "crystal_chronicles:polished_crustone",
+    "crystal_chronicles:chiseled_crustone",
+    "crystal_chronicles:clever_light",
+    "crystal_chronicles:fat_tissue_block"
   ]
 }

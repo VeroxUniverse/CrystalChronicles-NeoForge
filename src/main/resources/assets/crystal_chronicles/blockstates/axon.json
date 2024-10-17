@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "crystal_chronicles:block/axon"
+    },
+    "lit=true": {
+      "model": "crystal_chronicles:block/axon_impulse"
+    }
+  }
+}

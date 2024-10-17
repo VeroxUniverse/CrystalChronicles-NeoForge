@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "crystal_chronicles:block/tall_blood_bases_bottom"
+    },
+    "half=upper": {
+      "model": "crystal_chronicles:block/tall_blood_bases_top"
+    }
+  }
+}

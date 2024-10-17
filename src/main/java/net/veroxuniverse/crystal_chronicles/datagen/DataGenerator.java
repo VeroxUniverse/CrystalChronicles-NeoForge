@@ -25,14 +25,16 @@ public class DataGenerator {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         //generator.addProvider(event.includeServer(), new CCRecipeProvider(packOutput, lookupProvider));
-        //generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-        //        List.of(new LootTableProvider.SubProviderEntry(CCBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+        generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
+               List.of(new LootTableProvider.SubProviderEntry(CCBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
         BlockTagsProvider blockTagsProvider = new CCBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
+        generator.addProvider(event.includeServer(), new CCFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
         //generator.addProvider(event.includeServer(), new CCItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
         generator.addProvider(event.includeClient(), new CCItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new CCBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), new CCWorldGenProvider(packOutput, lookupProvider));
     }
 }

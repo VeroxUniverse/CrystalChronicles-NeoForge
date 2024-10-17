@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "cutout",
+  "textures": {
+    "cross": "crystal_chronicles:block/tall_blood_bases_top"
+  }
+}

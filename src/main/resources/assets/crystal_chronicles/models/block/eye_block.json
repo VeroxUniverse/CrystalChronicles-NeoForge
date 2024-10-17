@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "crystal_chronicles:block/eye_bottom",
+    "front": "crystal_chronicles:block/eye_side",
+    "side": "crystal_chronicles:block/eye_side",
+    "top": "crystal_chronicles:block/eye_top"
+  }
+}

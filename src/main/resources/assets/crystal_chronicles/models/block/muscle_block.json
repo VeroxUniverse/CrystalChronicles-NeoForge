@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "crystal_chronicles:block/muscle_block_top",
+    "side": "crystal_chronicles:block/muscle_block"
+  }
+}

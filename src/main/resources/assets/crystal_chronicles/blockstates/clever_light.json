@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "crystal_chronicles:block/clever_light_off"
+    },
+    "lit=true": {
+      "model": "crystal_chronicles:block/clever_light_on"
+    }
+  }
+}

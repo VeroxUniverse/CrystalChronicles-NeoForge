@@ -1,0 +1,136 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"render_type": "cutout",
+	"render_type": "translucent",
+	"textures": {
+		"1": "crystal_chronicles:block/neuron_block",
+		"3": "crystal_chronicles:block/neuron_core",
+		"particle": "crystal_chronicles:block/neuron_core"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [8, 0, 16, 8], "texture": "#1"},
+				"east": {"uv": [8, 0, 16, 8], "texture": "#1"},
+				"south": {"uv": [8, 0, 16, 8], "texture": "#1"},
+				"west": {"uv": [8, 0, 16, 8], "texture": "#1"},
+				"up": {"uv": [0, 8, 8, 16], "texture": "#1"},
+				"down": {"uv": [0, 8, 8, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [8, -11, -2],
+			"to": [8, 0, 18],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"east": {"uv": [8, 8, 16, 13.5], "texture": "#1"},
+				"west": {"uv": [8, 8, 16, 13.5], "texture": "#1"}
+			}
+		},
+		{
+			"from": [-2, -11, 8],
+			"to": [18, 0, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [8, 8, 16, 13.5], "texture": "#1"},
+				"south": {"uv": [8, 8, 16, 13.5], "texture": "#1"}
+			}
+		},
+		{
+			"from": [16, 0, 0],
+			"to": [26, 16, 0],
+			"rotation": {"angle": 45, "axis": "y", "origin": [16, 16, 0]},
+			"faces": {
+				"north": {"uv": [3, 0, 8, 8], "texture": "#1"},
+				"south": {"uv": [8, 0, 3, 8], "texture": "#1"}
+			}
+		},
+		{
+			"from": [16, 0, 16],
+			"to": [26, 16, 16],
+			"rotation": {"angle": -45, "axis": "y", "origin": [16, 16, 16]},
+			"faces": {
+				"north": {"uv": [3, 0, 8, 8], "texture": "#1"},
+				"south": {"uv": [8, 0, 3, 8], "texture": "#1"}
+			}
+		},
+		{
+			"from": [-10, 0, 16],
+			"to": [0, 16, 16],
+			"rotation": {"angle": 45, "axis": "y", "origin": [0, 16, 16]},
+			"faces": {
+				"north": {"uv": [8, 0, 3, 8], "texture": "#1"},
+				"south": {"uv": [3, 0, 8, 8], "texture": "#1"}
+			}
+		},
+		{
+			"from": [-10, 0, 0],
+			"to": [0, 16, 0],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 16, 0]},
+			"faces": {
+				"north": {"uv": [8, 0, 3, 8], "texture": "#1"},
+				"south": {"uv": [3, 0, 8, 8], "texture": "#1"}
+			}
+		},
+		{
+			"from": [3, 3, 3],
+			"to": [13, 13, 13],
+			"faces": {
+				"north": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"east": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"south": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"west": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"up": {"uv": [3, 3, 13, 13], "texture": "#3"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#3"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "neuron",
+			"origin": [0, 16, 0],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6]
+		},
+		{
+			"name": "neuron_core",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [7]
+		}
+	]
+}

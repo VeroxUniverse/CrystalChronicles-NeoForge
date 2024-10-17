@@ -1,9 +1,15 @@
 package net.veroxuniverse.crystal_chronicles.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
+import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
+import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 
 public class CCItemModelProvider extends ItemModelProvider {
@@ -43,6 +49,38 @@ public class CCItemModelProvider extends ItemModelProvider {
         basicItem(CCItems.PYROMANCER_CHESTPLATE.get());
         basicItem(CCItems.PYROMANCER_LEGGINGS.get());
         basicItem(CCItems.PYROMANCER_BOOTS.get());
+        basicItem(CCItems.FAT_TISSUE_BALL.get());
+        basicItem(CCItems.NEURON.get());
+        basicItem(CCItems.EYE.get());
+        basicItem(CCFluids.BLOOD_BUCKET.get());
+
+        flowerItem(CCBlocks.BLOOD_BASES);
+        flowerItem(CCBlocks.AXON);
+
+        buttonItem(CCBlocks.BRONCHUS_BUTTON, CCBlocks.BRONCHUS_PLANKS);
+        fenceItem(CCBlocks.BRONCHUS_FENCE, CCBlocks.BRONCHUS_PLANKS);
+
+        basicItem(CCBlocks.BRONCHUS_DOOR.asItem());
         
     }
+
+    public void flowerItem(DeferredBlock<Block> block) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0",  ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID,
+                        "block/" + block.getId().getPath()));
+    }
+
+    public void buttonItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/button_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+    public void fenceItem(DeferredBlock<Block> block, DeferredBlock<Block> baseBlock) {
+        this.withExistingParent(block.getId().getPath(), mcLoc("block/fence_inventory"))
+                .texture("texture",  ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID,
+                        "block/" + baseBlock.getId().getPath()));
+    }
+
+
 }

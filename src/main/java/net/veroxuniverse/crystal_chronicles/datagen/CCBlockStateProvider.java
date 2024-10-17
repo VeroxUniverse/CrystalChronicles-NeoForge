@@ -1,8 +1,7 @@
 package net.veroxuniverse.crystal_chronicles.datagen;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
@@ -22,22 +21,33 @@ public class CCBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(CCBlocks.BLOODSTONE_BLOCK);
-        blockWithItem(CCBlocks.VOIDSTONE_BLOCK);
-        blockWithItem(CCBlocks.LUNARITE_BLOCK);
-        blockWithItem(CCBlocks.PYRONITE_BLOCK);
-        blockWithItem(CCBlocks.CELESTITE_BLOCK);
-        blockWithItem(CCBlocks.TOXITE_BLOCK);
-        blockWithItem(CCBlocks.BLOODSTONE_BUDDING);
-        blockWithItem(CCBlocks.VOIDSTONE_BUDDING);
-        blockWithItem(CCBlocks.LUNARITE_BUDDING);
-        blockWithItem(CCBlocks.PYRONITE_BUDDING);
-        blockWithItem(CCBlocks.CELESTITE_BUDDING);
-        blockWithItem(CCBlocks.TOXITE_BUDDING);
-        blockWithItem(CCBlocks.MARBLE);
-        blockWithItem(CCBlocks.HEMATITE);
-        blockWithItem(CCBlocks.SHALE);
-        blockWithItem(CCBlocks.MAGNETITE);
+        blockWithItem(CCBlocks.ALVEOLUS_BLOCK);
+        blockWithItem(CCBlocks.FAT_TISSUE_BLOCK);
+        blockWithItem(CCBlocks.ROTTEN_FLESH_BLOCK);
+        blockWithItem(CCBlocks.CRUSTONE);
+        blockWithItem(CCBlocks.CRUSTONE_BRICKS);
+        blockWithItem(CCBlocks.CRACKED_CRUSTONE_BRICKS);
+        blockWithItem(CCBlocks.POLISHED_CRUSTONE);
+        blockWithItem(CCBlocks.CHISELED_CRUSTONE);
+
+        blockWithItem(CCBlocks.BRONCHUS_PLANKS);
+        stairsBlock(((StairBlock) CCBlocks.BRONCHUS_STAIRS.get()), blockTexture(CCBlocks.BRONCHUS_PLANKS.get()));
+        slabBlock(((SlabBlock) CCBlocks.BRONCHUS_SLAB.get()), blockTexture(CCBlocks.BRONCHUS_PLANKS.get()), blockTexture(CCBlocks.BRONCHUS_PLANKS.get()));
+        pressurePlateBlock(((PressurePlateBlock) CCBlocks.BRONCHUS_PRESSURE_PLATE.get()), blockTexture(CCBlocks.BRONCHUS_PLANKS.get()));
+        buttonBlock(((ButtonBlock) CCBlocks.BRONCHUS_BUTTON.get()), blockTexture(CCBlocks.BRONCHUS_PLANKS.get()));
+        fenceBlock(((FenceBlock) CCBlocks.BRONCHUS_FENCE.get()), blockTexture(CCBlocks.BRONCHUS_PLANKS.get()));
+        fenceGateBlock(((FenceGateBlock) CCBlocks.BRONCHUS_FENCE_GATE.get()), blockTexture(CCBlocks.BRONCHUS_PLANKS.get()));
+        doorBlockWithRenderType(((DoorBlock) CCBlocks.BRONCHUS_DOOR.get()), modLoc("block/bronchus_door_bottom"), modLoc("block/bronchus_door_top"), "cutout");
+        trapdoorBlockWithRenderType(((TrapDoorBlock) CCBlocks.BRONCHUS_TRAPDOOR.get()), modLoc("block/bronchus_trapdoor"), true, "cutout");
+
+        blockItem(CCBlocks.BRONCHUS_STAIRS);
+        blockItem(CCBlocks.BRONCHUS_SLAB);
+        blockItem(CCBlocks.BRONCHUS_PRESSURE_PLATE);
+        blockItem(CCBlocks.BRONCHUS_FENCE_GATE);
+        blockItem(CCBlocks.BRONCHUS_TRAPDOOR, "_bottom");
+
+        simpleBlock(CCBlocks.BLOOD_BASES.get(),
+                models().cross(blockTexture(CCBlocks.BLOOD_BASES.get()).getPath(), blockTexture(CCBlocks.BLOOD_BASES.get())).renderType("cutout"));
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {

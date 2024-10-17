@@ -4,9 +4,11 @@ import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ShieldItem;
+import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -28,8 +30,6 @@ import net.veroxuniverse.crystal_chronicles.item.weapon.sword.CCSwordItem;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
 import net.veroxuniverse.crystal_chronicles.lib.CCWeaponTiers;
 
-import java.util.function.Supplier;
-
 public class CCItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CrystalChronicles.MODID);
@@ -42,6 +42,11 @@ public class CCItems {
     public static final DeferredItem<Item> CELESTITE_SHARD = ITEMS.registerSimpleItem("celestite_shard");
     public static final DeferredItem<Item> TOXITE_SHARD = ITEMS.registerSimpleItem("toxite_shard");
     public static final DeferredItem<Item> PYRONITE_SHARD = ITEMS.registerSimpleItem("pyronite_shard");
+    public static final DeferredItem<Item> FAT_TISSUE_BALL = ITEMS.registerSimpleItem("fat_tissue_ball");
+    public static final DeferredItem<Item> NEURON = ITEMS.registerSimpleItem("neuron");
+    public static final DeferredItem<Item> EYE = ITEMS.registerSimpleItem("eye");
+
+    public static final DeferredItem<Item> NEURON_TORCH_ITEM = ITEMS.register("neuron_torch", () -> new StandingAndWallBlockItem(CCBlocks.NEURON_TORCH.get(), CCBlocks.NEURON_TORCH_WALL.get(), new Item.Properties(), Direction.DOWN));
 
     // ARMOR
 

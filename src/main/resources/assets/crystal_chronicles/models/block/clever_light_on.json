@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "crystal_chronicles:block/clever_light_bottom",
+    "front": "crystal_chronicles:block/clever_light_side_on",
+    "side": "crystal_chronicles:block/clever_light_side_on",
+    "top": "crystal_chronicles:block/clever_light_top_on"
+  }
+}

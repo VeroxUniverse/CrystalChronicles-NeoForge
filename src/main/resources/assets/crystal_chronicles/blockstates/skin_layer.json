@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "":       [
+      { "model": "crystal_chronicles:block/skin_layer_1",
+        "weight":40},
+      { "model": "crystal_chronicles:block/skin_layer_2",
+        "weight":20},
+      { "model": "crystal_chronicles:block/skin_layer_3",
+        "weight":20},
+      { "model": "crystal_chronicles:block/skin_layer_4",
+        "weight":20}
+    ]
+  }
+}
+

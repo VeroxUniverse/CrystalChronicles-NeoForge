@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "crystal_chronicles:block/neuron_block"
+    },
+    "lit=true": {
+      "model": "crystal_chronicles:block/neuron_block_impulse"
+    }
+  }
+}

@@ -7,6 +7,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
 
 public class CCTabs {
 
@@ -14,35 +15,38 @@ public class CCTabs {
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_BLOCKS = CREATIVE_MODE_TABS.register("cc_tab_blocks", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blocks." + CrystalChronicles.MODID))
-            .icon(() -> CCBlocks.LUNARITE_CLUSTER.get().asItem().getDefaultInstance())
+            .icon(() -> CCBlocks.FAT_TISSUE_BLOCK.get().asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(CCBlocks.BLOODSTONE_CLUSTER.get());
-                output.accept(CCBlocks.BLOODSTONE_BLOCK.get());
-                output.accept(CCBlocks.BLOODSTONE_BUDDING.get());
-                output.accept(CCBlocks.VOIDSTONE_CLUSTER.get());
-                output.accept(CCBlocks.VOIDSTONE_BLOCK.get());
-                output.accept(CCBlocks.VOIDSTONE_BUDDING.get());
-                output.accept(CCBlocks.LUNARITE_CLUSTER.get());
-                output.accept(CCBlocks.LUNARITE_BLOCK.get());
-                output.accept(CCBlocks.LUNARITE_BUDDING.get());
-                output.accept(CCBlocks.CELESTITE_CLUSTER.get());
-                output.accept(CCBlocks.CELESTITE_BLOCK.get());
-                output.accept(CCBlocks.CELESTITE_BUDDING.get());
-                output.accept(CCBlocks.TOXITE_CLUSTER.get());
-                output.accept(CCBlocks.TOXITE_BLOCK.get());
-                output.accept(CCBlocks.TOXITE_BUDDING.get());
-                output.accept(CCBlocks.PYRONITE_CLUSTER.get());
-                output.accept(CCBlocks.PYRONITE_BLOCK.get());
-                output.accept(CCBlocks.PYRONITE_BUDDING.get());
-                output.accept(CCBlocks.SHALE.get());
-                output.accept(CCBlocks.INFECTED_SHALE.get());
-                output.accept(CCBlocks.MAGNETITE.get());
-                output.accept(CCBlocks.HEMATITE.get());
-                output.accept(CCBlocks.MARBLE.get());
-                output.accept(CCBlocks.BLUE_MUSHROOM.get());
-                output.accept(CCBlocks.BLUE_VINES.get());
-                output.accept(CCBlocks.PURPLE_MUSHROOM.get());
-                output.accept(CCBlocks.PURPLE_GRASS.get());
+                output.accept(CCBlocks.BLOOD_BASES.get());
+                output.accept(CCBlocks.TALL_BLOOD_BASES.get());
+                output.accept(CCBlocks.FLESH_BLOCK.get());
+                output.accept(CCBlocks.MUSCLE_BLOCK.get());
+                output.accept(CCBlocks.ALVEOLUS_BLOCK.get());
+                output.accept(CCBlocks.FAT_TISSUE_BLOCK.get());
+                output.accept(CCBlocks.ARTREE_BASE.get());
+                output.accept(CCBlocks.ARTREE_VEIN.get());
+                output.accept(CCBlocks.ARTREE_CAPILLARY.get());
+                output.accept(CCBlocks.NEURON_BLOCK.get());
+                output.accept(CCBlocks.AXON.get());
+                output.accept(CCItems.NEURON_TORCH_ITEM.get());
+                output.accept(CCBlocks.BRONCHUS.get());
+                output.accept(CCBlocks.BRONCHUS_PLANKS.get());
+                output.accept(CCBlocks.BRONCHUS_STAIRS.get());
+                output.accept(CCBlocks.BRONCHUS_SLAB.get());
+                output.accept(CCBlocks.BRONCHUS_FENCE.get());
+                output.accept(CCBlocks.BRONCHUS_FENCE_GATE.get());
+                output.accept(CCBlocks.BRONCHUS_BUTTON.get());
+                output.accept(CCBlocks.BRONCHUS_PRESSURE_PLATE.get());
+                output.accept(CCBlocks.BRONCHUS_DOOR.get());
+                output.accept(CCBlocks.BRONCHUS_TRAPDOOR.get());
+                output.accept(CCBlocks.CRUSTONE.get());
+                output.accept(CCBlocks.CRUSTONE_BRICKS.get());
+                output.accept(CCBlocks.CRACKED_CRUSTONE_BRICKS.get());
+                output.accept(CCBlocks.POLISHED_CRUSTONE.get());
+                output.accept(CCBlocks.CHISELED_CRUSTONE.get());
+                output.accept(CCBlocks.EYE_BLOCK.get());
+                output.accept(CCBlocks.CELVER_LIGHT.get());
+                output.accept(CCBlocks.SKIN_LAYER.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ITEMS = CREATIVE_MODE_TABS.register("cc_tab_items", () -> CreativeModeTab.builder()
@@ -55,11 +59,15 @@ public class CCTabs {
                 output.accept(CCItems.CELESTITE_SHARD.get());
                 output.accept(CCItems.TOXITE_SHARD.get());
                 output.accept(CCItems.PYRONITE_SHARD.get());
+                output.accept(CCItems.FAT_TISSUE_BALL.get());
+                output.accept(CCItems.NEURON.get());
+                output.accept(CCItems.EYE.get());
+                output.accept(CCFluids.BLOOD_BUCKET.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ARMORY = CREATIVE_MODE_TABS.register("cc_tab_armory", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.armory." + CrystalChronicles.MODID))
-            .icon(() -> CCItems.PALADIN_SWORD.get().getDefaultInstance())
+            .icon(() -> CCItems.PALADIN_HELMET.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(CCItems.PALADIN_HELMET.get());
                 output.accept(CCItems.PALADIN_CHESTPLATE.get());
