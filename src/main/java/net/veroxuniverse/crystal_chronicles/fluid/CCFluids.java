@@ -31,7 +31,7 @@ public class CCFluids {
             () -> new BaseFlowingFluid.Flowing(CCFluids.BLOOD_PROPERTIES));
 
     public static final DeferredBlock<LiquidBlock> BLOOD_BLOCK = CCBlocks.BLOCKS.register("blood_block",
-            () -> new BloodFluidBlock(CCFluids.SOURCE_BLOOD.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA).noLootTable()));
+            () -> new BloodFluidBlock(CCFluids.SOURCE_BLOOD.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()));
     public static final DeferredItem<Item> BLOOD_BUCKET = CCItems.ITEMS.registerItem("blood_bucket",
             properties -> new BucketItem(CCFluids.SOURCE_BLOOD.get(), properties.craftRemainder(Items.BUCKET).stacksTo(1)));
 

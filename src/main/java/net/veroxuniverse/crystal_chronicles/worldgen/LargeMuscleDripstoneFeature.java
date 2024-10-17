@@ -2,33 +2,248 @@ package net.veroxuniverse.crystal_chronicles.worldgen;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.FloatProvider;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.Column;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.LargeDripstoneFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.LargeDripstoneConfiguration;
+import net.minecraft.world.phys.Vec3;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
+import net.veroxuniverse.crystal_chronicles.util.MuscleUtils;
 
-public class LargeMuscleDripstoneFeature extends LargeDripstoneFeature {
-    public LargeMuscleDripstoneFeature(Codec<LargeDripstoneConfiguration> pCodec) {
+import javax.annotation.Nullable;
+import java.util.Optional;
+
+public class LargeMuscleDripstoneFeature extends Feature<LargeMuscleDripstoneConfiguration> {
+    public LargeMuscleDripstoneFeature(Codec<LargeMuscleDripstoneConfiguration> pCodec) {
         super(pCodec);
     }
+
+
     @Override
-    public boolean place(FeaturePlaceContext<LargeDripstoneConfiguration> context) {
-        WorldGenLevel world = context.level();
-        BlockPos pos = context.origin();
-        RandomSource random = context.random();
+    public boolean place(FeaturePlaceContext<LargeMuscleDripstoneConfiguration> pContext) {
+        WorldGenLevel worldgenlevel = pContext.level();
+        BlockPos blockpos = pContext.origin();
+        LargeMuscleDripstoneConfiguration largedripstoneconfiguration = pContext.config();
+        RandomSource randomsource = pContext.random();
+        if (!MuscleUtils.isEmptyOrWater(worldgenlevel, blockpos)) {
+            return false;
+        } else {
+            Optional<Column> optional = Column.scan(
+                    worldgenlevel,
+                    blockpos,
+                    largedripstoneconfiguration.floorToCeilingSearchRange,
+                    MuscleUtils::isEmptyOrWater,
+                    MuscleUtils::isMuscleBaseOrLava
+            );
+            if (!optional.isEmpty() && optional.get() instanceof Column.Range) {
+                Column.Range column$range = (Column.Range)optional.get();
+                if (column$range.height() < 4) {
+                    return false;
+                } else {
+                    int i = (int)((float)column$range.height() * largedripstoneconfiguration.maxColumnRadiusToCaveHeightRatio);
+                    int j = Mth.clamp(i, largedripstoneconfiguration.columnRadius.getMinValue(), largedripstoneconfiguration.columnRadius.getMaxValue());
+                    int k = Mth.randomBetweenInclusive(randomsource, largedripstoneconfiguration.columnRadius.getMinValue(), j);
+                    LargeMuscleDripstoneFeature.LargeDripstone largedripstonefeature$largedripstone = makeDripstone(
+                            blockpos.atY(column$range.ceiling() - 1),
+                            false,
+                            randomsource,
+                            k,
+                            largedripstoneconfiguration.stalactiteBluntness,
+                            largedripstoneconfiguration.heightScale
+                    );
+                    LargeMuscleDripstoneFeature.LargeDripstone largedripstonefeature$largedripstone1 = makeDripstone(
+                            blockpos.atY(column$range.floor() + 1),
+                            true,
+                            randomsource,
+                            k,
+                            largedripstoneconfiguration.stalagmiteBluntness,
+                            largedripstoneconfiguration.heightScale
+                    );
+                    LargeMuscleDripstoneFeature.WindOffsetter largedripstonefeature$windoffsetter;
+                    if (largedripstonefeature$largedripstone.isSuitableForWind(largedripstoneconfiguration)
+                            && largedripstonefeature$largedripstone1.isSuitableForWind(largedripstoneconfiguration)) {
+                        largedripstonefeature$windoffsetter = new LargeMuscleDripstoneFeature.WindOffsetter(
+                                blockpos.getY(), randomsource, largedripstoneconfiguration.windSpeed
+                        );
+                    } else {
+                        largedripstonefeature$windoffsetter = LargeMuscleDripstoneFeature.WindOffsetter.noWind();
+                    }
 
-        this.placeMuscleDripstone(world, random, pos);
+                    boolean flag = largedripstonefeature$largedripstone.moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
+                            worldgenlevel, largedripstonefeature$windoffsetter
+                    );
+                    boolean flag1 = largedripstonefeature$largedripstone1.moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
+                            worldgenlevel, largedripstonefeature$windoffsetter
+                    );
+                    if (flag) {
+                        largedripstonefeature$largedripstone.placeBlocks(worldgenlevel, randomsource, largedripstonefeature$windoffsetter);
+                    }
 
-        return true;
+                    if (flag1) {
+                        largedripstonefeature$largedripstone1.placeBlocks(worldgenlevel, randomsource, largedripstonefeature$windoffsetter);
+                    }
+
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
     }
 
-    private void placeMuscleDripstone(WorldGenLevel world, RandomSource random, BlockPos pos) {
-        for (int i = 0; i < 10; i++) {
-            BlockPos targetPos = pos.offset(random.nextInt(3) - 1, random.nextInt(5), random.nextInt(3) - 1);
-            if (world.isEmptyBlock(targetPos)) {
-                world.setBlock(targetPos, CCBlocks.MUSCLE_BLOCK.get().defaultBlockState(), 3);
+    private static LargeMuscleDripstoneFeature.LargeDripstone makeDripstone(
+            BlockPos pRoot, boolean pPointingUp, RandomSource pRandom, int pRadius, FloatProvider pBluntnessBase, FloatProvider pScaleBase
+    ) {
+        return new LargeMuscleDripstoneFeature.LargeDripstone(
+                pRoot, pPointingUp, pRadius, (double)pBluntnessBase.sample(pRandom), (double)pScaleBase.sample(pRandom)
+        );
+    }
+
+    private void placeDebugMarkers(WorldGenLevel pLevel, BlockPos pPos, Column.Range pRange, LargeMuscleDripstoneFeature.WindOffsetter pWindOffsetter) {
+        pLevel.setBlock(pWindOffsetter.offset(pPos.atY(pRange.ceiling() - 1)), Blocks.DIAMOND_BLOCK.defaultBlockState(), 2);
+        pLevel.setBlock(pWindOffsetter.offset(pPos.atY(pRange.floor() + 1)), Blocks.GOLD_BLOCK.defaultBlockState(), 2);
+
+        for (BlockPos.MutableBlockPos blockpos$mutableblockpos = pPos.atY(pRange.floor() + 2).mutable();
+             blockpos$mutableblockpos.getY() < pRange.ceiling() - 1;
+             blockpos$mutableblockpos.move(Direction.UP)
+        ) {
+            BlockPos blockpos = pWindOffsetter.offset(blockpos$mutableblockpos);
+            if (MuscleUtils.isEmptyOrWater(pLevel, blockpos) || pLevel.getBlockState(blockpos).is(CCBlocks.MUSCLE_BLOCK.get())) {
+                pLevel.setBlock(blockpos, Blocks.CREEPER_HEAD.defaultBlockState(), 2);
+            }
+        }
+    }
+
+    static final class LargeDripstone {
+        private BlockPos root;
+        private final boolean pointingUp;
+        private int radius;
+        private final double bluntness;
+        private final double scale;
+
+        LargeDripstone(BlockPos pRoot, boolean pPointingUp, int pRadius, double pBluntness, double pScale) {
+            this.root = pRoot;
+            this.pointingUp = pPointingUp;
+            this.radius = pRadius;
+            this.bluntness = pBluntness;
+            this.scale = pScale;
+        }
+
+        private int getHeight() {
+            return this.getHeightAtRadius(0.0F);
+        }
+
+        private int getMinY() {
+            return this.pointingUp ? this.root.getY() : this.root.getY() - this.getHeight();
+        }
+
+        private int getMaxY() {
+            return !this.pointingUp ? this.root.getY() : this.root.getY() + this.getHeight();
+        }
+
+        boolean moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(WorldGenLevel pLevel, LargeMuscleDripstoneFeature.WindOffsetter pWindOffsetter) {
+            while (this.radius > 1) {
+                BlockPos.MutableBlockPos blockpos$mutableblockpos = this.root.mutable();
+                int i = Math.min(10, this.getHeight());
+
+                for (int j = 0; j < i; j++) {
+                    if (pLevel.getBlockState(blockpos$mutableblockpos).is(Blocks.LAVA)) {
+                        return false;
+                    }
+
+                    if (MuscleUtils.isCircleMostlyEmbeddedInStone(pLevel, pWindOffsetter.offset(blockpos$mutableblockpos), this.radius)) {
+                        this.root = blockpos$mutableblockpos;
+                        return true;
+                    }
+
+                    blockpos$mutableblockpos.move(this.pointingUp ? Direction.DOWN : Direction.UP);
+                }
+
+                this.radius /= 2;
+            }
+
+            return false;
+        }
+
+        private int getHeightAtRadius(float pRadius) {
+            return (int)MuscleUtils.getDripstoneHeight((double)pRadius, (double)this.radius, this.scale, this.bluntness);
+        }
+
+        void placeBlocks(WorldGenLevel pLevel, RandomSource pRandom, LargeMuscleDripstoneFeature.WindOffsetter pWindOffsetter) {
+            for (int i = -this.radius; i <= this.radius; i++) {
+                for (int j = -this.radius; j <= this.radius; j++) {
+                    float f = Mth.sqrt((float)(i * i + j * j));
+                    if (!(f > (float)this.radius)) {
+                        int k = this.getHeightAtRadius(f);
+                        if (k > 0) {
+                            if ((double)pRandom.nextFloat() < 0.2) {
+                                k = (int)((float)k * Mth.randomBetween(pRandom, 0.8F, 1.0F));
+                            }
+
+                            BlockPos.MutableBlockPos blockpos$mutableblockpos = this.root.offset(i, 0, j).mutable();
+                            boolean flag = false;
+                            int l = this.pointingUp
+                                    ? pLevel.getHeight(Heightmap.Types.WORLD_SURFACE_WG, blockpos$mutableblockpos.getX(), blockpos$mutableblockpos.getZ())
+                                    : Integer.MAX_VALUE;
+
+                            for (int i1 = 0; i1 < k && blockpos$mutableblockpos.getY() < l; i1++) {
+                                BlockPos blockpos = pWindOffsetter.offset(blockpos$mutableblockpos);
+                                if (MuscleUtils.isEmptyOrWaterOrLava(pLevel, blockpos)) {
+                                    flag = true;
+                                    Block block = CCBlocks.MUSCLE_BLOCK.get();
+                                    pLevel.setBlock(blockpos, block.defaultBlockState(), 2);
+                                } else if (flag && pLevel.getBlockState(blockpos).is(CCBlocks.FLESH_BLOCK.get())) {
+                                    break;
+                                }
+
+                                blockpos$mutableblockpos.move(this.pointingUp ? Direction.UP : Direction.DOWN);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        boolean isSuitableForWind(LargeMuscleDripstoneConfiguration pConfig) {
+            return this.radius >= pConfig.minRadiusForWind && this.bluntness >= (double)pConfig.minBluntnessForWind;
+        }
+    }
+
+    static final class WindOffsetter {
+        private final int originY;
+        @Nullable
+        private final Vec3 windSpeed;
+
+        WindOffsetter(int pOriginY, RandomSource pRandom, FloatProvider pMagnitude) {
+            this.originY = pOriginY;
+            float f = pMagnitude.sample(pRandom);
+            float f1 = Mth.randomBetween(pRandom, 0.0F, (float) Math.PI);
+            this.windSpeed = new Vec3((double)(Mth.cos(f1) * f), 0.0, (double)(Mth.sin(f1) * f));
+        }
+
+        private WindOffsetter() {
+            this.originY = 0;
+            this.windSpeed = null;
+        }
+
+        static LargeMuscleDripstoneFeature.WindOffsetter noWind() {
+            return new LargeMuscleDripstoneFeature.WindOffsetter();
+        }
+
+        BlockPos offset(BlockPos pPos) {
+            if (this.windSpeed == null) {
+                return pPos;
+            } else {
+                int i = this.originY - pPos.getY();
+                Vec3 vec3 = this.windSpeed.scale((double)i);
+                return pPos.offset(Mth.floor(vec3.x), 0, Mth.floor(vec3.z));
             }
         }
     }

@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "crystal_chronicles:block/eye_block"
-    }
+    "facing=up":    { "model": "crystal_chronicles:block/eye_block" },
+    "facing=north": { "model": "crystal_chronicles:block/eye_block", "x": 90 },
+    "facing=south": { "model": "crystal_chronicles:block/eye_block", "x": 270 },
+    "facing=east":  { "model": "crystal_chronicles:block/eye_block", "x": 90,"y": 90 },
+    "facing=west":  { "model": "crystal_chronicles:block/eye_block", "x": 90,"y": 270 },
+    "facing=down":  { "model": "crystal_chronicles:block/eye_block", "x": 180 }
   }
 }

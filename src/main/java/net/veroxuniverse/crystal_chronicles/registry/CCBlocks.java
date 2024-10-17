@@ -42,9 +42,9 @@ public class CCBlocks {
     public static final DeferredBlock<Block> ARTREE_CAPILLARY = registerBlock("artree_capillary",
             () -> new CapillaryBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE_WALL).noOcclusion()));
     public static final DeferredBlock<Block> NEURON_BLOCK = registerBlock("neuron_block",
-            () -> new NeuronBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion()));
+            () -> new NeuronBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion().randomTicks()));
     public static final DeferredBlock<Block> AXON = registerBlock("axon",
-            () -> new AxonBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion()));
+            () -> new AxonBlock(BlockBehaviour.Properties.of().lightLevel(litBlockEmission(15)).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion().randomTicks()));
     public static final DeferredBlock<Block> ROTTEN_FLESH_BLOCK = registerBlock("rotten_flesh_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
 
@@ -76,7 +76,7 @@ public class CCBlocks {
             () -> new WallNeuronTorchBlock(ParticleTypes.CRIT, BlockBehaviour.Properties.of().lightLevel(state -> 14).strength(0.3F).sound(SoundType.FROGLIGHT).noOcclusion().noCollission().lootFrom(NEURON_TORCH)));
 
     public static final DeferredBlock<Block> EYE_BLOCK = registerBlock("eye_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
+            () -> new EyeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
     public static final DeferredBlock<Block> CRUSTONE = registerBlock("crustone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
     public static final DeferredBlock<Block> CRUSTONE_BRICKS = registerBlock("crustone_bricks",
