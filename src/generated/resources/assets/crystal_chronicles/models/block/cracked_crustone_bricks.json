@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "crystal_chronicles:block/cracked_crustone_bricks"
+  }
+}

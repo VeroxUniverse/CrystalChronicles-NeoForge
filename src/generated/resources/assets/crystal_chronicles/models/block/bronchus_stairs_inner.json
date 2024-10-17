@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "crystal_chronicles:block/bronchus_planks",
+    "side": "crystal_chronicles:block/bronchus_planks",
+    "top": "crystal_chronicles:block/bronchus_planks"
+  }
+}

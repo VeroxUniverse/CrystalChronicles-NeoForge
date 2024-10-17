@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "crystal_chronicles:block/bronchus_planks"
+  }
+}
