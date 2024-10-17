@@ -60,22 +60,28 @@ public class NeuronFeature extends Feature<NoneFeatureConfiguration> {
         }
 
         BlockPos currentPos = startPos;
+
         for (int i = 0; i < axonCount; i++) {
             BlockState axonBlockState = CCBlocks.AXON.get().defaultBlockState();
-            world.setBlock(currentPos, axonBlockState, 3);
 
-            if (world instanceof ServerLevel) {
-                world.scheduleTick(currentPos, CCBlocks.AXON.get(), 1); // Tick für AxonBlock
+            if (world.isEmptyBlock(currentPos)) {
+                world.setBlock(currentPos, axonBlockState, 3);
+
+                if (world instanceof ServerLevel) {
+                    world.scheduleTick(currentPos, CCBlocks.AXON.get(), 1);
+                }
             }
 
             currentPos = currentPos.below();
         }
 
         BlockState neuronBlockState = CCBlocks.NEURON_BLOCK.get().defaultBlockState();
-        world.setBlock(currentPos, neuronBlockState, 3);
+        if (world.isEmptyBlock(currentPos)) {
+            world.setBlock(currentPos, neuronBlockState, 3);
 
-        if (world instanceof ServerLevel) {
-            world.scheduleTick(currentPos, CCBlocks.NEURON_BLOCK.get(), 1); // Tick für NeuronBlock
+            if (world instanceof ServerLevel) {
+                world.scheduleTick(currentPos, CCBlocks.NEURON_BLOCK.get(), 1);
+            }
         }
 
         return true;
