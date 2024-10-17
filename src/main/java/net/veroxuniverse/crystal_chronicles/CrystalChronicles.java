@@ -33,6 +33,7 @@ import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 import net.veroxuniverse.crystal_chronicles.registry.CCTabs;
+import net.veroxuniverse.crystal_chronicles.worldgen.CCFeatures;
 import org.slf4j.Logger;
 
 @Mod(CrystalChronicles.MODID)
@@ -53,6 +54,7 @@ public class CrystalChronicles {
         CCEffects.register(modEventBus);
         CCFluids.register(modEventBus);
         CCFluidTypes.register(modEventBus);
+        CCFeatures.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
