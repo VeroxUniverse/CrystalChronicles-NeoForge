@@ -2,13 +2,11 @@ package net.veroxuniverse.crystal_chronicles.worldgen;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.veroxuniverse.crystal_chronicles.block.NeuronBlock;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 
 public class NeuronFeature extends Feature<NoneFeatureConfiguration> {
@@ -16,27 +14,6 @@ public class NeuronFeature extends Feature<NoneFeatureConfiguration> {
     public NeuronFeature(Codec<NoneFeatureConfiguration> codec) {
         super(codec);
     }
-
-    /*
-
-    @Override
-    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
-        WorldGenLevel world = context.level();
-        BlockPos pos = context.origin();
-
-        BlockState neuronBlockState = CCBlocks.NEURON_BLOCK.get().defaultBlockState();
-
-        world.setBlock(pos, neuronBlockState, 3);
-
-        if (world instanceof ServerLevel) {
-            ServerLevel serverLevel = (ServerLevel) world;
-            neuronBlockState.tick(serverLevel, pos, serverLevel.random);
-        }
-
-        return true;
-    }
-
-     */
 
     @Override
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
@@ -60,28 +37,29 @@ public class NeuronFeature extends Feature<NoneFeatureConfiguration> {
         }
 
         BlockPos currentPos = startPos;
+        BlockPos lastAxonPos = null;
 
         for (int i = 0; i < axonCount; i++) {
             BlockState axonBlockState = CCBlocks.AXON.get().defaultBlockState();
 
             if (world.isEmptyBlock(currentPos)) {
                 world.setBlock(currentPos, axonBlockState, 3);
+                world.scheduleTick(currentPos, CCBlocks.AXON.get(), 1);
 
-                if (world instanceof ServerLevel) {
-                    world.scheduleTick(currentPos, CCBlocks.AXON.get(), 1);
-                }
+                lastAxonPos = currentPos;
+            } else {
+                break;
             }
 
             currentPos = currentPos.below();
         }
 
+        BlockPos neuronPos = (lastAxonPos != null) ? currentPos : startPos.below();
         BlockState neuronBlockState = CCBlocks.NEURON_BLOCK.get().defaultBlockState();
-        if (world.isEmptyBlock(currentPos)) {
-            world.setBlock(currentPos, neuronBlockState, 3);
 
-            if (world instanceof ServerLevel) {
-                world.scheduleTick(currentPos, CCBlocks.NEURON_BLOCK.get(), 1);
-            }
+        if (world.isEmptyBlock(neuronPos)) {
+            world.setBlock(neuronPos, neuronBlockState, 3);
+            world.scheduleTick(neuronPos, CCBlocks.NEURON_BLOCK.get(), 1);
         }
 
         return true;

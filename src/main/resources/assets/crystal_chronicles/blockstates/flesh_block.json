@@ -2,7 +2,7 @@
   "variants": {
     "":       [
       { "model": "crystal_chronicles:block/flesh_block",
-        "weight":98},
+        "weight":200},
       { "model": "crystal_chronicles:block/flesh_eye",
         "weight":1},
       { "model": "crystal_chronicles:block/flesh_teeth",
