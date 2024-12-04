@@ -1,0 +1,53 @@
+{
+	"temperature": 0.8,
+	"downfall": 0.4,
+	"has_precipitation": false,
+	"effects": {
+		"sky_color": 0,
+		"fog_color": 0,
+		"water_color": 16759296,
+		"water_fog_color": 16759296,
+		"grass_color": 12081920,
+		"foliage_color": 12088064
+	},
+	"spawn_costs": {},
+	"spawners": {},
+	"carvers": {
+		"air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+	},
+	"features": [
+		[],
+		[
+			"crystal_chronicles:flesh/wound"
+		],
+		[
+			"crystal_chronicles:flesh/cave_pillar",
+			"crystal_chronicles:flesh/cysts"
+		],
+		[],
+		[
+
+		],
+		[],
+		[
+			"crystal_chronicles:flesh/ore_fat",
+			"crystal_chronicles:flesh/ore_muscle"
+		],
+		[],
+		[
+
+		],
+		[
+			"crystal_chronicles:flesh/blood_grass",
+			"crystal_chronicles:flesh/blood_tall_grass",
+			"crystal_chronicles:flesh/dangling_eyes",
+			"crystal_chronicles:flesh/neuron_cluster",
+			"crystal_chronicles:bronchus_cave"
+		],
+		[]
+	]
+}

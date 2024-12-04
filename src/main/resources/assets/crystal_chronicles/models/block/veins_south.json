@@ -1,0 +1,17 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "crystal_chronicles:block/veins",
+    "south": "crystal_chronicles:block/veins"
+  },
+  "render_type": "cutout",
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 16, 1],
+      "faces": {
+        "south": { "texture": "#south", "cullface": "south" }
+      }
+    }
+  ]
+}

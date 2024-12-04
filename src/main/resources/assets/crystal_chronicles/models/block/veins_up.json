@@ -1,0 +1,17 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "crystal_chronicles:block/veins",
+    "down": "crystal_chronicles:block/veins"
+  },
+  "render_type": "cutout",
+  "elements": [
+    {
+      "from": [0, 15, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "down": { "texture": "#down", "cullface": "down" }
+      }
+    }
+  ]
+}

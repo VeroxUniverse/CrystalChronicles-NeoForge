@@ -1,12 +1,12 @@
 {
   "variants": {
-    "":       [
-      { "model": "crystal_chronicles:block/flesh_block",
-        "weight":200},
-      { "model": "crystal_chronicles:block/flesh_eye",
-        "weight":1},
-      { "model": "crystal_chronicles:block/flesh_teeth",
-        "weight":1}
+    "has_skin_above=true": [
+      { "model": "crystal_chronicles:block/flesh_block_skin_side"}
+    ],
+    "has_skin_above=false": [
+      { "model": "crystal_chronicles:block/flesh_block", "weight": 2000 },
+      { "model": "crystal_chronicles:block/flesh_eye", "weight": 1 },
+      { "model": "crystal_chronicles:block/flesh_teeth", "weight": 1 }
     ]
   }
 }

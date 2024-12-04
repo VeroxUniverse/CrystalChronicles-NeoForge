@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crystal_chronicles:hemalite_shard"
+  },
+  "base": {
+    "item": "irons_spellbooks:cultist_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:rogue_helmet"
+  },
+  "template": {
+    "item": "irons_spellbooks:blood_rune"
+  }
+}

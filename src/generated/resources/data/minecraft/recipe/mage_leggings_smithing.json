@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crystal_chronicles:voidstone_shard"
+  },
+  "base": {
+    "item": "irons_spellbooks:shadowwalker_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:mage_leggings"
+  },
+  "template": {
+    "item": "irons_spellbooks:ender_rune"
+  }
+}

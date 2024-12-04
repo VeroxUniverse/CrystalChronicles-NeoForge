@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import org.jetbrains.annotations.NotNull;
 
 public class AxonBlock extends HalfTransparentBlock {
@@ -34,20 +33,16 @@ public class AxonBlock extends HalfTransparentBlock {
     @Override
     public void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
         if (!pLevel.isClientSide){
-            // immediately check nearby NeuronBlock when placed
             updateBlocks(pLevel, pPos);
         }
     }
 
     @Override
     public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        // Periodically check and sync with the block below
         updateBlocks(pLevel, pPos);
-        // Schedule the next tick after 10 ticks (0.5 seconds)
         pLevel.scheduleTick(pPos, this, 10);
     }
 
-    // Method to update all AxonBlocks above the NeuronBlock, with a maximum of MAX_AXONS blocks
     private void updateBlocks(Level pLevel, BlockPos pPos) {
         BlockPos blockBelow = pPos.below();
         BlockState belowState = pLevel.getBlockState(blockBelow);
@@ -70,7 +65,7 @@ public class AxonBlock extends HalfTransparentBlock {
 
     @Override
     public boolean isSignalSource(BlockState state) {
-        return false; // disables redstone interactions
+        return false;
     }
 
     @Override

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "crystal_chronicles:crustone_bricks"
+  },
+  "result": {
+    "id": "crystal_chronicles:crustone_bricks_wall"
+  }
+}

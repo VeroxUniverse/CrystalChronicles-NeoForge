@@ -10,6 +10,9 @@
     "crystal_chronicles:bronchus_pressure_plate",
     "crystal_chronicles:bronchus_door",
     "crystal_chronicles:bronchus_trapdoor",
-    "crystal_chronicles:bronchus_fence_gate"
+    "crystal_chronicles:bronchus_fence_gate",
+    "crystal_chronicles:artree_base",
+    "crystal_chronicles:artree_capillary",
+    "crystal_chronicles:artree_vein"
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/crustone_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/crustone"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/crustone_slab_top"
+    }
+  }
+}

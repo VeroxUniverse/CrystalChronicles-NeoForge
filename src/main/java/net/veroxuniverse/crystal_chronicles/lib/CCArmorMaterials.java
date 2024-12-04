@@ -20,65 +20,75 @@ public class CCArmorMaterials {
     public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS =
             DeferredRegister.create(Registries.ARMOR_MATERIAL, CrystalChronicles.MODID);
 
-    public static final Holder<ArmorMaterial> BLOODSTONE =
-            ARMOR_MATERIALS.register("bloodstone", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> BLOOD =
+            ARMOR_MATERIALS.register("blood", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 4);
                         map.put(ArmorItem.Type.LEGGINGS, 7);
                         map.put(ArmorItem.Type.CHESTPLATE, 9);
                         map.put(ArmorItem.Type.HELMET, 4);
-                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.BLOODSTONE_SHARD.get()),
-                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "bloodstone"))),
+                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.HEMALITE_SHARD.get()),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "blood"))),
                     3, 0.1F));
-    public static final Holder<ArmorMaterial> VOIDSTONE =
-            ARMOR_MATERIALS.register("voidstone", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> ENDER =
+            ARMOR_MATERIALS.register("ender", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 3);
                         map.put(ArmorItem.Type.LEGGINGS, 6);
                         map.put(ArmorItem.Type.CHESTPLATE, 8);
                         map.put(ArmorItem.Type.HELMET, 3);
                     }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
-                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "voidstone"))),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "ender"))),
                     3, 0.1F));
-    public static final Holder<ArmorMaterial> CELESTITE =
-            ARMOR_MATERIALS.register("celestite", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> LIGHTNING =
+            ARMOR_MATERIALS.register("lightning", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 4);
                         map.put(ArmorItem.Type.LEGGINGS, 7);
                         map.put(ArmorItem.Type.CHESTPLATE, 10);
                         map.put(ArmorItem.Type.HELMET, 5);
-                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.CELESTITE_SHARD.get()),
-                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "celestite"))),
+                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.VOLTITE_SHARD.get()),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "lightning"))),
                     3, 0.5F));
-    public static final Holder<ArmorMaterial> LUNARITE =
-            ARMOR_MATERIALS.register("lunarite", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> HOLY =
+            ARMOR_MATERIALS.register("holy", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 4);
                         map.put(ArmorItem.Type.LEGGINGS, 7);
                         map.put(ArmorItem.Type.CHESTPLATE, 9);
                         map.put(ArmorItem.Type.HELMET, 4);
-                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.LUNARITE_SHARD.get()),
-                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "lunarite"))),
+                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.DIVINITE_SHARD.get()),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "holy"))),
                     3, 0.1F));
-    public static final Holder<ArmorMaterial> TOXITE =
-            ARMOR_MATERIALS.register("toxite", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> NATURE =
+            ARMOR_MATERIALS.register("nature", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 3);
                         map.put(ArmorItem.Type.LEGGINGS, 6);
                         map.put(ArmorItem.Type.CHESTPLATE, 8);
                         map.put(ArmorItem.Type.HELMET, 3);
-                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.TOXITE_SHARD.get()),
-                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "toxite"))),
+                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.FLORALITE_SHARD.get()),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "nature"))),
                     4, 0.1F));
-    public static final Holder<ArmorMaterial> PYRONITE =
-            ARMOR_MATERIALS.register("pyronite", () -> new ArmorMaterial(
+    public static final Holder<ArmorMaterial> FIRE =
+            ARMOR_MATERIALS.register("fire", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 3);
                         map.put(ArmorItem.Type.LEGGINGS, 6);
                         map.put(ArmorItem.Type.CHESTPLATE, 9);
                         map.put(ArmorItem.Type.HELMET, 3);
-                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.PYRONITE_SHARD.get()),
-                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "pyronite"))),
+                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "fire"))),
+                    2, 0.4F));
+    public static final Holder<ArmorMaterial> ICE =
+            ARMOR_MATERIALS.register("ice", () -> new ArmorMaterial(
+                    Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                        map.put(ArmorItem.Type.BOOTS, 3);
+                        map.put(ArmorItem.Type.LEGGINGS, 6);
+                        map.put(ArmorItem.Type.CHESTPLATE, 9);
+                        map.put(ArmorItem.Type.HELMET, 3);
+                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.ICE_SHARD.get()),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "ice"))),
                     2, 0.4F));
 
     public static void register(IEventBus eventBus) {

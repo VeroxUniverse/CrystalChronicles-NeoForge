@@ -25,7 +25,6 @@ public class LargeMuscleDripstoneFeature extends Feature<LargeMuscleDripstoneCon
         super(pCodec);
     }
 
-
     @Override
     public boolean place(FeaturePlaceContext<LargeMuscleDripstoneConfiguration> pContext) {
         WorldGenLevel worldgenlevel = pContext.level();

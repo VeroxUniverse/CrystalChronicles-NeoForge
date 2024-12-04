@@ -18,7 +18,7 @@ import java.util.function.Consumer;
 
 public class TankArmor extends AnimatedSpellArmor {
     public TankArmor(Holder<ArmorMaterial> holder, Type type, Properties properties) {
-        super(holder, type, properties, tankSchoolAttributes(AttributeRegistry.LIGHTNING_SPELL_POWER));;
+        super(holder, type, properties, tankSchoolAttributes(AttributeRegistry.ICE_SPELL_POWER));;
     }
 
     @Override

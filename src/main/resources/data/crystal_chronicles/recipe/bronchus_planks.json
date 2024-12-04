@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "crystal_chronicles:bronchus"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:bronchus_planks"
+  }
+}

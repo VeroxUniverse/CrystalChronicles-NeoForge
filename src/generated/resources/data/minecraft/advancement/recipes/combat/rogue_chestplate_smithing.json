@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blood_rune": {
+      "conditions": {
+        "items": [
+          {
+            "items": "irons_spellbooks:blood_rune"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:rogue_chestplate_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blood_rune"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:rogue_chestplate_smithing"
+    ]
+  }
+}

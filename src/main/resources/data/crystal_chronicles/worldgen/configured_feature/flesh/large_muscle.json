@@ -1,0 +1,30 @@
+{
+  "type": "crystal_chronicles:large_muscle_dripstone",
+  "config": {
+    "column_radius": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 19,
+      "min_inclusive": 5
+    },
+    "floor_to_ceiling_search_range": 30,
+    "height_scale": {
+      "type": "minecraft:constant",
+      "value": 2.0
+    },
+    "max_column_radius_to_cave_height_ratio": 0.33,
+    "min_bluntness_for_wind": 0.6,
+    "min_radius_for_wind": 4,
+    "stalactite_bluntness": {
+      "type": "minecraft:constant",
+      "value": 0.1
+    },
+    "stalagmite_bluntness": {
+      "type": "minecraft:constant",
+      "value": 0.1
+    },
+    "wind_speed": {
+      "type": "minecraft:constant",
+      "value": 0.0
+    }
+  }
+}

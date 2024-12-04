@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "crystal_chronicles:voidstone_shard"
+    }
+  },
+  "pattern": [
+    "S",
+    "N",
+    "N"
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [
+          {
+            "id": "irons_spellbooks:magic_missile",
+            "index": 0,
+            "level": 8,
+            "locked": true
+          }
+        ],
+        "maxSpells": 1,
+        "mustEquip": false,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "crystal_chronicles:staff"
+  }
+}

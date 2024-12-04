@@ -2,6 +2,8 @@ package net.veroxuniverse.crystal_chronicles.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.state.BlockState;
@@ -36,6 +38,20 @@ public class SkinLayerBlock extends Block {
 
     public @NotNull VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext context) {
         return SHAPE_BASE;
+    }
+
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader levelReader, BlockPos pos) {
+        return !levelReader.isEmptyBlock(pos.below());
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+        super.neighborChanged(state, level, pos, block, fromPos, isMoving);
+
+        if (!canSurvive(state, level, pos)) {
+            level.destroyBlock(pos, true);
+        }
     }
 
 }

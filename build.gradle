@@ -86,7 +86,7 @@ configurations {
 repositories {
     mavenLocal()
     // Adds the 'libs' folder in the project directory as a flat directory
-    maven {url 'https://libs.azuredoom.com:4443/mods'}
+    maven { url 'https://maven.azuredoom.com/mods' }
     maven {
         // location of the maven that hosts JEI files since January 2023
         name = "Jared's maven"

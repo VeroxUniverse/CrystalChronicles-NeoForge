@@ -19,8 +19,10 @@ public class CCTabs {
             .displayItems((parameters, output) -> {
                 output.accept(CCBlocks.BLOOD_BASES.get());
                 output.accept(CCBlocks.TALL_BLOOD_BASES.get());
+                output.accept(CCBlocks.VEINS.get());
                 output.accept(CCBlocks.FLESH_BLOCK.get());
                 output.accept(CCBlocks.MUSCLE_BLOCK.get());
+                output.accept(CCBlocks.TENDON_BLOCK.get());
                 output.accept(CCBlocks.ALVEOLUS_BLOCK.get());
                 output.accept(CCBlocks.FAT_TISSUE_BLOCK.get());
                 output.accept(CCBlocks.ARTREE_BASE.get());
@@ -29,6 +31,7 @@ public class CCTabs {
                 output.accept(CCBlocks.NEURON_BLOCK.get());
                 output.accept(CCBlocks.AXON.get());
                 output.accept(CCItems.NEURON_TORCH_ITEM.get());
+                output.accept(CCBlocks.ALVEOLUS.get());
                 output.accept(CCBlocks.BRONCHUS.get());
                 output.accept(CCBlocks.BRONCHUS_PLANKS.get());
                 output.accept(CCBlocks.BRONCHUS_STAIRS.get());
@@ -40,25 +43,44 @@ public class CCTabs {
                 output.accept(CCBlocks.BRONCHUS_DOOR.get());
                 output.accept(CCBlocks.BRONCHUS_TRAPDOOR.get());
                 output.accept(CCBlocks.CRUSTONE.get());
+                output.accept(CCBlocks.CRUSTONE_STAIRS.get());
+                output.accept(CCBlocks.CRUSTONE_SLAB.get());
+                output.accept(CCBlocks.CRUSTONE_WALL.get());
                 output.accept(CCBlocks.CRUSTONE_BRICKS.get());
+                output.accept(CCBlocks.CRUSTONE_BRICKS_STAIRS.get());
+                output.accept(CCBlocks.CRUSTONE_BRICKS_SLAB.get());
+                output.accept(CCBlocks.CRUSTONE_BRICKS_WALL.get());
                 output.accept(CCBlocks.CRACKED_CRUSTONE_BRICKS.get());
+                output.accept(CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get());
+                output.accept(CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get());
+                output.accept(CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get());
                 output.accept(CCBlocks.POLISHED_CRUSTONE.get());
+                output.accept(CCBlocks.POLISHED_CRUSTONE_STAIRS.get());
+                output.accept(CCBlocks.POLISHED_CRUSTONE_SLAB.get());
+                output.accept(CCBlocks.POLISHED_CRUSTONE_WALL.get());
                 output.accept(CCBlocks.CHISELED_CRUSTONE.get());
+                output.accept(CCBlocks.CHISELED_CRUSTONE_STAIRS.get());
+                output.accept(CCBlocks.CHISELED_CRUSTONE_SLAB.get());
+                output.accept(CCBlocks.CHISELED_CRUSTONE_WALL.get());
                 output.accept(CCBlocks.EYE_BLOCK.get());
+                output.accept(CCBlocks.HANGING_VEINS.get());
                 output.accept(CCBlocks.CELVER_LIGHT.get());
                 output.accept(CCBlocks.SKIN_LAYER.get());
+                output.accept(CCBlocks.ROTTEN_FLESH_BLOCK.get());
+                output.accept(CCBlocks.HEMALITE_BLOCK.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ITEMS = CREATIVE_MODE_TABS.register("cc_tab_items", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.items." + CrystalChronicles.MODID))
-            .icon(() -> CCItems.LUNARITE_SHARD.get().getDefaultInstance())
+            .icon(() -> CCItems.DIVINITE_SHARD.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(CCItems.BLOODSTONE_SHARD.get());
+                output.accept(CCItems.HEMALITE_SHARD.get());
                 output.accept(CCItems.VOIDSTONE_SHARD.get());
-                output.accept(CCItems.LUNARITE_SHARD.get());
-                output.accept(CCItems.CELESTITE_SHARD.get());
-                output.accept(CCItems.TOXITE_SHARD.get());
-                output.accept(CCItems.PYRONITE_SHARD.get());
+                output.accept(CCItems.DIVINITE_SHARD.get());
+                output.accept(CCItems.VOLTITE_SHARD.get());
+                output.accept(CCItems.FLORALITE_SHARD.get());
+                output.accept(CCItems.VOLCANITE_SHARD.get());
+                output.accept(CCItems.ICE_SHARD.get());
                 output.accept(CCItems.FAT_TISSUE_BALL.get());
                 output.accept(CCItems.NEURON.get());
                 output.accept(CCItems.EYE.get());
@@ -79,7 +101,7 @@ public class CCTabs {
                 output.accept(CCItems.TANK_CHESTPLATE.get());
                 output.accept(CCItems.TANK_LEGGINGS.get());
                 output.accept(CCItems.TANK_BOOTS.get());
-                output.accept(CCItems.SWORD.get());
+                output.accept(CCItems.ICE_HAMMER.get());
                 output.accept(CCItems.MAGE_HELMET.get());
                 output.accept(CCItems.MAGE_CHESTPLATE.get());
                 output.accept(CCItems.MAGE_LEGGINGS.get());
@@ -89,7 +111,7 @@ public class CCTabs {
                 output.accept(CCItems.ROGUE_CHESTPLATE.get());
                 output.accept(CCItems.ROGUE_LEGGINGS.get());
                 output.accept(CCItems.ROGUE_BOOTS.get());
-                output.accept(CCItems.GREATSWORD.get());
+                output.accept(CCItems.BLOOD_SCYTHE.get());
                 output.accept(CCItems.PYROMANCER_HELMET.get());
                 output.accept(CCItems.PYROMANCER_CHESTPLATE.get());
                 output.accept(CCItems.PYROMANCER_LEGGINGS.get());
@@ -100,6 +122,7 @@ public class CCTabs {
                 output.accept(CCItems.TOXIC_LEGGINGS.get());
                 output.accept(CCItems.TOXIC_BOOTS.get());
                 output.accept(CCItems.SPEAR.get());
+                output.accept(CCItems.LIGHTNING_BIDENT.get());
             }).build());
 
     public static void register(IEventBus eventBus) {

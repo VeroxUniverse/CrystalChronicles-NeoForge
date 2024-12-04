@@ -1,7 +1,6 @@
 package net.veroxuniverse.crystal_chronicles.registry;
 
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -15,6 +14,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.block.*;
+import net.veroxuniverse.crystal_chronicles.worldgen.tree.CCTreeGrower;
 
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
@@ -30,8 +30,10 @@ public class CCBlocks {
     public static final DeferredBlock<Block> ALVEOLUS_BLOCK = registerBlock("alveolus_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
     public static final DeferredBlock<Block> FLESH_BLOCK = registerBlock("flesh_block",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
+            () -> new FleshBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
     public static final DeferredBlock<Block> MUSCLE_BLOCK = registerBlock("muscle_block",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
+    public static final DeferredBlock<Block> TENDON_BLOCK = registerBlock("tendon_block",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
     public static final DeferredBlock<Block> FAT_TISSUE_BLOCK = registerBlock("fat_tissue_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
@@ -77,20 +79,72 @@ public class CCBlocks {
 
     public static final DeferredBlock<Block> EYE_BLOCK = registerBlock("eye_block",
             () -> new EyeBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
+    public static final DeferredBlock<Block> HANGING_VEINS = registerBlock("hanging_veins",
+            () -> new HangingVeinsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
+
     public static final DeferredBlock<Block> CRUSTONE = registerBlock("crustone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
+    public static final DeferredBlock<Block> CRUSTONE_STAIRS = registerBlock("crustone_stairs",
+            () -> new StairBlock(CCBlocks.CRUSTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRUSTONE_SLAB = registerBlock("crustone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRUSTONE_WALL = registerBlock("crustone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
     public static final DeferredBlock<Block> CRUSTONE_BRICKS = registerBlock("crustone_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
+    public static final DeferredBlock<Block> CRUSTONE_BRICKS_STAIRS = registerBlock("crustone_bricks_stairs",
+            () -> new StairBlock(CCBlocks.CRUSTONE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRUSTONE_BRICKS_SLAB = registerBlock("crustone_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRUSTONE_BRICKS_WALL = registerBlock("crustone_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
     public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICKS = registerBlock("cracked_crustone_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
+    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICKS_STAIRS = registerBlock("cracked_crustone_bricks_stairs",
+            () -> new StairBlock(CCBlocks.CRACKED_CRUSTONE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICKS_SLAB = registerBlock("cracked_crustone_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICKS_WALL = registerBlock("cracked_crustone_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
     public static final DeferredBlock<Block> POLISHED_CRUSTONE = registerBlock("polished_crustone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
+    public static final DeferredBlock<Block> POLISHED_CRUSTONE_STAIRS = registerBlock("polished_crustone_stairs",
+            () -> new StairBlock(CCBlocks.POLISHED_CRUSTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_CRUSTONE_SLAB = registerBlock("polished_crustone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_CRUSTONE_WALL = registerBlock("polished_crustone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
     public static final DeferredBlock<Block> CHISELED_CRUSTONE = registerBlock("chiseled_crustone",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
+    public static final DeferredBlock<Block> CHISELED_CRUSTONE_STAIRS = registerBlock("chiseled_crustone_stairs",
+            () -> new StairBlock(CCBlocks.CHISELED_CRUSTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_CRUSTONE_SLAB = registerBlock("chiseled_crustone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_CRUSTONE_WALL = registerBlock("chiseled_crustone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> ALVEOLUS = registerBlock("alveolus",
+            () -> new CCSaplingBlock(CCTreeGrower.BRONCHUS, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS).randomTicks(), CCBlocks.FLESH_BLOCK.get()));
+
     public static final DeferredBlock<Block> SKIN_LAYER = registerBlock("skin_layer",
             () -> new SkinLayerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
     public static final DeferredBlock<Block> CELVER_LIGHT = registerBlock("clever_light",
             () -> new CleverLightBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(CleverLightBlock.LIT) ? 15 : 0).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion()));
+
+    public static final DeferredBlock<Block> HEMALITE_BLOCK = registerBlock("hemalite_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+
+    public static final DeferredBlock<Block> VEINS = registerBlock("veins",
+            () -> new FleshVeinsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

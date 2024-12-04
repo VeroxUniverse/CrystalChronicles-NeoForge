@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": {
+      "feature": "crystal_chronicles:flesh/cyst",
+      "placement": []
+    },
+    "feature_true": {
+      "feature": "crystal_chronicles:flesh/festering_cyst",
+      "placement": []
+    }
+  }
+}

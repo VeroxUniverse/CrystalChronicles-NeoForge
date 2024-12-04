@@ -1,0 +1,84 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 7,
+    "xz_spread": 10,
+    "y_spread": 4,
+    "feature": {
+      "feature": {
+        "type": "minecraft:block_column",
+        "config": {
+          "allowed_placement": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          },
+          "direction": "down",
+          "prioritize_tip": true,
+          "layers": [
+            {
+              "height": {
+                "type": "minecraft:weighted_list",
+                "distribution": [
+                  {
+                    "data": {
+                      "type": "minecraft:uniform",
+                      "max_inclusive": 10,
+                      "min_inclusive": 2
+                    },
+                    "weight": 2
+                  },
+                  {
+                    "data": {
+                      "type": "minecraft:uniform",
+                      "max_inclusive": 6,
+                      "min_inclusive": 2
+                    },
+                    "weight": 10
+                  }
+                ]
+              },
+              "provider": {
+                "type": "minecraft:simple_state_provider",
+                "state": {
+                  "Name": "crystal_chronicles:hanging_veins"
+                }
+              }
+            },
+            {
+              "height": 1,
+              "provider": {
+                "type": "minecraft:simple_state_provider",
+                "state": {
+                  "Name": "crystal_chronicles:eye_block",
+                  "Properties": {
+                    "facing": "down"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "crystal_chronicles:flesh_block",
+                "offset": [0,1,0]
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:air",
+                "offset": [0,0,0]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

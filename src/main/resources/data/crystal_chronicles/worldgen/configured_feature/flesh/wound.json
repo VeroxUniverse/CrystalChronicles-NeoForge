@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": {
+      "feature": {
+        "type": "minecraft:lake",
+        "config": {
+          "barrier": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "crystal_chronicles:muscle_block"
+            }
+          },
+          "fluid": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "crystal_chronicles:blood_block",
+              "Properties": {}
+            }
+          }
+        }
+      },
+      "placement": []
+    },
+    "feature_true": {
+      "feature": {
+        "type": "minecraft:lake",
+        "config": {
+          "barrier": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "crystal_chronicles:rotten_flesh_block"
+            }
+          },
+          "fluid": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:water",
+              "Properties": {
+                "level": "0"
+              }
+            }
+          }
+        }
+      },
+      "placement": []
+    }
+  }
+}

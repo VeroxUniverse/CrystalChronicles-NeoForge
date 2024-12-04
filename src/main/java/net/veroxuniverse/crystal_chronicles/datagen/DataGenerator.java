@@ -24,7 +24,7 @@ public class DataGenerator {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        //generator.addProvider(event.includeServer(), new CCRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new CCRecipeProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
                List.of(new LootTableProvider.SubProviderEntry(CCBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
@@ -35,6 +35,6 @@ public class DataGenerator {
 
         generator.addProvider(event.includeClient(), new CCItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new CCBlockStateProvider(packOutput, existingFileHelper));
-        //generator.addProvider(event.includeServer(), new CCWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new CCWorldGenProvider(packOutput, lookupProvider));
     }
 }

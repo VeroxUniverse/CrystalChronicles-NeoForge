@@ -26,6 +26,21 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.CRACKED_CRUSTONE_BRICKS.get())
                 .add(CCBlocks.POLISHED_CRUSTONE.get())
                 .add(CCBlocks.CHISELED_CRUSTONE.get())
+                .add(CCBlocks.CRUSTONE_WALL.get())
+                .add(CCBlocks.CRUSTONE_BRICKS_WALL.get())
+                .add(CCBlocks.POLISHED_CRUSTONE_WALL.get())
+                .add(CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get())
+                .add(CCBlocks.CHISELED_CRUSTONE_WALL.get())
+                .add(CCBlocks.CRUSTONE_SLAB.get())
+                .add(CCBlocks.CRUSTONE_BRICKS_SLAB.get())
+                .add(CCBlocks.POLISHED_CRUSTONE_SLAB.get())
+                .add(CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get())
+                .add(CCBlocks.CHISELED_CRUSTONE_SLAB.get())
+                .add(CCBlocks.CRUSTONE_STAIRS.get())
+                .add(CCBlocks.CRUSTONE_BRICKS_STAIRS.get())
+                .add(CCBlocks.POLISHED_CRUSTONE_STAIRS.get())
+                .add(CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get())
+                .add(CCBlocks.CHISELED_CRUSTONE_STAIRS.get())
                 .add(CCBlocks.CELVER_LIGHT.get())
                 .add(CCBlocks.FAT_TISSUE_BLOCK.get());
 
@@ -40,11 +55,15 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.BRONCHUS_PRESSURE_PLATE.get())
                 .add(CCBlocks.BRONCHUS_DOOR.get())
                 .add(CCBlocks.BRONCHUS_TRAPDOOR.get())
-                .add(CCBlocks.BRONCHUS_FENCE_GATE.get());
+                .add(CCBlocks.BRONCHUS_FENCE_GATE.get())
+                .add(CCBlocks.ARTREE_BASE.get())
+                .add(CCBlocks.ARTREE_CAPILLARY.get())
+                .add(CCBlocks.ARTREE_VEIN.get());
 
         this.tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(CCBlocks.AXON.get())
-                .add(CCBlocks.NEURON_BLOCK.get());
+                .add(CCBlocks.NEURON_BLOCK.get())
+                .add(CCBlocks.EYE_BLOCK.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL);
 
@@ -61,6 +80,13 @@ public class CCBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.PLANKS)
                 .add(CCBlocks.BRONCHUS_PLANKS.get());
+
+        this.tag(BlockTags.WALLS)
+                .add(CCBlocks.CRUSTONE_WALL.get())
+                .add(CCBlocks.CRUSTONE_BRICKS_WALL.get())
+                .add(CCBlocks.POLISHED_CRUSTONE_WALL.get())
+                .add(CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get())
+                .add(CCBlocks.CHISELED_CRUSTONE_WALL.get());
 
         this.tag(CCTags.Blocks.CC_BLOOD_BLOCK)
                 .add(CCBlocks.FLESH_BLOCK.get())

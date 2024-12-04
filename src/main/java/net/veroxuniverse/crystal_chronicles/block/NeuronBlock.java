@@ -45,7 +45,6 @@ public class NeuronBlock extends HalfTransparentBlock {
 
     @Override
     protected void onPlace(BlockState pState, Level pLevel, BlockPos pPos, BlockState pOldState, boolean pIsMoving) {
-        // starts the first tick
         if (!pLevel.isClientSide) {
             pLevel.scheduleTick(pPos, this, getRandomInterval(MIN_TICK_INTERVAL, MAX_TICK_INTERVAL));
         }
@@ -71,10 +70,9 @@ public class NeuronBlock extends HalfTransparentBlock {
         pLevel.scheduleTick(pPos, this, tickInterval);
     }
 
-    // Method to update all AxonBlocks
     private void updateAboveBlocks(ServerLevel pLevel, BlockPos pPos) {
         BlockPos currentPos = pPos.above();
-        int count = 0; // Counter for the number of AxonBlocks updated
+        int count = 0;
 
         while (currentPos != null && count < MAX_AXONS) {
             BlockState currentState = pLevel.getBlockState(currentPos);
@@ -86,18 +84,16 @@ public class NeuronBlock extends HalfTransparentBlock {
                     count++;
                 }
             } else {
-                // Stop if we reach a non-AxonBlocks
                 break;
             }
 
-            // Move to the next block above
             currentPos = currentPos.above();
         }
     }
 
     @Override
     public int getLightBlock(BlockState state, BlockGetter world, BlockPos pos) {
-        return state.getLightEmission(); // check light level
+        return state.getLightEmission();
     }
 
     @Override
@@ -107,7 +103,7 @@ public class NeuronBlock extends HalfTransparentBlock {
 
     @Override
     public boolean isSignalSource(BlockState state) {
-        return false; // disables redstone interactions
+        return false;
     }
 
     @Override
@@ -115,7 +111,6 @@ public class NeuronBlock extends HalfTransparentBlock {
         return PushReaction.NORMAL;
     }
 
-    // helper method to generate a random value between min and max
     private int getRandomInterval(int minTicks, int maxTicks) {
         Random random = new Random();
         return minTicks + random.nextInt(maxTicks - minTicks + 1);

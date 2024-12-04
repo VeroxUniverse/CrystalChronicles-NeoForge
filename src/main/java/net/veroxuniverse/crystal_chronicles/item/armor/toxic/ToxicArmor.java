@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 public class ToxicArmor extends AnimatedSpellArmor {
 
     public ToxicArmor(Holder<ArmorMaterial> holder, Type type, Properties properties) {
-        super(holder, type, properties, schoolAttributes(AttributeRegistry.ENDER_SPELL_POWER));
+        super(holder, type, properties, schoolAttributes(AttributeRegistry.NATURE_SPELL_POWER));
     }
 
     @Override

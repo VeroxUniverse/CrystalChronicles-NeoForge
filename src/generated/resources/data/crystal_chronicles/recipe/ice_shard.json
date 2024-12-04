@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "irons_spellbooks:frozen_bone"
+    },
+    {
+      "item": "irons_spellbooks:mithril_ingot"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:ice_shard"
+  }
+}

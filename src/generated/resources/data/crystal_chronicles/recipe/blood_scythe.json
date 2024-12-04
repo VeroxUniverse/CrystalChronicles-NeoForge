@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "crystal_chronicles:hemalite_shard"
+    }
+  },
+  "pattern": [
+    "SS",
+    "SN",
+    " N"
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [
+          {
+            "id": "irons_spellbooks:blood_slash",
+            "index": 0,
+            "level": 3,
+            "locked": true
+          }
+        ],
+        "maxSpells": 1,
+        "mustEquip": false,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "crystal_chronicles:blood_scythe"
+  }
+}

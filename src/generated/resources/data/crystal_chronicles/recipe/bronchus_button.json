@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "black_opal",
+  "ingredients": [
+    {
+      "item": "crystal_chronicles:bronchus_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:bronchus_button"
+  }
+}
