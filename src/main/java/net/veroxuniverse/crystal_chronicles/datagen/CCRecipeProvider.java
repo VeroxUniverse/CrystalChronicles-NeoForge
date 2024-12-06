@@ -404,7 +404,7 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .save(pRecipeOutput, "toxic_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.NATURE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PRIEST_LEGGINGS.get()),
+                        Ingredient.of(ItemRegistry.PLAGUED_LEGGINGS.get()),
                         Ingredient.of(CCItems.FLORALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
                         CCItems.TOXIC_LEGGINGS.get()
