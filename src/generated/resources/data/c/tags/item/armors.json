@@ -1,0 +1,29 @@
+{
+  "values": [
+    "crystal_chronicles:paladin_boots",
+    "crystal_chronicles:paladin_leggings",
+    "crystal_chronicles:paladin_chestplate",
+    "crystal_chronicles:paladin_helmet",
+    "crystal_chronicles:tank_boots",
+    "crystal_chronicles:tank_leggings",
+    "crystal_chronicles:tank_chestplate",
+    "crystal_chronicles:tank_helmet",
+    "crystal_chronicles:mage_boots",
+    "crystal_chronicles:mage_leggings",
+    "crystal_chronicles:mage_chestplate",
+    "crystal_chronicles:mage_helmet",
+    "crystal_chronicles:pyromancer_boots",
+    "crystal_chronicles:pyromancer_leggings",
+    "crystal_chronicles:pyromancer_chestplate",
+    "crystal_chronicles:pyromancer_helmet",
+    "crystal_chronicles:toxic_boots",
+    "crystal_chronicles:toxic_leggings",
+    "crystal_chronicles:toxic_chestplate",
+    "crystal_chronicles:toxic_helmet",
+    "crystal_chronicles:rogue_boots",
+    "crystal_chronicles:rogue_leggings",
+    "crystal_chronicles:rogue_leggings",
+    "crystal_chronicles:rogue_chestplate",
+    "crystal_chronicles:rogue_helmet"
+  ]
+}

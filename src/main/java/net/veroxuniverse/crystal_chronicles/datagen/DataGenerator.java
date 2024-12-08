@@ -31,7 +31,7 @@ public class DataGenerator {
         BlockTagsProvider blockTagsProvider = new CCBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new CCFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
-        //generator.addProvider(event.includeServer(), new CCItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new CCItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
         generator.addProvider(event.includeClient(), new CCItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new CCBlockStateProvider(packOutput, existingFileHelper));

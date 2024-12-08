@@ -54,78 +54,78 @@ public class CCItems {
 
     public static final DeferredHolder<Item, PaladinArmor> PALADIN_HELMET = ITEMS.register(
             "paladin_helmet",
-            () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
     public static final DeferredHolder<Item, PaladinArmor> PALADIN_CHESTPLATE = ITEMS.register(
             "paladin_chestplate",
-            () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
     public static final DeferredHolder<Item, PaladinArmor> PALADIN_LEGGINGS = ITEMS.register(
             "paladin_leggings",
-            () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
     public static final DeferredHolder<Item, PaladinArmor> PALADIN_BOOTS = ITEMS.register(
             "paladin_boots",
-            () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
     public static final DeferredHolder<Item, TankArmor> TANK_HELMET = ITEMS.register(
             "tank_helmet",
-            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
     public static final DeferredHolder<Item, TankArmor> TANK_CHESTPLATE = ITEMS.register(
             "tank_chestplate",
-            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
     public static final DeferredHolder<Item, TankArmor> TANK_LEGGINGS = ITEMS.register(
             "tank_leggings",
-            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
     public static final DeferredHolder<Item, TankArmor> TANK_BOOTS = ITEMS.register(
             "tank_boots",
-            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
     public static final DeferredHolder<Item, RogueArmor> ROGUE_HELMET = ITEMS.register(
             "rogue_helmet",
-            () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
     public static final DeferredHolder<Item, RogueArmor> ROGUE_CHESTPLATE = ITEMS.register(
             "rogue_chestplate",
-            () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
     public static final DeferredHolder<Item, RogueArmor> ROGUE_LEGGINGS = ITEMS.register(
             "rogue_leggings",
-            () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
     public static final DeferredHolder<Item, RogueArmor> ROGUE_BOOTS = ITEMS.register(
             "rogue_boots",
-            () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
     public static final DeferredHolder<Item, MageArmor> MAGE_HELMET = ITEMS.register(
             "mage_helmet",
-            () -> new MageArmor(CCArmorMaterials.ENDER, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new MageArmor(CCArmorMaterials.ENDER, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
     public static final DeferredHolder<Item, MageArmor> MAGE_CHESTPLATE = ITEMS.register(
             "mage_chestplate",
-            () -> new MageArmor(CCArmorMaterials.ENDER, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new MageArmor(CCArmorMaterials.ENDER, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
     public static final DeferredHolder<Item, MageArmor> MAGE_LEGGINGS = ITEMS.register(
             "mage_leggings",
-            () -> new MageArmor(CCArmorMaterials.ENDER, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new MageArmor(CCArmorMaterials.ENDER, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
     public static final DeferredHolder<Item, MageArmor> MAGE_BOOTS = ITEMS.register(
             "mage_boots",
-            () -> new MageArmor(CCArmorMaterials.ENDER, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new MageArmor(CCArmorMaterials.ENDER, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
 
     public static final DeferredHolder<Item, PyromancerArmor> PYROMANCER_HELMET = ITEMS.register(
             "pyromancer_helmet",
-            () -> new PyromancerArmor(CCArmorMaterials.FIRE, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new PyromancerArmor(CCArmorMaterials.FIRE, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
     public static final DeferredHolder<Item, PyromancerArmor> PYROMANCER_CHESTPLATE = ITEMS.register(
             "pyromancer_chestplate",
-            () -> new PyromancerArmor(CCArmorMaterials.FIRE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new PyromancerArmor(CCArmorMaterials.FIRE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
     public static final DeferredHolder<Item, PyromancerArmor> PYROMANCER_LEGGINGS = ITEMS.register(
             "pyromancer_leggings",
-            () -> new PyromancerArmor(CCArmorMaterials.FIRE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new PyromancerArmor(CCArmorMaterials.FIRE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
     public static final DeferredHolder<Item, PyromancerArmor> PYROMANCER_BOOTS = ITEMS.register(
             "pyromancer_boots",
-            () -> new PyromancerArmor(CCArmorMaterials.FIRE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new PyromancerArmor(CCArmorMaterials.FIRE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
 
     public static final DeferredHolder<Item, ToxicArmor> TOXIC_HELMET = ITEMS.register(
             "toxic_helmet",
-            () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
     public static final DeferredHolder<Item, ToxicArmor> TOXIC_CHESTPLATE = ITEMS.register(
             "toxic_chestplate",
-            () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
     public static final DeferredHolder<Item, ToxicArmor> TOXIC_LEGGINGS = ITEMS.register(
             "toxic_leggings",
-            () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
     public static final DeferredHolder<Item, ToxicArmor> TOXIC_BOOTS = ITEMS.register(
             "toxic_boots",
-            () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant()));
+            () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
 
 
 
