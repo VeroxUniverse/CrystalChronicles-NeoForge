@@ -66,16 +66,16 @@ public class CCItems {
             () -> new PaladinArmor(CCArmorMaterials.HOLY, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
     public static final DeferredHolder<Item, TankArmor> TANK_HELMET = ITEMS.register(
             "tank_helmet",
-            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
+            () -> new TankArmor(CCArmorMaterials.ICE, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
     public static final DeferredHolder<Item, TankArmor> TANK_CHESTPLATE = ITEMS.register(
             "tank_chestplate",
-            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
+            () -> new TankArmor(CCArmorMaterials.ICE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
     public static final DeferredHolder<Item, TankArmor> TANK_LEGGINGS = ITEMS.register(
             "tank_leggings",
-            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
+            () -> new TankArmor(CCArmorMaterials.ICE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
     public static final DeferredHolder<Item, TankArmor> TANK_BOOTS = ITEMS.register(
             "tank_boots",
-            () -> new TankArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
+            () -> new TankArmor(CCArmorMaterials.ICE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
     public static final DeferredHolder<Item, RogueArmor> ROGUE_HELMET = ITEMS.register(
             "rogue_helmet",
             () -> new RogueArmor(CCArmorMaterials.BLOOD, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
