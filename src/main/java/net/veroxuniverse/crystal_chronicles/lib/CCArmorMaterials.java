@@ -49,7 +49,7 @@ public class CCArmorMaterials {
                         map.put(ArmorItem.Type.HELMET, 5);
                     }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.VOLTITE_SHARD.get()),
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "lightning"))),
-                    3, 0.5F));
+                    3, 0.1F));
     public static final Holder<ArmorMaterial> HOLY =
             ARMOR_MATERIALS.register("holy", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
@@ -69,7 +69,7 @@ public class CCArmorMaterials {
                         map.put(ArmorItem.Type.HELMET, 3);
                     }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.FLORALITE_SHARD.get()),
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "nature"))),
-                    4, 0.1F));
+                    4, 0.2F));
     public static final Holder<ArmorMaterial> FIRE =
             ARMOR_MATERIALS.register("fire", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
@@ -79,7 +79,7 @@ public class CCArmorMaterials {
                         map.put(ArmorItem.Type.HELMET, 3);
                     }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "fire"))),
-                    2, 0.4F));
+                    2, 0.2F));
     public static final Holder<ArmorMaterial> ICE =
             ARMOR_MATERIALS.register("ice", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
@@ -89,7 +89,7 @@ public class CCArmorMaterials {
                         map.put(ArmorItem.Type.HELMET, 3);
                     }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(CCItems.ICE_SHARD.get()),
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "ice"))),
-                    2, 0.4F));
+                    2, 0.3F));
 
     public static void register(IEventBus eventBus) {
         ARMOR_MATERIALS.register(eventBus);
