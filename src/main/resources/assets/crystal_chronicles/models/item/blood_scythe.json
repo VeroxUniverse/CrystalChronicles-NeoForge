@@ -22,25 +22,25 @@
     },
     "firstperson_righthand": {
       "rotation": [
-        -26.02,
-        27.82,
-        12.02
+        -7,
+        -15,
+        -13
       ],
       "translation": [
-        10.5,
-        0,
+        7,
+        -7,
         -6.25
       ]
     },
     "firstperson_lefthand": {
       "rotation": [
-        -26.02,
-        27.82,
-        12.02
+        -7,
+        -15,
+        -13
       ],
       "translation": [
-        10.25,
-        0,
+        7,
+        -7,
         -6.25
       ]
     },
