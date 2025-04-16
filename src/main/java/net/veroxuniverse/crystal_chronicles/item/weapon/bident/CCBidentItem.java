@@ -5,15 +5,12 @@ import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.api.spells.SpellData;
 import io.redspace.ironsspellbooks.registries.ComponentRegistry;
-import mod.azure.azurelib.common.internal.client.RenderProvider;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedSwordItem;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class CCBidentItem extends AnimatedSwordItem implements IPresetSpellContainer {
 
@@ -23,19 +20,6 @@ public class CCBidentItem extends AnimatedSwordItem implements IPresetSpellConta
     public CCBidentItem(Tier pTier, Properties pProperties, SpellDataRegistryHolder[] spellDataRegistryHolders) {
         super(pTier, pProperties);
         this.spellDataRegistryHolders = spellDataRegistryHolders;
-    }
-
-    @Override
-    public void createRenderer(Consumer<RenderProvider> consumer) {
-        consumer.accept(new RenderProvider() {
-            private BidentItemRenderer renderer = null;
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                if (renderer == null)
-                    return new BidentItemRenderer();
-                return this.renderer;
-            }
-        });
     }
 
     public List<SpellData> getSpells() {

@@ -95,6 +95,15 @@
   "item.crystal_chronicles.eye": "Eye",
   "item.crystal_chronicles.blood_bucket": "Blood Bucket",
   "item.crystal_chronicles.lightning_bident": "Volt Spear",
+  "item.crystal_chronicles.electromancer_helmet": "Electromancer Helmet",
+  "item.crystal_chronicles.electromancer_chestplate": "Electromancer Chestplate",
+  "item.crystal_chronicles.electromancer_leggings": "Electromancer Leggings",
+  "item.crystal_chronicles.electromancer_boots": "Electromancer Boots",
+  "item.crystal_chronicles.evoker_helmet": "Archevoker Hat",
+  "item.crystal_chronicles.evoker_chestplate": "Archevoker Tunic",
+  "item.crystal_chronicles.evoker_leggings": "Archevoker Leggings",
+  "item.crystal_chronicles.evoker_boots": "Archevoker Boots",
+  "item.crystal_chronicles.evocation_twinblade": "Evoker's Twinblade",
 
   "fluid_type.crystal_chronicles.blood_fluid": "Blood",
 

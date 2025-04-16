@@ -1,11 +1,27 @@
 package net.veroxuniverse.crystal_chronicles.item.weapon.spear;
 
-import mod.azure.azurelib.common.api.client.renderer.GeoItemRenderer;
-import mod.azure.azurelib.common.api.client.renderer.layer.AutoGlowingGeoLayer;
+import mod.azure.azurelib.rewrite.render.item.AzItemRenderer;
+import mod.azure.azurelib.rewrite.render.item.AzItemRendererConfig;
+import mod.azure.azurelib.rewrite.render.layer.AzAutoGlowingLayer;
+import net.minecraft.resources.ResourceLocation;
+import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 
-public class SpearItemRenderer extends GeoItemRenderer<CCSpearItem> {
+public class SpearItemRenderer extends AzItemRenderer {
+    private static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(
+            CrystalChronicles.MODID,
+            "geo/spear.geo.json"
+    );
+
+    private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(
+            CrystalChronicles.MODID,
+            "textures/item/spear.png"
+    );
+
     public SpearItemRenderer() {
-        super(new SpearItemModel());
-        addRenderLayer(new AutoGlowingGeoLayer<>(this));
+        super(
+                AzItemRendererConfig.builder(GEO, TEX)
+                        .addRenderLayer(new AzAutoGlowingLayer<>())
+                        .build()
+        );
     }
 }

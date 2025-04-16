@@ -78,7 +78,8 @@ public class AnimatedSpellArmor extends ArmorItem implements GeoItem, IPresetSpe
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(school, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
                 new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-                new AttributeContainer(Attributes.MOVEMENT_SPEED, -0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)};
+                //new AttributeContainer(Attributes.MOVEMENT_SPEED, -0.0125, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+        };
     }
 
     public static AttributeContainer[] mixedSchoolAttributes(Holder<Attribute> school, Holder<Attribute> school2) {

@@ -446,12 +446,97 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_lightning_rune", has(ItemRegistry.LIGHTNING_RUNE.get()))
                 .save(pRecipeOutput);
 
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
+                        Ingredient.of(ItemRegistry.ELECTROMANCER_HELMET.get()),
+                        Ingredient.of(CCItems.VOLTITE_SHARD.get()),
+                        RecipeCategory.COMBAT,
+                        CCItems.ELECTROMANCER_HELMET.get()
+                )
+                .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
+                .save(pRecipeOutput, "electromancer_helmet_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
+                        Ingredient.of(ItemRegistry.ELECTROMANCER_CHESTPLATE.get()),
+                        Ingredient.of(CCItems.VOLTITE_SHARD.get()),
+                        RecipeCategory.COMBAT,
+                        CCItems.ELECTROMANCER_CHESTPLATE.get()
+                )
+                .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
+                .save(pRecipeOutput, "electromancer_chestplate_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
+                        Ingredient.of(ItemRegistry.ELECTROMANCER_LEGGINGS.get()),
+                        Ingredient.of(CCItems.VOLTITE_SHARD.get()),
+                        RecipeCategory.COMBAT,
+                        CCItems.ELECTROMANCER_LEGGINGS.get()
+                )
+                .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
+                .save(pRecipeOutput, "electromancer_leggings_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
+                        Ingredient.of(ItemRegistry.ELECTROMANCER_BOOTS.get()),
+                        Ingredient.of(CCItems.VOLTITE_SHARD.get()),
+                        RecipeCategory.COMBAT,
+                        CCItems.ELECTROMANCER_BOOTS.get()
+                )
+                .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
+                .save(pRecipeOutput, "electromancer_boots_smithing");
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.VOLTITE_SHARD.get(), 1)
                 .requires(ItemRegistry.LIGHTNING_BOTTLE.get())
                 .requires(ItemRegistry.MITHRIL_INGOT.get())
                 .requires(Items.AMETHYST_SHARD)
                 .unlockedBy("has_lightning_rune", has(ItemRegistry.LIGHTNING_RUNE.get()))
                 .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.EVOCATION_TWINBLADE.get())
+                .pattern(" SE")
+                .pattern(" N ")
+                .pattern("ES ")
+                .define('S', Items.TOTEM_OF_UNDYING)
+                .define('E', Items.EMERALD)
+                .define('N', Items.STICK)
+                .unlockedBy("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
+                .save(pRecipeOutput);
+
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
+                        Ingredient.of(ItemRegistry.ARCHEVOKER_HELMET.get()),
+                        Ingredient.of(Items.TOTEM_OF_UNDYING),
+                        RecipeCategory.COMBAT,
+                        CCItems.EVOKER_HELMET.get()
+                )
+                .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
+                .save(pRecipeOutput, "evoker_helmet_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
+                        Ingredient.of(ItemRegistry.ARCHEVOKER_CHESTPLATE.get()),
+                        Ingredient.of(Items.TOTEM_OF_UNDYING),
+                        RecipeCategory.COMBAT,
+                        CCItems.EVOKER_CHESTPLATE.get()
+                )
+                .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
+                .save(pRecipeOutput, "evoker_chestplate_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
+                        Ingredient.of(ItemRegistry.ARCHEVOKER_LEGGINGS.get()),
+                        Ingredient.of(Items.TOTEM_OF_UNDYING),
+                        RecipeCategory.COMBAT,
+                        CCItems.EVOKER_LEGGINGS.get()
+                )
+                .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
+                .save(pRecipeOutput, "evoker_leggings_smithing");
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
+                        Ingredient.of(ItemRegistry.ARCHEVOKER_BOOTS.get()),
+                        Ingredient.of(Items.TOTEM_OF_UNDYING),
+                        RecipeCategory.COMBAT,
+                        CCItems.EVOKER_BOOTS.get()
+                )
+                .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
+                .save(pRecipeOutput, "evoker_boots_smithing");
+
 
     }
 }

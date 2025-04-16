@@ -1,11 +1,27 @@
 package net.veroxuniverse.crystal_chronicles.item.weapon.hammer;
 
-import mod.azure.azurelib.common.api.client.renderer.GeoItemRenderer;
-import mod.azure.azurelib.common.api.client.renderer.layer.AutoGlowingGeoLayer;
+import mod.azure.azurelib.rewrite.render.item.AzItemRenderer;
+import mod.azure.azurelib.rewrite.render.item.AzItemRendererConfig;
+import mod.azure.azurelib.rewrite.render.layer.AzAutoGlowingLayer;
+import net.minecraft.resources.ResourceLocation;
+import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 
-public class HammerItemRenderer extends GeoItemRenderer<CCHammerItem> {
+public class HammerItemRenderer extends AzItemRenderer {
+    private static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(
+            CrystalChronicles.MODID,
+            "geo/ice_hammer.geo.json"
+    );
+
+    private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(
+            CrystalChronicles.MODID,
+            "textures/item/ice_hammer.png"
+    );
+
     public HammerItemRenderer() {
-        super(new HammerItemModel());
-        addRenderLayer(new AutoGlowingGeoLayer<>(this));
+        super(
+                AzItemRendererConfig.builder(GEO, TEX)
+                        .addRenderLayer(new AzAutoGlowingLayer<>())
+                        .build()
+        );
     }
 }

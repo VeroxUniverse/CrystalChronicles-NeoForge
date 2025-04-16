@@ -122,7 +122,16 @@ public class CCTabs {
                 output.accept(CCItems.TOXIC_LEGGINGS.get());
                 output.accept(CCItems.TOXIC_BOOTS.get());
                 output.accept(CCItems.SPEAR.get());
+                output.accept(CCItems.ELECTROMANCER_HELMET.get());
+                output.accept(CCItems.ELECTROMANCER_CHESTPLATE.get());
+                output.accept(CCItems.ELECTROMANCER_LEGGINGS.get());
+                output.accept(CCItems.ELECTROMANCER_BOOTS.get());
                 output.accept(CCItems.LIGHTNING_BIDENT.get());
+                output.accept(CCItems.EVOKER_HELMET.get());
+                output.accept(CCItems.EVOKER_CHESTPLATE.get());
+                output.accept(CCItems.EVOKER_LEGGINGS.get());
+                output.accept(CCItems.EVOKER_BOOTS.get());
+                output.accept(CCItems.EVOCATION_TWINBLADE.get());
             }).build());
 
     public static void register(IEventBus eventBus) {

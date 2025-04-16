@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "N": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "pattern": [
+    " SE",
+    " N ",
+    "ES "
+  ],
+  "result": {
+    "components": {
+      "irons_spellbooks:spell_container": {
+        "data": [
+          {
+            "id": "irons_spellbooks:shield",
+            "index": 0,
+            "level": 6,
+            "locked": true
+          }
+        ],
+        "maxSpells": 1,
+        "mustEquip": false,
+        "spellWheel": true
+      }
+    },
+    "count": 1,
+    "id": "crystal_chronicles:evocation_twinblade"
+  }
+}

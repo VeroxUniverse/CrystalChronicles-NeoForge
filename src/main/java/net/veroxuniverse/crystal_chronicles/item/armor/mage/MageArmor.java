@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 public class MageArmor extends AnimatedSpellArmor {
 
     public MageArmor(Holder<ArmorMaterial> holder, Type type, Properties properties) {
-        super(holder, type, properties, mixedSchoolAttributes(AttributeRegistry.ENDER_SPELL_POWER, AttributeRegistry.EVOCATION_SPELL_POWER));
+        super(holder, type, properties, schoolAttributes(AttributeRegistry.ENDER_SPELL_POWER));
     }
 
     @Override

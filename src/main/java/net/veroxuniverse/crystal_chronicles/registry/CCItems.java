@@ -14,6 +14,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.item.armor.electromancer.ElectromancerArmor;
+import net.veroxuniverse.crystal_chronicles.item.armor.evoker.EvokerArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.mage.MageArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.paladin.PaladinArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.pyromancer.PyromancerArmor;
@@ -127,6 +129,33 @@ public class CCItems {
             "toxic_boots",
             () -> new ToxicArmor(CCArmorMaterials.NATURE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
 
+    public static final DeferredHolder<Item, EvokerArmor> EVOKER_HELMET = ITEMS.register(
+            "evoker_helmet",
+            () -> new EvokerArmor(CCArmorMaterials.EVOCATION, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
+    public static final DeferredHolder<Item, EvokerArmor> EVOKER_CHESTPLATE = ITEMS.register(
+            "evoker_chestplate",
+            () -> new EvokerArmor(CCArmorMaterials.EVOCATION, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
+    public static final DeferredHolder<Item, EvokerArmor> EVOKER_LEGGINGS = ITEMS.register(
+            "evoker_leggings",
+            () -> new EvokerArmor(CCArmorMaterials.EVOCATION, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
+    public static final DeferredHolder<Item, EvokerArmor> EVOKER_BOOTS = ITEMS.register(
+            "evoker_boots",
+            () -> new EvokerArmor(CCArmorMaterials.EVOCATION, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
+
+    public static final DeferredHolder<Item, ElectromancerArmor> ELECTROMANCER_HELMET = ITEMS.register(
+            "electromancer_helmet",
+            () -> new ElectromancerArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(53))));
+    public static final DeferredHolder<Item, ElectromancerArmor> ELECTROMANCER_CHESTPLATE = ITEMS.register(
+            "electromancer_chestplate",
+            () -> new ElectromancerArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(53))));
+    public static final DeferredHolder<Item, ElectromancerArmor> ELECTROMANCER_LEGGINGS = ITEMS.register(
+            "electromancer_leggings",
+            () -> new ElectromancerArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(53))));
+    public static final DeferredHolder<Item, ElectromancerArmor> ELECTROMANCER_BOOTS = ITEMS.register(
+            "electromancer_boots",
+            () -> new ElectromancerArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
+
+
 
 
     // WEAPONS
@@ -170,6 +199,11 @@ public class CCItems {
                     ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.LIGHTNING)
                     ).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.CHAIN_LIGHTNING_SPELL, 8))));
+    public static final DeferredHolder<Item, Item> EVOCATION_TWINBLADE = ITEMS.register("evocation_twinblade",
+            () -> new CCBidentItem(CCWeaponTiers.EVOCATION,
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.EVOCATION)
+                    ).fireResistant(),
+                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.SHIELD_SPELL, 6))));
 
 
     public static void register(IEventBus eventBus) {

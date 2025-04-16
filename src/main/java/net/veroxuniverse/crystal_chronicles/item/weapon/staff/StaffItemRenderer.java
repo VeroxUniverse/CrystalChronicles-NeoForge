@@ -1,11 +1,28 @@
 package net.veroxuniverse.crystal_chronicles.item.weapon.staff;
 
-import mod.azure.azurelib.common.api.client.renderer.GeoItemRenderer;
-import mod.azure.azurelib.common.api.client.renderer.layer.AutoGlowingGeoLayer;
+import mod.azure.azurelib.rewrite.render.item.AzItemRenderer;
+import mod.azure.azurelib.rewrite.render.item.AzItemRendererConfig;
+import mod.azure.azurelib.rewrite.render.layer.AzAutoGlowingLayer;
+import net.minecraft.resources.ResourceLocation;
+import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 
-public class StaffItemRenderer extends GeoItemRenderer<CCStaffItem> {
+public class StaffItemRenderer extends AzItemRenderer {
+    private static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(
+            CrystalChronicles.MODID,
+            "geo/staff.geo.json"
+    );
+
+    private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(
+            CrystalChronicles.MODID,
+            "textures/item/staff.png"
+    );
+
     public StaffItemRenderer() {
-        super(new StaffItemModel());
-        addRenderLayer(new AutoGlowingGeoLayer<>(this));
+        super(
+                AzItemRendererConfig.builder(GEO, TEX)
+                        .addRenderLayer(new AzAutoGlowingLayer<>())
+                        .setAnimatorProvider(StaffItemAnimation::new)
+                        .build()
+        );
     }
 }

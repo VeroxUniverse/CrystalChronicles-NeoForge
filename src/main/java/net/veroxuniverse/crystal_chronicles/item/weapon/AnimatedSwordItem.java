@@ -6,13 +6,6 @@ import io.redspace.ironsspellbooks.api.spells.SpellData;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
 import io.redspace.ironsspellbooks.player.ClientMagicData;
-import mod.azure.azurelib.common.api.common.animatable.GeoItem;
-import mod.azure.azurelib.common.internal.client.RenderProvider;
-import mod.azure.azurelib.common.internal.common.util.AzureLibUtil;
-import mod.azure.azurelib.core.animatable.instance.AnimatableInstanceCache;
-import mod.azure.azurelib.core.animation.AnimatableManager;
-import mod.azure.azurelib.core.animation.AnimationController;
-import mod.azure.azurelib.core.object.PlayState;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -25,30 +18,11 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.level.Level;
 
-import java.util.function.Consumer;
+public class AnimatedSwordItem extends ExtendedSwordItem {
 
-public class AnimatedSwordItem extends ExtendedSwordItem implements GeoItem{
-
-    private final AnimatableInstanceCache cache = AzureLibUtil.createInstanceCache(this);
 
     public AnimatedSwordItem(Tier pTier, Properties pProperties) {
         super(pTier, pProperties);
-    }
-
-    @Override
-    public void createRenderer(Consumer<RenderProvider> consumer) {
-
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "controllerName",
-                event -> PlayState.STOP));
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
     }
 
     public static ItemAttributeModifiers createAttributes(IronsWeaponTier pTier) {

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_evocation_rune": {
+      "conditions": {
+        "items": [
+          {
+            "items": "irons_spellbooks:evocation_rune"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:evoker_chestplate_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_evocation_rune"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:evoker_chestplate_smithing"
+    ]
+  }
+}
