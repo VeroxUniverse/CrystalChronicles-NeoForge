@@ -43,8 +43,15 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.TOXIC_LEGGINGS.get())
                 .add(CCItems.TOXIC_CHESTPLATE.get())
                 .add(CCItems.TOXIC_HELMET.get())
+                .add(CCItems.ELECTROMANCER_BOOTS.get())
+                .add(CCItems.ELECTROMANCER_LEGGINGS.get())
+                .add(CCItems.ELECTROMANCER_CHESTPLATE.get())
+                .add(CCItems.ELECTROMANCER_HELMET.get())
+                .add(CCItems.EVOKER_BOOTS.get())
+                .add(CCItems.EVOKER_LEGGINGS.get())
+                .add(CCItems.EVOKER_CHESTPLATE.get())
+                .add(CCItems.EVOKER_HELMET.get())
                 .add(CCItems.ROGUE_BOOTS.get())
-                .add(CCItems.ROGUE_LEGGINGS.get())
                 .add(CCItems.ROGUE_LEGGINGS.get())
                 .add(CCItems.ROGUE_CHESTPLATE.get())
                 .add(CCItems.ROGUE_HELMET.get());
@@ -55,6 +62,8 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.MAGE_HELMET.get())
                 .add(CCItems.PYROMANCER_HELMET.get())
                 .add(CCItems.TOXIC_HELMET.get())
+                .add(CCItems.ELECTROMANCER_HELMET.get())
+                .add(CCItems.EVOKER_HELMET.get())
                 .add(CCItems.ROGUE_HELMET.get());
 
         tag(ItemTags.CHEST_ARMOR_ENCHANTABLE)
@@ -63,6 +72,8 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.MAGE_CHESTPLATE.get())
                 .add(CCItems.PYROMANCER_CHESTPLATE.get())
                 .add(CCItems.TOXIC_CHESTPLATE.get())
+                .add(CCItems.ELECTROMANCER_CHESTPLATE.get())
+                .add(CCItems.EVOKER_CHESTPLATE.get())
                 .add(CCItems.ROGUE_CHESTPLATE.get());
 
         tag(ItemTags.LEG_ARMOR_ENCHANTABLE)
@@ -71,6 +82,8 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.MAGE_LEGGINGS.get())
                 .add(CCItems.PYROMANCER_LEGGINGS.get())
                 .add(CCItems.TOXIC_LEGGINGS.get())
+                .add(CCItems.ELECTROMANCER_LEGGINGS.get())
+                .add(CCItems.EVOKER_LEGGINGS.get())
                 .add(CCItems.ROGUE_LEGGINGS.get());
 
         tag(ItemTags.FOOT_ARMOR_ENCHANTABLE)
@@ -79,6 +92,8 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.MAGE_BOOTS.get())
                 .add(CCItems.PYROMANCER_BOOTS.get())
                 .add(CCItems.TOXIC_BOOTS.get())
+                .add(CCItems.ELECTROMANCER_BOOTS.get())
+                .add(CCItems.EVOKER_BOOTS.get())
                 .add(CCItems.ROGUE_BOOTS.get());
 
         tag(ItemTags.SWORDS)
@@ -88,6 +103,7 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.CHAKRAM.get())
                 .add(CCItems.ICE_HAMMER.get())
                 .add(CCItems.STAFF.get())
+                .add(CCItems.EVOCATION_TWINBLADE.get())
                 .add(CCItems.BLOOD_SCYTHE.get());
 
         tag(Tags.Items.TOOLS_SHIELD)
@@ -119,6 +135,14 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.ROGUE_LEGGINGS.get())
                 .add(CCItems.ROGUE_CHESTPLATE.get())
                 .add(CCItems.ROGUE_HELMET.get())
+                .add(CCItems.ELECTROMANCER_BOOTS.get())
+                .add(CCItems.ELECTROMANCER_LEGGINGS.get())
+                .add(CCItems.ELECTROMANCER_CHESTPLATE.get())
+                .add(CCItems.ELECTROMANCER_HELMET.get())
+                .add(CCItems.EVOKER_BOOTS.get())
+                .add(CCItems.EVOKER_LEGGINGS.get())
+                .add(CCItems.EVOKER_CHESTPLATE.get())
+                .add(CCItems.EVOKER_HELMET.get())
                 .add(CCItems.PALADIN_SHIELD.get());
 
         tag(ItemTags.DURABILITY_ENCHANTABLE)
@@ -147,6 +171,14 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.ROGUE_LEGGINGS.get())
                 .add(CCItems.ROGUE_CHESTPLATE.get())
                 .add(CCItems.ROGUE_HELMET.get())
+                .add(CCItems.ELECTROMANCER_BOOTS.get())
+                .add(CCItems.ELECTROMANCER_LEGGINGS.get())
+                .add(CCItems.ELECTROMANCER_CHESTPLATE.get())
+                .add(CCItems.ELECTROMANCER_HELMET.get())
+                .add(CCItems.EVOKER_BOOTS.get())
+                .add(CCItems.EVOKER_LEGGINGS.get())
+                .add(CCItems.EVOKER_CHESTPLATE.get())
+                .add(CCItems.EVOKER_HELMET.get())
                 .add(CCItems.PALADIN_SHIELD.get());
 
     }

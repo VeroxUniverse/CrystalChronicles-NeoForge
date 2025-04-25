@@ -25,6 +25,14 @@
     "crystal_chronicles:rogue_leggings",
     "crystal_chronicles:rogue_chestplate",
     "crystal_chronicles:rogue_helmet",
+    "crystal_chronicles:electromancer_boots",
+    "crystal_chronicles:electromancer_leggings",
+    "crystal_chronicles:electromancer_chestplate",
+    "crystal_chronicles:electromancer_helmet",
+    "crystal_chronicles:evoker_boots",
+    "crystal_chronicles:evoker_leggings",
+    "crystal_chronicles:evoker_chestplate",
+    "crystal_chronicles:evoker_helmet",
     "crystal_chronicles:paladin_shield"
   ]
 }

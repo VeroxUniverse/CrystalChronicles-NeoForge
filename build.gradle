@@ -157,8 +157,9 @@ dependencies {
     runtimeOnly "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}"
 
     // Player Animator
-    implementation "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
-    jarJar(group: "dev.kosmx.player-anim", name: "player-animation-lib-forge", version: "[${player_animator_version},${player_animator_version}]")
+    compileOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
+    runtimeOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
+    //jarJar(group: "dev.kosmx.player-anim", name: "player-animation-lib-forge", version: "[${player_animator_version},${player_animator_version}]")
 
     // Curios
     implementation "curse.maven:adorned-1036809:5740650"
@@ -186,7 +187,8 @@ tasks.withType(ProcessResources).configureEach {
             mod_version            : mod_version,
             mod_authors            : mod_authors,
             mod_description        : mod_description,
-            azurelib_version_range  : azurelib_version_range
+            azurelib_version_range  : azurelib_version_range,
+            spellbooks_version_range: spellbooks_version_range
     ]
     inputs.properties replaceProperties
 
