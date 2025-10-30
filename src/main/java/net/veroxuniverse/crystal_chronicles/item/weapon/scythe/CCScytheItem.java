@@ -17,8 +17,6 @@ import java.util.List;
 
 public class CCScytheItem extends AnimatedSwordItem implements IPresetSpellContainer {
 
-
-
     List<SpellData> spellData = null;
     SpellDataRegistryHolder[] spellDataRegistryHolders;
 

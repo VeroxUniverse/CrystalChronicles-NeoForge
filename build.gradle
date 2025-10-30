@@ -124,11 +124,18 @@ repositories {
         name = "Iron's Maven - Release"
         url = "https://code.redspace.io/releases"
     }
+    maven {
+        name = "Iron's Maven - Snapshots"
+        url = "https://code.redspace.io/snapshots"
+    }
     maven { url = "https://api.modrinth.com/maven" }
     maven { url = "https://maven.enginehub.org/repo/" }
     maven { url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
     maven { url = "https://maven.theillusivec4.top" }
-    maven { url = "https://maven.kosmx.dev/" }
+    maven {
+        name "KosmX's maven"
+        url 'https://maven.kosmx.dev/'
+    }
 }
 
 dependencies {
@@ -136,7 +143,11 @@ dependencies {
     //implementation "net.neoforged:neoforge:${neo_version}"
 
     implementation "mod.azure.azurelib:azurelib-neo-${minecraft_version}:${azurelib_version}"
-    implementation("io.redspace:irons_spellbooks:${irons_spells_version}")
+
+    //compileOnly "io.redspace:irons_spellbooks:${irons_spells_version}:api"
+    //runtimeOnly "io.redspace:irons_spellbooks:${irons_spells_version}"
+    implementation "io.redspace:irons_spellbooks:${irons_spells_version}"
+
 
     // JEI
     //compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
@@ -157,8 +168,10 @@ dependencies {
     runtimeOnly "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}"
 
     // Player Animator
-    compileOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
-    runtimeOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
+    //compileOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
+    //runtimeOnly "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
+    implementation "dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}"
+
     //jarJar(group: "dev.kosmx.player-anim", name: "player-animation-lib-forge", version: "[${player_animator_version},${player_animator_version}]")
 
     // Curios
