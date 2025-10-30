@@ -1,3 +1,5 @@
+/* DISABLED DUE TO MOB UPDATES
+
 package net.veroxuniverse.crystal_chronicles.entity;
 
 import mod.azure.azurelib.common.api.common.animatable.GeoEntity;
@@ -20,7 +22,7 @@ public class AnimatedMonsterEntity extends Monster implements GeoEntity {
         super(pEntityType, pLevel);
     }
 
-    /*
+    /////////////////
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
         controllerRegistrar
@@ -35,7 +37,8 @@ public class AnimatedMonsterEntity extends Monster implements GeoEntity {
                     return PlayState.STOP;
                 }).triggerableAnim("attack", RawAnimation.begin().then("attack", Animation.LoopType.PLAY_ONCE)));
     }
-     */
+
+    /////////////////
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
@@ -68,3 +71,5 @@ public class AnimatedMonsterEntity extends Monster implements GeoEntity {
         return cache;
     }
 }
+
+ */

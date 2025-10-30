@@ -58,7 +58,7 @@ public class CrystalChronicles {
 
         AzureLib.initialize();
         CCTabs.register(modEventBus);
-        CCEntityTypes.register(modEventBus);
+        //CCEntityTypes.register(modEventBus);
         CCBlocks.register(modEventBus);
         CCItems.register(modEventBus);
         CCArmorMaterials.register(modEventBus);

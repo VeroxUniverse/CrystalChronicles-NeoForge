@@ -1,3 +1,6 @@
+/* DISABLED DUE TO MOB UPDATES
+
+
 package net.veroxuniverse.crystal_chronicles.entity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -57,3 +60,6 @@ public class CCEntityTypes {
     }
 
 }
+
+
+ */

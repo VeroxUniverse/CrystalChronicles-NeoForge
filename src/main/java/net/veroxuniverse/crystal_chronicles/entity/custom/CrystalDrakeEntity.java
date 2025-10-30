@@ -1,3 +1,5 @@
+/* DISABLED DUE TO MOB UPDATES
+
 package net.veroxuniverse.crystal_chronicles.entity.custom;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
@@ -148,3 +150,5 @@ public class CrystalDrakeEntity extends AnimatedMonsterEntity implements SmartBr
     }
 
 }
+
+ */
