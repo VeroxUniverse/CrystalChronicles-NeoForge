@@ -29,6 +29,8 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
+        // BLOOD //
+
         this.dropSelf(CCBlocks.BLOOD_BASES.get());
         this.dropSelf(CCBlocks.FLESH_BLOCK.get());
         this.dropSelf(CCBlocks.MUSCLE_BLOCK.get());
@@ -108,6 +110,47 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.add(CCBlocks.TALL_BLOOD_BASES.get(),
                 block -> createDoorTable(CCBlocks.TALL_BLOOD_BASES.get()));
 
+        // HOLY //
+
+        this.dropSelf(CCBlocks.CHISELED_HOLY_MARBLE.get());
+        this.dropSelf(CCBlocks.CLOUD_BLOCK.get());
+        this.dropSelf(CCBlocks.CRACKED_HOLY_MARBLE.get());
+        this.dropSelf(CCBlocks.DENSE_CLOUDS.get());
+        this.dropSelf(CCBlocks.GOLDSTONE.get());
+        this.dropSelf(CCBlocks.HOLY_BEACON.get());
+        this.dropSelf(CCBlocks.HOLY_MARBLE.get());
+        this.dropSelf(CCBlocks.HOLY_MARBLE_BRICKS.get());
+        this.dropSelf(CCBlocks.HOLY_MARBLE_PILLAR.get());
+        this.dropSelf(CCBlocks.HOLY_LIGHT_BLOCK.get());
+        this.dropSelf(CCBlocks.POLISHED_HOLY_MARBLE.get());
+
+        // FIRE //
+
+        this.dropSelf(CCBlocks.CHISELED_PUMICE.get());
+        this.dropSelf(CCBlocks.CRACKED_PUMICE.get());
+        this.dropSelf(CCBlocks.VOLCANITE_BLOCK.get());
+        this.dropSelf(CCBlocks.GREEN_SULPHUR_POOL.get());
+        this.dropSelf(CCBlocks.ORANGE_SULPHUR_POOL.get());
+        this.dropSelf(CCBlocks.PIRITE_BLOCK.get());
+        this.dropSelf(CCBlocks.POLISHED_PUMICE.get());
+        this.dropSelf(CCBlocks.PUMICE_BRICKS.get());
+        this.dropSelf(CCBlocks.RED_SULPHUR_POOL.get());
+        this.dropSelf(CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get());
+        this.dropSelf(CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get());
+        this.dropSelf(CCBlocks.SMALL_PIRITE_BLOCK.get());
+        this.dropSelf(CCBlocks.SULPHUR_CRYSTAL.get());
+        this.dropSelf(CCBlocks.PUMICE.get());
+        this.dropSelf(CCBlocks.SMALL_SULPHUR_CLUSTER.get());
+        this.dropSelf(CCBlocks.MEDIUM_SULPHUR_CLUSTER.get());
+        this.dropSelf(CCBlocks.SULPHUR_DUST.get());
+        this.dropSelf(CCBlocks.SULPHUR_DUST_LAYER.get());
+        this.dropSelf(CCBlocks.SULPHUR_WATER_VENT_BASE.get());
+        this.dropSelf(CCBlocks.SULPHUR_WATER_VENT_TOP.get());
+        this.dropSelf(CCBlocks.SULPHURIC_SOIL.get());
+        this.dropSelf(CCBlocks.VERMILLION_SULPHUR_POOL.get());
+        this.dropSelf(CCBlocks.YELLOW_SULPHUR_POOL.get());
+        this.add(CCBlocks.TALL_SULPHUR_CLUSTER.get(),
+                block -> createDoorTable(CCBlocks.TALL_SULPHUR_CLUSTER.get()));
 
     }
 

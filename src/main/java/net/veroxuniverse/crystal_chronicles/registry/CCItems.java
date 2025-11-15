@@ -5,10 +5,8 @@ import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ShieldItem;
-import net.minecraft.world.item.StandingAndWallBlockItem;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -51,6 +49,10 @@ public class CCItems {
     public static final DeferredItem<Item> EYE = ITEMS.registerSimpleItem("eye");
 
     public static final DeferredItem<Item> NEURON_TORCH_ITEM = ITEMS.register("neuron_torch", () -> new StandingAndWallBlockItem(CCBlocks.NEURON_TORCH.get(), CCBlocks.NEURON_TORCH_WALL.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final DeferredItem<Item> CLOUD_BUCKET = ITEMS.register("cloud_bucket",
+            () -> new SolidBucketItem(CCBlocks.CLOUD_LAYER.get(), SoundEvents.BUCKET_EMPTY_POWDER_SNOW,new Item.Properties().stacksTo(1)));
+
 
     // ARMOR
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "cutout",
+  "textures": {
+    "cross": "crystal_chronicles:block/tall_sulphur_cluster_top",
+    "particle": "crystal_chronicles:block/tall_sulphur_cluster_top"
+  }
+}

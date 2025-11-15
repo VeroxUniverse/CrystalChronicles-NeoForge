@@ -2,6 +2,7 @@ package net.veroxuniverse.crystal_chronicles.datagen;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -18,6 +19,9 @@ public class CCBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+
+        // BLOOD //
+
         blockWithItem(CCBlocks.ALVEOLUS_BLOCK);
         blockWithItem(CCBlocks.FAT_TISSUE_BLOCK);
         blockWithItem(CCBlocks.ROTTEN_FLESH_BLOCK);
@@ -80,6 +84,38 @@ public class CCBlockStateProvider extends BlockStateProvider {
 
         simpleBlock(CCBlocks.HANGING_VEINS.get(),
                 models().cross(blockTexture(CCBlocks.HANGING_VEINS.get()).getPath(), blockTexture(CCBlocks.HANGING_VEINS.get())).renderType("cutout"));
+
+        // HOLY //
+
+        blockWithItem(CCBlocks.CHISELED_HOLY_MARBLE);
+        blockWithItem(CCBlocks.CLOUD_BLOCK);
+        blockWithItem(CCBlocks.CRACKED_HOLY_MARBLE);
+        blockWithItem(CCBlocks.DENSE_CLOUDS);
+        blockWithItem(CCBlocks.GOLDSTONE);
+        blockWithItem(CCBlocks.HOLY_MARBLE_BRICKS);
+        blockWithItem(CCBlocks.POLISHED_HOLY_MARBLE);
+        blockWithItem(CCBlocks.HOLY_MARBLE);
+
+        // FIRE //
+
+        blockWithItem(CCBlocks.PUMICE);
+        blockWithItem(CCBlocks.POLISHED_PUMICE);
+        blockWithItem(CCBlocks.CHISELED_PUMICE);
+        blockWithItem(CCBlocks.CRACKED_PUMICE);
+        blockWithItem(CCBlocks.VOLCANITE_BLOCK);
+        blockWithItem(CCBlocks.PIRITE_BLOCK);
+        blockWithItem(CCBlocks.PUMICE_BRICKS);
+        blockWithItem(CCBlocks.SULPHURIC_SOIL);
+        blockWithItem(CCBlocks.SULPHUR_CRYSTAL);
+        blockWithItem(CCBlocks.SULPHUR_DUST);
+        directionalCluster(CCBlocks.SMALL_SULPHUR_CLUSTER);
+        directionalCluster(CCBlocks.MEDIUM_SULPHUR_CLUSTER);
+        pillarBlock(CCBlocks.GREEN_SULPHUR_POOL, "_top");
+        pillarBlock(CCBlocks.ORANGE_SULPHUR_POOL, "_top");
+        pillarBlock(CCBlocks.RED_SULPHUR_POOL, "_top");
+        pillarBlock(CCBlocks.YELLOW_SULPHUR_POOL, "_top");
+        pillarBlock(CCBlocks.VERMILLION_SULPHUR_POOL, "_top");
+
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {
@@ -97,4 +133,29 @@ public class CCBlockStateProvider extends BlockStateProvider {
     private void blockItem(DeferredBlock<Block> deferredBlock, String appendix) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("crystal_chronicles:block/" + deferredBlock.getId().getPath() + appendix));
     }
+
+    private void pillarBlock(DeferredBlock<Block> deferredBlock, String topSuffix) {
+        String name = deferredBlock.getId().getPath();
+        var side = blockTexture(deferredBlock.get());
+        var end = modLoc("block/" + name + topSuffix);
+        axisBlock((RotatedPillarBlock) deferredBlock.get(), side, end);
+        simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("crystal_chronicles:block/" + name));
+    }
+
+    private void directionalCluster(DeferredBlock<Block> block) {
+        String name = block.getId().getPath();
+        ModelFile model = models()
+                .getBuilder(name)
+                .parent(models().getExistingFile(mcLoc("block/amethyst_cluster")))
+                .texture("cross", blockTexture(block.get()))
+                .renderType("cutout");
+        directionalBlock(block.get(), model);
+        flatItemFromBlock(block);
+    }
+
+    private void flatItemFromBlock(DeferredBlock<Block> block) {
+        String name = block.getId().getPath();
+        itemModels().getBuilder(name).parent(itemModels().getExistingFile(mcLoc("item/generated"))).texture("layer0", modLoc("block/" + name));
+    }
+
 }

@@ -68,6 +68,42 @@ public class CCTabs {
                 output.accept(CCBlocks.SKIN_LAYER.get());
                 output.accept(CCBlocks.ROTTEN_FLESH_BLOCK.get());
                 output.accept(CCBlocks.HEMALITE_BLOCK.get());
+                output.accept(CCBlocks.CLOUD_BLOCK.get());
+                output.accept(CCBlocks.CLOUD_LAYER.get());
+                output.accept(CCBlocks.DENSE_CLOUDS.get());
+                output.accept(CCBlocks.HOLY_MARBLE.get());
+                output.accept(CCBlocks.HOLY_MARBLE_BRICKS.get());
+                output.accept(CCBlocks.CHISELED_HOLY_MARBLE.get());
+                output.accept(CCBlocks.CRACKED_HOLY_MARBLE.get());
+                output.accept(CCBlocks.POLISHED_HOLY_MARBLE.get());
+                output.accept(CCBlocks.HOLY_MARBLE_PILLAR.get());
+                output.accept(CCBlocks.GOLDSTONE.get());
+                output.accept(CCBlocks.HOLY_LIGHT_BLOCK.get());
+                output.accept(CCBlocks.HOLY_BEACON.get());
+                output.accept(CCBlocks.PUMICE.get());
+                output.accept(CCBlocks.PUMICE_BRICKS.get());
+                output.accept(CCBlocks.CHISELED_PUMICE.get());
+                output.accept(CCBlocks.CRACKED_PUMICE.get());
+                output.accept(CCBlocks.POLISHED_PUMICE.get());
+                output.accept(CCBlocks.PIRITE_BLOCK.get());
+                output.accept(CCBlocks.SMALL_PIRITE_BLOCK.get());
+                output.accept(CCBlocks.GREEN_SULPHUR_POOL.get());
+                output.accept(CCBlocks.ORANGE_SULPHUR_POOL.get());
+                output.accept(CCBlocks.RED_SULPHUR_POOL.get());
+                output.accept(CCBlocks.YELLOW_SULPHUR_POOL.get());
+                output.accept(CCBlocks.VERMILLION_SULPHUR_POOL.get());
+                output.accept(CCBlocks.SULPHUR_WATER_VENT_BASE.get());
+                output.accept(CCBlocks.SULPHUR_WATER_VENT_TOP.get());
+                output.accept(CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get());
+                output.accept(CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get());
+                output.accept(CCBlocks.SULPHUR_DUST.get());
+                output.accept(CCBlocks.SULPHUR_DUST_LAYER.get());
+                output.accept(CCBlocks.SULPHURIC_SOIL.get());
+                output.accept(CCBlocks.SULPHUR_CRYSTAL.get());
+                output.accept(CCBlocks.SMALL_SULPHUR_CLUSTER.get());
+                output.accept(CCBlocks.MEDIUM_SULPHUR_CLUSTER.get());
+                output.accept(CCBlocks.TALL_SULPHUR_CLUSTER.get());
+                output.accept(CCBlocks.VOLCANITE_BLOCK.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ITEMS = CREATIVE_MODE_TABS.register("cc_tab_items", () -> CreativeModeTab.builder()
@@ -85,6 +121,7 @@ public class CCTabs {
                 output.accept(CCItems.NEURON.get());
                 output.accept(CCItems.EYE.get());
                 output.accept(CCFluids.BLOOD_BUCKET.get());
+                output.accept(CCItems.CLOUD_BUCKET.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ARMORY = CREATIVE_MODE_TABS.register("cc_tab_armory", () -> CreativeModeTab.builder()

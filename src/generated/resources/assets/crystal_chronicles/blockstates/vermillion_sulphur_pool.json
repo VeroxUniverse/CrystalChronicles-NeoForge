@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "crystal_chronicles:block/vermillion_sulphur_pool_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "crystal_chronicles:block/vermillion_sulphur_pool"
+    },
+    "axis=z": {
+      "model": "crystal_chronicles:block/vermillion_sulphur_pool_horizontal",
+      "x": 90
+    }
+  }
+}

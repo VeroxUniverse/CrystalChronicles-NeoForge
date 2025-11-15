@@ -23,6 +23,8 @@ public class CCBlocks {
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CrystalChronicles.MODID);
 
+    // BLOOD //
+
     public static final DeferredBlock<Block> BLOOD_BASES = registerBlock("blood_bases",
             () -> new BloodFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)));
     public static final DeferredBlock<Block> TALL_BLOOD_BASES = registerBlock("tall_blood_bases",
@@ -145,6 +147,127 @@ public class CCBlocks {
 
     public static final DeferredBlock<Block> VEINS = registerBlock("veins",
             () -> new FleshVeinsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE)));
+
+    // HOLY //
+
+    public static final DeferredBlock<Block> CLOUD_BLOCK = registerBlock("cloud_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)));
+
+    public static final DeferredBlock<Block> CLOUD_LAYER = registerBlock("cloud_layer",
+            () -> new CloudBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noOcclusion().noLootTable()));
+
+    public static final DeferredBlock<Block> DENSE_CLOUDS = registerBlock("dense_cloud",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)));
+
+    public static final DeferredBlock<Block> HOLY_MARBLE = registerBlock("holy_marble",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> CHISELED_HOLY_MARBLE = registerBlock("chiseled_holy_marble",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE = registerBlock("cracked_holy_marble",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> POLISHED_HOLY_MARBLE = registerBlock("polished_holy_marble",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> HOLY_MARBLE_BRICKS = registerBlock("holy_marble_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> HOLY_MARBLE_PILLAR = registerBlock("holy_marble_pillar",
+            () -> new HolyMarblePillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+
+    public static final DeferredBlock<Block> GOLDSTONE = registerBlock("goldstone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_GOLD_BLOCK)));
+
+    public static final DeferredBlock<Block> HOLY_LIGHT_BLOCK = registerBlock("holy_light_block",
+            () -> new HolyLightBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE).noOcclusion()));
+
+    public static final DeferredBlock<Block> HOLY_LIGHT_1 = registerBlock("holy_light_1",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noLootTable().noOcclusion()));
+
+    public static final DeferredBlock<Block> HOLY_LIGHT_2 = registerBlock("holy_light_2",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noLootTable().noOcclusion()));
+
+    public static final DeferredBlock<Block> HOLY_LIGHT_3 = registerBlock("holy_light_3",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noLootTable().noOcclusion()));
+
+    public static final DeferredBlock<Block> HOLY_BEACON = registerBlock("holy_beacon",
+            () -> new HolyBeaconBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE).noOcclusion()));
+
+    // FIRE //
+
+    public static final DeferredBlock<Block> VOLCANITE_BLOCK = registerBlock("volcanite_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+
+    public static final DeferredBlock<Block> PIRITE_BLOCK = registerBlock("pirite_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> PUMICE = registerBlock("pumice",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> PUMICE_BRICKS = registerBlock("pumice_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> CHISELED_PUMICE = registerBlock("chiseled_pumice",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> CRACKED_PUMICE = registerBlock("cracked_pumice",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> POLISHED_PUMICE = registerBlock("polished_pumice",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> GREEN_SULPHUR_POOL = registerBlock("green_sulphur_pool",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> ORANGE_SULPHUR_POOL = registerBlock("orange_sulphur_pool",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> RED_SULPHUR_POOL = registerBlock("red_sulphur_pool",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> YELLOW_SULPHUR_POOL = registerBlock("yellow_sulphur_pool",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> SMALL_SULPHUR_CLUSTER = registerBlock("small_sulphur_cluster",
+            () -> new DirectionalClusterBlock(7.0F, 3.0F, BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).noOcclusion()));
+
+    public static final DeferredBlock<Block> MEDIUM_SULPHUR_CLUSTER = registerBlock("medium_sulphur_cluster",
+            () -> new DirectionalClusterBlock(7.0F, 3.0F, BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).noOcclusion()));
+
+    public static final DeferredBlock<Block> TALL_SULPHUR_CLUSTER = registerBlock("tall_sulphur_cluster",
+            () -> new TallSulphurClusterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).noOcclusion()));
+
+    public static final DeferredBlock<Block> SULPHUR_CRYSTAL = registerBlock("sulphur_crystal",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+
+    public static final DeferredBlock<Block> SULPHUR_DUST = registerBlock("sulphur_dust",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)));
+
+    public static final DeferredBlock<Block> SULPHUR_DUST_LAYER = registerBlock("sulphur_dust_layer",
+            () -> new CarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noOcclusion()));
+
+    public static final DeferredBlock<Block> SULPHURIC_SOIL = registerBlock("sulphuric_soil",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
+
+    public static final DeferredBlock<Block> VERMILLION_SULPHUR_POOL = registerBlock("vermillion_sulphur_pool",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> RED_SULPHUR_WATER_VENT_BASE = registerBlock("red_sulphur_water_vent_base",
+            () -> new VentBaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+
+    public static final DeferredBlock<Block> RED_SULPHUR_WATER_VENT_TOP = registerBlock("red_sulphur_water_vent_top",
+            () -> new VentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().randomTicks()));
+
+    public static final DeferredBlock<Block> SULPHUR_WATER_VENT_BASE = registerBlock("sulphur_water_vent_base",
+            () -> new VentBaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
+
+    public static final DeferredBlock<Block> SULPHUR_WATER_VENT_TOP = registerBlock("sulphur_water_vent_top",
+            () -> new VentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().randomTicks()));
+
+    public static final DeferredBlock<Block> SMALL_PIRITE_BLOCK = registerBlock("small_pirite_block",
+            () -> new SmallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().dynamicShape()));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

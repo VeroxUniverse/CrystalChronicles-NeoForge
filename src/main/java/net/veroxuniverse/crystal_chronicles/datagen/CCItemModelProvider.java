@@ -57,6 +57,7 @@ public class CCItemModelProvider extends ItemModelProvider {
         basicItem(CCItems.ELECTROMANCER_CHESTPLATE.get());
         basicItem(CCItems.ELECTROMANCER_LEGGINGS.get());
         basicItem(CCItems.ELECTROMANCER_BOOTS.get());
+        basicItem(CCItems.CLOUD_BUCKET.get());
 
         basicItem(CCItems.FAT_TISSUE_BALL.get());
         basicItem(CCItems.ICE_SHARD.get());

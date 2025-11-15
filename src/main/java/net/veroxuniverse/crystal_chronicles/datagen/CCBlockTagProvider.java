@@ -19,7 +19,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-
+        
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(CCBlocks.CRUSTONE.get())
                 .add(CCBlocks.CRUSTONE_BRICKS.get())
@@ -42,7 +42,38 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get())
                 .add(CCBlocks.CHISELED_CRUSTONE_STAIRS.get())
                 .add(CCBlocks.CELVER_LIGHT.get())
-                .add(CCBlocks.FAT_TISSUE_BLOCK.get());
+                .add(CCBlocks.FAT_TISSUE_BLOCK.get())
+                .add(CCBlocks.CHISELED_HOLY_MARBLE.get())
+                .add(CCBlocks.CRACKED_HOLY_MARBLE.get())
+                .add(CCBlocks.GOLDSTONE.get())
+                .add(CCBlocks.HOLY_BEACON.get())
+                .add(CCBlocks.HOLY_MARBLE.get())
+                .add(CCBlocks.HOLY_MARBLE_BRICKS.get())
+                .add(CCBlocks.HOLY_MARBLE_PILLAR.get())
+                .add(CCBlocks.HOLY_LIGHT_BLOCK.get())
+                .add(CCBlocks.POLISHED_HOLY_MARBLE.get())
+                .add(CCBlocks.CHISELED_PUMICE.get())
+                .add(CCBlocks.CRACKED_PUMICE.get())
+                .add(CCBlocks.VOLCANITE_BLOCK.get())
+                .add(CCBlocks.GREEN_SULPHUR_POOL.get())
+                .add(CCBlocks.ORANGE_SULPHUR_POOL.get())
+                .add(CCBlocks.PUMICE.get())
+                .add(CCBlocks.PIRITE_BLOCK.get())
+                .add(CCBlocks.POLISHED_PUMICE.get())
+                .add(CCBlocks.PUMICE_BRICKS.get())
+                .add(CCBlocks.RED_SULPHUR_POOL.get())
+                .add(CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get())
+                .add(CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get())
+                .add(CCBlocks.SMALL_PIRITE_BLOCK.get())
+                .add(CCBlocks.SULPHUR_CRYSTAL.get())
+                .add(CCBlocks.SMALL_SULPHUR_CLUSTER.get())
+                .add(CCBlocks.MEDIUM_SULPHUR_CLUSTER.get())
+                .add(CCBlocks.TALL_SULPHUR_CLUSTER.get())
+                .add(CCBlocks.SULPHUR_WATER_VENT_BASE.get())
+                .add(CCBlocks.SULPHUR_WATER_VENT_TOP.get())
+                .add(CCBlocks.SULPHURIC_SOIL.get())
+                .add(CCBlocks.VERMILLION_SULPHUR_POOL.get())
+                .add(CCBlocks.YELLOW_SULPHUR_POOL.get());
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(CCBlocks.BRONCHUS.get())
@@ -64,6 +95,13 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.AXON.get())
                 .add(CCBlocks.NEURON_BLOCK.get())
                 .add(CCBlocks.EYE_BLOCK.get());
+
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(CCBlocks.SULPHUR_DUST.get())
+                .add(CCBlocks.SULPHUR_DUST_LAYER.get())
+                .add(CCBlocks.CLOUD_BLOCK.get())
+                .add(CCBlocks.DENSE_CLOUDS.get())
+                .add(CCBlocks.CLOUD_LAYER.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL);
 

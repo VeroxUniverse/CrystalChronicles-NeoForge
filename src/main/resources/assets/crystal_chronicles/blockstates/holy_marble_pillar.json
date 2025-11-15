@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "part=single": {
+      "model": "crystal_chronicles:block/marble_pillar"
+    },
+    "part=top": {
+      "model": "crystal_chronicles:block/marble_pillar_top"
+    },
+    "part=middle": {
+      "model": "crystal_chronicles:block/marble_pillar_mid"
+    },
+    "part=bottom": {
+      "model": "crystal_chronicles:block/marble_pillar_base"
+    }
+  }
+}

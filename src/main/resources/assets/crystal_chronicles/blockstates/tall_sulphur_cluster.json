@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "crystal_chronicles:block/tall_sulphur_cluster_bottom"
+    },
+    "half=upper": {
+      "model": "crystal_chronicles:block/tall_sulphur_cluster_top"
+    }
+  }
+}

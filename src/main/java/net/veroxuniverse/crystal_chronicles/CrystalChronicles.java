@@ -7,6 +7,8 @@ import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
 import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -15,9 +17,12 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.veroxuniverse.crystal_chronicles.block.entity.render.HolyLightRenderer;
 import net.veroxuniverse.crystal_chronicles.effect.CCEffects;
 import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
@@ -40,6 +45,7 @@ import net.veroxuniverse.crystal_chronicles.item.weapon.spear.SpearItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.staff.StaffItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.twinblade.TwinbladeItemRenderer;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
+import net.veroxuniverse.crystal_chronicles.registry.CCBlockEntities;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 import net.veroxuniverse.crystal_chronicles.registry.CCTabs;
@@ -64,6 +70,7 @@ public class CrystalChronicles {
         CCFluids.register(modEventBus);
         CCFluidTypes.register(modEventBus);
         CCFeatures.register(modEventBus);
+        CCBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -149,10 +156,30 @@ public class CrystalChronicles {
         }
 
         @SubscribeEvent
+        public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(
+                    CCBlockEntities.HOLY_LIGHT_BE.get(),
+                    HolyLightRenderer::new
+            );
+        }
+
+        @SubscribeEvent
+        public static void onRegisterAdditionalModels(ModelEvent.RegisterAdditional event) {
+            var seg1 = ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "block/holy_light_1");
+            var seg2 = ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "block/holy_light_2");
+            var seg3 = ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "block/holy_light_3");
+
+            event.register(ModelResourceLocation.standalone(seg1));
+            event.register(ModelResourceLocation.standalone(seg2));
+            event.register(ModelResourceLocation.standalone(seg3));
+        }
+
+        @SubscribeEvent
         public static void onClientExtensions(RegisterClientExtensionsEvent event) {
             event.registerFluidType(((BaseFluidType) CCFluidTypes.BLOOD_FLUID_TYPE.get()).getClientFluidTypeExtensions(),
                     CCFluidTypes.BLOOD_FLUID_TYPE.get());
         }
+
     }
 
 }
