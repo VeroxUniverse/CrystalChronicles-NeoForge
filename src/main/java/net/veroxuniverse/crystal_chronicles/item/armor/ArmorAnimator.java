@@ -1,4 +1,4 @@
-package net.veroxuniverse.crystal_chronicles.item.weapon.staff;
+package net.veroxuniverse.crystal_chronicles.item.armor;
 
 import mod.azure.azurelib.common.animation.controller.AzAnimationController;
 import mod.azure.azurelib.common.animation.controller.AzAnimationControllerContainer;
@@ -8,11 +8,11 @@ import net.minecraft.world.item.ItemStack;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import org.jetbrains.annotations.NotNull;
 
-public class StaffItemAnimation extends AzItemAnimator {
+public class ArmorAnimator extends AzItemAnimator {
+
     private static final ResourceLocation ANIMATIONS = ResourceLocation.fromNamespaceAndPath(
             CrystalChronicles.MODID,
-            "animations/staff.animation.json"
-    );
+            "animations/armor/empty.animation.json");
 
     @Override
     public void registerControllers(AzAnimationControllerContainer<ItemStack> animationControllerContainer) {
@@ -21,7 +21,6 @@ public class StaffItemAnimation extends AzItemAnimator {
                         .build()
         );
     }
-
     @Override
     public @NotNull ResourceLocation getAnimationLocation(ItemStack animatable) {
         return ANIMATIONS;

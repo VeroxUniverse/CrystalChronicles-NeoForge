@@ -2,9 +2,9 @@ package net.veroxuniverse.crystal_chronicles;
 
 import com.mojang.logging.LogUtils;
 import mod.azure.azurelib.AzureLib;
-import mod.azure.azurelib.common.internal.common.AzureLib;
-import mod.azure.azurelib.rewrite.animation.cache.AzIdentityRegistry;
-import mod.azure.azurelib.rewrite.render.item.AzItemRendererRegistry;
+import mod.azure.azurelib.common.animation.cache.AzIdentityRegistry;
+import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
+import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.neoforged.api.distmarker.Dist;
@@ -23,6 +23,14 @@ import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
 import net.veroxuniverse.crystal_chronicles.item.CCItemProperties;
+import net.veroxuniverse.crystal_chronicles.item.armor.electromancer.ElectromancerArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.evoker.EvokerArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.mage.MageArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.paladin.PaladinArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.pyromancer.PyromancerArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.rogue.RogueArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.tank.TankArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.toxic.ToxicArmorRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.bident.BidentItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.chakram.ChakramItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.hammer.HammerItemRenderer;
@@ -72,7 +80,7 @@ public class CrystalChronicles {
         LOGGER.info("HELLO from server starting");
     }
 
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
@@ -97,6 +105,47 @@ public class CrystalChronicles {
             AzItemRendererRegistry.register(StaffItemRenderer::new, CCItems.STAFF.get());
             AzItemRendererRegistry.register(TwinbladeItemRenderer::new, CCItems.EVOCATION_TWINBLADE.get());
             // AzItemRendererRegistry.register(SwordItemRenderer::new, CCItems.SWORD.get()); /// REMOVED
+
+            AzArmorRendererRegistry.register(ElectromancerArmorRenderer::new,
+                    CCItems.ELECTROMANCER_HELMET.get(),
+                    CCItems.ELECTROMANCER_CHESTPLATE.get(),
+                    CCItems.ELECTROMANCER_LEGGINGS.get(),
+                    CCItems.ELECTROMANCER_BOOTS.get());
+            AzArmorRendererRegistry.register(EvokerArmorRenderer::new,
+                    CCItems.EVOKER_HELMET.get(),
+                    CCItems.EVOKER_CHESTPLATE.get(),
+                    CCItems.EVOKER_LEGGINGS.get(),
+                    CCItems.EVOKER_BOOTS.get());
+            AzArmorRendererRegistry.register(MageArmorRenderer::new,
+                    CCItems.MAGE_HELMET.get(),
+                    CCItems.MAGE_CHESTPLATE.get(),
+                    CCItems.MAGE_LEGGINGS.get(),
+                    CCItems.MAGE_BOOTS.get());
+            AzArmorRendererRegistry.register(PaladinArmorRenderer::new,
+                    CCItems.PALADIN_HELMET.get(),
+                    CCItems.PALADIN_CHESTPLATE.get(),
+                    CCItems.PALADIN_LEGGINGS.get(),
+                    CCItems.PALADIN_BOOTS.get());
+            AzArmorRendererRegistry.register(PyromancerArmorRenderer::new,
+                    CCItems.PYROMANCER_HELMET.get(),
+                    CCItems.PYROMANCER_CHESTPLATE.get(),
+                    CCItems.PYROMANCER_LEGGINGS.get(),
+                    CCItems.PYROMANCER_BOOTS.get());
+            AzArmorRendererRegistry.register(RogueArmorRenderer::new,
+                    CCItems.ROGUE_HELMET.get(),
+                    CCItems.ROGUE_CHESTPLATE.get(),
+                    CCItems.ROGUE_LEGGINGS.get(),
+                    CCItems.ROGUE_BOOTS.get());
+            AzArmorRendererRegistry.register(TankArmorRenderer::new,
+                    CCItems.TANK_HELMET.get(),
+                    CCItems.TANK_CHESTPLATE.get(),
+                    CCItems.TANK_LEGGINGS.get(),
+                    CCItems.TANK_BOOTS.get());
+            AzArmorRendererRegistry.register(ToxicArmorRenderer::new,
+                    CCItems.TOXIC_HELMET.get(),
+                    CCItems.TOXIC_CHESTPLATE.get(),
+                    CCItems.TOXIC_LEGGINGS.get(),
+                    CCItems.TOXIC_BOOTS.get());
         }
 
         @SubscribeEvent

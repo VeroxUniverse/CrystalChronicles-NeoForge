@@ -1,11 +1,30 @@
 package net.veroxuniverse.crystal_chronicles.item.armor.toxic;
 
-import mod.azure.azurelib.common.api.client.renderer.GeoArmorRenderer;
-import mod.azure.azurelib.common.api.client.renderer.layer.AutoGlowingGeoLayer;
+import mod.azure.azurelib.common.render.armor.AzArmorRenderer;
+import mod.azure.azurelib.common.render.armor.AzArmorRendererConfig;
+import mod.azure.azurelib.common.render.layer.AzAutoGlowingLayer;
+import net.minecraft.resources.ResourceLocation;
+import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.item.armor.ArmorAnimator;
 
-public class ToxicArmorRenderer extends GeoArmorRenderer<ToxicArmor> {
+public class ToxicArmorRenderer extends AzArmorRenderer {
+    private static final ResourceLocation MODEL = ResourceLocation.fromNamespaceAndPath(
+            CrystalChronicles.MODID,
+            "geo/toxic.geo.json"
+    );
+
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(
+            CrystalChronicles.MODID,
+            "textures/armor/toxic.png"
+    );
+
     public ToxicArmorRenderer() {
-        super(new ToxicArmorModel());
-        addRenderLayer(new AutoGlowingGeoLayer<>(this));
+        super(
+                AzArmorRendererConfig.builder(MODEL, TEXTURE)
+                        .setAnimatorProvider(ArmorAnimator::new)
+                        .addRenderLayer(new AzAutoGlowingLayer<>())
+                        .build()
+        );
     }
 }
+

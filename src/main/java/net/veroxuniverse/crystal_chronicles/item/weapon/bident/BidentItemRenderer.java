@@ -1,12 +1,10 @@
 package net.veroxuniverse.crystal_chronicles.item.weapon.bident;
 
-import mod.azure.azurelib.rewrite.render.item.AzItemRenderer;
-import mod.azure.azurelib.rewrite.render.item.AzItemRendererConfig;
-import mod.azure.azurelib.rewrite.render.layer.AzAutoGlowingLayer;
-import mod.azure.azurelib.rewrite.render.layer.AzBlockAndItemLayer;
+import mod.azure.azurelib.common.render.item.AzItemRenderer;
+import mod.azure.azurelib.common.render.item.AzItemRendererConfig;
+import mod.azure.azurelib.common.render.layer.AzAutoGlowingLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
-import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
 public class BidentItemRenderer extends AzItemRenderer {
     private static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(

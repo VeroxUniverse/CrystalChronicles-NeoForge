@@ -1,3 +1,4 @@
+/* DISABLED DUE TO MOB UPDATES
 package net.veroxuniverse.crystal_chronicles.event;
 
 import net.minecraft.world.entity.SpawnPlacementTypes;
@@ -15,7 +16,7 @@ import net.veroxuniverse.crystal_chronicles.entity.custom.CrystalWolfEntity;
 
 public class CCEvents {
 
-    @EventBusSubscriber(modid = CrystalChronicles.MODID, bus = EventBusSubscriber.Bus.MOD)
+    @EventBusSubscriber(modid = CrystalChronicles.MODID)
     public static class RegistrationHandler {
 
         @SubscribeEvent
@@ -45,3 +46,4 @@ public class CCEvents {
     }
 
 }
+ */
