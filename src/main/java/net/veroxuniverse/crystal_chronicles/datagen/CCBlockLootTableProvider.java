@@ -189,11 +189,11 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.add(CCBlocks.POLISHED_PUMICE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.POLISHED_PUMICE_SLAB.get()));
 
-        this.dropSelf(CCBlocks.PIRITE_BLOCK.get());
-        this.dropSelf(CCBlocks.PIRITE_STAIRS.get());
-        this.dropSelf(CCBlocks.PIRITE_WALL.get());
-        this.add(CCBlocks.PIRITE_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.PIRITE_SLAB.get()));
+        this.dropSelf(CCBlocks.PYRITE_BLOCK.get());
+        this.dropSelf(CCBlocks.PYRITE_STAIRS.get());
+        this.dropSelf(CCBlocks.PYRITE_WALL.get());
+        this.add(CCBlocks.PYRITE_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.PYRITE_SLAB.get()));
 
         this.dropSelf(CCBlocks.VOLCANITE_BLOCK.get());
         this.dropSelf(CCBlocks.GREEN_SULPHUR_POOL.get());
@@ -201,7 +201,7 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.RED_SULPHUR_POOL.get());
         this.dropSelf(CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get());
         this.dropSelf(CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get());
-        this.dropSelf(CCBlocks.SMALL_PIRITE_BLOCK.get());
+        this.dropSelf(CCBlocks.SMALL_PYRITE_BLOCK.get());
         this.dropSelf(CCBlocks.SULPHUR_CRYSTAL.get());
         this.dropSelf(CCBlocks.SMALL_SULPHUR_CLUSTER.get());
         this.dropSelf(CCBlocks.MEDIUM_SULPHUR_CLUSTER.get());

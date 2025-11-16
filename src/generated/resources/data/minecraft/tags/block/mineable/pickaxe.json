@@ -54,13 +54,13 @@
     "crystal_chronicles:green_sulphur_pool",
     "crystal_chronicles:orange_sulphur_pool",
     "crystal_chronicles:pumice",
-    "crystal_chronicles:pirite_block",
+    "crystal_chronicles:pyrite_block",
     "crystal_chronicles:polished_pumice",
     "crystal_chronicles:pumice_bricks",
     "crystal_chronicles:red_sulphur_pool",
     "crystal_chronicles:red_sulphur_water_vent_base",
     "crystal_chronicles:red_sulphur_water_vent_top",
-    "crystal_chronicles:small_pirite_block",
+    "crystal_chronicles:small_pyrite_block",
     "crystal_chronicles:sulphur_crystal",
     "crystal_chronicles:small_sulphur_cluster",
     "crystal_chronicles:medium_sulphur_cluster",
@@ -85,8 +85,8 @@
     "crystal_chronicles:polished_pumice_stairs",
     "crystal_chronicles:polished_pumice_slab",
     "crystal_chronicles:polished_pumice_wall",
-    "crystal_chronicles:pirite_block_stairs",
-    "crystal_chronicles:pirite_block_slab",
-    "crystal_chronicles:pirite_block_wall"
+    "crystal_chronicles:pyrite_block_stairs",
+    "crystal_chronicles:pyrite_block_slab",
+    "crystal_chronicles:pyrite_block_wall"
   ]
 }

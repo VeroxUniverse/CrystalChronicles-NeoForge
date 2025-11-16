@@ -6,8 +6,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.SmithingTransformRecipe;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
@@ -592,10 +590,10 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_polished_pumice", has(CCBlocks.POLISHED_PUMICE.get())).save(pRecipeOutput);
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_WALL.get(), CCBlocks.POLISHED_PUMICE.get());
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_SLAB.get(), CCBlocks.PIRITE_BLOCK);
-        stairBuilder(CCBlocks.PIRITE_STAIRS.get(), Ingredient.of(CCBlocks.PIRITE_BLOCK.get())).group("pirite_block")
-                .unlockedBy("has_pirite_block", has(CCBlocks.PIRITE_BLOCK.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_WALL.get(), CCBlocks.PIRITE_BLOCK.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE_BLOCK);
+        stairBuilder(CCBlocks.PYRITE_STAIRS.get(), Ingredient.of(CCBlocks.PYRITE_BLOCK.get())).group("pirite_block")
+                .unlockedBy("has_pirite_block", has(CCBlocks.PYRITE_BLOCK.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE_BLOCK.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS.get(), 4)
                 .pattern("BB")
@@ -689,9 +687,9 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CHISELED_PUMICE.get(), 2);
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_WALL.get(), CCBlocks.CHISELED_PUMICE.get());
 
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_STAIRS.get(), CCBlocks.PIRITE_BLOCK.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_SLAB.get(), CCBlocks.PIRITE_BLOCK.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_WALL.get(), CCBlocks.PIRITE_BLOCK.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_STAIRS.get(), CCBlocks.PYRITE_BLOCK.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE_BLOCK.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE_BLOCK.get());
 
     }
 }

@@ -76,13 +76,13 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.GREEN_SULPHUR_POOL.get())
                 .add(CCBlocks.ORANGE_SULPHUR_POOL.get())
                 .add(CCBlocks.PUMICE.get())
-                .add(CCBlocks.PIRITE_BLOCK.get())
+                .add(CCBlocks.PYRITE_BLOCK.get())
                 .add(CCBlocks.POLISHED_PUMICE.get())
                 .add(CCBlocks.PUMICE_BRICKS.get())
                 .add(CCBlocks.RED_SULPHUR_POOL.get())
                 .add(CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get())
                 .add(CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get())
-                .add(CCBlocks.SMALL_PIRITE_BLOCK.get())
+                .add(CCBlocks.SMALL_PYRITE_BLOCK.get())
                 .add(CCBlocks.SULPHUR_CRYSTAL.get())
                 .add(CCBlocks.SMALL_SULPHUR_CLUSTER.get())
                 .add(CCBlocks.MEDIUM_SULPHUR_CLUSTER.get())
@@ -107,9 +107,9 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.POLISHED_PUMICE_STAIRS.get())
                 .add(CCBlocks.POLISHED_PUMICE_SLAB.get())
                 .add(CCBlocks.POLISHED_PUMICE_WALL.get())
-                .add(CCBlocks.PIRITE_STAIRS.get())
-                .add(CCBlocks.PIRITE_SLAB.get())
-                .add(CCBlocks.PIRITE_WALL.get());
+                .add(CCBlocks.PYRITE_STAIRS.get())
+                .add(CCBlocks.PYRITE_SLAB.get())
+                .add(CCBlocks.PYRITE_WALL.get());
 
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(CCBlocks.BRONCHUS.get())
@@ -164,7 +164,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.CRUSTONE.get())
                 .add(CCBlocks.HOLY_MARBLE.get())
                 .add(CCBlocks.PUMICE.get())
-                .add(CCBlocks.PIRITE_BLOCK.get())
+                .add(CCBlocks.PYRITE_BLOCK.get())
                 .add(CCBlocks.GOLDSTONE.get());
 
         this.tag(BlockTags.WALLS)
@@ -184,7 +184,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.CHISELED_PUMICE_WALL.get())
                 .add(CCBlocks.CRACKED_PUMICE_WALL.get())
                 .add(CCBlocks.POLISHED_PUMICE_WALL.get())
-                .add(CCBlocks.PIRITE_WALL.get());
+                .add(CCBlocks.PYRITE_WALL.get());
 
         this.tag(CCTags.Blocks.CC_BLOOD_BLOCK)
                 .add(CCBlocks.FLESH_BLOCK.get())

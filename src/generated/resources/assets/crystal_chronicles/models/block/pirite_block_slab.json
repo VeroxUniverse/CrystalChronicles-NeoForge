@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "crystal_chronicles:block/pirite_block",
-    "side": "crystal_chronicles:block/pirite_block",
-    "top": "crystal_chronicles:block/pirite_block"
-  }
-}

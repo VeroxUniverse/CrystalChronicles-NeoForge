@@ -2,7 +2,6 @@ package net.veroxuniverse.crystal_chronicles.datagen;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
@@ -169,12 +168,12 @@ public class CCBlockStateProvider extends BlockStateProvider {
         blockItem(CCBlocks.POLISHED_PUMICE_STAIRS);
         blockItem(CCBlocks.POLISHED_PUMICE_SLAB);
 
-        blockWithItem(CCBlocks.PIRITE_BLOCK);
-        stairsBlock(((StairBlock) CCBlocks.PIRITE_STAIRS.get()), blockTexture(CCBlocks.PIRITE_BLOCK.get()));
-        slabBlock(((SlabBlock) CCBlocks.PIRITE_SLAB.get()), blockTexture(CCBlocks.PIRITE_BLOCK.get()), blockTexture(CCBlocks.PIRITE_BLOCK.get()));
-        wallBlock(((WallBlock) CCBlocks.PIRITE_WALL.get()), blockTexture(CCBlocks.PIRITE_BLOCK.get()));
-        blockItem(CCBlocks.PIRITE_STAIRS);
-        blockItem(CCBlocks.PIRITE_SLAB);
+        blockWithItem(CCBlocks.PYRITE_BLOCK);
+        stairsBlock(((StairBlock) CCBlocks.PYRITE_STAIRS.get()), blockTexture(CCBlocks.PYRITE_BLOCK.get()));
+        slabBlock(((SlabBlock) CCBlocks.PYRITE_SLAB.get()), blockTexture(CCBlocks.PYRITE_BLOCK.get()), blockTexture(CCBlocks.PYRITE_BLOCK.get()));
+        wallBlock(((WallBlock) CCBlocks.PYRITE_WALL.get()), blockTexture(CCBlocks.PYRITE_BLOCK.get()));
+        blockItem(CCBlocks.PYRITE_STAIRS);
+        blockItem(CCBlocks.PYRITE_SLAB);
 
         blockWithItem(CCBlocks.VOLCANITE_BLOCK);
         blockWithItem(CCBlocks.SULPHURIC_SOIL);

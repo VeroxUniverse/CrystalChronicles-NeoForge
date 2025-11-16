@@ -118,11 +118,11 @@ public class CCTabs {
                 output.accept(CCBlocks.POLISHED_PUMICE_STAIRS.get());
                 output.accept(CCBlocks.POLISHED_PUMICE_SLAB.get());
                 output.accept(CCBlocks.POLISHED_PUMICE_WALL.get());
-                output.accept(CCBlocks.PIRITE_BLOCK.get());
-                output.accept(CCBlocks.PIRITE_STAIRS.get());
-                output.accept(CCBlocks.PIRITE_SLAB.get());
-                output.accept(CCBlocks.PIRITE_WALL.get());
-                output.accept(CCBlocks.SMALL_PIRITE_BLOCK.get());
+                output.accept(CCBlocks.PYRITE_BLOCK.get());
+                output.accept(CCBlocks.PYRITE_STAIRS.get());
+                output.accept(CCBlocks.PYRITE_SLAB.get());
+                output.accept(CCBlocks.PYRITE_WALL.get());
+                output.accept(CCBlocks.SMALL_PYRITE_BLOCK.get());
                 output.accept(CCBlocks.GREEN_SULPHUR_POOL.get());
                 output.accept(CCBlocks.ORANGE_SULPHUR_POOL.get());
                 output.accept(CCBlocks.RED_SULPHUR_POOL.get());

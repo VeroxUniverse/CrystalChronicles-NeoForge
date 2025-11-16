@@ -94,7 +94,7 @@ public class CCItemModelProvider extends ItemModelProvider {
         wallItem(CCBlocks.CHISELED_PUMICE_WALL, CCBlocks.CHISELED_PUMICE);
         wallItem(CCBlocks.CRACKED_PUMICE_WALL, CCBlocks.CRACKED_PUMICE);
         wallItem(CCBlocks.POLISHED_PUMICE_WALL, CCBlocks.POLISHED_PUMICE);
-        wallItem(CCBlocks.PIRITE_WALL, CCBlocks.PIRITE_BLOCK);
+        wallItem(CCBlocks.PYRITE_WALL, CCBlocks.PYRITE_BLOCK);
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
