@@ -81,7 +81,20 @@ public class CCItemModelProvider extends ItemModelProvider {
         wallItem(CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL, CCBlocks.CRACKED_CRUSTONE_BRICKS);
         wallItem(CCBlocks.POLISHED_CRUSTONE_WALL, CCBlocks.POLISHED_CRUSTONE);
         wallItem(CCBlocks.CHISELED_CRUSTONE_WALL, CCBlocks.CHISELED_CRUSTONE);
-        
+
+        wallItem(CCBlocks.HOLY_MARBLE_WALL, CCBlocks.HOLY_MARBLE);
+        wallItem(CCBlocks.HOLY_MARBLE_BRICKS_WALL, CCBlocks.HOLY_MARBLE_BRICKS);
+        wallItem(CCBlocks.CHISELED_HOLY_MARBLE_WALL, CCBlocks.CHISELED_HOLY_MARBLE);
+        wallItem(CCBlocks.CRACKED_HOLY_MARBLE_WALL, CCBlocks.CRACKED_HOLY_MARBLE);
+        wallItem(CCBlocks.POLISHED_HOLY_MARBLE_WALL, CCBlocks.POLISHED_HOLY_MARBLE);
+        wallItem(CCBlocks.GOLDSTONE_WALL, CCBlocks.GOLDSTONE);
+
+        wallItem(CCBlocks.PUMICE_WALL, CCBlocks.PUMICE);
+        wallItem(CCBlocks.PUMICE_BRICKS_WALL, CCBlocks.PUMICE_BRICKS);
+        wallItem(CCBlocks.CHISELED_PUMICE_WALL, CCBlocks.CHISELED_PUMICE);
+        wallItem(CCBlocks.CRACKED_PUMICE_WALL, CCBlocks.CRACKED_PUMICE);
+        wallItem(CCBlocks.POLISHED_PUMICE_WALL, CCBlocks.POLISHED_PUMICE);
+        wallItem(CCBlocks.PIRITE_WALL, CCBlocks.PIRITE_BLOCK);
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

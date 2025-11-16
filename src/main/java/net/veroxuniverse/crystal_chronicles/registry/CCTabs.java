@@ -72,20 +72,56 @@ public class CCTabs {
                 output.accept(CCBlocks.CLOUD_LAYER.get());
                 output.accept(CCBlocks.DENSE_CLOUDS.get());
                 output.accept(CCBlocks.HOLY_MARBLE.get());
+                output.accept(CCBlocks.HOLY_MARBLE_STAIRS.get());
+                output.accept(CCBlocks.HOLY_MARBLE_SLAB.get());
+                output.accept(CCBlocks.HOLY_MARBLE_WALL.get());
                 output.accept(CCBlocks.HOLY_MARBLE_BRICKS.get());
+                output.accept(CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get());
+                output.accept(CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get());
+                output.accept(CCBlocks.HOLY_MARBLE_BRICKS_WALL.get());
                 output.accept(CCBlocks.CHISELED_HOLY_MARBLE.get());
+                output.accept(CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get());
+                output.accept(CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get());
+                output.accept(CCBlocks.CHISELED_HOLY_MARBLE_WALL.get());
                 output.accept(CCBlocks.CRACKED_HOLY_MARBLE.get());
+                output.accept(CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get());
+                output.accept(CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get());
+                output.accept(CCBlocks.CRACKED_HOLY_MARBLE_WALL.get());
                 output.accept(CCBlocks.POLISHED_HOLY_MARBLE.get());
+                output.accept(CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get());
+                output.accept(CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get());
+                output.accept(CCBlocks.POLISHED_HOLY_MARBLE_WALL.get());
                 output.accept(CCBlocks.HOLY_MARBLE_PILLAR.get());
                 output.accept(CCBlocks.GOLDSTONE.get());
+                output.accept(CCBlocks.GOLDSTONE_STAIRS.get());
+                output.accept(CCBlocks.GOLDSTONE_SLAB.get());
+                output.accept(CCBlocks.GOLDSTONE_WALL.get());
                 output.accept(CCBlocks.HOLY_LIGHT_BLOCK.get());
                 output.accept(CCBlocks.HOLY_BEACON.get());
                 output.accept(CCBlocks.PUMICE.get());
+                output.accept(CCBlocks.PUMICE_STAIRS.get());
+                output.accept(CCBlocks.PUMICE_SLAB.get());
+                output.accept(CCBlocks.PUMICE_WALL.get());
                 output.accept(CCBlocks.PUMICE_BRICKS.get());
+                output.accept(CCBlocks.PUMICE_BRICKS_STAIRS.get());
+                output.accept(CCBlocks.PUMICE_BRICKS_SLAB.get());
+                output.accept(CCBlocks.PUMICE_BRICKS_WALL.get());
                 output.accept(CCBlocks.CHISELED_PUMICE.get());
+                output.accept(CCBlocks.CHISELED_PUMICE_STAIRS.get());
+                output.accept(CCBlocks.CHISELED_PUMICE_SLAB.get());
+                output.accept(CCBlocks.CHISELED_PUMICE_WALL.get());
                 output.accept(CCBlocks.CRACKED_PUMICE.get());
+                output.accept(CCBlocks.CRACKED_PUMICE_STAIRS.get());
+                output.accept(CCBlocks.CRACKED_PUMICE_SLAB.get());
+                output.accept(CCBlocks.CRACKED_PUMICE_WALL.get());
                 output.accept(CCBlocks.POLISHED_PUMICE.get());
+                output.accept(CCBlocks.POLISHED_PUMICE_STAIRS.get());
+                output.accept(CCBlocks.POLISHED_PUMICE_SLAB.get());
+                output.accept(CCBlocks.POLISHED_PUMICE_WALL.get());
                 output.accept(CCBlocks.PIRITE_BLOCK.get());
+                output.accept(CCBlocks.PIRITE_STAIRS.get());
+                output.accept(CCBlocks.PIRITE_SLAB.get());
+                output.accept(CCBlocks.PIRITE_WALL.get());
                 output.accept(CCBlocks.SMALL_PIRITE_BLOCK.get());
                 output.accept(CCBlocks.GREEN_SULPHUR_POOL.get());
                 output.accept(CCBlocks.ORANGE_SULPHUR_POOL.get());
@@ -105,6 +141,7 @@ public class CCTabs {
                 output.accept(CCBlocks.TALL_SULPHUR_CLUSTER.get());
                 output.accept(CCBlocks.VOLCANITE_BLOCK.get());
             }).build());
+
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ITEMS = CREATIVE_MODE_TABS.register("cc_tab_items", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.items." + CrystalChronicles.MODID))

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/goldstone_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/goldstone"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/goldstone_slab_top"
+    }
+  }
+}

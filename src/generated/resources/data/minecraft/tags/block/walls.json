@@ -4,6 +4,18 @@
     "crystal_chronicles:crustone_bricks_wall",
     "crystal_chronicles:polished_crustone_wall",
     "crystal_chronicles:cracked_crustone_bricks_wall",
-    "crystal_chronicles:chiseled_crustone_wall"
+    "crystal_chronicles:chiseled_crustone_wall",
+    "crystal_chronicles:holy_marble_wall",
+    "crystal_chronicles:holy_marble_bricks_wall",
+    "crystal_chronicles:chiseled_holy_marble_wall",
+    "crystal_chronicles:cracked_holy_marble_wall",
+    "crystal_chronicles:polished_holy_marble_wall",
+    "crystal_chronicles:goldstone_wall",
+    "crystal_chronicles:pumice_wall",
+    "crystal_chronicles:pumice_bricks_wall",
+    "crystal_chronicles:chiseled_pumice_wall",
+    "crystal_chronicles:cracked_pumice_wall",
+    "crystal_chronicles:polished_pumice_wall",
+    "crystal_chronicles:pirite_block_wall"
   ]
 }

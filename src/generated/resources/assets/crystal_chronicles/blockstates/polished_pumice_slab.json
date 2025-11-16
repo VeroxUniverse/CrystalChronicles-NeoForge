@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/polished_pumice_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/polished_pumice"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/polished_pumice_slab_top"
+    }
+  }
+}

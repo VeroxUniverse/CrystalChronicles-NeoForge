@@ -195,6 +195,55 @@ public class CCBlocks {
     public static final DeferredBlock<Block> HOLY_BEACON = registerBlock("holy_beacon",
             () -> new HolyBeaconBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE).noOcclusion()));
 
+    public static final DeferredBlock<Block> HOLY_MARBLE_STAIRS = registerBlock("holy_marble_stairs",
+            () -> new StairBlock(CCBlocks.HOLY_MARBLE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HOLY_MARBLE_SLAB = registerBlock("holy_marble_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HOLY_MARBLE_WALL = registerBlock("holy_marble_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> HOLY_MARBLE_BRICKS_STAIRS = registerBlock("holy_marble_bricks_stairs",
+            () -> new StairBlock(CCBlocks.HOLY_MARBLE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HOLY_MARBLE_BRICKS_SLAB = registerBlock("holy_marble_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> HOLY_MARBLE_BRICKS_WALL = registerBlock("holy_marble_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CHISELED_HOLY_MARBLE_STAIRS = registerBlock("chiseled_holy_marble_stairs",
+            () -> new StairBlock(CCBlocks.CHISELED_HOLY_MARBLE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_HOLY_MARBLE_SLAB = registerBlock("chiseled_holy_marble_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_HOLY_MARBLE_WALL = registerBlock("chiseled_holy_marble_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_STAIRS = registerBlock("cracked_holy_marble_stairs",
+            () -> new StairBlock(CCBlocks.CRACKED_HOLY_MARBLE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_SLAB = registerBlock("cracked_holy_marble_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_WALL = registerBlock("cracked_holy_marble_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> POLISHED_HOLY_MARBLE_STAIRS = registerBlock("polished_holy_marble_stairs",
+            () -> new StairBlock(CCBlocks.POLISHED_HOLY_MARBLE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_HOLY_MARBLE_SLAB = registerBlock("polished_holy_marble_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_HOLY_MARBLE_WALL = registerBlock("polished_holy_marble_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> GOLDSTONE_STAIRS = registerBlock("goldstone_stairs",
+            () -> new StairBlock(CCBlocks.GOLDSTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> GOLDSTONE_SLAB = registerBlock("goldstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> GOLDSTONE_WALL = registerBlock("goldstone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+
     // FIRE //
 
     public static final DeferredBlock<Block> VOLCANITE_BLOCK = registerBlock("volcanite_block",
@@ -268,6 +317,55 @@ public class CCBlocks {
 
     public static final DeferredBlock<Block> SMALL_PIRITE_BLOCK = registerBlock("small_pirite_block",
             () -> new SmallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().dynamicShape()));
+
+    public static final DeferredBlock<Block> PUMICE_STAIRS = registerBlock("pumice_stairs",
+            () -> new StairBlock(CCBlocks.PUMICE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> PUMICE_SLAB = registerBlock("pumice_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> PUMICE_WALL = registerBlock("pumice_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> PUMICE_BRICKS_STAIRS = registerBlock("pumice_bricks_stairs",
+            () -> new StairBlock(CCBlocks.PUMICE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> PUMICE_BRICKS_SLAB = registerBlock("pumice_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> PUMICE_BRICKS_WALL = registerBlock("pumice_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CHISELED_PUMICE_STAIRS = registerBlock("chiseled_pumice_stairs",
+            () -> new StairBlock(CCBlocks.CHISELED_PUMICE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_PUMICE_SLAB = registerBlock("chiseled_pumice_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_PUMICE_WALL = registerBlock("chiseled_pumice_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CRACKED_PUMICE_STAIRS = registerBlock("cracked_pumice_stairs",
+            () -> new StairBlock(CCBlocks.CRACKED_PUMICE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRACKED_PUMICE_SLAB = registerBlock("cracked_pumice_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRACKED_PUMICE_WALL = registerBlock("cracked_pumice_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> POLISHED_PUMICE_STAIRS = registerBlock("polished_pumice_stairs",
+            () -> new StairBlock(CCBlocks.POLISHED_PUMICE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_PUMICE_SLAB = registerBlock("polished_pumice_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_PUMICE_WALL = registerBlock("polished_pumice_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> PIRITE_STAIRS = registerBlock("pirite_block_stairs",
+            () -> new StairBlock(CCBlocks.PIRITE_BLOCK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> PIRITE_SLAB = registerBlock("pirite_block_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> PIRITE_WALL = registerBlock("pirite_block_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

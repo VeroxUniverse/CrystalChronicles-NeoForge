@@ -87,24 +87,96 @@ public class CCBlockStateProvider extends BlockStateProvider {
 
         // HOLY //
 
-        blockWithItem(CCBlocks.CHISELED_HOLY_MARBLE);
         blockWithItem(CCBlocks.CLOUD_BLOCK);
-        blockWithItem(CCBlocks.CRACKED_HOLY_MARBLE);
         blockWithItem(CCBlocks.DENSE_CLOUDS);
-        blockWithItem(CCBlocks.GOLDSTONE);
-        blockWithItem(CCBlocks.HOLY_MARBLE_BRICKS);
-        blockWithItem(CCBlocks.POLISHED_HOLY_MARBLE);
+
         blockWithItem(CCBlocks.HOLY_MARBLE);
+        stairsBlock(((StairBlock) CCBlocks.HOLY_MARBLE_STAIRS.get()), blockTexture(CCBlocks.HOLY_MARBLE.get()));
+        slabBlock(((SlabBlock) CCBlocks.HOLY_MARBLE_SLAB.get()), blockTexture(CCBlocks.HOLY_MARBLE.get()), blockTexture(CCBlocks.HOLY_MARBLE.get()));
+        wallBlock(((WallBlock) CCBlocks.HOLY_MARBLE_WALL.get()), blockTexture(CCBlocks.HOLY_MARBLE.get()));
+        blockItem(CCBlocks.HOLY_MARBLE_STAIRS);
+        blockItem(CCBlocks.HOLY_MARBLE_SLAB);
+
+        blockWithItem(CCBlocks.HOLY_MARBLE_BRICKS);
+        stairsBlock(((StairBlock) CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get()), blockTexture(CCBlocks.HOLY_MARBLE_BRICKS.get()));
+        slabBlock(((SlabBlock) CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get()), blockTexture(CCBlocks.HOLY_MARBLE_BRICKS.get()), blockTexture(CCBlocks.HOLY_MARBLE_BRICKS.get()));
+        wallBlock(((WallBlock) CCBlocks.HOLY_MARBLE_BRICKS_WALL.get()), blockTexture(CCBlocks.HOLY_MARBLE_BRICKS.get()));
+        blockItem(CCBlocks.HOLY_MARBLE_BRICKS_STAIRS);
+        blockItem(CCBlocks.HOLY_MARBLE_BRICKS_SLAB);
+
+        blockWithItem(CCBlocks.CHISELED_HOLY_MARBLE);
+        stairsBlock(((StairBlock) CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get()), blockTexture(CCBlocks.CHISELED_HOLY_MARBLE.get()));
+        slabBlock(((SlabBlock) CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get()), blockTexture(CCBlocks.CHISELED_HOLY_MARBLE.get()), blockTexture(CCBlocks.CHISELED_HOLY_MARBLE.get()));
+        wallBlock(((WallBlock) CCBlocks.CHISELED_HOLY_MARBLE_WALL.get()), blockTexture(CCBlocks.CHISELED_HOLY_MARBLE.get()));
+        blockItem(CCBlocks.CHISELED_HOLY_MARBLE_STAIRS);
+        blockItem(CCBlocks.CHISELED_HOLY_MARBLE_SLAB);
+
+        blockWithItem(CCBlocks.CRACKED_HOLY_MARBLE);
+        stairsBlock(((StairBlock) CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get()), blockTexture(CCBlocks.CRACKED_HOLY_MARBLE.get()));
+        slabBlock(((SlabBlock) CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get()), blockTexture(CCBlocks.CRACKED_HOLY_MARBLE.get()), blockTexture(CCBlocks.CRACKED_HOLY_MARBLE.get()));
+        wallBlock(((WallBlock) CCBlocks.CRACKED_HOLY_MARBLE_WALL.get()), blockTexture(CCBlocks.CRACKED_HOLY_MARBLE.get()));
+        blockItem(CCBlocks.CRACKED_HOLY_MARBLE_STAIRS);
+        blockItem(CCBlocks.CRACKED_HOLY_MARBLE_SLAB);
+
+        blockWithItem(CCBlocks.POLISHED_HOLY_MARBLE);
+        stairsBlock(((StairBlock) CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get()), blockTexture(CCBlocks.POLISHED_HOLY_MARBLE.get()));
+        slabBlock(((SlabBlock) CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get()), blockTexture(CCBlocks.POLISHED_HOLY_MARBLE.get()), blockTexture(CCBlocks.POLISHED_HOLY_MARBLE.get()));
+        wallBlock(((WallBlock) CCBlocks.POLISHED_HOLY_MARBLE_WALL.get()), blockTexture(CCBlocks.POLISHED_HOLY_MARBLE.get()));
+        blockItem(CCBlocks.POLISHED_HOLY_MARBLE_STAIRS);
+        blockItem(CCBlocks.POLISHED_HOLY_MARBLE_SLAB);
+
+        blockWithItem(CCBlocks.GOLDSTONE);
+        stairsBlock(((StairBlock) CCBlocks.GOLDSTONE_STAIRS.get()), blockTexture(CCBlocks.GOLDSTONE.get()));
+        slabBlock(((SlabBlock) CCBlocks.GOLDSTONE_SLAB.get()), blockTexture(CCBlocks.GOLDSTONE.get()), blockTexture(CCBlocks.GOLDSTONE.get()));
+        wallBlock(((WallBlock) CCBlocks.GOLDSTONE_WALL.get()), blockTexture(CCBlocks.GOLDSTONE.get()));
+        blockItem(CCBlocks.GOLDSTONE_STAIRS);
+        blockItem(CCBlocks.GOLDSTONE_SLAB);
 
         // FIRE //
 
         blockWithItem(CCBlocks.PUMICE);
-        blockWithItem(CCBlocks.POLISHED_PUMICE);
-        blockWithItem(CCBlocks.CHISELED_PUMICE);
-        blockWithItem(CCBlocks.CRACKED_PUMICE);
-        blockWithItem(CCBlocks.VOLCANITE_BLOCK);
-        blockWithItem(CCBlocks.PIRITE_BLOCK);
+        stairsBlock(((StairBlock) CCBlocks.PUMICE_STAIRS.get()), blockTexture(CCBlocks.PUMICE.get()));
+        slabBlock(((SlabBlock) CCBlocks.PUMICE_SLAB.get()), blockTexture(CCBlocks.PUMICE.get()), blockTexture(CCBlocks.PUMICE.get()));
+        wallBlock(((WallBlock) CCBlocks.PUMICE_WALL.get()), blockTexture(CCBlocks.PUMICE.get()));
+        blockItem(CCBlocks.PUMICE_STAIRS);
+        blockItem(CCBlocks.PUMICE_SLAB);
+
         blockWithItem(CCBlocks.PUMICE_BRICKS);
+        stairsBlock(((StairBlock) CCBlocks.PUMICE_BRICKS_STAIRS.get()), blockTexture(CCBlocks.PUMICE_BRICKS.get()));
+        slabBlock(((SlabBlock) CCBlocks.PUMICE_BRICKS_SLAB.get()), blockTexture(CCBlocks.PUMICE_BRICKS.get()), blockTexture(CCBlocks.PUMICE_BRICKS.get()));
+        wallBlock(((WallBlock) CCBlocks.PUMICE_BRICKS_WALL.get()), blockTexture(CCBlocks.PUMICE_BRICKS.get()));
+        blockItem(CCBlocks.PUMICE_BRICKS_STAIRS);
+        blockItem(CCBlocks.PUMICE_BRICKS_SLAB);
+
+        blockWithItem(CCBlocks.CHISELED_PUMICE);
+        stairsBlock(((StairBlock) CCBlocks.CHISELED_PUMICE_STAIRS.get()), blockTexture(CCBlocks.CHISELED_PUMICE.get()));
+        slabBlock(((SlabBlock) CCBlocks.CHISELED_PUMICE_SLAB.get()), blockTexture(CCBlocks.CHISELED_PUMICE.get()), blockTexture(CCBlocks.CHISELED_PUMICE.get()));
+        wallBlock(((WallBlock) CCBlocks.CHISELED_PUMICE_WALL.get()), blockTexture(CCBlocks.CHISELED_PUMICE.get()));
+        blockItem(CCBlocks.CHISELED_PUMICE_STAIRS);
+        blockItem(CCBlocks.CHISELED_PUMICE_SLAB);
+
+        blockWithItem(CCBlocks.CRACKED_PUMICE);
+        stairsBlock(((StairBlock) CCBlocks.CRACKED_PUMICE_STAIRS.get()), blockTexture(CCBlocks.CRACKED_PUMICE.get()));
+        slabBlock(((SlabBlock) CCBlocks.CRACKED_PUMICE_SLAB.get()), blockTexture(CCBlocks.CRACKED_PUMICE.get()), blockTexture(CCBlocks.CRACKED_PUMICE.get()));
+        wallBlock(((WallBlock) CCBlocks.CRACKED_PUMICE_WALL.get()), blockTexture(CCBlocks.CRACKED_PUMICE.get()));
+        blockItem(CCBlocks.CRACKED_PUMICE_STAIRS);
+        blockItem(CCBlocks.CRACKED_PUMICE_SLAB);
+
+        blockWithItem(CCBlocks.POLISHED_PUMICE);
+        stairsBlock(((StairBlock) CCBlocks.POLISHED_PUMICE_STAIRS.get()), blockTexture(CCBlocks.POLISHED_PUMICE.get()));
+        slabBlock(((SlabBlock) CCBlocks.POLISHED_PUMICE_SLAB.get()), blockTexture(CCBlocks.POLISHED_PUMICE.get()), blockTexture(CCBlocks.POLISHED_PUMICE.get()));
+        wallBlock(((WallBlock) CCBlocks.POLISHED_PUMICE_WALL.get()), blockTexture(CCBlocks.POLISHED_PUMICE.get()));
+        blockItem(CCBlocks.POLISHED_PUMICE_STAIRS);
+        blockItem(CCBlocks.POLISHED_PUMICE_SLAB);
+
+        blockWithItem(CCBlocks.PIRITE_BLOCK);
+        stairsBlock(((StairBlock) CCBlocks.PIRITE_STAIRS.get()), blockTexture(CCBlocks.PIRITE_BLOCK.get()));
+        slabBlock(((SlabBlock) CCBlocks.PIRITE_SLAB.get()), blockTexture(CCBlocks.PIRITE_BLOCK.get()), blockTexture(CCBlocks.PIRITE_BLOCK.get()));
+        wallBlock(((WallBlock) CCBlocks.PIRITE_WALL.get()), blockTexture(CCBlocks.PIRITE_BLOCK.get()));
+        blockItem(CCBlocks.PIRITE_STAIRS);
+        blockItem(CCBlocks.PIRITE_SLAB);
+
+        blockWithItem(CCBlocks.VOLCANITE_BLOCK);
         blockWithItem(CCBlocks.SULPHURIC_SOIL);
         blockWithItem(CCBlocks.SULPHUR_CRYSTAL);
         blockWithItem(CCBlocks.SULPHUR_DUST);

@@ -537,6 +537,161 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
                 .save(pRecipeOutput, "evoker_boots_smithing");
 
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_SLAB.get(), CCBlocks.HOLY_MARBLE);
+        stairBuilder(CCBlocks.HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.HOLY_MARBLE.get())).group("holy_marble")
+                .unlockedBy("has_holy_marble", has(CCBlocks.HOLY_MARBLE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_WALL.get(), CCBlocks.HOLY_MARBLE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get(), CCBlocks.HOLY_MARBLE_BRICKS);
+        stairBuilder(CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.HOLY_MARBLE_BRICKS.get())).group("holy_marble_bricks")
+                .unlockedBy("has_holy_marble_bricks", has(CCBlocks.HOLY_MARBLE_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_WALL.get(), CCBlocks.HOLY_MARBLE_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get(), CCBlocks.CHISELED_HOLY_MARBLE);
+        stairBuilder(CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_HOLY_MARBLE.get())).group("chiseled_holy_marble")
+                .unlockedBy("has_chiseled_holy_marble", has(CCBlocks.CHISELED_HOLY_MARBLE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_WALL.get(), CCBlocks.CHISELED_HOLY_MARBLE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get(), CCBlocks.CRACKED_HOLY_MARBLE);
+        stairBuilder(CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.CRACKED_HOLY_MARBLE.get())).group("cracked_holy_marble")
+                .unlockedBy("has_cracked_holy_marble", has(CCBlocks.CRACKED_HOLY_MARBLE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_WALL.get(), CCBlocks.CRACKED_HOLY_MARBLE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get(), CCBlocks.POLISHED_HOLY_MARBLE);
+        stairBuilder(CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_HOLY_MARBLE.get())).group("polished_holy_marble")
+                .unlockedBy("has_polished_holy_marble", has(CCBlocks.POLISHED_HOLY_MARBLE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_WALL.get(), CCBlocks.POLISHED_HOLY_MARBLE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_SLAB.get(), CCBlocks.GOLDSTONE);
+        stairBuilder(CCBlocks.GOLDSTONE_STAIRS.get(), Ingredient.of(CCBlocks.GOLDSTONE.get())).group("goldstone")
+                .unlockedBy("has_goldstone", has(CCBlocks.GOLDSTONE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_WALL.get(), CCBlocks.GOLDSTONE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_SLAB.get(), CCBlocks.PUMICE);
+        stairBuilder(CCBlocks.PUMICE_STAIRS.get(), Ingredient.of(CCBlocks.PUMICE.get())).group("pumice")
+                .unlockedBy("has_pumice", has(CCBlocks.PUMICE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_WALL.get(), CCBlocks.PUMICE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_SLAB.get(), CCBlocks.PUMICE_BRICKS);
+        stairBuilder(CCBlocks.PUMICE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.PUMICE_BRICKS.get())).group("pumice_bricks")
+                .unlockedBy("has_pumice_bricks", has(CCBlocks.PUMICE_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_WALL.get(), CCBlocks.PUMICE_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CHISELED_PUMICE);
+        stairBuilder(CCBlocks.CHISELED_PUMICE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_PUMICE.get())).group("chiseled_pumice")
+                .unlockedBy("has_chiseled_pumice", has(CCBlocks.CHISELED_PUMICE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_WALL.get(), CCBlocks.CHISELED_PUMICE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_SLAB.get(), CCBlocks.CRACKED_PUMICE);
+        stairBuilder(CCBlocks.CRACKED_PUMICE_STAIRS.get(), Ingredient.of(CCBlocks.CRACKED_PUMICE.get())).group("cracked_pumice")
+                .unlockedBy("has_cracked_pumice", has(CCBlocks.CRACKED_PUMICE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_WALL.get(), CCBlocks.CRACKED_PUMICE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_SLAB.get(), CCBlocks.POLISHED_PUMICE);
+        stairBuilder(CCBlocks.POLISHED_PUMICE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_PUMICE.get())).group("polished_pumice")
+                .unlockedBy("has_polished_pumice", has(CCBlocks.POLISHED_PUMICE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_WALL.get(), CCBlocks.POLISHED_PUMICE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_SLAB.get(), CCBlocks.PIRITE_BLOCK);
+        stairBuilder(CCBlocks.PIRITE_STAIRS.get(), Ingredient.of(CCBlocks.PIRITE_BLOCK.get())).group("pirite_block")
+                .unlockedBy("has_pirite_block", has(CCBlocks.PIRITE_BLOCK.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_WALL.get(), CCBlocks.PIRITE_BLOCK.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.HOLY_MARBLE.get())
+                .unlockedBy("has_holy_marble", has(CCBlocks.HOLY_MARBLE.get()))
+                .save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.PUMICE.get())
+                .unlockedBy("has_pumice", has(CCBlocks.PUMICE.get()))
+                .save(pRecipeOutput);
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_STAIRS.get(), CCBlocks.CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_SLAB.get(), CCBlocks.CRUSTONE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_WALL.get(), CCBlocks.CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS.get(), CCBlocks.CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE.get(), CCBlocks.CRUSTONE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS_STAIRS.get(), CCBlocks.CRUSTONE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS_SLAB.get(), CCBlocks.CRUSTONE_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS_WALL.get(), CCBlocks.CRUSTONE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS.get(), CCBlocks.CRUSTONE_BRICKS.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE_STAIRS.get(), CCBlocks.POLISHED_CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE_SLAB.get(), CCBlocks.POLISHED_CRUSTONE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE_WALL.get(), CCBlocks.POLISHED_CRUSTONE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE.get(), CCBlocks.POLISHED_CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE_STAIRS.get(), CCBlocks.CHISELED_CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE_SLAB.get(), CCBlocks.CHISELED_CRUSTONE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE_WALL.get(), CCBlocks.CHISELED_CRUSTONE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_STAIRS.get(), CCBlocks.HOLY_MARBLE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_SLAB.get(), CCBlocks.HOLY_MARBLE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_WALL.get(), CCBlocks.HOLY_MARBLE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS.get(), CCBlocks.HOLY_MARBLE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE.get(), CCBlocks.HOLY_MARBLE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE.get(), CCBlocks.HOLY_MARBLE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get(), CCBlocks.HOLY_MARBLE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get(), CCBlocks.HOLY_MARBLE_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_WALL.get(), CCBlocks.HOLY_MARBLE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE.get(), CCBlocks.HOLY_MARBLE_BRICKS.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get(), CCBlocks.CRACKED_HOLY_MARBLE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get(), CCBlocks.CRACKED_HOLY_MARBLE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_WALL.get(), CCBlocks.CRACKED_HOLY_MARBLE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get(), CCBlocks.POLISHED_HOLY_MARBLE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get(), CCBlocks.POLISHED_HOLY_MARBLE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_WALL.get(), CCBlocks.POLISHED_HOLY_MARBLE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get(), CCBlocks.CHISELED_HOLY_MARBLE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get(), CCBlocks.CHISELED_HOLY_MARBLE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_WALL.get(), CCBlocks.CHISELED_HOLY_MARBLE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_PILLAR.get(), CCBlocks.HOLY_MARBLE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_STAIRS.get(), CCBlocks.GOLDSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_SLAB.get(), CCBlocks.GOLDSTONE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_WALL.get(), CCBlocks.GOLDSTONE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_STAIRS.get(), CCBlocks.PUMICE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_SLAB.get(), CCBlocks.PUMICE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_WALL.get(), CCBlocks.PUMICE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS.get(), CCBlocks.PUMICE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE.get(), CCBlocks.PUMICE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE.get(), CCBlocks.PUMICE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_STAIRS.get(), CCBlocks.PUMICE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_SLAB.get(), CCBlocks.PUMICE_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_WALL.get(), CCBlocks.PUMICE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE.get(), CCBlocks.PUMICE_BRICKS.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_STAIRS.get(), CCBlocks.CRACKED_PUMICE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_SLAB.get(), CCBlocks.CRACKED_PUMICE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_WALL.get(), CCBlocks.CRACKED_PUMICE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_STAIRS.get(), CCBlocks.POLISHED_PUMICE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_SLAB.get(), CCBlocks.POLISHED_PUMICE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_WALL.get(), CCBlocks.POLISHED_PUMICE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_STAIRS.get(), CCBlocks.CHISELED_PUMICE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CHISELED_PUMICE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_WALL.get(), CCBlocks.CHISELED_PUMICE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_STAIRS.get(), CCBlocks.PIRITE_BLOCK.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_SLAB.get(), CCBlocks.PIRITE_BLOCK.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PIRITE_WALL.get(), CCBlocks.PIRITE_BLOCK.get());
 
     }
 }

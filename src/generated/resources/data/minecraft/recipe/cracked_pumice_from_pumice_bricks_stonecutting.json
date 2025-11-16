@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "crystal_chronicles:pumice_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:cracked_pumice"
+  }
+}
