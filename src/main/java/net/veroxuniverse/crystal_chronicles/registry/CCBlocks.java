@@ -154,7 +154,7 @@ public class CCBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)));
 
     public static final DeferredBlock<Block> CLOUD_LAYER = registerBlock("cloud_layer",
-            () -> new CloudBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noOcclusion().noLootTable()));
+            () -> new CloudBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noOcclusion().noLootTable().noCollission()));
 
     public static final DeferredBlock<Block> DENSE_CLOUDS = registerBlock("dense_cloud",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)));

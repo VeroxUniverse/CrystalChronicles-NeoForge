@@ -38,6 +38,8 @@ public class CloudBlock extends Block implements BucketPickup {
 
     public static final MapCodec<CloudBlock> CODEC = simpleCodec(CloudBlock::new);
 
+    private static final VoxelShape CLOUD_SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D);
+
     private static final VoxelShape FALLING_COLLISION_SHAPE = Shapes.box(0.0, 0.0, 0.0, 1.0, 0.8999999761581421, 1.0);
 
     public MapCodec<CloudBlock> codec() {
@@ -52,29 +54,45 @@ public class CloudBlock extends Block implements BucketPickup {
         return adjacentState.is(this) ? true : super.skipRendering(state, adjacentState, direction);
     }
 
+    @Override
     protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
+
         if (!(entity instanceof LivingEntity) || entity.getInBlockState().is(this)) {
-            entity.makeStuckInBlock(state, new Vec3(0.8999999761581421, 1.5, 0.8999999761581421));
+
+            if (entity.fallDistance > 2.5F) {
+                entity.makeStuckInBlock(state, new Vec3(0.90D, 0.90D, 0.90D));
+            }
+
             if (level.isClientSide) {
-                RandomSource randomsource = level.getRandom();
-                boolean flag = entity.xOld != entity.getX() || entity.zOld != entity.getZ();
-                if (flag && randomsource.nextBoolean()) {
-                    level.addParticle(ParticleTypes.CLOUD, entity.getX(), (double)(pos.getY() + 1), entity.getZ(), (double)(Mth.randomBetween(randomsource, -1.0F, 1.0F) * 0.083333336F), 0.05000000074505806, (double)(Mth.randomBetween(randomsource, -1.0F, 1.0F) * 0.083333336F));
+                RandomSource random = level.getRandom();
+                boolean moved = entity.xOld != entity.getX() || entity.zOld != entity.getZ();
+
+                if (moved && random.nextBoolean()) {
+                    level.addParticle(
+                            ParticleTypes.CLOUD,
+                            entity.getX(),
+                            pos.getY() + 1,
+                            entity.getZ(),
+                            Mth.randomBetween(random, -0.08F, 0.08F),
+                            0.05F,
+                            Mth.randomBetween(random, -0.08F, 0.08F)
+                    );
+
                     if (entity instanceof Player player) {
-                        level.playSound(player, pos, SoundEvents.POWDER_SNOW_FALL, SoundSource.BLOCKS, 0.8F,0.6F);
+                        level.playSound(player, pos, SoundEvents.POWDER_SNOW_FALL, SoundSource.BLOCKS, 0.02F, 0.6F);
                     }
                 }
             }
         }
 
         if (!level.isClientSide) {
-            if (entity.isOnFire() && (level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) || entity instanceof Player) && entity.mayInteract(level, pos)) {
+            if (entity.isOnFire() && (level.getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING) || entity instanceof Player) &&
+                    entity.mayInteract(level, pos)) {
                 level.destroyBlock(pos, false);
             }
 
             entity.setSharedFlagOnFire(false);
         }
-
     }
 
     protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
@@ -93,6 +111,11 @@ public class CloudBlock extends Block implements BucketPickup {
         }
 
         return Shapes.empty();
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return CLOUD_SHAPE;
     }
 
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
