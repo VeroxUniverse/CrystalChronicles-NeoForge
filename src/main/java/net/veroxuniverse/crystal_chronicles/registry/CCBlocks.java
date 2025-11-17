@@ -181,16 +181,39 @@ public class CCBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_GOLD_BLOCK)));
 
     public static final DeferredBlock<Block> HOLY_LIGHT_BLOCK = registerBlock("holy_light_block",
-            () -> new HolyLightBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE).noOcclusion()));
+            () -> new HolyLightBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE).noOcclusion())
+    );
 
     public static final DeferredBlock<Block> HOLY_LIGHT_1 = registerBlock("holy_light_1",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noLootTable().noOcclusion()));
+            () -> new HolyLightSegmentBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)
+                            .noLootTable()
+                            .noOcclusion()
+                            .noCollission()
+                            .lightLevel(state -> 2)
+                            .strength(-1.0F, 3600000.0F)
+            ));
 
     public static final DeferredBlock<Block> HOLY_LIGHT_2 = registerBlock("holy_light_2",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noLootTable().noOcclusion()));
+            () -> new HolyLightSegmentBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)
+                            .noLootTable()
+                            .noOcclusion()
+                            .noCollission()
+                            .lightLevel(state -> 2)
+                            .strength(-1.0F, 3600000.0F)
+            ));
 
     public static final DeferredBlock<Block> HOLY_LIGHT_3 = registerBlock("holy_light_3",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noLootTable().noOcclusion()));
+            () -> new HolyLightSegmentBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)
+                            .noLootTable()
+                            .noOcclusion()
+                            .noCollission()
+                            .lightLevel(state -> 2)
+                            .strength(-1.0F, 3600000.0F)
+            ));
 
     public static final DeferredBlock<Block> HOLY_BEACON = registerBlock("holy_beacon",
             () -> new HolyBeaconBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE).noOcclusion()));

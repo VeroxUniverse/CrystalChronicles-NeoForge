@@ -17,12 +17,10 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.veroxuniverse.crystal_chronicles.block.entity.render.HolyLightRenderer;
 import net.veroxuniverse.crystal_chronicles.effect.CCEffects;
 import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
@@ -45,7 +43,6 @@ import net.veroxuniverse.crystal_chronicles.item.weapon.spear.SpearItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.staff.StaffItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.twinblade.TwinbladeItemRenderer;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
-import net.veroxuniverse.crystal_chronicles.registry.CCBlockEntities;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 import net.veroxuniverse.crystal_chronicles.registry.CCTabs;
@@ -70,7 +67,6 @@ public class CrystalChronicles {
         CCFluids.register(modEventBus);
         CCFluidTypes.register(modEventBus);
         CCFeatures.register(modEventBus);
-        CCBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -93,6 +89,13 @@ public class CrystalChronicles {
         public static void onClientSetup(FMLClientSetupEvent event) {
             LOGGER.info("HELLO FROM CLIENT SETUP");
             CCItemProperties.addCustomItemProperties();
+
+            ItemBlockRenderTypes.setRenderLayer(CCBlocks.HOLY_LIGHT_1.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(CCBlocks.HOLY_LIGHT_2.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(CCBlocks.HOLY_LIGHT_3.get(), RenderType.translucent());
+
+            ItemBlockRenderTypes.setRenderLayer(CCBlocks.CLOUD_LAYER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(CCBlocks.HOLY_BEACON.get(), RenderType.translucent());
 
             ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_BLOOD.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_BLOOD.get(), RenderType.translucent());
@@ -153,14 +156,6 @@ public class CrystalChronicles {
                     CCItems.TOXIC_CHESTPLATE.get(),
                     CCItems.TOXIC_LEGGINGS.get(),
                     CCItems.TOXIC_BOOTS.get());
-        }
-
-        @SubscribeEvent
-        public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-            event.registerBlockEntityRenderer(
-                    CCBlockEntities.HOLY_LIGHT_BE.get(),
-                    HolyLightRenderer::new
-            );
         }
 
         @SubscribeEvent

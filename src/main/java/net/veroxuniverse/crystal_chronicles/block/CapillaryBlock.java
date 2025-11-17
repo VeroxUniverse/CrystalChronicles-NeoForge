@@ -3,11 +3,13 @@ package net.veroxuniverse.crystal_chronicles.block;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,58 +30,91 @@ public class CapillaryBlock extends PipeBlock {
         this.registerDefaultState(
                 this.stateDefinition
                         .any()
-                        .setValue(NORTH, Boolean.valueOf(false))
-                        .setValue(EAST, Boolean.valueOf(false))
-                        .setValue(SOUTH, Boolean.valueOf(false))
-                        .setValue(WEST, Boolean.valueOf(false))
-                        .setValue(UP, Boolean.valueOf(false))
-                        .setValue(DOWN, Boolean.valueOf(false))
+                        .setValue(NORTH, false)
+                        .setValue(EAST, false)
+                        .setValue(SOUTH, false)
+                        .setValue(WEST, false)
+                        .setValue(UP, false)
+                        .setValue(DOWN, false)
         );
     }
 
-    @Override
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        return getStateWithConnections(pContext.getLevel(), pContext.getClickedPos(), this.defaultBlockState());
+    private static boolean connectsTo(BlockState state) {
+        return state.is(CCBlocks.ARTREE_BASE.get())
+                || state.is(CCBlocks.ARTREE_VEIN.get())
+                || state.is(CCBlocks.ARTREE_CAPILLARY.get());
     }
 
-    public static BlockState getStateWithConnections(BlockGetter getter, BlockPos pos, BlockState state) {
-        BlockState blockstate = getter.getBlockState(pos.below());
-        BlockState blockstate1 = getter.getBlockState(pos.above());
-        BlockState blockstate2 = getter.getBlockState(pos.north());
-        BlockState blockstate3 = getter.getBlockState(pos.east());
-        BlockState blockstate4 = getter.getBlockState(pos.south());
-        BlockState blockstate5 = getter.getBlockState(pos.west());
-        Block block = state.getBlock();
-        net.neoforged.neoforge.common.util.TriState soilDecision = blockstate.canSustainPlant(getter, pos.below(), Direction.UP, state);
-        return state
-                .trySetValue(DOWN, Boolean.valueOf(blockstate.is(block) || blockstate.is(CCBlocks.ARTREE_VEIN) || blockstate.is(CCBlocks.ARTREE_BASE) || soilDecision.isTrue()))
-                .trySetValue(UP, Boolean.valueOf(blockstate1.is(block) || blockstate1.is(CCBlocks.ARTREE_VEIN)))
-                .trySetValue(NORTH, Boolean.valueOf(blockstate2.is(block) || blockstate2.is(CCBlocks.ARTREE_VEIN)))
-                .trySetValue(EAST, Boolean.valueOf(blockstate3.is(block) || blockstate3.is(CCBlocks.ARTREE_VEIN)))
-                .trySetValue(SOUTH, Boolean.valueOf(blockstate4.is(block) || blockstate4.is(CCBlocks.ARTREE_VEIN)))
-                .trySetValue(WEST, Boolean.valueOf(blockstate5.is(block) || blockstate5.is(CCBlocks.ARTREE_VEIN)));
+    private static boolean shouldHaveRandomUp(BlockPos pos) {
+        long hash = pos.asLong();
+        hash ^= (hash >> 33);
+        hash *= 0xff51afd7ed558ccdL;
+        hash ^= (hash >> 33);
+        return (hash & 15L) == 0L;
     }
 
     @Override
-    protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        if (!pState.canSurvive(pLevel, pCurrentPos)) {
-            pLevel.scheduleTick(pCurrentPos, this, 1);
-            return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
-        } else {
-            boolean flag = pFacingState.is(this) || (pFacingState.is(CCBlocks.ARTREE_BASE) || pFacingState.is(CCBlocks.ARTREE_VEIN));
-            if (pFacing == Direction.DOWN) {
-                net.neoforged.neoforge.common.util.TriState soilDecision = pFacingState.canSustainPlant(pLevel, pFacingPos.relative(pFacing), pFacing.getOpposite(), pState);
-                if (!soilDecision.isDefault()) {
-                    flag = soilDecision.isTrue();
-                }
-            }
-            return pState.setValue(PROPERTY_BY_DIRECTION.get(pFacing), Boolean.valueOf(flag));
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return getStateWithConnections(ctx.getLevel(), ctx.getClickedPos(), this.defaultBlockState());
+    }
+
+    public static BlockState getStateWithConnections(BlockGetter level, BlockPos pos, BlockState baseState) {
+        BlockState below = level.getBlockState(pos.below());
+        BlockState above = level.getBlockState(pos.above());
+        BlockState north = level.getBlockState(pos.north());
+        BlockState east  = level.getBlockState(pos.east());
+        BlockState south = level.getBlockState(pos.south());
+        BlockState west  = level.getBlockState(pos.west());
+
+        boolean connectDown  = connectsTo(below);
+        boolean connectNorth = connectsTo(north);
+        boolean connectEast  = connectsTo(east);
+        boolean connectSouth = connectsTo(south);
+        boolean connectWest  = connectsTo(west);
+
+        boolean connectUpToTree = connectsTo(above);
+        boolean randomUpStub = above.isAir() && !connectUpToTree && shouldHaveRandomUp(pos);
+        boolean connectUp = connectUpToTree || randomUpStub;
+
+        return baseState
+                .setValue(DOWN,  connectDown)
+                .setValue(UP,    connectUp)
+                .setValue(NORTH, connectNorth)
+                .setValue(EAST,  connectEast)
+                .setValue(SOUTH, connectSouth)
+                .setValue(WEST,  connectWest);
+    }
+
+    @Override
+    protected BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+
+        if (!state.canSurvive(level, currentPos)) {
+            level.scheduleTick(currentPos, this, 1);
+            return super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+        }
+
+        return getStateWithConnections(level, currentPos, state);
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(NORTH, EAST, SOUTH, WEST, UP, DOWN);
+    }
+
+    @Override
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
+        super.onPlace(state, level, pos, oldState, isMoving);
+
+        if (!level.isClientSide) {
+            level.scheduleTick(pos, this, 1);
         }
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(NORTH, EAST, SOUTH, WEST, UP, DOWN);
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        BlockState fixed = getStateWithConnections(level, pos, state);
+        if (fixed != state) {
+            level.setBlock(pos, fixed, Block.UPDATE_CLIENTS);
+        }
     }
-
 }
