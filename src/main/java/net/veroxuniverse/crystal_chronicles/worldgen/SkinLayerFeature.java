@@ -25,7 +25,6 @@ public class SkinLayerFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos origin = ctx.origin();
 
         int radius = 2 + random.nextInt(2);
-
         boolean placedSomething = false;
 
         for (int dx = -radius; dx <= radius; dx++) {
@@ -34,19 +33,22 @@ public class SkinLayerFeature extends Feature<NoneFeatureConfiguration> {
                 BlockPos pos = origin.offset(dx, 0, dz);
                 BlockPos below = pos.below();
 
-                if (!level.isEmptyBlock(pos))
+                if (!level.isEmptyBlock(pos)) {
                     continue;
+                }
 
                 BlockState belowState = level.getBlockState(below);
 
-                if (!(belowState.getBlock() instanceof FleshBlock))
+                if (!(belowState.getBlock() instanceof FleshBlock)) {
                     continue;
-
+                }
 
                 BlockState skinState = CCBlocks.SKIN_LAYER.get().defaultBlockState();
                 level.setBlock(pos, skinState, Block.UPDATE_ALL);
 
-                if (belowState.hasProperty(FleshBlock.HAS_SKIN_ABOVE)) {
+                if (belowState.hasProperty(FleshBlock.HAS_SKIN_ABOVE)
+                        && !belowState.getValue(FleshBlock.HAS_SKIN_ABOVE)) {
+
                     level.setBlock(
                             below,
                             belowState.setValue(FleshBlock.HAS_SKIN_ABOVE, true),
@@ -60,4 +62,5 @@ public class SkinLayerFeature extends Feature<NoneFeatureConfiguration> {
 
         return placedSomething;
     }
+
 }
