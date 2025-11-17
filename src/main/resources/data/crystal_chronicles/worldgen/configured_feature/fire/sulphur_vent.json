@@ -1,0 +1,43 @@
+{
+  "type": "block_column",
+  "config": {
+    "direction": "up",
+    "prioritize_tip": true,
+    "allowed_placement": {
+      "type": "minecraft:replaceable"
+    },
+    "layers": [
+      {
+        "height": {
+          "type": "minecraft:biased_to_bottom",
+          "max_inclusive": 3,
+          "min_inclusive": 1
+        },
+        "provider": {
+          "type": "simple_state_provider",
+          "state": {
+            "Name": "crystal_chronicles:sulphuric_soil"
+          }
+        }
+      },
+      {
+        "height": 1,
+        "provider": {
+          "type": "simple_state_provider",
+          "state": {
+            "Name": "crystal_chronicles:red_sulphur_water_vent_base"
+          }
+        }
+      },
+      {
+        "height": 1,
+        "provider": {
+          "type": "simple_state_provider",
+          "state": {
+            "Name": "crystal_chronicles:red_sulphur_water_vent_top"
+          }
+        }
+      }
+    ]
+  }
+}

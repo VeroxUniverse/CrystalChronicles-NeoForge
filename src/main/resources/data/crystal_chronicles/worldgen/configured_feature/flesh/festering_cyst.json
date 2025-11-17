@@ -21,7 +21,7 @@
           "Name": "crystal_chronicles:fat_tissue_block"
         }
       },
-      "inner_placements": [
+      "inner_placements": [ 
         {
           "Name": "minecraft:water"
         }

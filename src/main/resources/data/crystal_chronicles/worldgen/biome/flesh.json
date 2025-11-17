@@ -13,11 +13,7 @@
 	"spawn_costs": {},
 	"spawners": {},
 	"carvers": {
-		"air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
+		"air": []
 	},
 	"features": [
 		[],
@@ -28,25 +24,23 @@
 			"crystal_chronicles:flesh/cave_pillar",
 			"crystal_chronicles:flesh/cysts"
 		],
-		[],
 		[
-
+			"crystal_chronicles:flesh/skin_patch"
 		],
+		[],
 		[],
 		[
 			"crystal_chronicles:flesh/ore_fat",
 			"crystal_chronicles:flesh/ore_muscle"
 		],
 		[],
-		[
-
-		],
+		[],
 		[
 			"crystal_chronicles:flesh/blood_grass",
 			"crystal_chronicles:flesh/blood_tall_grass",
+			"crystal_chronicles:flesh/bronchal_tree",
 			"crystal_chronicles:flesh/dangling_eyes",
-			"crystal_chronicles:flesh/neuron_cluster",
-			"crystal_chronicles:bronchus_cave"
+			"crystal_chronicles:flesh/neuron_cluster"
 		],
 		[]
 	]
