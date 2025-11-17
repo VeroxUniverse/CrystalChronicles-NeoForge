@@ -1,5 +1,7 @@
 package net.veroxuniverse.crystal_chronicles.datagen;
 
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -10,10 +12,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
@@ -31,7 +39,8 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
 
         // BLOOD //
 
-        this.dropSelf(CCBlocks.BLOOD_BASES.get());
+        this.add(CCBlocks.BLOOD_BASES.get(),
+                block -> createShearsOnlyDrop(CCBlocks.BLOOD_BASES.get()));
         this.dropSelf(CCBlocks.FLESH_BLOCK.get());
         this.dropSelf(CCBlocks.MUSCLE_BLOCK.get());
         this.dropSelf(CCBlocks.ARTREE_BASE.get());
@@ -85,7 +94,6 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.TENDON_BLOCK.get());
         this.dropSelf(CCBlocks.CELVER_LIGHT.get());
         this.dropSelf(CCBlocks.SKIN_LAYER.get());
-        this.dropSelf(CCBlocks.BLOOD_BASES.get());
         this.dropSelf(CCBlocks.HANGING_VEINS.get());
         this.add(CCBlocks.FAT_TISSUE_BLOCK.get(),
                 block -> createMultipleOreDrops(CCBlocks.FAT_TISSUE_BLOCK.get(), CCItems.FAT_TISSUE_BALL.get(), 2,4));
@@ -108,7 +116,9 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createDoorTable(CCBlocks.BRONCHUS_DOOR.get()));
 
         this.add(CCBlocks.TALL_BLOOD_BASES.get(),
-                block -> createDoorTable(CCBlocks.TALL_BLOOD_BASES.get()));
+                block -> createTallShearsOnlyDrop(CCBlocks.TALL_BLOOD_BASES.get()));
+        //this.add(CCBlocks.TALL_BLOOD_BASES.get(),
+        //        block -> createDoorTable(CCBlocks.TALL_BLOOD_BASES.get()));
 
         // HOLY //
 
@@ -216,6 +226,23 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createDoorTable(CCBlocks.TALL_SULPHUR_CLUSTER.get()));
 
 
+    }
+
+    protected LootTable.Builder createTallShearsOnlyDrop(Block block) {
+        return LootTable.lootTable()
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                        .setProperties(
+                                                StatePropertiesPredicate.Builder.properties()
+                                                        .hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER)
+                                        ))
+                                .when(MatchTool.toolMatches(
+                                        ItemPredicate.Builder.item().of(Items.SHEARS)
+                                ))
+                                .add(LootItem.lootTableItem(block))
+                );
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

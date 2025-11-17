@@ -106,16 +106,11 @@ public class VeinBlock extends PipeBlock {
         super.onPlace(state, level, pos, oldState, isMoving);
 
         if (!level.isClientSide) {
-            level.scheduleTick(pos, this, 1);
+            BlockState fixed = getStateWithConnections(level, pos, state);
+            if (fixed != state) {
+                level.setBlock(pos, fixed, Block.UPDATE_CLIENTS);
+            }
         }
     }
 
-    @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        BlockState fixed = getStateWithConnections(level, pos, state);
-        if (fixed != state) {
-            level.setBlock(pos, fixed, Block.UPDATE_CLIENTS);
-        }
-    }
 }
-

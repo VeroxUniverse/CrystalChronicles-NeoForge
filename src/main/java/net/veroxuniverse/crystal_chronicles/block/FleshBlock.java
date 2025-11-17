@@ -1,8 +1,6 @@
 package net.veroxuniverse.crystal_chronicles.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,7 +14,10 @@ public class FleshBlock extends Block {
 
     public FleshBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(HAS_SKIN_ABOVE, false));
+        this.registerDefaultState(
+                this.stateDefinition.any()
+                        .setValue(HAS_SKIN_ABOVE, false)
+        );
     }
 
     @Override
@@ -24,13 +25,7 @@ public class FleshBlock extends Block {
         super.onPlace(state, level, pos, oldState, isMoving);
         if (!level.isClientSide) {
             updateSkinState(level, pos, state);
-            level.scheduleTick(pos, this, 1);
         }
-    }
-
-    @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        updateSkinState(level, pos, state);
     }
 
     @Override
@@ -56,5 +51,4 @@ public class FleshBlock extends Block {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(HAS_SKIN_ABOVE);
     }
-
 }

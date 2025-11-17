@@ -1,8 +1,6 @@
 package net.veroxuniverse.crystal_chronicles.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -57,18 +55,11 @@ public class SkinLayerBlock extends Block {
 
         if (!level.isClientSide) {
             updateBelowSkinState(level, pos, true);
-            level.scheduleTick(pos, this, 1);
         }
     }
 
     @Override
-    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        updateBelowSkinState(level, pos, true);
-    }
-
-    @Override
-    public void neighborChanged(BlockState state, Level level, BlockPos pos,
-                                Block block, BlockPos fromPos, boolean isMoving) {
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
         super.neighborChanged(state, level, pos, block, fromPos, isMoving);
 
         if (!level.isClientSide) {
@@ -86,7 +77,6 @@ public class SkinLayerBlock extends Block {
 
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-
         if (!level.isClientSide && !state.is(newState.getBlock())) {
             updateBelowSkinState(level, pos, false);
         }
@@ -98,7 +88,8 @@ public class SkinLayerBlock extends Block {
         BlockPos belowPos = pos.below();
         BlockState belowState = level.getBlockState(belowPos);
 
-        if (belowState.getBlock() instanceof FleshBlock flesh && belowState.hasProperty(FleshBlock.HAS_SKIN_ABOVE)) {
+        if (belowState.getBlock() instanceof FleshBlock
+                && belowState.hasProperty(FleshBlock.HAS_SKIN_ABOVE)) {
             if (belowState.getValue(FleshBlock.HAS_SKIN_ABOVE) != value) {
                 level.setBlock(
                         belowPos,

@@ -33,6 +33,12 @@ public class CCFeatures {
     public static final DeferredHolder<Feature<?>, ArtreeFeature> ARTREE_FEATURE =
             FEATURES.register("artree_feature", () -> new ArtreeFeature(NoneFeatureConfiguration.CODEC));
 
+    public static final DeferredHolder<Feature<?>, HolyLightFeature> HOLY_LIGHT_FEATURE =
+            FEATURES.register("holy_light_feature", () -> new HolyLightFeature(NoneFeatureConfiguration.CODEC));
+
+    public static final DeferredHolder<Feature<?>, SkinLayerFeature> SKIN_LAYER_FEATURE =
+            FEATURES.register("skin_layer_feature", () -> new SkinLayerFeature(NoneFeatureConfiguration.CODEC));
+
     public static void register(IEventBus modEventBus) {
         FEATURES.register(modEventBus);
     }

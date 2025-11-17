@@ -138,7 +138,7 @@ public class CCBlocks {
             () -> new CCSaplingBlock(CCTreeGrower.BRONCHUS, BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_FUNGUS).randomTicks(), CCBlocks.FLESH_BLOCK.get()));
 
     public static final DeferredBlock<Block> SKIN_LAYER = registerBlock("skin_layer",
-            () -> new SkinLayerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
+            () -> new SkinLayerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).randomTicks()));
     public static final DeferredBlock<Block> CELVER_LIGHT = registerBlock("clever_light",
             () -> new CleverLightBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(CleverLightBlock.LIT) ? 15 : 0).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion()));
 
@@ -146,7 +146,7 @@ public class CCBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
     public static final DeferredBlock<Block> VEINS = registerBlock("veins",
-            () -> new FleshVeinsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE)));
+            () -> new FleshVeinsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).randomTicks()));
 
     // HOLY //
 
@@ -182,7 +182,7 @@ public class CCBlocks {
 
     public static final DeferredBlock<Block> HOLY_LIGHT_BLOCK = registerBlock("holy_light_block",
             () -> new HolyLightBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE).noOcclusion())
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.GLOWSTONE).noOcclusion().randomTicks())
     );
 
     public static final DeferredBlock<Block> HOLY_LIGHT_1 = registerBlock("holy_light_1",
@@ -192,7 +192,7 @@ public class CCBlocks {
                             .noOcclusion()
                             .noCollission()
                             .lightLevel(state -> 2)
-                            .strength(-1.0F, 3600000.0F)
+                            .strength(-1.0F, 3600000.0F).randomTicks()
             ));
 
     public static final DeferredBlock<Block> HOLY_LIGHT_2 = registerBlock("holy_light_2",
@@ -202,7 +202,7 @@ public class CCBlocks {
                             .noOcclusion()
                             .noCollission()
                             .lightLevel(state -> 2)
-                            .strength(-1.0F, 3600000.0F)
+                            .strength(-1.0F, 3600000.0F).randomTicks()
             ));
 
     public static final DeferredBlock<Block> HOLY_LIGHT_3 = registerBlock("holy_light_3",
@@ -212,7 +212,7 @@ public class CCBlocks {
                             .noOcclusion()
                             .noCollission()
                             .lightLevel(state -> 2)
-                            .strength(-1.0F, 3600000.0F)
+                            .strength(-1.0F, 3600000.0F).randomTicks()
             ));
 
     public static final DeferredBlock<Block> HOLY_BEACON = registerBlock("holy_beacon",

@@ -13,17 +13,18 @@ import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 
 public class HolyLightBlock extends Block {
 
+    private static final int TICK_RATE = 20;
+
     public HolyLightBlock(Properties props) {
         super(props);
     }
 
     @Override
-    public void onPlace(BlockState state, Level level, BlockPos pos,
-                        BlockState oldState, boolean isMoving) {
+    public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         super.onPlace(state, level, pos, oldState, isMoving);
         if (!level.isClientSide) {
             updateSegments(level, pos, state);
-            level.scheduleTick(pos, this, 1);
+            level.scheduleTick(pos, this, TICK_RATE);
         }
     }
 
@@ -40,11 +41,11 @@ public class HolyLightBlock extends Block {
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         updateSegments(level, pos, state);
+        level.scheduleTick(pos, this, TICK_RATE);
     }
 
     @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos,
-                         BlockState newState, boolean isMoving) {
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!level.isClientSide && !state.is(newState.getBlock())) {
             clearSegments(level, pos);
         }

@@ -1,8 +1,8 @@
 {
-  "feature": "crystal_chronicles:flesh/bronchal_tree",
+  "feature": "crystal_chronicles:bronchus_tree",
   "placement": [
     {
-      "type": "count_on_every_layer",
+      "type": "minecraft:count_on_every_layer",
       "count": 5
     },
     {
@@ -14,7 +14,7 @@
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
-        "type": "all_of",
+        "type": "minecraft:all_of",
         "predicates": [
           {
             "type": "minecraft:would_survive",
@@ -26,14 +26,22 @@
             }
           },
           {
-            "type": "matching_blocks",
+            "type": "minecraft:matching_blocks",
             "blocks": "minecraft:air",
-            "offset": [0,5,0]
+            "offset": [
+              0,
+              5,
+              0
+            ]
           },
           {
-            "type": "matching_blocks",
+            "type": "minecraft:matching_blocks",
             "blocks": "minecraft:air",
-            "offset": [0,10,0]
+            "offset": [
+              0,
+              10,
+              0
+            ]
           }
         ]
       }
