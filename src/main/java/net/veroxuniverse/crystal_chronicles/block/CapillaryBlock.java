@@ -45,13 +45,7 @@ public class CapillaryBlock extends PipeBlock {
                 || state.is(CCBlocks.ARTREE_CAPILLARY.get());
     }
 
-    private static boolean shouldHaveRandomUp(BlockPos pos) {
-        long hash = pos.asLong();
-        hash ^= (hash >> 33);
-        hash *= 0xff51afd7ed558ccdL;
-        hash ^= (hash >> 33);
-        return (hash & 15L) == 0L;
-    }
+
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
@@ -73,8 +67,7 @@ public class CapillaryBlock extends PipeBlock {
         boolean connectWest  = connectsTo(west);
 
         boolean connectUpToTree = connectsTo(above);
-        boolean randomUpStub = above.isAir() && !connectUpToTree && shouldHaveRandomUp(pos);
-        boolean connectUp = connectUpToTree || randomUpStub;
+        boolean connectUp = connectUpToTree;
 
         return baseState
                 .setValue(DOWN,  connectDown)

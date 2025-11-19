@@ -24,11 +24,36 @@ public class SkinLayerFeature extends Feature<NoneFeatureConfiguration> {
         RandomSource random = ctx.random();
         BlockPos origin = ctx.origin();
 
-        int radius = 2 + random.nextInt(2);
+        int baseRadius = 2 + random.nextInt(2); // 2–3
         boolean placedSomething = false;
 
-        for (int dx = -radius; dx <= radius; dx++) {
-            for (int dz = -radius; dz <= radius; dz++) {
+        int maxOffset = baseRadius + 1;
+
+        for (int dx = -maxOffset; dx <= maxOffset; dx++) {
+            for (int dz = -maxOffset; dz <= maxOffset; dz++) {
+
+                double distSq = dx * dx + dz * dz;
+                double dist = Math.sqrt(distSq);
+
+                if (dist > baseRadius + 1.5) {
+                    continue;
+                }
+
+                boolean tryPlace;
+
+                if (dist <= baseRadius - 0.5) {
+                    tryPlace = true;
+                }
+                else if (dist <= baseRadius + 0.5) {
+                    tryPlace = random.nextFloat() < 0.7f;
+                }
+                else {
+                    tryPlace = random.nextFloat() < 0.25f;
+                }
+
+                if (!tryPlace) {
+                    continue;
+                }
 
                 BlockPos pos = origin.offset(dx, 0, dz);
                 BlockPos below = pos.below();
@@ -38,7 +63,6 @@ public class SkinLayerFeature extends Feature<NoneFeatureConfiguration> {
                 }
 
                 BlockState belowState = level.getBlockState(below);
-
                 if (!(belowState.getBlock() instanceof FleshBlock)) {
                     continue;
                 }
@@ -48,7 +72,6 @@ public class SkinLayerFeature extends Feature<NoneFeatureConfiguration> {
 
                 if (belowState.hasProperty(FleshBlock.HAS_SKIN_ABOVE)
                         && !belowState.getValue(FleshBlock.HAS_SKIN_ABOVE)) {
-
                     level.setBlock(
                             below,
                             belowState.setValue(FleshBlock.HAS_SKIN_ABOVE, true),
@@ -62,5 +85,4 @@ public class SkinLayerFeature extends Feature<NoneFeatureConfiguration> {
 
         return placedSomething;
     }
-
 }

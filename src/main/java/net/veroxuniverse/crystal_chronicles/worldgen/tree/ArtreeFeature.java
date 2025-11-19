@@ -18,19 +18,24 @@ import java.util.Set;
 
 public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
 
-    private static final int MIN_STEM_HEIGHT = 2;
-    private static final int MAX_STEM_HEIGHT = 4;
+    // Stamm
+    private static final int MIN_STEM_HEIGHT = 3;
+    private static final int MAX_STEM_HEIGHT = 5;
 
-    private static final int MIN_BRANCH_LENGTH = 3;
-    private static final int MAX_BRANCH_LENGTH = 6;
+    // Seitenäste (Veins): 1–2 Blöcke vom Stamm weg
+    private static final int MIN_BRANCH_LENGTH = 1;
+    private static final int MAX_BRANCH_LENGTH = 2;
+    private static final int MIN_BRANCHES = 2;
+    private static final int MAX_BRANCHES = 4;
+    private static final float BRANCH_CHANCE_PER_LEVEL = 0.4f;
 
-    private static final int MAX_BRANCH_DEPTH = 3;          // wie tief Unteräste gehen dürfen
-    private static final float SUB_BRANCH_CHANCE = 0.25f;   // Chance für Unterast
-    private static final float DIR_SHIFT_CHANCE   = 0.2f;   // Chance, die horizontale Richtung zu wechseln
-    private static final float UP_DRIFT_CHANCE    = 0.4f;   // Chance, beim Wachsen einen Block hochzugehen
+    // Capillary-Cluster
+    private static final int MIN_CAP_CLUSTER = 3;
+    private static final int MAX_CAP_CLUSTER = 4;
 
-    private static final int MAX_NEIGHBOR_CONNECTIONS = 3;  // begrenzt Klumpen
-    private static final float SIDE_CAP_CHANCE = 0.6f;      // Wahrscheinlichkeit für seitliche Capillaries
+    // “Dichte”-Limits
+    private static final int MAX_NEIGHBOR_ARTREE = 4;
+    private static final int MAX_NEIGHBOR_CAPILLARY = 1;
 
     public ArtreeFeature(Codec<NoneFeatureConfiguration> codec) {
         super(codec);
@@ -42,42 +47,65 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
         RandomSource random = ctx.random();
         BlockPos origin = ctx.origin();
 
+        // Nur auf Flesh generieren
         if (!level.getBlockState(origin.below()).is(CCBlocks.FLESH_BLOCK.get())) {
             return false;
         }
 
         Set<BlockPos> veinPositions = new HashSet<>();
         Set<BlockPos> capillaryPositions = new HashSet<>();
+        Set<BlockPos> capillaryCenters = new HashSet<>(); // Enden von Ästen + Stammspitze
 
+        // --- Base ---
+        BlockPos basePos = origin;
+        BlockState baseState = CCBlocks.ARTREE_BASE.get().defaultBlockState();
+        level.setBlock(basePos, baseState, 3);
+
+        // --- Stamm (gerade nach oben) ---
         int stemHeight = MIN_STEM_HEIGHT + random.nextInt(MAX_STEM_HEIGHT - MIN_STEM_HEIGHT + 1);
-        BlockPos stemPos = origin;
+        BlockPos stemPos = basePos.above();
+        BlockPos topStemPos = stemPos;
 
-        for (int i = 0; i < stemHeight; i++) {
-            BlockState baseState = CCBlocks.ARTREE_BASE.get().defaultBlockState();
-            level.setBlock(stemPos, baseState, 3);
+        Direction[] horiz = {Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
+
+        int maxBranches = MIN_BRANCHES + random.nextInt(MAX_BRANCHES - MIN_BRANCHES + 1);
+        int madeBranches = 0;
+
+        for (int y = 0; y < stemHeight; y++) {
+            if (!level.isEmptyBlock(stemPos)) {
+                break;
+            }
+
+            BlockState stemVein = CCBlocks.ARTREE_VEIN.get().defaultBlockState();
+            level.setBlock(stemPos, stemVein, 3);
             veinPositions.add(stemPos);
+            topStemPos = stemPos;
+
+            // nur solange wir noch Äste bauen dürfen
+            if (madeBranches < maxBranches && random.nextFloat() < BRANCH_CHANCE_PER_LEVEL) {
+                Direction dir = horiz[random.nextInt(horiz.length)];
+                BlockPos branchEnd = growStraightBranch(level, random, stemPos, dir, veinPositions);
+                if (branchEnd != null) {
+                    capillaryCenters.add(branchEnd);
+                    madeBranches++;
+                }
+            }
 
             stemPos = stemPos.above();
         }
 
-        BlockPos stemTop = stemPos;
+        // Stammspitze bekommt auch einen Capillary-Cluster
+        capillaryCenters.add(topStemPos);
 
-        for (int y = 0; y < stemHeight; y++) {
-            BlockPos branchStart = origin.above(y);
-            int branchCount = 1 + random.nextInt(3);
-
-            for (int i = 0; i < branchCount; i++) {
-                growBranch(level, random, branchStart, veinPositions, capillaryPositions, 0);
-            }
+        // --- Capillary-Cluster an allen Endpunkten ---
+        for (BlockPos center : capillaryCenters) {
+            placeCapillaryCluster(level, random, center, capillaryPositions);
         }
 
-        if (random.nextBoolean()) {
-            growBranch(level, random, stemTop, veinPositions, capillaryPositions, 0);
-        }
-
+        // --- Verbindungsstates setzen ---
         for (BlockPos pos : veinPositions) {
             BlockState state = level.getBlockState(pos);
-            if (state.is(CCBlocks.ARTREE_VEIN.get()) || state.is(CCBlocks.ARTREE_BASE.get())) {
+            if (state.is(CCBlocks.ARTREE_VEIN.get())) {
                 BlockState fixed = VeinBlock.getStateWithConnections(level, pos, state);
                 level.setBlock(pos, fixed, 3);
             }
@@ -94,87 +122,72 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
         return true;
     }
 
-    private void growBranch(WorldGenLevel level, RandomSource random, BlockPos start, Set<BlockPos> veins, Set<BlockPos> caps, int depth) {
+    /**
+     * Baut einen geraden Seitenast aus Veins in eine horizontale Richtung.
+     * Gibt die Position des letzten gesetzten Veins zurück, damit dort
+     * der Capillary-Cluster entstehen kann.
+     */
+    private BlockPos growStraightBranch(WorldGenLevel level, RandomSource random,
+                                        BlockPos start, Direction dir,
+                                        Set<BlockPos> veins) {
 
-        if (depth > MAX_BRANCH_DEPTH) {
-            return;
-        }
+        int length = MIN_BRANCH_LENGTH
+                + random.nextInt(MAX_BRANCH_LENGTH - MIN_BRANCH_LENGTH + 1); // 1–2
 
-        int length = MIN_BRANCH_LENGTH + random.nextInt(MAX_BRANCH_LENGTH - MIN_BRANCH_LENGTH + 1);
-        BlockPos current = start;
-
-        Direction mainDir = randomHorizontal(random);
+        BlockPos current = start.relative(dir);
+        BlockPos lastPlaced = null;
 
         for (int i = 0; i < length; i++) {
-
-            if (random.nextFloat() < UP_DRIFT_CHANCE) {
-                current = current.above();
-            }
-
-            current = current.relative(mainDir);
-
             if (!level.isEmptyBlock(current)) {
                 break;
             }
 
-            boolean isLastSegment = (i == length - 1);
+            BlockState vein = CCBlocks.ARTREE_VEIN.get().defaultBlockState();
+            level.setBlock(current, vein, 3);
+            veins.add(current);
+            lastPlaced = current;
 
-            if (isLastSegment) {
-                placeCapillaryCluster(level, random, current, veins, caps);
-            } else {
-                BlockState veinState = CCBlocks.ARTREE_VEIN.get().defaultBlockState();
-                level.setBlock(current, veinState, 3);
-                veins.add(current);
-
-                if (random.nextFloat() < SUB_BRANCH_CHANCE) {
-                    growBranch(level, random, current, veins, caps, depth + 1);
-                }
-            }
-
-            if (random.nextFloat() < DIR_SHIFT_CHANCE) {
-                mainDir = randomHorizontal(random);
-            }
+            current = current.relative(dir);
         }
+
+        return lastPlaced;
     }
 
-    private void placeCapillaryCluster(WorldGenLevel level, RandomSource random, BlockPos veinPos, Set<BlockPos> veins, Set<BlockPos> caps) {
+    /**
+     * Setzt nur Capillaries rund um einen Vein-Endpunkt.
+     */
+    private void placeCapillaryCluster(WorldGenLevel level, RandomSource random,
+                                       BlockPos center, Set<BlockPos> caps) {
 
-        if (level.isEmptyBlock(veinPos)) {
-            BlockState veinState = CCBlocks.ARTREE_VEIN.get().defaultBlockState();
-            level.setBlock(veinPos, veinState, 3);
-            veins.add(veinPos);
-        }
+        int count = MIN_CAP_CLUSTER + random.nextInt(MAX_CAP_CLUSTER - MIN_CAP_CLUSTER + 1);
 
-        BlockPos upPos = veinPos.above();
-        if (canPlaceCapillaryAt(level, upPos)) {
-            placeCapillary(level, upPos, caps);
-        }
-
-        Direction[] horizontals = new Direction[]{
-                Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST
+        Direction[] dirs = {
+                Direction.UP,
+                Direction.NORTH, Direction.SOUTH,
+                Direction.EAST, Direction.WEST
         };
 
-        for (Direction dir : horizontals) {
-            if (random.nextFloat() > SIDE_CAP_CHANCE) continue;
+        for (int i = 0; i < count; i++) {
+            Direction d = dirs[random.nextInt(dirs.length)];
+            BlockPos capPos = center.relative(d);
 
-            BlockPos sidePos = veinPos.relative(dir);
+            if (canPlaceCapillaryAt(level, capPos)) {
+                placeCapillary(level, capPos, caps);
 
-            if (!canPlaceCapillaryAt(level, sidePos)) continue;
-
-            placeCapillary(level, sidePos, caps);
-
-            if (random.nextFloat() < 0.3f) {
-                BlockPos sideUp = sidePos.above();
-                if (canPlaceCapillaryAt(level, sideUp)) {
-                    placeCapillary(level, sideUp, caps);
+                // kleine Chance, dass ein Kapillar noch einen "Finger" nach oben bekommt
+                if (d == Direction.UP && random.nextFloat() < 0.4f) {
+                    BlockPos up2 = capPos.above();
+                    if (canPlaceCapillaryAt(level, up2)) {
+                        placeCapillary(level, up2, caps);
+                    }
                 }
             }
         }
     }
 
     private void placeCapillary(WorldGenLevel level, BlockPos pos, Set<BlockPos> caps) {
-        BlockState capState = CCBlocks.ARTREE_CAPILLARY.get().defaultBlockState();
-        level.setBlock(pos, capState, 3);
+        BlockState cap = CCBlocks.ARTREE_CAPILLARY.get().defaultBlockState();
+        level.setBlock(pos, cap, 3);
         caps.add(pos);
     }
 
@@ -183,16 +196,33 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
             return false;
         }
 
-        int neighborArtreeCount = countArtreeNeighbors(level, pos);
-        return neighborArtreeCount <= MAX_NEIGHBOR_CONNECTIONS;
+        int artreeNeighbors = countArtreeNeighbors(level, pos);
+        if (artreeNeighbors > MAX_NEIGHBOR_ARTREE) {
+            return false;
+        }
+
+        int capNeighbors = countCapillaryNeighbors(level, pos);
+        return capNeighbors <= MAX_NEIGHBOR_CAPILLARY;
     }
 
     private int countArtreeNeighbors(WorldGenLevel level, BlockPos pos) {
         int count = 0;
-        for (Direction dir : Direction.values()) {
-            BlockPos nPos = pos.relative(dir);
+        for (Direction d : Direction.values()) {
+            BlockPos nPos = pos.relative(d);
             BlockState nState = level.getBlockState(nPos);
             if (isArtreeBlock(nState)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int countCapillaryNeighbors(WorldGenLevel level, BlockPos pos) {
+        int count = 0;
+        for (Direction d : Direction.values()) {
+            BlockPos nPos = pos.relative(d);
+            BlockState nState = level.getBlockState(nPos);
+            if (nState.is(CCBlocks.ARTREE_CAPILLARY.get())) {
                 count++;
             }
         }
@@ -203,13 +233,5 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
         return state.is(CCBlocks.ARTREE_BASE.get())
                 || state.is(CCBlocks.ARTREE_VEIN.get())
                 || state.is(CCBlocks.ARTREE_CAPILLARY.get());
-    }
-
-    private Direction randomHorizontal(RandomSource rnd) {
-        Direction[] d = {
-                Direction.NORTH, Direction.SOUTH,
-                Direction.EAST, Direction.WEST
-        };
-        return d[rnd.nextInt(d.length)];
     }
 }
