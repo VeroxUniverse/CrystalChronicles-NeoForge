@@ -1,11 +1,4 @@
 {
-  "type": "minecraft:simple_block",
-  "config": {
-    "to_place": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "crystal_chronicles:holy_light_block"
-      }
-    }
-  }
+  "type": "crystal_chronicles:holy_light_feature",
+  "config": {}
 }

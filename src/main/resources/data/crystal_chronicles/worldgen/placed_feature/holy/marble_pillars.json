@@ -18,6 +18,14 @@
       }
     },
     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "matching_blocks",
+        "blocks": "minecraft:air",
+        "offset": [0,5,0]
+      }
+    },
+    {
       "type": "minecraft:biome"
     }
   ]

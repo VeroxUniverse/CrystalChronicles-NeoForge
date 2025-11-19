@@ -1,0 +1,51 @@
+{
+  "feature": "crystal_chronicles:flesh/artree",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 2
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "below_top": 0
+        },
+        "min_inclusive": {
+          "above_bottom": 10
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "all_of",
+        "predicates": [
+          {
+            "type": "minecraft:would_survive",
+            "state": {
+              "Name": "crystal_chronicles:alveolus",
+              "Properties": {
+                "stage": "0"
+              }
+            }
+          },
+          {
+            "type": "matching_blocks",
+            "blocks": "minecraft:air",
+            "offset": [0,5,0]
+          },
+          {
+            "type": "matching_blocks",
+            "blocks": "minecraft:air",
+            "offset": [0,10,0]
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
