@@ -20,25 +20,8 @@ public class HolyLightFeature extends Feature<NoneFeatureConfiguration> {
         WorldGenLevel level = ctx.level();
         BlockPos origin = ctx.origin();
 
-        BlockState originState = level.getBlockState(origin);
-        if (!originState.is(CCBlocks.GOLDSTONE.get())) {
-            return false;
-        }
-
-        for (int i = 1; i <= 4; i++) {
-            BlockPos belowPos = origin.below(i);
-            if (!level.isEmptyBlock(belowPos)) {
-                return false;
-            }
-        }
-
-        BlockPos abovePos = origin.above();
-
         BlockState holyLight = CCBlocks.HOLY_LIGHT_BLOCK.get().defaultBlockState();
         level.setBlock(origin, holyLight, 3);
-
-        BlockState goldstone = CCBlocks.GOLDSTONE.get().defaultBlockState();
-        level.setBlock(abovePos, goldstone, 3);
 
         level.scheduleTick(origin, CCBlocks.HOLY_LIGHT_BLOCK.get(), 5);
 
