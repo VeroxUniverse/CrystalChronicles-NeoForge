@@ -36,6 +36,29 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        
+        // BISMUTH //
+
+        this.dropSelf(CCBlocks.BISMITE.get());
+        this.dropSelf(CCBlocks.BISMITE_BRICKS.get());
+        this.dropSelf(CCBlocks.CHISELED_BISMITE.get());
+        this.dropSelf(CCBlocks.CRACKED_BISMITE.get());
+        this.dropSelf(CCBlocks.POLISHED_BISMITE.get());
+        this.dropSelf(CCBlocks.BISMUTH_BRICKS.get());
+        this.dropSelf(CCBlocks.PURPLE_BISMUTH_BRICKS.get());
+        this.dropSelf(CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
+        this.dropSelf(CCBlocks.VIOLET_BISMUTH_BRICKS.get());
+        this.dropSelf(CCBlocks.YELLOW_BISMUTH_BRICKS.get());
+        this.dropSelf(CCBlocks.CHISELED_BISMUTH.get());
+        this.dropSelf(CCBlocks.PURPLE_CHISELED_BISMUTH.get());
+        this.dropSelf(CCBlocks.RAINBOW_CHISELED_BISMUTH.get());
+        this.dropSelf(CCBlocks.VIOLET_CHISELED_BISMUTH.get());
+        this.dropSelf(CCBlocks.YELLOW_CHISELED_BISMUTH.get());
+        this.dropSelf(CCBlocks.BISMUTH_CRYSTAL.get());
+        this.dropSelf(CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
+        this.dropSelf(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get());
+        this.dropSelf(CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
+        this.dropSelf(CCBlocks.YELLOW_BISMUTH_CRYSTAL.get());
 
         // BLOOD //
 

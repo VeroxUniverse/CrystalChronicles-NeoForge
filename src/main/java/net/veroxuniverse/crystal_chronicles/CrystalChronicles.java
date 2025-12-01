@@ -25,6 +25,7 @@ import net.veroxuniverse.crystal_chronicles.effect.CCEffects;
 import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
+import net.veroxuniverse.crystal_chronicles.fluid.ReactiveWaterFluidType;
 import net.veroxuniverse.crystal_chronicles.item.CCItemProperties;
 import net.veroxuniverse.crystal_chronicles.item.armor.electromancer.ElectromancerArmorRenderer;
 import net.veroxuniverse.crystal_chronicles.item.armor.evoker.EvokerArmorRenderer;
@@ -100,6 +101,9 @@ public class CrystalChronicles {
             ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_BLOOD.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_BLOOD.get(), RenderType.translucent());
 
+            ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_REACTIVE_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_REACTIVE_WATER.get(), RenderType.translucent());
+
             // EntityRenderers.register(CCEntityTypes.CRYSTAL_DRAKE.get(), CrystalDrakeRenderer::new);
             // EntityRenderers.register(CCEntityTypes.CRYSTAL_SCORPION.get(), CrystalScorpionRenderer::new);
             // EntityRenderers.register(CCEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemRenderer::new);
@@ -173,6 +177,9 @@ public class CrystalChronicles {
         public static void onClientExtensions(RegisterClientExtensionsEvent event) {
             event.registerFluidType(((BaseFluidType) CCFluidTypes.BLOOD_FLUID_TYPE.get()).getClientFluidTypeExtensions(),
                     CCFluidTypes.BLOOD_FLUID_TYPE.get());
+
+            //event.registerFluidType(((ReactiveWaterFluidType) CCFluidTypes.REACTIVE_WATER_FLUID_TYPE.get()).getClientFluidTypeExtensions(),
+            //        CCFluidTypes.REACTIVE_WATER_FLUID_TYPE.get());
         }
 
     }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "crystal_chronicles:block/purple_bismuth_crystal",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "crystal_chronicles:block/purple_bismuth_crystal"
+    },
+    "facing=south": {
+      "model": "crystal_chronicles:block/purple_bismuth_crystal",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "crystal_chronicles:block/purple_bismuth_crystal",
+      "y": 270
+    }
+  }
+}

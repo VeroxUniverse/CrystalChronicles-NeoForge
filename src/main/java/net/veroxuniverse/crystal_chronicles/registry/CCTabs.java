@@ -17,6 +17,26 @@ public class CCTabs {
             .title(Component.translatable("itemGroup.blocks." + CrystalChronicles.MODID))
             .icon(() -> CCBlocks.FAT_TISSUE_BLOCK.get().asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
+                output.accept(CCBlocks.BISMITE.get());
+                output.accept(CCBlocks.BISMITE_BRICKS.get());
+                output.accept(CCBlocks.CHISELED_BISMITE.get());
+                output.accept(CCBlocks.CRACKED_BISMITE.get());
+                output.accept(CCBlocks.POLISHED_BISMITE.get());
+                output.accept(CCBlocks.BISMUTH_BRICKS.get());
+                output.accept(CCBlocks.PURPLE_BISMUTH_BRICKS.get());
+                output.accept(CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
+                output.accept(CCBlocks.VIOLET_BISMUTH_BRICKS.get());
+                output.accept(CCBlocks.YELLOW_BISMUTH_BRICKS.get());
+                output.accept(CCBlocks.CHISELED_BISMUTH.get());
+                output.accept(CCBlocks.PURPLE_CHISELED_BISMUTH.get());
+                output.accept(CCBlocks.RAINBOW_CHISELED_BISMUTH.get());
+                output.accept(CCBlocks.VIOLET_CHISELED_BISMUTH.get());
+                output.accept(CCBlocks.YELLOW_CHISELED_BISMUTH.get());
+                output.accept(CCBlocks.BISMUTH_CRYSTAL.get());
+                output.accept(CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
+                output.accept(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get());
+                output.accept(CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
+                output.accept(CCBlocks.YELLOW_BISMUTH_CRYSTAL.get());
                 output.accept(CCBlocks.BLOOD_BASES.get());
                 output.accept(CCBlocks.TALL_BLOOD_BASES.get());
                 output.accept(CCBlocks.VEINS.get());
@@ -159,6 +179,7 @@ public class CCTabs {
                 output.accept(CCItems.EYE.get());
                 output.accept(CCFluids.BLOOD_BUCKET.get());
                 output.accept(CCItems.CLOUD_BUCKET.get());
+                output.accept(CCFluids.REACTIVE_WATER_BUCKET.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ARMORY = CREATIVE_MODE_TABS.register("cc_tab_armory", () -> CreativeModeTab.builder()

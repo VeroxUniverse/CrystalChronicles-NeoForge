@@ -19,6 +19,19 @@ public class CCBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
+        // BISMUTH //
+
+        blockWithItem(CCBlocks.BISMITE_BRICKS);
+        blockWithItem(CCBlocks.CHISELED_BISMITE);
+        blockWithItem(CCBlocks.CRACKED_BISMITE);
+        blockWithItem(CCBlocks.POLISHED_BISMITE);
+
+        blockWithItem(CCBlocks.BISMUTH_BRICKS);
+        blockWithItem(CCBlocks.PURPLE_BISMUTH_BRICKS);
+        blockWithItem(CCBlocks.RAINBOW_BISMUTH_BRICKS);
+        blockWithItem(CCBlocks.VIOLET_BISMUTH_BRICKS);
+        blockWithItem(CCBlocks.YELLOW_BISMUTH_BRICKS);
+
         // BLOOD //
 
         blockWithItem(CCBlocks.ALVEOLUS_BLOCK);

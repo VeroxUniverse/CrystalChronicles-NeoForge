@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "crystal_chronicles:block/rainbow_bismuth_bricks_1",
+    "front": "crystal_chronicles:block/purple_bismuth_block",
+    "side": "crystal_chronicles:block/purple_bismuth_block",
+    "top": "crystal_chronicles:block/rainbow_bismuth_crystal_top"
+  }
+}

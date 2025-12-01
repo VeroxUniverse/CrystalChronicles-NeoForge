@@ -16,6 +16,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.block.BloodFluidBlock;
+import net.veroxuniverse.crystal_chronicles.block.ReactiveWaterBlock;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 
@@ -30,10 +31,22 @@ public class CCFluids {
     public static final Supplier<FlowingFluid> FLOWING_BLOOD = FLUIDS.register("flowing_blood",
             () -> new BaseFlowingFluid.Flowing(CCFluids.BLOOD_PROPERTIES));
 
+    public static final Supplier<FlowingFluid> SOURCE_REACTIVE_WATER = FLUIDS.register("reactive_water",
+            () -> new BaseFlowingFluid.Source(CCFluids.REACTIVE_WATER_PROPERTIES));
+    public static final Supplier<FlowingFluid> FLOWING_REACTIVE_WATER = FLUIDS.register("reactive_water_flowing",
+            () -> new BaseFlowingFluid.Flowing(CCFluids.REACTIVE_WATER_PROPERTIES));
+
+
     public static final DeferredBlock<LiquidBlock> BLOOD_BLOCK = CCBlocks.BLOCKS.register("blood_block",
             () -> new BloodFluidBlock(CCFluids.SOURCE_BLOOD.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()));
     public static final DeferredItem<Item> BLOOD_BUCKET = CCItems.ITEMS.registerItem("blood_bucket",
             properties -> new BucketItem(CCFluids.SOURCE_BLOOD.get(), properties.craftRemainder(Items.BUCKET).stacksTo(1)));
+
+    public static final DeferredBlock<LiquidBlock> REACTIVE_WATER_BLOCK = CCBlocks.BLOCKS.register("reactive_water_block",
+            () -> new ReactiveWaterBlock(SOURCE_REACTIVE_WATER.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()));
+    public static final DeferredItem<Item> REACTIVE_WATER_BUCKET = CCItems.ITEMS.registerItem("reactive_water_bucket",
+            properties -> new BucketItem(SOURCE_REACTIVE_WATER.get(), properties.craftRemainder(Items.BUCKET).stacksTo(1)));
+
 
     public static final BaseFlowingFluid.Properties BLOOD_PROPERTIES = new BaseFlowingFluid.Properties(
             CCFluidTypes.BLOOD_FLUID_TYPE, SOURCE_BLOOD, FLOWING_BLOOD)
@@ -42,6 +55,15 @@ public class CCFluids {
             .block(CCFluids.BLOOD_BLOCK)
             .bucket(CCFluids.BLOOD_BUCKET)
             .explosionResistance(10);
+
+
+    public static final BaseFlowingFluid.Properties REACTIVE_WATER_PROPERTIES = new BaseFlowingFluid.Properties(
+            CCFluidTypes.REACTIVE_WATER_FLUID_TYPE, SOURCE_REACTIVE_WATER, FLOWING_REACTIVE_WATER)
+            .slopeFindDistance(4)
+            .levelDecreasePerBlock(1)
+            .block(REACTIVE_WATER_BLOCK)
+            .bucket(REACTIVE_WATER_BUCKET)
+            .explosionResistance(100);
 
 
     public static void register(IEventBus eventBus) {

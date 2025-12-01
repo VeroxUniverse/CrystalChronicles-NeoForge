@@ -1,0 +1,148 @@
+{
+  "variants": {
+    "formed=false,facing=north": {
+      "model": "crystal_chronicles:block/rainbow_bismuth_crystal",
+      "y": 180
+    },
+    "formed=false,facing=east": {
+      "model": "crystal_chronicles:block/rainbow_bismuth_crystal",
+      "y": 270
+    },
+    "formed=false,facing=south": {
+      "model": "crystal_chronicles:block/rainbow_bismuth_crystal",
+      "y": 0
+    },
+    "formed=false,facing=west": {
+      "model": "crystal_chronicles:block/rainbow_bismuth_crystal",
+      "y": 90
+    },
+    "formed=true,facing=north,part=down_back_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_back_left",
+      "y": 180
+    },
+    "formed=true,facing=east,part=down_back_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_back_left",
+      "y": 270
+    },
+    "formed=true,facing=south,part=down_back_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_back_left",
+      "y": 0
+    },
+    "formed=true,facing=west,part=down_back_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_back_left",
+      "y": 90
+    },
+    "formed=true,facing=north,part=down_back_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_back_right",
+      "y": 180
+    },
+    "formed=true,facing=east,part=down_back_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_back_right",
+      "y": 270
+    },
+    "formed=true,facing=south,part=down_back_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_back_right",
+      "y": 0
+    },
+    "formed=true,facing=west,part=down_back_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_back_right",
+      "y": 90
+    },
+    "formed=true,facing=north,part=down_front_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_front_left",
+      "y": 180
+    },
+    "formed=true,facing=east,part=down_front_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_front_left",
+      "y": 270
+    },
+    "formed=true,facing=south,part=down_front_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_front_left",
+      "y": 0
+    },
+    "formed=true,facing=west,part=down_front_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_front_left",
+      "y": 90
+    },
+    "formed=true,facing=north,part=down_front_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_front_right",
+      "y": 180
+    },
+    "formed=true,facing=east,part=down_front_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_front_right",
+      "y": 270
+    },
+    "formed=true,facing=south,part=down_front_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_front_right",
+      "y": 0
+    },
+    "formed=true,facing=west,part=down_front_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_down_front_right",
+      "y": 90
+    },
+    "formed=true,facing=north,part=up_back_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_back_left",
+      "y": 180
+    },
+    "formed=true,facing=east,part=up_back_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_back_left",
+      "y": 270
+    },
+    "formed=true,facing=south,part=up_back_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_back_left",
+      "y": 0
+    },
+    "formed=true,facing=west,part=up_back_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_back_left",
+      "y": 90
+    },
+    "formed=true,facing=north,part=up_back_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_back_right",
+      "y": 180
+    },
+    "formed=true,facing=east,part=up_back_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_back_right",
+      "y": 270
+    },
+    "formed=true,facing=south,part=up_back_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_back_right",
+      "y": 0
+    },
+    "formed=true,facing=west,part=up_back_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_back_right",
+      "y": 90
+    },
+    "formed=true,facing=north,part=up_front_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_front_left",
+      "y": 180
+    },
+    "formed=true,facing=east,part=up_front_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_front_left",
+      "y": 270
+    },
+    "formed=true,facing=south,part=up_front_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_front_left",
+      "y": 0
+    },
+    "formed=true,facing=west,part=up_front_left": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_front_left",
+      "y": 90
+    },
+    "formed=true,facing=north,part=up_front_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_front_right",
+      "y": 180
+    },
+    "formed=true,facing=east,part=up_front_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_front_right",
+      "y": 270
+    },
+    "formed=true,facing=south,part=up_front_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_front_right",
+      "y": 0
+    },
+    "formed=true,facing=west,part=up_front_right": {
+      "model": "crystal_chronicles:block/bismuth_crystal/part_up_front_right",
+      "y": 90
+    }
+  }
+}

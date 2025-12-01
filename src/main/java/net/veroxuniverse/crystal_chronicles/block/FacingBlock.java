@@ -10,13 +10,12 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
 import javax.annotation.Nullable;
-import java.util.Dictionary;
 
-public class EyeBlock extends DirectionalBlock {
+public class FacingBlock extends DirectionalBlock {
     public static final DirectionProperty FACING = DirectionalBlock.FACING;
 
 
-    public EyeBlock(Properties properties) {
+    public FacingBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH)); // Default to north
     }
