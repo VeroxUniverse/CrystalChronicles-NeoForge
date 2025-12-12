@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "rainbow_bismuth_bricks",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:rainbow_bismuth_bricks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:rainbow_bismuth_bricks_stairs"
+  }
+}

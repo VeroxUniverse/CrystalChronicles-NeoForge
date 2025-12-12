@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/polished_bismite_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/polished_bismite"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/polished_bismite_slab_top"
+    }
+  }
+}

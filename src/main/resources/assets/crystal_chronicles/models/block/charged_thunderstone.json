@@ -1,0 +1,8 @@
+{
+  "parent": "crystal_chronicles:block/glowing_block",
+  "textures": {
+    "particle": "crystal_chronicles:block/charged_thunderstone",
+    "base": "crystal_chronicles:block/thunderstone",
+    "lit": "crystal_chronicles:block/charged_thunderstone_e"
+  }
+}

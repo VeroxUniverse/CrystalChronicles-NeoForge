@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/chiseled_thunderstone_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/chiseled_thunderstone"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/chiseled_thunderstone_slab_top"
+    }
+  }
+}

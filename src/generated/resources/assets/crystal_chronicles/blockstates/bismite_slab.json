@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/bismite_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/bismite"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/bismite_slab_top"
+    }
+  }
+}

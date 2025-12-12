@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_purple_bismuth_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crystal_chronicles:purple_bismuth_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:purple_bismuth_bricks_from_crystal"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_purple_bismuth_crystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:purple_bismuth_bricks_from_crystal"
+    ]
+  }
+}

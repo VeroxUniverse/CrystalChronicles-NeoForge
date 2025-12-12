@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "polished_bismite",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:polished_bismite"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:polished_bismite_stairs"
+  }
+}

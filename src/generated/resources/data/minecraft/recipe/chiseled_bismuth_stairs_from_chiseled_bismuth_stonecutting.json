@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "crystal_chronicles:chiseled_bismuth"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:chiseled_bismuth_stairs"
+  }
+}

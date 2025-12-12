@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/violet_chiseled_bismuth_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/violet_chiseled_bismuth"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/violet_chiseled_bismuth_slab_top"
+    }
+  }
+}

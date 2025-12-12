@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "violet_chiseled_bismuth",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:violet_chiseled_bismuth"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:violet_chiseled_bismuth_stairs"
+  }
+}

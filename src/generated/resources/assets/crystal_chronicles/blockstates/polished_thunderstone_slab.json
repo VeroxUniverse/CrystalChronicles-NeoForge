@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/polished_thunderstone_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/polished_thunderstone"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/polished_thunderstone_slab_top"
+    }
+  }
+}
