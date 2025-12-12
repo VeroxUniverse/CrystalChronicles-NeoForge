@@ -1,16 +1,13 @@
 package net.veroxuniverse.crystal_chronicles.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.veroxuniverse.crystal_chronicles.util.CrystalPart;
 
 import java.util.ArrayList;
@@ -38,26 +35,6 @@ public class BismuthCrystalBlock extends HorizontalCrystalBlock {
     }
 
     @Override
-    public void playerWillDestroy(BlockState state, Level level, BlockPos pos, Player player) {
-        if (!level.isClientSide && state.getValue(FORMED)) {
-            // Starte den Zerstörungsprozess des geformten Kubus.
-            // Wir übergeben die aktuelle FACING, da sie für den Kubus-Bau verwendet wurde.
-            unformCuboid(level, pos, state.getValue(FACING));
-        }
-        super.playerWillDestroy(state, level, pos, player);
-    }
-
-    @Override
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        // Diese Methode wird nach playerWillDestroy aufgerufen, wenn der Block tatsächlich entfernt wird.
-        // Wir können die unformCuboid-Logik auch hier verwenden, um eine zuverlässigere Zerstörung zu gewährleisten.
-        if (!level.isClientSide && state.getValue(FORMED) && !newState.is(this)) {
-            unformCuboid(level, pos, state.getValue(FACING));
-        }
-        super.onRemove(state, level, pos, newState, isMoving);
-    }
-
-    @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         if (!level.isClientSide) {
             checkAndForm(level, pos);
@@ -65,11 +42,17 @@ public class BismuthCrystalBlock extends HorizontalCrystalBlock {
     }
 
     @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (!level.isClientSide && state.getValue(FORMED) && !newState.is(this)) {
+            unformCuboid(level, pos, state.getValue(FACING));
+        }
+        super.onRemove(state, level, pos, newState, isMoving);
+    }
+
+    @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
         if (!level.isClientSide) {
-            if (state.getValue(FORMED)) {
-                checkAndUnform(level, pos);
-            }
+
             checkAndForm(level, pos);
         }
     }
@@ -84,20 +67,47 @@ public class BismuthCrystalBlock extends HorizontalCrystalBlock {
         }
     }
 
+    private void unformCuboid(Level level, BlockPos destroyedPos, Direction commonFacing) {
+
+        for (BlockPos potentialBase : getPotentialBasePositions(destroyedPos, commonFacing)) {
+
+            boolean foundFormedCuboid = true;
+
+            for (int i = 0; i < CUBE_OFFSETS.length; i++) {
+                BlockPos rotatedOffset = getRotatedOffset(CUBE_OFFSETS[i], commonFacing);
+                BlockPos checkPos = potentialBase.offset(rotatedOffset.getX(), rotatedOffset.getY(), rotatedOffset.getZ());
+
+                if (checkPos.equals(destroyedPos)) continue;
+
+                BlockState state = level.getBlockState(checkPos);
+
+                if (state.getBlock() != this || !state.getValue(FORMED) || state.getValue(FACING) != commonFacing) {
+                    foundFormedCuboid = false;
+                    break;
+                }
+            }
+
+            if (foundFormedCuboid) {
+                setCuboidState(level, potentialBase, commonFacing, false);
+                return;
+            }
+        }
+    }
+
     private static final int[][] CUBE_OFFSETS = new int[][]{
             {0, 0, 0}, {1, 0, 0}, {0, 1, 0}, {1, 1, 0},
             {0, 0, 1}, {1, 0, 1}, {0, 1, 1}, {1, 1, 1}
     };
 
     private static final CrystalPart[] PARTS_BY_INDEX = new CrystalPart[]{
-            CrystalPart.DOWN_BACK_LEFT,  // 0, 0, 0
-            CrystalPart.DOWN_BACK_RIGHT, // 1, 0, 0
-            CrystalPart.UP_BACK_LEFT,    // 0, 1, 0
-            CrystalPart.UP_BACK_RIGHT,   // 1, 1, 0
-            CrystalPart.DOWN_FRONT_LEFT, // 0, 0, 1
-            CrystalPart.DOWN_FRONT_RIGHT,// 1, 0, 1
-            CrystalPart.UP_FRONT_LEFT,   // 0, 1, 1
-            CrystalPart.UP_FRONT_RIGHT   // 1, 1, 1
+            CrystalPart.DOWN_BACK_LEFT,
+            CrystalPart.DOWN_BACK_RIGHT,
+            CrystalPart.UP_BACK_LEFT,
+            CrystalPart.UP_BACK_RIGHT,
+            CrystalPart.DOWN_FRONT_LEFT,
+            CrystalPart.DOWN_FRONT_RIGHT,
+            CrystalPart.UP_FRONT_LEFT,
+            CrystalPart.UP_FRONT_RIGHT
     };
 
     private BlockPos getRotatedOffset(int[] offset, Direction facing) {
@@ -153,6 +163,10 @@ public class BismuthCrystalBlock extends HorizontalCrystalBlock {
                 return false;
             }
 
+            if (state.getValue(FORMED)) {
+                return false;
+            }
+
             if (state.getValue(FACING) != expectedFacing) {
                 return false;
             }
@@ -183,27 +197,5 @@ public class BismuthCrystalBlock extends HorizontalCrystalBlock {
                 level.setBlock(partPos, newState, 18);
             }
         }
-    }
-
-    private void checkAndUnform(Level level, BlockPos currentPos) {
-
-        if (!level.getBlockState(currentPos).getValue(FORMED)) {
-            return;
-        }
-
-        Direction currentFacing = level.getBlockState(currentPos).getValue(FACING);
-
-        for (BlockPos basePos : getPotentialBasePositions(currentPos, currentFacing)) {
-            if (canFormCuboid(level, basePos, currentFacing)) {
-                return;
-            }
-        }
-
-        BlockState unformedState = this.defaultBlockState()
-                .setValue(FORMED, false)
-                .setValue(PART, CrystalPart.DOWN_BACK_LEFT)
-                .setValue(FACING, level.getBlockState(currentPos).getValue(FACING));
-
-        level.setBlock(currentPos, unformedState, 3);
     }
 }

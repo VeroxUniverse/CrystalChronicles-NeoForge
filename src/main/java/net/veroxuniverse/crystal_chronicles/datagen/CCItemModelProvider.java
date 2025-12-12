@@ -95,6 +95,35 @@ public class CCItemModelProvider extends ItemModelProvider {
         wallItem(CCBlocks.CRACKED_PUMICE_WALL, CCBlocks.CRACKED_PUMICE);
         wallItem(CCBlocks.POLISHED_PUMICE_WALL, CCBlocks.POLISHED_PUMICE);
         wallItem(CCBlocks.PYRITE_WALL, CCBlocks.PYRITE_BLOCK);
+
+        wallItem(CCBlocks.PUMICE_WALL, CCBlocks.PUMICE);
+        wallItem(CCBlocks.PUMICE_BRICKS_WALL, CCBlocks.PUMICE_BRICKS);
+        wallItem(CCBlocks.CHISELED_PUMICE_WALL, CCBlocks.CHISELED_PUMICE);
+        wallItem(CCBlocks.CRACKED_PUMICE_WALL, CCBlocks.CRACKED_PUMICE);
+        wallItem(CCBlocks.POLISHED_PUMICE_WALL, CCBlocks.POLISHED_PUMICE);
+        wallItem(CCBlocks.PYRITE_WALL, CCBlocks.PYRITE_BLOCK);
+
+        wallItem(CCBlocks.THUNDERSTONE_WALL, CCBlocks.THUNDERSTONE);
+        wallItem(CCBlocks.CHISELED_THUNDERSTONE_WALL, CCBlocks.CHISELED_THUNDERSTONE);
+        wallItem(CCBlocks.THUNDERSTONE_BRICKS_WALL, CCBlocks.THUNDERSTONE_BRICKS);
+        wallItem(CCBlocks.POLISHED_THUNDERSTONE_WALL, CCBlocks.POLISHED_THUNDERSTONE);
+
+        wallItem(CCBlocks.BISMITE_WALL, CCBlocks.BISMITE);
+        wallItem(CCBlocks.BISMITE_BRICKS_WALL, CCBlocks.BISMITE_BRICKS);
+        wallItem(CCBlocks.CHISELED_BISMITE_WALL, CCBlocks.CHISELED_BISMITE);
+        wallItem(CCBlocks.CRACKED_BISMITE_WALL, CCBlocks.CRACKED_BISMITE);
+        wallItem(CCBlocks.POLISHED_BISMITE_WALL, CCBlocks.POLISHED_BISMITE);
+
+        wallItem(CCBlocks.CHISELED_BISMUTH_WALL, CCBlocks.CHISELED_BISMUTH);
+        wallItem(CCBlocks.PURPLE_CHISELED_BISMUTH_WALL, CCBlocks.PURPLE_CHISELED_BISMUTH);
+        wallItem(CCBlocks.VIOLET_CHISELED_BISMUTH_WALL, CCBlocks.VIOLET_CHISELED_BISMUTH);
+        wallItem(CCBlocks.YELLOW_CHISELED_BISMUTH_WALL, CCBlocks.YELLOW_CHISELED_BISMUTH);
+
+        wallItem(CCBlocks.BISMUTH_BRICKS_WALL, CCBlocks.BISMUTH_BRICKS);
+        wallItem(CCBlocks.PURPLE_BISMUTH_BRICKS_WALL, CCBlocks.PURPLE_BISMUTH_BRICKS);
+        wallItem(CCBlocks.YELLOW_BISMUTH_BRICKS_WALL, CCBlocks.YELLOW_BISMUTH_BRICKS);
+        wallItem(CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL, CCBlocks.RAINBOW_BISMUTH_BRICKS);
+        wallItem(CCBlocks.VIOLET_BISMUTH_BRICKS_WALL, CCBlocks.VIOLET_BISMUTH_BRICKS);
     }
 
     private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {

@@ -22,6 +22,11 @@ public class CCBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(CCBlocks.THUNDERSTONE.get())
+                .add(CCBlocks.CHARGED_THUNDERSTONE.get())
+                .add(CCBlocks.THUNDERSTONE_BRICKS.get())
+                .add(CCBlocks.CHISELED_THUNDERSTONE.get())
+                .add(CCBlocks.POLISHED_THUNDERSTONE.get())
                 .add(CCBlocks.BISMITE.get())
                 .add(CCBlocks.BISMITE_BRICKS.get())
                 .add(CCBlocks.CHISELED_BISMITE.get())
@@ -34,7 +39,6 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.YELLOW_BISMUTH_BRICKS.get())
                 .add(CCBlocks.CHISELED_BISMUTH.get())
                 .add(CCBlocks.PURPLE_CHISELED_BISMUTH.get())
-                .add(CCBlocks.RAINBOW_CHISELED_BISMUTH.get())
                 .add(CCBlocks.VIOLET_CHISELED_BISMUTH.get())
                 .add(CCBlocks.YELLOW_CHISELED_BISMUTH.get())
                 .add(CCBlocks.BISMUTH_CRYSTAL.get())
@@ -172,7 +176,6 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.YELLOW_BISMUTH_BRICKS.get())
                 .add(CCBlocks.CHISELED_BISMUTH.get())
                 .add(CCBlocks.PURPLE_CHISELED_BISMUTH.get())
-                .add(CCBlocks.RAINBOW_CHISELED_BISMUTH.get())
                 .add(CCBlocks.VIOLET_CHISELED_BISMUTH.get())
                 .add(CCBlocks.YELLOW_CHISELED_BISMUTH.get())
                 .add(CCBlocks.BISMUTH_CRYSTAL.get())
@@ -196,12 +199,14 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.BRONCHUS_PLANKS.get());
 
         this.tag(BlockTags.STONE_BRICKS)
+                .add(CCBlocks.THUNDERSTONE_BRICKS.get())
                 .add(CCBlocks.PUMICE_BRICKS.get())
                 .add(CCBlocks.BISMITE_BRICKS.get())
                 .add(CCBlocks.HOLY_MARBLE_BRICKS.get())
                 .add(CCBlocks.CRUSTONE_BRICKS.get());
 
         this.tag(Tags.Blocks.STONES)
+                .add(CCBlocks.THUNDERSTONE.get())
                 .add(CCBlocks.CRUSTONE.get())
                 .add(CCBlocks.BISMITE.get())
                 .add(CCBlocks.HOLY_MARBLE.get())
@@ -210,6 +215,24 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.GOLDSTONE.get());
 
         this.tag(BlockTags.WALLS)
+                .add(CCBlocks.CHISELED_BISMUTH_WALL.get())
+                .add(CCBlocks.PURPLE_CHISELED_BISMUTH_WALL.get())
+                .add(CCBlocks.VIOLET_CHISELED_BISMUTH_WALL.get())
+                .add(CCBlocks.YELLOW_CHISELED_BISMUTH_WALL.get())
+                .add(CCBlocks.BISMUTH_BRICKS_WALL.get())
+                .add(CCBlocks.PURPLE_BISMUTH_BRICKS_WALL.get())
+                .add(CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get())
+                .add(CCBlocks.VIOLET_BISMUTH_BRICKS_WALL.get())
+                .add(CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get())
+                .add(CCBlocks.BISMITE_WALL.get())
+                .add(CCBlocks.CHISELED_BISMITE_WALL.get())
+                .add(CCBlocks.CRACKED_BISMITE_WALL.get())
+                .add(CCBlocks.POLISHED_BISMITE_WALL.get())
+                .add(CCBlocks.BISMITE_BRICKS_WALL.get())
+                .add(CCBlocks.THUNDERSTONE_WALL.get())
+                .add(CCBlocks.CHISELED_THUNDERSTONE_WALL.get())
+                .add(CCBlocks.THUNDERSTONE_BRICKS_WALL.get())
+                .add(CCBlocks.POLISHED_THUNDERSTONE_WALL.get())
                 .add(CCBlocks.CRUSTONE_WALL.get())
                 .add(CCBlocks.CRUSTONE_BRICKS_WALL.get())
                 .add(CCBlocks.POLISHED_CRUSTONE_WALL.get())

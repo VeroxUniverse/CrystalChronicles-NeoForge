@@ -159,6 +159,11 @@ dependencies {
 
     // Patchouli
 
+    // Renders
+
+    implementation "curse.maven:irisshaders-455508:6661598"
+    implementation "curse.maven:sodium-394468:6382651"
+
     // Geckolib
     compileOnly "software.bernie.geckolib:geckolib-neoforge-${geckolib_version}"
     runtimeOnly "software.bernie.geckolib:geckolib-neoforge-${geckolib_version}"

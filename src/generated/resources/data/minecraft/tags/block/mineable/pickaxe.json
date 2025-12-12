@@ -1,5 +1,10 @@
 {
   "values": [
+    "crystal_chronicles:thunderstone",
+    "crystal_chronicles:charged_thunderstone",
+    "crystal_chronicles:thunderstone_bricks",
+    "crystal_chronicles:chiseled_thunderstone",
+    "crystal_chronicles:polished_thunderstone",
     "crystal_chronicles:bismite",
     "crystal_chronicles:bismite_bricks",
     "crystal_chronicles:chiseled_bismite",
@@ -12,7 +17,6 @@
     "crystal_chronicles:yellow_bismuth_bricks",
     "crystal_chronicles:chiseled_bismuth",
     "crystal_chronicles:purple_chiseled_bismuth",
-    "crystal_chronicles:rainbow_chiseled_bismuth",
     "crystal_chronicles:violet_chiseled_bismuth",
     "crystal_chronicles:yellow_chiseled_bismuth",
     "crystal_chronicles:bismuth_crystal",

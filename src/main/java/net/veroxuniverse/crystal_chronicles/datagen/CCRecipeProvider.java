@@ -691,5 +691,209 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE_BLOCK.get(), 2);
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE_BLOCK.get());
 
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_SLAB.get(), CCBlocks.THUNDERSTONE);
+        stairBuilder(CCBlocks.THUNDERSTONE_STAIRS.get(), Ingredient.of(CCBlocks.THUNDERSTONE.get())).group("thunderstone").unlockedBy("has_thunderstone", has(CCBlocks.THUNDERSTONE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_WALL.get(), CCBlocks.THUNDERSTONE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_STAIRS.get(), CCBlocks.THUNDERSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_SLAB.get(), CCBlocks.THUNDERSTONE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_WALL.get(), CCBlocks.THUNDERSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS.get(), CCBlocks.THUNDERSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE.get(), CCBlocks.THUNDERSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.THUNDERSTONE.get())
+                .unlockedBy("has_thunderstone", has(CCBlocks.THUNDERSTONE.get()))
+                .save(pRecipeOutput);
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_SLAB.get(), CCBlocks.THUNDERSTONE_BRICKS);
+        stairBuilder(CCBlocks.THUNDERSTONE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.THUNDERSTONE_BRICKS.get())).group("thunderstone_bricks").unlockedBy("has_thunderstone_bricks", has(CCBlocks.THUNDERSTONE_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_WALL.get(), CCBlocks.THUNDERSTONE_BRICKS.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_STAIRS.get(), CCBlocks.THUNDERSTONE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_SLAB.get(), CCBlocks.THUNDERSTONE_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_WALL.get(), CCBlocks.THUNDERSTONE_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_SLAB.get(), CCBlocks.POLISHED_THUNDERSTONE);
+        stairBuilder(CCBlocks.POLISHED_THUNDERSTONE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_THUNDERSTONE.get())).group("polished_thunderstone").unlockedBy("has_polished_thunderstone", has(CCBlocks.POLISHED_THUNDERSTONE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_WALL.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_STAIRS.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_SLAB.get(), CCBlocks.POLISHED_THUNDERSTONE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_WALL.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_SLAB.get(), CCBlocks.CHISELED_THUNDERSTONE);
+        stairBuilder(CCBlocks.CHISELED_THUNDERSTONE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_THUNDERSTONE.get())).group("chiseled_thunderstone").unlockedBy("has_chiseled_thunderstone", has(CCBlocks.CHISELED_THUNDERSTONE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_WALL.get(), CCBlocks.CHISELED_THUNDERSTONE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_STAIRS.get(), CCBlocks.CHISELED_THUNDERSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_SLAB.get(), CCBlocks.CHISELED_THUNDERSTONE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_WALL.get(), CCBlocks.CHISELED_THUNDERSTONE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_SLAB.get(), CCBlocks.BISMITE);
+        stairBuilder(CCBlocks.BISMITE_STAIRS.get(), Ingredient.of(CCBlocks.BISMITE.get())).group("bismite").unlockedBy("has_bismite", has(CCBlocks.BISMITE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_WALL.get(), CCBlocks.BISMITE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_STAIRS.get(), CCBlocks.BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_SLAB.get(), CCBlocks.BISMITE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_WALL.get(), CCBlocks.BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS.get(), CCBlocks.BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE.get(), CCBlocks.BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE.get(), CCBlocks.POLISHED_BISMITE.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.BISMITE.get())
+                .unlockedBy("has_bismite", has(CCBlocks.BISMITE.get()))
+                .save(pRecipeOutput);
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_SLAB.get(), CCBlocks.BISMITE_BRICKS);
+        stairBuilder(CCBlocks.BISMITE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.BISMITE_BRICKS.get())).group("bismite_bricks").unlockedBy("has_bismite_bricks", has(CCBlocks.BISMITE_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_WALL.get(), CCBlocks.BISMITE_BRICKS.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_STAIRS.get(), CCBlocks.BISMITE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_SLAB.get(), CCBlocks.BISMITE_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_WALL.get(), CCBlocks.BISMITE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE.get(), CCBlocks.BISMITE_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_SLAB.get(), CCBlocks.POLISHED_BISMITE);
+        stairBuilder(CCBlocks.POLISHED_BISMITE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_BISMITE.get())).group("polished_bismite").unlockedBy("has_polished_bismite", has(CCBlocks.POLISHED_BISMITE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_WALL.get(), CCBlocks.POLISHED_BISMITE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_STAIRS.get(), CCBlocks.POLISHED_BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_SLAB.get(), CCBlocks.POLISHED_BISMITE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_WALL.get(), CCBlocks.POLISHED_BISMITE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_SLAB.get(), CCBlocks.CHISELED_BISMITE);
+        stairBuilder(CCBlocks.CHISELED_BISMITE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_BISMITE.get())).group("chiseled_bismite").unlockedBy("has_chiseled_bismite", has(CCBlocks.CHISELED_BISMITE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_WALL.get(), CCBlocks.CHISELED_BISMITE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_STAIRS.get(), CCBlocks.CHISELED_BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_SLAB.get(), CCBlocks.CHISELED_BISMITE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_WALL.get(), CCBlocks.CHISELED_BISMITE.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_SLAB.get(), CCBlocks.CRACKED_BISMITE);
+        stairBuilder(CCBlocks.CRACKED_BISMITE_STAIRS.get(), Ingredient.of(CCBlocks.CRACKED_BISMITE.get())).group("cracked_bismite").unlockedBy("has_cracked_bismite", has(CCBlocks.CRACKED_BISMITE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_WALL.get(), CCBlocks.CRACKED_BISMITE.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_STAIRS.get(), CCBlocks.CRACKED_BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_SLAB.get(), CCBlocks.CRACKED_BISMITE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_WALL.get(), CCBlocks.CRACKED_BISMITE.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.BISMUTH_CRYSTAL.get())
+                .unlockedBy("has_bismuth_crystal", has(CCBlocks.BISMUTH_CRYSTAL.get()))
+                .save(pRecipeOutput);
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_SLAB.get(), CCBlocks.BISMUTH_BRICKS);
+        stairBuilder(CCBlocks.BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.BISMUTH_BRICKS.get())).group("bismuth_bricks").unlockedBy("has_bismuth_bricks", has(CCBlocks.BISMUTH_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_WALL.get(), CCBlocks.BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_STAIRS.get(), CCBlocks.BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_SLAB.get(), CCBlocks.BISMUTH_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_WALL.get(), CCBlocks.BISMUTH_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get(), CCBlocks.PURPLE_BISMUTH_BRICKS);
+        stairBuilder(CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.PURPLE_BISMUTH_BRICKS.get())).group("purple_bismuth_bricks").unlockedBy("has_purple_bismuth_bricks", has(CCBlocks.PURPLE_BISMUTH_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_WALL.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_WALL.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS);
+        stairBuilder(CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.RAINBOW_BISMUTH_BRICKS.get())).group("rainbow_bismuth_bricks").unlockedBy("has_rainbow_bismuth_bricks", has(CCBlocks.RAINBOW_BISMUTH_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB.get(), CCBlocks.VIOLET_BISMUTH_BRICKS);
+        stairBuilder(CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.VIOLET_BISMUTH_BRICKS.get())).group("violet_bismuth_bricks").unlockedBy("has_violet_bismuth_bricks", has(CCBlocks.VIOLET_BISMUTH_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_WALL.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_WALL.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.YELLOW_BISMUTH_BRICKS);
+        stairBuilder(CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.YELLOW_BISMUTH_BRICKS.get())).group("yellow_bismuth_bricks").unlockedBy("has_yellow_bismuth_bricks", has(CCBlocks.YELLOW_BISMUTH_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_SLAB.get(), CCBlocks.CHISELED_BISMUTH);
+        stairBuilder(CCBlocks.CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_BISMUTH.get())).group("chiseled_bismuth").unlockedBy("has_chiseled_bismuth", has(CCBlocks.CHISELED_BISMUTH.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_WALL.get(), CCBlocks.CHISELED_BISMUTH.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_STAIRS.get(), CCBlocks.CHISELED_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_SLAB.get(), CCBlocks.CHISELED_BISMUTH.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_WALL.get(), CCBlocks.CHISELED_BISMUTH.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_SLAB.get(), CCBlocks.PURPLE_CHISELED_BISMUTH);
+        stairBuilder(CCBlocks.PURPLE_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.PURPLE_CHISELED_BISMUTH.get())).group("purple_chiseled_bismuth").unlockedBy("has_purple_chiseled_bismuth", has(CCBlocks.PURPLE_CHISELED_BISMUTH.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_WALL.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_SLAB.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_WALL.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_SLAB.get(), CCBlocks.VIOLET_CHISELED_BISMUTH);
+        stairBuilder(CCBlocks.VIOLET_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.VIOLET_CHISELED_BISMUTH.get())).group("violet_chiseled_bismuth").unlockedBy("has_violet_chiseled_bismuth", has(CCBlocks.VIOLET_CHISELED_BISMUTH.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_WALL.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_SLAB.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_WALL.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
+
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_SLAB.get(), CCBlocks.YELLOW_CHISELED_BISMUTH);
+        stairBuilder(CCBlocks.YELLOW_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.YELLOW_CHISELED_BISMUTH.get())).group("yellow_chiseled_bismuth").unlockedBy("has_yellow_chiseled_bismuth", has(CCBlocks.YELLOW_CHISELED_BISMUTH.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_WALL.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_SLAB.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_WALL.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.PURPLE_BISMUTH_CRYSTAL.get())
+                .unlockedBy("has_purple_bismuth_crystal", has(CCBlocks.PURPLE_BISMUTH_CRYSTAL.get()))
+                .save(pRecipeOutput, "purple_bismuth_bricks_from_crystal");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get())
+                .unlockedBy("has_rainbow_bismuth_crystal", has(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get()))
+                .save(pRecipeOutput, "rainbow_bismuth_bricks_from_crystal");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.VIOLET_BISMUTH_CRYSTAL.get())
+                .unlockedBy("has_violet_bismuth_crystal", has(CCBlocks.VIOLET_BISMUTH_CRYSTAL.get()))
+                .save(pRecipeOutput, "violet_bismuth_bricks_from_crystal");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS.get(), 4)
+                .pattern("BB")
+                .pattern("BB")
+                .define('B', CCBlocks.YELLOW_BISMUTH_CRYSTAL.get())
+                .unlockedBy("has_yellow_bismuth_crystal", has(CCBlocks.YELLOW_BISMUTH_CRYSTAL.get()))
+                .save(pRecipeOutput, "yellow_bismuth_bricks_from_crystal");
+
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH.get(), CCBlocks.BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH.get(), CCBlocks.BISMUTH_CRYSTAL.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH_CRYSTAL.get());
+
     }
 }

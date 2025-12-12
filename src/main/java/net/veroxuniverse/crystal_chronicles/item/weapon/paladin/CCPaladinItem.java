@@ -8,11 +8,12 @@ import io.redspace.ironsspellbooks.registries.ComponentRegistry;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedSwordItem;
+import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedSwordItemWithoutCasting;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class CCPaladinItem extends AnimatedSwordItem implements IPresetSpellContainer {
+public class CCPaladinItem extends AnimatedSwordItemWithoutCasting implements IPresetSpellContainer {
 
     List<SpellData> spellData = null;
     SpellDataRegistryHolder[] spellDataRegistryHolders;

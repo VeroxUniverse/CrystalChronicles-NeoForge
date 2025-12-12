@@ -53,39 +53,69 @@ public class HolyLightBlock extends Block {
     }
 
     private void updateSegments(Level level, BlockPos pos, BlockState state) {
-        int length = computeLength(level, pos);
+        int totalLength = computeLength(level, pos);
 
-        for (int i = 1; i <= 3; i++) {
+        BlockPos currentPos = pos;
+
+        for (int i = 1; i <= Math.min(3, totalLength); i++) {
             BlockPos belowPos = pos.below(i);
             BlockState belowState = level.getBlockState(belowPos);
 
-            if (i <= length) {
-                Block targetBlock = switch (i) {
-                    case 1 -> CCBlocks.HOLY_LIGHT_1.get();
-                    case 2 -> CCBlocks.HOLY_LIGHT_2.get();
-                    case 3 -> CCBlocks.HOLY_LIGHT_3.get();
-                    default -> null;
-                };
+            Block targetBlock = switch (i) {
+                case 1 -> CCBlocks.HOLY_LIGHT_1.get();
+                case 2 -> CCBlocks.HOLY_LIGHT_2.get();
+                case 3 -> CCBlocks.HOLY_LIGHT_3.get();
+                default -> null;
+            };
 
-                if (targetBlock != null && !belowState.is(targetBlock)) {
-                    if (belowState.canBeReplaced()) {
-                        level.setBlock(belowPos, targetBlock.defaultBlockState(), Block.UPDATE_ALL);
+            if (targetBlock != null && !belowState.is(targetBlock)) {
+                if (belowState.canBeReplaced() || isSegmentBlock(belowState)) {
+                    level.setBlock(belowPos, targetBlock.defaultBlockState(), Block.UPDATE_ALL);
+                }
+            }
+        }
+
+        int startY = pos.getY() - 4;
+        int endY = pos.getY() - totalLength;
+
+        if (totalLength > 3) {
+            for (int y = startY; y > endY; y--) {
+                BlockPos segmentPos = new BlockPos(pos.getX(), y, pos.getZ());
+                BlockState segmentState = level.getBlockState(segmentPos);
+
+                if (!segmentState.is(CCBlocks.HOLY_LIGHT_4.get())) {
+                    if (segmentState.canBeReplaced() || isSegmentBlock(segmentState)) {
+                        level.setBlock(segmentPos, CCBlocks.HOLY_LIGHT_4.get().defaultBlockState(), Block.UPDATE_ALL);
                     }
                 }
+            }
+        }
+
+        int cleanupY = pos.getY() - totalLength - 1;
+
+        for (int y = cleanupY; y >= level.getMinBuildHeight(); y--) {
+            BlockPos cleanupPos = new BlockPos(pos.getX(), y, pos.getZ());
+            BlockState cleanupState = level.getBlockState(cleanupPos);
+
+            if (isSegmentBlock(cleanupState)) {
+                level.setBlock(cleanupPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
             } else {
-                if (isSegmentBlock(belowState)) {
-                    level.setBlock(belowPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+                if (!cleanupState.isAir()) {
+                    break;
                 }
             }
         }
     }
 
     private void clearSegments(Level level, BlockPos pos) {
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; ; i++) {
             BlockPos belowPos = pos.below(i);
             BlockState belowState = level.getBlockState(belowPos);
+
             if (isSegmentBlock(belowState)) {
                 level.setBlock(belowPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
+            } else {
+                break;
             }
         }
     }
@@ -93,14 +123,15 @@ public class HolyLightBlock extends Block {
     private boolean isSegmentBlock(BlockState state) {
         return state.is(CCBlocks.HOLY_LIGHT_1.get())
                 || state.is(CCBlocks.HOLY_LIGHT_2.get())
-                || state.is(CCBlocks.HOLY_LIGHT_3.get());
+                || state.is(CCBlocks.HOLY_LIGHT_3.get())
+                || state.is(CCBlocks.HOLY_LIGHT_4.get());
     }
 
     private int computeLength(Level level, BlockPos pos) {
         int length = 0;
 
-        for (int i = 1; i <= 3; i++) {
-            BlockPos belowPos = pos.below(i);
+        for (int y = pos.getY() - 1; y >= level.getMinBuildHeight(); y--) {
+            BlockPos belowPos = new BlockPos(pos.getX(), y, pos.getZ());
             BlockState belowState = level.getBlockState(belowPos);
 
             if (isSegmentBlock(belowState)) {
@@ -114,15 +145,12 @@ public class HolyLightBlock extends Block {
                             || belowState.is(BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "glass_panes")))
                             || belowState.is(BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "transparent")));
 
-            if (!isAllowedTransparent) {
+            if (isAllowedTransparent) {
+                length++;
+            } else {
                 break;
             }
-
-            if (belowState.isAir()) {
-                length++;
-            }
         }
-
         return length;
     }
 }

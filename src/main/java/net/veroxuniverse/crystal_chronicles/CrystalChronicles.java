@@ -7,6 +7,7 @@ import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
 import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
@@ -22,10 +23,12 @@ import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsE
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.veroxuniverse.crystal_chronicles.effect.CCEffects;
+//import net.veroxuniverse.crystal_chronicles.entity.CCBlockEntities;
+//import net.veroxuniverse.crystal_chronicles.entity.CCEntities;
+//import net.veroxuniverse.crystal_chronicles.entity.client.DimensionalRiftEntityRenderer;
 import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
-import net.veroxuniverse.crystal_chronicles.fluid.ReactiveWaterFluidType;
 import net.veroxuniverse.crystal_chronicles.item.CCItemProperties;
 import net.veroxuniverse.crystal_chronicles.item.armor.electromancer.ElectromancerArmorRenderer;
 import net.veroxuniverse.crystal_chronicles.item.armor.evoker.EvokerArmorRenderer;
@@ -47,6 +50,8 @@ import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 import net.veroxuniverse.crystal_chronicles.registry.CCTabs;
+import net.veroxuniverse.crystal_chronicles.spells.CCSpells;
+import net.veroxuniverse.crystal_chronicles.spells.PrismaticSchools;
 import net.veroxuniverse.crystal_chronicles.worldgen.CCFeatures;
 import org.slf4j.Logger;
 
@@ -68,6 +73,10 @@ public class CrystalChronicles {
         CCFluids.register(modEventBus);
         CCFluidTypes.register(modEventBus);
         CCFeatures.register(modEventBus);
+        PrismaticSchools.register(modEventBus);
+        CCSpells.register(modEventBus);
+        //CCEntities.register(modEventBus);
+        //CCBlockEntities.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -119,6 +128,8 @@ public class CrystalChronicles {
             AzItemRendererRegistry.register(StaffItemRenderer::new, CCItems.STAFF.get());
             AzItemRendererRegistry.register(TwinbladeItemRenderer::new, CCItems.EVOCATION_TWINBLADE.get());
             // AzItemRendererRegistry.register(SwordItemRenderer::new, CCItems.SWORD.get()); /// REMOVED
+
+            //EntityRenderers.register(CCEntities.DIMENSIONAL_RIFT.get(), DimensionalRiftEntityRenderer::new);
 
             AzArmorRendererRegistry.register(ElectromancerArmorRenderer::new,
                     CCItems.ELECTROMANCER_HELMET.get(),

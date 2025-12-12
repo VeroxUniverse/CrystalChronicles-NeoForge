@@ -35,6 +35,8 @@ public class CCItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CrystalChronicles.MODID);
 
+    // SPELLS
+
     // RESOURCES
 
     public static final DeferredItem<Item> HEMALITE_SHARD = ITEMS.registerSimpleItem("hemalite_shard");

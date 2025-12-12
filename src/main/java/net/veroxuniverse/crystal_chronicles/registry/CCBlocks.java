@@ -23,18 +23,66 @@ public class CCBlocks {
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CrystalChronicles.MODID);
 
+    // LIGHTNING //
+
+    public static final DeferredBlock<Block> THUNDERSTONE = registerBlock("thunderstone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> CHARGED_THUNDERSTONE = registerBlock("charged_thunderstone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> CHISELED_THUNDERSTONE = registerBlock("chiseled_thunderstone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> THUNDERSTONE_BRICKS = registerBlock("thunderstone_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> POLISHED_THUNDERSTONE = registerBlock("polished_thunderstone",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
+    public static final DeferredBlock<Block> THUNDERSTONE_STAIRS = registerBlock("thunderstone_stairs",
+            () -> new StairBlock(CCBlocks.THUNDERSTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> THUNDERSTONE_SLAB = registerBlock("thunderstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> THUNDERSTONE_WALL = registerBlock("thunderstone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CHISELED_THUNDERSTONE_STAIRS = registerBlock("chiseled_thunderstone_stairs",
+            () -> new StairBlock(CCBlocks.CHISELED_THUNDERSTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_THUNDERSTONE_SLAB = registerBlock("chiseled_thunderstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_THUNDERSTONE_WALL = registerBlock("chiseled_thunderstone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> THUNDERSTONE_BRICKS_STAIRS = registerBlock("thunderstone_bricks_stairs",
+            () -> new StairBlock(CCBlocks.THUNDERSTONE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> THUNDERSTONE_BRICKS_SLAB = registerBlock("thunderstone_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> THUNDERSTONE_BRICKS_WALL = registerBlock("thunderstone_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> POLISHED_THUNDERSTONE_STAIRS = registerBlock("polished_thunderstone_stairs",
+            () -> new StairBlock(CCBlocks.POLISHED_THUNDERSTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_THUNDERSTONE_SLAB = registerBlock("polished_thunderstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_THUNDERSTONE_WALL = registerBlock("polished_thunderstone_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
     // END - BISMUTH //
 
+    //public static final DeferredBlock<Block> PORTAL_FRAME_BLOCK = registerBlock("portal_frame_block",
+    //        () -> new PortalFrameBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
     public static final DeferredBlock<Block> BISMUTH_CRYSTAL = registerBlock("bismuth_crystal",
-            () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+            () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(state -> 6)));
     public static final DeferredBlock<Block> PURPLE_BISMUTH_CRYSTAL = registerBlock("purple_bismuth_crystal",
-            () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+            () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(state -> 6)));
     public static final DeferredBlock<Block> RAINBOW_BISMUTH_CRYSTAL = registerBlock("rainbow_bismuth_crystal",
-            () -> new BismuthCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+            () -> new BismuthCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(state -> 6)));
     public static final DeferredBlock<Block> VIOLET_BISMUTH_CRYSTAL = registerBlock("violet_bismuth_crystal",
-            () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+            () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(state -> 6)));
     public static final DeferredBlock<Block> YELLOW_BISMUTH_CRYSTAL = registerBlock("yellow_bismuth_crystal",
-            () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion()));
+            () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(state -> 6)));
 
     public static final DeferredBlock<Block> BISMITE = registerBlock("bismite",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
@@ -47,6 +95,46 @@ public class CCBlocks {
     public static final DeferredBlock<Block> POLISHED_BISMITE = registerBlock("polished_bismite",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
 
+    public static final DeferredBlock<Block> BISMITE_STAIRS = registerBlock("bismite_stairs",
+            () -> new StairBlock(CCBlocks.BISMITE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> BISMITE_SLAB = registerBlock("bismite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> BISMITE_WALL = registerBlock("bismite_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CHISELED_BISMITE_STAIRS = registerBlock("chiseled_bismite_stairs",
+            () -> new StairBlock(CCBlocks.CHISELED_BISMITE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_BISMITE_SLAB = registerBlock("chiseled_bismite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CHISELED_BISMITE_WALL = registerBlock("chiseled_bismite_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> CRACKED_BISMITE_STAIRS = registerBlock("cracked_bismite_stairs",
+            () -> new StairBlock(CCBlocks.CRACKED_BISMITE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRACKED_BISMITE_SLAB = registerBlock("cracked_bismite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> CRACKED_BISMITE_WALL = registerBlock("cracked_bismite_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> POLISHED_BISMITE_STAIRS = registerBlock("polished_bismite_stairs",
+            () -> new StairBlock(CCBlocks.POLISHED_BISMITE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_BISMITE_SLAB = registerBlock("polished_bismite_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> POLISHED_BISMITE_WALL = registerBlock("polished_bismite_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
+    public static final DeferredBlock<Block> BISMITE_BRICKS_STAIRS = registerBlock("bismite_bricks_stairs",
+            () -> new StairBlock(CCBlocks.BISMITE_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> BISMITE_BRICKS_SLAB = registerBlock("bismite_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
+    public static final DeferredBlock<Block> BISMITE_BRICKS_WALL = registerBlock("bismite_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
     public static final DeferredBlock<Block> BISMUTH_BRICKS = registerBlock("bismuth_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS = registerBlock("purple_bismuth_bricks",
@@ -58,6 +146,46 @@ public class CCBlocks {
     public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS = registerBlock("yellow_bismuth_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
+    public static final DeferredBlock<Block> BISMUTH_BRICKS_STAIRS = registerBlock("bismuth_bricks_stairs",
+            () -> new StairBlock(CCBlocks.BISMUTH_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> BISMUTH_BRICKS_SLAB = registerBlock("bismuth_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> BISMUTH_BRICKS_WALL = registerBlock("bismuth_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS_STAIRS = registerBlock("purple_bismuth_bricks_stairs",
+            () -> new StairBlock(CCBlocks.PURPLE_BISMUTH_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS_SLAB = registerBlock("purple_bismuth_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS_WALL = registerBlock("purple_bismuth_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS_STAIRS = registerBlock("yellow_bismuth_bricks_stairs",
+            () -> new StairBlock(CCBlocks.YELLOW_BISMUTH_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS_SLAB = registerBlock("yellow_bismuth_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS_WALL = registerBlock("yellow_bismuth_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICKS_STAIRS = registerBlock("rainbow_bismuth_bricks_stairs",
+            () -> new StairBlock(CCBlocks.RAINBOW_BISMUTH_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICKS_SLAB = registerBlock("rainbow_bismuth_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICKS_WALL = registerBlock("rainbow_bismuth_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICKS_STAIRS = registerBlock("violet_bismuth_bricks_stairs",
+            () -> new StairBlock(CCBlocks.VIOLET_BISMUTH_BRICKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICKS_SLAB = registerBlock("violet_bismuth_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICKS_WALL = registerBlock("violet_bismuth_bricks_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
     public static final DeferredBlock<Block> CHISELED_BISMUTH = registerBlock("chiseled_bismuth",
             () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> PURPLE_CHISELED_BISMUTH = registerBlock("purple_chiseled_bismuth",
@@ -66,8 +194,38 @@ public class CCBlocks {
             () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> YELLOW_CHISELED_BISMUTH = registerBlock("yellow_chiseled_bismuth",
             () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
-    public static final DeferredBlock<Block> RAINBOW_CHISELED_BISMUTH = registerBlock("rainbow_chiseled_bismuth",
-            () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+
+    public static final DeferredBlock<Block> CHISELED_BISMUTH_STAIRS = registerBlock("chiseled_bismuth_stairs",
+            () -> new StairBlock(CCBlocks.CHISELED_BISMUTH.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> CHISELED_BISMUTH_SLAB = registerBlock("chiseled_bismuth_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> CHISELED_BISMUTH_WALL = registerBlock("chiseled_bismuth_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> PURPLE_CHISELED_BISMUTH_STAIRS = registerBlock("purple_chiseled_bismuth_stairs",
+            () -> new StairBlock(CCBlocks.PURPLE_CHISELED_BISMUTH.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> PURPLE_CHISELED_BISMUTH_SLAB = registerBlock("purple_chiseled_bismuth_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> PURPLE_CHISELED_BISMUTH_WALL = registerBlock("purple_chiseled_bismuth_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> YELLOW_CHISELED_BISMUTH_STAIRS = registerBlock("yellow_chiseled_bismuth_stairs",
+            () -> new StairBlock(CCBlocks.YELLOW_CHISELED_BISMUTH.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> YELLOW_CHISELED_BISMUTH_SLAB = registerBlock("yellow_chiseled_bismuth_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> YELLOW_CHISELED_BISMUTH_WALL = registerBlock("yellow_chiseled_bismuth_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> VIOLET_CHISELED_BISMUTH_STAIRS = registerBlock("violet_chiseled_bismuth_stairs",
+            () -> new StairBlock(CCBlocks.VIOLET_CHISELED_BISMUTH.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> VIOLET_CHISELED_BISMUTH_SLAB = registerBlock("violet_chiseled_bismuth_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> VIOLET_CHISELED_BISMUTH_WALL = registerBlock("violet_chiseled_bismuth_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
     // BLOOD //
 
@@ -237,7 +395,7 @@ public class CCBlocks {
                             .noLootTable()
                             .noOcclusion()
                             .noCollission()
-                            .lightLevel(state -> 2)
+                            .lightLevel(state -> 14)
                             .strength(-1.0F, 3600000.0F).randomTicks()
             ));
 
@@ -247,7 +405,7 @@ public class CCBlocks {
                             .noLootTable()
                             .noOcclusion()
                             .noCollission()
-                            .lightLevel(state -> 2)
+                            .lightLevel(state -> 14)
                             .strength(-1.0F, 3600000.0F).randomTicks()
             ));
 
@@ -257,7 +415,17 @@ public class CCBlocks {
                             .noLootTable()
                             .noOcclusion()
                             .noCollission()
-                            .lightLevel(state -> 2)
+                            .lightLevel(state -> 14)
+                            .strength(-1.0F, 3600000.0F).randomTicks()
+            ));
+
+    public static final DeferredBlock<Block> HOLY_LIGHT_4 = registerBlock("holy_light_4",
+            () -> new HolyLightSegmentBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)
+                            .noLootTable()
+                            .noOcclusion()
+                            .noCollission()
+                            .lightLevel(state -> 14)
                             .strength(-1.0F, 3600000.0F).randomTicks()
             ));
 

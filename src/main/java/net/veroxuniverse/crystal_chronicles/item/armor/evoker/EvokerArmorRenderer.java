@@ -22,7 +22,6 @@ public class EvokerArmorRenderer extends AzArmorRenderer {
         super(
                 AzArmorRendererConfig.builder(MODEL, TEXTURE)
                         .setAnimatorProvider(ArmorAnimator::new)
-                        .addRenderLayer(new AzAutoGlowingLayer<>())
                         .build()
         );
     }
