@@ -9,11 +9,16 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.*;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -21,6 +26,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.veroxuniverse.crystal_chronicles.effect.CCEffects;
 //import net.veroxuniverse.crystal_chronicles.entity.CCBlockEntities;
@@ -77,6 +83,7 @@ public class CrystalChronicles {
         CCSpells.register(modEventBus);
         //CCEntities.register(modEventBus);
         //CCBlockEntities.register(modEventBus);
+        modEventBus.addListener(this::registerResourcePack);
 
         NeoForge.EVENT_BUS.register(this);
     }
@@ -87,10 +94,48 @@ public class CrystalChronicles {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-
         AzIdentityRegistry.register(CCItems.STAFF.get());
-
         LOGGER.info("HELLO from server starting");
+    }
+
+    private void registerResourcePack(AddPackFindersEvent event) {
+        if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+            var modFile = net.neoforged.fml.ModList.get().getModFileById(MODID).getFile();
+            var resourcePath = modFile.findResource("resourcepacks/CrystalChroniclesArmorReplacement");
+
+            if (resourcePath == null) {
+                LOGGER.error("Resourcepack Path not found!");
+                return;
+            }
+
+            var locationInfo = new net.minecraft.server.packs.PackLocationInfo(
+                    MODID + ":armor_replacement",
+                    Component.literal("Crystal Chronicles - Old Armor Models"),
+                    PackSource.BUILT_IN,
+                    java.util.Optional.empty()
+            );
+
+            var pack = Pack.readMetaAndCreate(
+                    locationInfo,
+                    new Pack.ResourcesSupplier() {
+                        @Override
+                        public PackResources openPrimary(PackLocationInfo info) {
+                            return new PathPackResources(info, resourcePath);
+                        }
+
+                        @Override
+                        public PackResources openFull(PackLocationInfo info, Pack.Metadata metadata) {
+                            return openPrimary(info);
+                        }
+                    },
+                    PackType.CLIENT_RESOURCES,
+                    new net.minecraft.server.packs.PackSelectionConfig(false, Pack.Position.TOP, false)
+            );
+
+            if (pack != null) {
+                event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
+            }
+        }
     }
 
     @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
@@ -112,11 +157,6 @@ public class CrystalChronicles {
 
             ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_REACTIVE_WATER.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_REACTIVE_WATER.get(), RenderType.translucent());
-
-            // EntityRenderers.register(CCEntityTypes.CRYSTAL_DRAKE.get(), CrystalDrakeRenderer::new);
-            // EntityRenderers.register(CCEntityTypes.CRYSTAL_SCORPION.get(), CrystalScorpionRenderer::new);
-            // EntityRenderers.register(CCEntityTypes.CRYSTAL_GOLEM.get(), CrystalGolemRenderer::new);
-            // EntityRenderers.register(CCEntityTypes.CRYSTAL_WOLF.get(), CrystalWolfRenderer::new);
 
             AzItemRendererRegistry.register(BidentItemRenderer::new, CCItems.LIGHTNING_BIDENT.get());
             AzItemRendererRegistry.register(ChakramItemRenderer::new, CCItems.CHAKRAM.get());

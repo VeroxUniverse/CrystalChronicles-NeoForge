@@ -6,6 +6,7 @@
   "item.crystal_chronicles.volcanite_shard": "Volcanite Shard",
   "item.crystal_chronicles.floralite_shard": "Floralite Shard",
   "item.crystal_chronicles.ice_shard": "Cryolite Shard",
+  "item.crystal_chronicles.reactive_water_bucket": "Sulphuric Water Bucket",
 
   "block.crystal_chronicles.blood_bases": "Blood Bases",
   "block.crystal_chronicles.tall_blood_bases": "Tall Blood Bases",
@@ -261,6 +262,7 @@
   "item.crystal_chronicles.cloud_bucket": "Cloud Bucket",
 
   "fluid_type.crystal_chronicles.blood_fluid": "Blood",
+  "fluid_type.crystal_chronicles.reactive_water": "Sulphuric Water",
 
   "advancements.crystal_chronicles.root.title": "Prismatic Arts",
   "advancements.crystal_chronicles.root.description": "Begin your journey into the Crystal Chronicles dimensions.",

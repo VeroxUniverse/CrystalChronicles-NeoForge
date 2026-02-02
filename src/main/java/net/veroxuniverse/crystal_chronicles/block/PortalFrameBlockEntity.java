@@ -42,7 +42,7 @@ public class PortalFrameBlockEntity extends BlockEntity {
         double entityY = masterPos.getY() + 1.5;
         double entityZ = masterPos.getZ() + 0.5;
 
-        // TODO: Passen Sie die Z-Koordinate basierend auf der FACING-Property des Blocks an!
+        // TODO: Z-Koordinate basierend auf der FACING-Property des Blocks!
         Direction facing = this.getBlockState().getValue(PortalFrameBlock.FACING);
         if (facing == Direction.EAST || facing == Direction.WEST) {
             entityX = masterPos.getX() + 0.5;
