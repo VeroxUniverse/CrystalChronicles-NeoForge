@@ -1,84 +1,36 @@
 {
-  "credit": "Made with Blockbench",
-  "parent": "builtin/entity",
-  "texture_size": [
-    128,
-    128
-  ],
-  "display": {
-    "thirdperson_righthand": {
-      "translation": [
-        0,
-        2,
-        2
-      ]
-    },
-    "thirdperson_lefthand": {
-      "translation": [
-        0,
-        2,
-        2
-      ]
-    },
-    "firstperson_righthand": {
-      "rotation": [
-        -7,
-        -15,
-        -13
-      ],
-      "translation": [
-        7,
-        -7,
-        -6.25
-      ]
-    },
-    "firstperson_lefthand": {
-      "rotation": [
-        -7,
-        -15,
-        -13
-      ],
-      "translation": [
-        7,
-        -7,
-        -6.25
-      ]
-    },
-    "ground": {
-      "translation": [
-        0,
-        10.25,
-        0
-      ],
-      "scale": [
-        0.4,
-        0.4,
-        0.4
-      ]
-    },
-    "gui": {
-      "rotation": [
-        43,
-        34,
-        -50
-      ],
-      "translation": [
-        -2.25,
-        -2.75,
-        0
-      ],
-      "scale": [
-        0.4,
-        0.4,
-        0.4
-      ]
-    },
-    "fixed": {
-      "rotation": [
-        0,
-        90,
-        0
-      ]
-    }
-  }
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "builtin/entity",
+	"texture_size": [128, 128],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 2, 2]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 2, 2]
+		},
+		"firstperson_righthand": {
+			"rotation": [-7, -15, -13],
+			"translation": [7, -7, -6.25]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-7, -15, -13],
+			"translation": [7, -7, -6.25]
+		},
+		"ground": {
+			"translation": [0, 10.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [43, 34, -50],
+			"translation": [-2.25, -2.75, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"translation": [0, -2.75, 0],
+			"scale": [0.4, 0.4, 0.4]
+		}
+	}
 }

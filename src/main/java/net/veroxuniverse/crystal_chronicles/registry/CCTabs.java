@@ -259,6 +259,7 @@ public class CCTabs {
                 output.accept(CCItems.MAGE_CHESTPLATE.get());
                 output.accept(CCItems.MAGE_LEGGINGS.get());
                 output.accept(CCItems.MAGE_BOOTS.get());
+                output.accept(CCItems.VOID_SICKLE.get());
                 output.accept(CCItems.STAFF.get());
                 output.accept(CCItems.ROGUE_HELMET.get());
                 output.accept(CCItems.ROGUE_CHESTPLATE.get());

@@ -7,18 +7,16 @@ import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
 import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.*;
+import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -29,9 +27,6 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.veroxuniverse.crystal_chronicles.effect.CCEffects;
-//import net.veroxuniverse.crystal_chronicles.entity.CCBlockEntities;
-//import net.veroxuniverse.crystal_chronicles.entity.CCEntities;
-//import net.veroxuniverse.crystal_chronicles.entity.client.DimensionalRiftEntityRenderer;
 import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
@@ -49,6 +44,7 @@ import net.veroxuniverse.crystal_chronicles.item.weapon.chakram.ChakramItemRende
 import net.veroxuniverse.crystal_chronicles.item.weapon.hammer.HammerItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.paladin.PaladinItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.scythe.ScytheItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.sickle.SickleItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.spear.SpearItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.staff.StaffItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.twinblade.TwinbladeItemRenderer;
@@ -104,7 +100,7 @@ public class CrystalChronicles {
             var resourcePath = modFile.findResource("resourcepacks/CrystalChroniclesArmorReplacement");
 
             if (resourcePath == null) {
-                LOGGER.error("Resourcepack Path not found!");
+                LOGGER.error("Resourcepack Path not found: resourcepacks/CrystalChroniclesArmorReplacement");
                 return;
             }
 
@@ -119,12 +115,12 @@ public class CrystalChronicles {
                     locationInfo,
                     new Pack.ResourcesSupplier() {
                         @Override
-                        public PackResources openPrimary(PackLocationInfo info) {
-                            return new PathPackResources(info, resourcePath);
+                        public net.minecraft.server.packs.PackResources openPrimary(net.minecraft.server.packs.PackLocationInfo info) {
+                            return new net.minecraft.server.packs.PathPackResources(info, resourcePath);
                         }
 
                         @Override
-                        public PackResources openFull(PackLocationInfo info, Pack.Metadata metadata) {
+                        public net.minecraft.server.packs.PackResources openFull(net.minecraft.server.packs.PackLocationInfo info, Pack.Metadata metadata) {
                             return openPrimary(info);
                         }
                     },
@@ -168,6 +164,7 @@ public class CrystalChronicles {
             AzItemRendererRegistry.register(StaffItemRenderer::new, CCItems.STAFF.get());
             AzItemRendererRegistry.register(TwinbladeItemRenderer::new, CCItems.EVOCATION_TWINBLADE.get());
             // AzItemRendererRegistry.register(SwordItemRenderer::new, CCItems.SWORD.get()); /// REMOVED
+            AzItemRendererRegistry.register(SickleItemRenderer::new, CCItems.VOID_SICKLE.get());
 
             //EntityRenderers.register(CCEntities.DIMENSIONAL_RIFT.get(), DimensionalRiftEntityRenderer::new);
 
