@@ -9,6 +9,7 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
+import net.veroxuniverse.crystal_chronicles.util.CCTags;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -180,6 +181,9 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.EVOCATION_KNIGHT_CHESTPLATE.get())
                 .add(CCItems.EVOCATION_KNIGHT_HELMET.get())
                 .add(CCItems.HOLY_SHIELD.get());
+
+        tag(CCTags.Items.STAFF)
+                .add(CCItems.ENDER_STAFF.get());
 
     }
     

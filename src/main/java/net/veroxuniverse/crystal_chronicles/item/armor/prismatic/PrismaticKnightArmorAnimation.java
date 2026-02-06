@@ -1,4 +1,4 @@
-package net.veroxuniverse.crystal_chronicles.item.armor;
+package net.veroxuniverse.crystal_chronicles.item.armor.prismatic;
 
 import mod.azure.azurelib.common.animation.controller.AzAnimationController;
 import mod.azure.azurelib.common.animation.controller.AzAnimationControllerContainer;
@@ -8,11 +8,11 @@ import net.minecraft.world.item.ItemStack;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import org.jetbrains.annotations.NotNull;
 
-public class ArmorAnimator extends AzItemAnimator {
-
+public class PrismaticKnightArmorAnimation extends AzItemAnimator {
     private static final ResourceLocation ANIMATIONS = ResourceLocation.fromNamespaceAndPath(
             CrystalChronicles.MODID,
-            "animations/armor/empty.animation.json");
+            "animations/prismatic_knight_armor.animation.json"
+    );
 
     @Override
     public void registerControllers(AzAnimationControllerContainer<ItemStack> animationControllerContainer) {

@@ -1,8 +1,11 @@
 package net.veroxuniverse.crystal_chronicles.registry;
 
+import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
+import io.redspace.ironsspellbooks.item.weapons.StaffItem;
+import io.redspace.ironsspellbooks.item.weapons.StaffTier;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -20,7 +23,10 @@ import net.veroxuniverse.crystal_chronicles.item.armor.fire.FireKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.blood.BloodKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.ice.IceKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.nature.NatureKnightArmor;
+import net.veroxuniverse.crystal_chronicles.item.armor.prismatic.PrismaticKnightArmor;
+import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedStaffItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedSwordItem;
+import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderSickleItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ice.IceHammerItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.lightning.LightningBidentItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.fire.FireChakramItem;
@@ -29,6 +35,7 @@ import net.veroxuniverse.crystal_chronicles.item.weapon.blood.BloodScytheItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.nature.NatureSpearItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderStaffItem;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
+import net.veroxuniverse.crystal_chronicles.lib.CCStaffTiers;
 import net.veroxuniverse.crystal_chronicles.lib.CCWeaponTiers;
 
 public class CCItems {
@@ -159,8 +166,18 @@ public class CCItems {
             "lightning_knight_boots",
             () -> new LightningKnightArmor(CCArmorMaterials.LIGHTNING, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(53))));
 
-
-
+    public static final DeferredHolder<Item, PrismaticKnightArmor> PRISMATIC_KNIGHT_HELMET = ITEMS.register(
+            "prismatic_knight_helmet",
+            () -> new PrismaticKnightArmor(CCArmorMaterials.PRISMATIC, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).fireResistant()));
+    public static final DeferredHolder<Item, PrismaticKnightArmor> PRISMATIC_KNIGHT_CHESTPLATE = ITEMS.register(
+            "prismatic_knight_chestplate",
+            () -> new PrismaticKnightArmor(CCArmorMaterials.PRISMATIC, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).fireResistant()));
+    public static final DeferredHolder<Item, PrismaticKnightArmor> PRISMATIC_KNIGHT_LEGGINGS = ITEMS.register(
+            "prismatic_knight_leggings",
+            () -> new PrismaticKnightArmor(CCArmorMaterials.PRISMATIC, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).fireResistant()));
+    public static final DeferredHolder<Item, PrismaticKnightArmor> PRISMATIC_KNIGHT_BOOTS = ITEMS.register(
+            "prismatic_knight_boots",
+            () -> new PrismaticKnightArmor(CCArmorMaterials.PRISMATIC, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).fireResistant()));
 
     // WEAPONS
     public static final DeferredHolder<Item, Item> HOLY_SWORD = ITEMS.register("holy_sword",
@@ -189,12 +206,10 @@ public class CCItems {
                     ).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.POISON_SPLASH_SPELL, 8))));
     public static final DeferredHolder<Item, Item> ENDER_STAFF = ITEMS.register("ender_staff",
-            () -> new EnderStaffItem(CCWeaponTiers.ENDER_STAFF,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.ENDER_STAFF)
-                    ).fireResistant(),
+            () -> new EnderStaffItem(ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes(CCStaffTiers.ENDER_STAFF)).rarity(Rarity.UNCOMMON),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.MAGIC_MISSILE_SPELL, 8))));
     public static final DeferredHolder<Item, Item> ENDER_SICKLE = ITEMS.register("ender_sickle",
-            () -> new EnderStaffItem(CCWeaponTiers.ENDER_SICKLE,
+            () -> new EnderSickleItem(CCWeaponTiers.ENDER_SICKLE,
                     ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.ENDER_SICKLE)
                     ).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.TELEPORT_SPELL, 3))));

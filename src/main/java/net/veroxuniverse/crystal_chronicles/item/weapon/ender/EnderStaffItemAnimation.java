@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 public class EnderStaffItemAnimation extends AzItemAnimator {
     private static final ResourceLocation ANIMATIONS = ResourceLocation.fromNamespaceAndPath(
             CrystalChronicles.MODID,
-            "animations/staff.animation.json"
+            "animations/ender_staff.animation.json"
     );
 
     @Override

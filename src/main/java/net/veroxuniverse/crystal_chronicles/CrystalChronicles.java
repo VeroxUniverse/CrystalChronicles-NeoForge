@@ -39,6 +39,7 @@ import net.veroxuniverse.crystal_chronicles.item.armor.fire.FireKnightArmorRende
 import net.veroxuniverse.crystal_chronicles.item.armor.blood.BloodKnightArmorRenderer;
 import net.veroxuniverse.crystal_chronicles.item.armor.ice.IceKnightArmorRenderer;
 import net.veroxuniverse.crystal_chronicles.item.armor.nature.NatureKnightArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.prismatic.PrismaticKnightArmorRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.lightning.LightningBidentItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.fire.FireChakramItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ice.IceHammerItemRenderer;
@@ -91,6 +92,10 @@ public class CrystalChronicles {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         AzIdentityRegistry.register(CCItems.ENDER_STAFF.get());
+        AzIdentityRegistry.register(CCItems.PRISMATIC_KNIGHT_HELMET.get());
+        AzIdentityRegistry.register(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get());
+        AzIdentityRegistry.register(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get());
+        AzIdentityRegistry.register(CCItems.PRISMATIC_KNIGHT_BOOTS.get());
         LOGGER.info("HELLO from server starting");
     }
 
@@ -156,14 +161,12 @@ public class CrystalChronicles {
 
             AzItemRendererRegistry.register(LightningBidentItemRenderer::new, CCItems.LIGHTNING_BIDENT.get());
             AzItemRendererRegistry.register(FireChakramItemRenderer::new, CCItems.FIRE_CHAKRAM.get());
-            // AzItemRendererRegistry.register(GreatswordItemRenderer::new, CCItems.GREATSWORD.get()); /// REMOVED
             AzItemRendererRegistry.register(IceHammerItemRenderer::new, CCItems.ICE_HAMMER.get());
             AzItemRendererRegistry.register(HolySwordItemRenderer::new, CCItems.HOLY_SWORD.get());
             AzItemRendererRegistry.register(BloodScytheItemRenderer::new, CCItems.BLOOD_SCYTHE.get());
             AzItemRendererRegistry.register(NatureSpearItemRenderer::new, CCItems.NATURE_SPEAR.get());
             AzItemRendererRegistry.register(EnderStaffItemRenderer::new, CCItems.ENDER_STAFF.get());
             AzItemRendererRegistry.register(EvocationTwinbladeItemRenderer::new, CCItems.EVOCATION_TWINBLADE.get());
-            // AzItemRendererRegistry.register(SwordItemRenderer::new, CCItems.SWORD.get()); /// REMOVED
             AzItemRendererRegistry.register(EnderSickleItemRenderer::new, CCItems.ENDER_SICKLE.get());
 
             //EntityRenderers.register(CCEntities.DIMENSIONAL_RIFT.get(), DimensionalRiftEntityRenderer::new);
@@ -208,6 +211,11 @@ public class CrystalChronicles {
                     CCItems.NATURE_KNIGHT_CHESTPLATE.get(),
                     CCItems.NATURE_KNIGHT_LEGGINGS.get(),
                     CCItems.NATURE_KNIGHT_BOOTS.get());
+            AzArmorRendererRegistry.register(PrismaticKnightArmorRenderer::new,
+                    CCItems.PRISMATIC_KNIGHT_HELMET.get(),
+                    CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get(),
+                    CCItems.PRISMATIC_KNIGHT_LEGGINGS.get(),
+                    CCItems.PRISMATIC_KNIGHT_BOOTS.get());
         }
 
         @SubscribeEvent

@@ -4,6 +4,8 @@ import com.google.common.base.Suppliers;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
+import io.redspace.ironsspellbooks.item.armor.IDisableHat;
+import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.registries.ComponentRegistry;
 import net.minecraft.core.Holder;
@@ -19,7 +21,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 
 import java.util.function.Supplier;
 
-public class AnimatedSpellArmor extends ArmorItem implements IPresetSpellContainer {
+public class AnimatedSpellArmor extends ArmorItem implements IPresetSpellContainer, IDisableHat, IDisableJacket {
 
     private final Supplier<ItemAttributeModifiers> defaultModifiers;
 

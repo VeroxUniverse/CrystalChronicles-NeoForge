@@ -286,6 +286,11 @@ public class CCTabs {
                 output.accept(CCItems.EVOCATION_KNIGHT_LEGGINGS.get());
                 output.accept(CCItems.EVOCATION_KNIGHT_BOOTS.get());
                 output.accept(CCItems.EVOCATION_TWINBLADE.get());
+
+                output.accept(CCItems.PRISMATIC_KNIGHT_HELMET.get());
+                output.accept(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get());
+                output.accept(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get());
+                output.accept(CCItems.PRISMATIC_KNIGHT_BOOTS.get());
             }).build());
 
     public static void register(IEventBus eventBus) {
