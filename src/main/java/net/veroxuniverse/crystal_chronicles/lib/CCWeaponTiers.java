@@ -19,35 +19,42 @@ import java.util.function.Supplier;
 
 public class CCWeaponTiers implements Tier, IronsWeaponTier {
 
-    public static final Tier ENDER = new ExtendedWeaponTier(
+    public static final Tier ENDER_STAFF = new ExtendedWeaponTier(
             3069, 6.0f, -3.0f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
             () -> Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
             new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.MANA_REGEN, 0.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-    public static final Tier LIGHTNING = new ExtendedWeaponTier(
+    public static final Tier ENDER_SICKLE = new ExtendedWeaponTier(
+            3069, 7.0f, -3.0f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
+            () -> Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
+            new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(Attributes.MOVEMENT_SPEED, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
+    public static final Tier LIGHTNING_BIDENT = new ExtendedWeaponTier(
             3069, 9.0f, -2.6f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
             () -> Ingredient.of(CCItems.VOLTITE_SHARD.get()),
             new AttributeContainer(AttributeRegistry.LIGHTNING_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-    public static final Tier HOLY = new ExtendedWeaponTier(
+    public static final Tier HOLY_SWORD = new ExtendedWeaponTier(
             3069, 8.0f, -2.4f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
             () -> Ingredient.of(CCItems.DIVINITE_SHARD.get()),
             new AttributeContainer(AttributeRegistry.HOLY_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-    public static final Tier NATURE = new ExtendedWeaponTier(
+    public static final Tier NATURE_SPEAR = new ExtendedWeaponTier(
             3069, 9.0f, -2.7f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
             () -> Ingredient.of(CCItems.FLORALITE_SHARD.get()),
             new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-    public static final Tier FIRE = new ExtendedWeaponTier(
+    public static final Tier FIRE_CHAKRAM = new ExtendedWeaponTier(
             3069, 7.0f, -3.0f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
             () -> Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
             new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
@@ -55,7 +62,7 @@ public class CCWeaponTiers implements Tier, IronsWeaponTier {
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(Attributes.MOVEMENT_SPEED, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-    public static final Tier BLOOD = new ExtendedWeaponTier(
+    public static final Tier BLOOD_SCYTHE = new ExtendedWeaponTier(
             3069, 9.0f, -2.7f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
             () -> Ingredient.of(CCItems.HEMALITE_SHARD.get()),
             new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
@@ -63,14 +70,14 @@ public class CCWeaponTiers implements Tier, IronsWeaponTier {
             new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-    public static final Tier ICE = new ExtendedWeaponTier(
+    public static final Tier ICE_HAMMER = new ExtendedWeaponTier(
             3069, 11.0f, -3.2f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
             () -> Ingredient.of(CCItems.ICE_SHARD.get()),
             new AttributeContainer(AttributeRegistry.ICE_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.05, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
-    public static final Tier EVOCATION = new ExtendedWeaponTier(
+    public static final Tier EVOCATION_TWINBLADE = new ExtendedWeaponTier(
             3069, 8.0f, -2.4f, 20, CCTags.Blocks.INCORRECT_FOR_CRYSTAL_TOOL,
             () -> Ingredient.of(Items.EMERALD),
             new AttributeContainer(AttributeRegistry.EVOCATION_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),

@@ -1,12 +1,12 @@
 {
   "values": [
-    "crystal_chronicles:paladin_boots",
-    "crystal_chronicles:tank_boots",
-    "crystal_chronicles:mage_boots",
-    "crystal_chronicles:pyromancer_boots",
-    "crystal_chronicles:toxic_boots",
-    "crystal_chronicles:electromancer_boots",
-    "crystal_chronicles:evoker_boots",
-    "crystal_chronicles:rogue_boots"
+    "crystal_chronicles:holy_knight_boots",
+    "crystal_chronicles:ice_knight_boots",
+    "crystal_chronicles:ender_mage_boots",
+    "crystal_chronicles:fire_knight_boots",
+    "crystal_chronicles:nature_knight_boots",
+    "crystal_chronicles:lightning_knight_boots",
+    "crystal_chronicles:evocation_knight_boots",
+    "crystal_chronicles:blood_knight_boots"
   ]
 }

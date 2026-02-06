@@ -21,6 +21,7 @@ public class ArmorAnimator extends AzItemAnimator {
                         .build()
         );
     }
+
     @Override
     public @NotNull ResourceLocation getAnimationLocation(ItemStack animatable) {
         return ANIMATIONS;

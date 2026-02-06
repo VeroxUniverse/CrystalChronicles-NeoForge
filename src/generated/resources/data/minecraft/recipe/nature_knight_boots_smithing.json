@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crystal_chronicles:floralite_shard"
+  },
+  "base": {
+    "item": "irons_spellbooks:plagued_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:nature_knight_boots"
+  },
+  "template": {
+    "item": "irons_spellbooks:nature_rune"
+  }
+}

@@ -1,5 +1,6 @@
 package net.veroxuniverse.crystal_chronicles.lib;
 
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -100,6 +101,16 @@ public class CCArmorMaterials {
                         map.put(ArmorItem.Type.HELMET, 5);
                     }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(Items.TOTEM_OF_UNDYING),
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "evocation"))),
+                    3, 0.2F));
+    public static final Holder<ArmorMaterial> PRISMATIC =
+            ARMOR_MATERIALS.register("PRISMATIC", () -> new ArmorMaterial(
+                    Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                        map.put(ArmorItem.Type.BOOTS, 6);
+                        map.put(ArmorItem.Type.LEGGINGS, 9);
+                        map.put(ArmorItem.Type.CHESTPLATE, 12);
+                        map.put(ArmorItem.Type.HELMET, 6);
+                    }), 20, SoundEvents.ARMOR_EQUIP_DIAMOND, () -> Ingredient.of(ItemRegistry.DIVINE_SOULSHARD.get()),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "prismatic"))),
                     3, 0.2F));
 
     public static void register(IEventBus eventBus) {

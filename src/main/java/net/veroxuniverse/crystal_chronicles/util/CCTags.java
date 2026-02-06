@@ -2,7 +2,9 @@ package net.veroxuniverse.crystal_chronicles.util;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 
@@ -16,6 +18,16 @@ public class CCTags {
 
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, name));
+        }
+    }
+
+    public static class Items {
+        public static final TagKey<Item> CRYSTALS = createTag("crystals");
+        public static final TagKey<Item> CRYSTAL_TOOL = createTag("crystal_tool");
+        public static final TagKey<Item> STAFF = createTag("staff");
+
+        private static TagKey<Item> createTag(String name) {
+            return ItemTags.create(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, name));
         }
     }
 

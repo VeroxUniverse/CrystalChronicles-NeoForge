@@ -19,7 +19,7 @@
       "irons_spellbooks:spell_container": {
         "data": [
           {
-            "id": "irons_spellbooks:chain_lightning",
+            "id": "irons_spellbooks:volt_strike",
             "index": 0,
             "level": 8,
             "locked": true
