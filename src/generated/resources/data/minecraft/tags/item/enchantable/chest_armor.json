@@ -1,12 +1,12 @@
 {
   "values": [
-    "crystal_chronicles:paladin_chestplate",
-    "crystal_chronicles:tank_chestplate",
-    "crystal_chronicles:mage_chestplate",
-    "crystal_chronicles:pyromancer_chestplate",
-    "crystal_chronicles:toxic_chestplate",
-    "crystal_chronicles:electromancer_chestplate",
-    "crystal_chronicles:evoker_chestplate",
-    "crystal_chronicles:rogue_chestplate"
+    "crystal_chronicles:holy_knight_chestplate",
+    "crystal_chronicles:ice_knight_chestplate",
+    "crystal_chronicles:ender_mage_chestplate",
+    "crystal_chronicles:fire_knight_chestplate",
+    "crystal_chronicles:nature_knight_chestplate",
+    "crystal_chronicles:lightning_knight_chestplate",
+    "crystal_chronicles:evocation_knight_chestplate",
+    "crystal_chronicles:blood_knight_chestplate"
   ]
 }

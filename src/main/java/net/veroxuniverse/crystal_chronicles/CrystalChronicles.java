@@ -31,23 +31,23 @@ import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
 import net.veroxuniverse.crystal_chronicles.item.CCItemProperties;
-import net.veroxuniverse.crystal_chronicles.item.armor.electromancer.ElectromancerArmorRenderer;
-import net.veroxuniverse.crystal_chronicles.item.armor.evoker.EvokerArmorRenderer;
-import net.veroxuniverse.crystal_chronicles.item.armor.mage.MageArmorRenderer;
-import net.veroxuniverse.crystal_chronicles.item.armor.paladin.PaladinArmorRenderer;
-import net.veroxuniverse.crystal_chronicles.item.armor.pyromancer.PyromancerArmorRenderer;
-import net.veroxuniverse.crystal_chronicles.item.armor.rogue.RogueArmorRenderer;
-import net.veroxuniverse.crystal_chronicles.item.armor.tank.TankArmorRenderer;
-import net.veroxuniverse.crystal_chronicles.item.armor.toxic.ToxicArmorRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.bident.BidentItemRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.chakram.ChakramItemRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.hammer.HammerItemRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.paladin.PaladinItemRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.scythe.ScytheItemRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.sickle.SickleItemRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.spear.SpearItemRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.staff.StaffItemRenderer;
-import net.veroxuniverse.crystal_chronicles.item.weapon.twinblade.TwinbladeItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.lightning.LightningKnightArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.evocation.EvocationKnightArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.ender.EnderMageArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.holy.HolyKnightArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.fire.FireKnightArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.blood.BloodKnightArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.ice.IceKnightArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.armor.nature.NatureKnightArmorRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.lightning.LightningBidentItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.fire.FireChakramItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.ice.IceHammerItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.holy.HolySwordItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.blood.BloodScytheItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderSickleItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.nature.NatureSpearItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderStaffItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.evocation.EvocationTwinbladeItemRenderer;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
@@ -90,7 +90,7 @@ public class CrystalChronicles {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        AzIdentityRegistry.register(CCItems.STAFF.get());
+        AzIdentityRegistry.register(CCItems.ENDER_STAFF.get());
         LOGGER.info("HELLO from server starting");
     }
 
@@ -151,63 +151,63 @@ public class CrystalChronicles {
             ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_BLOOD.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_BLOOD.get(), RenderType.translucent());
 
-            ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_REACTIVE_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_SULPHURIC_WATER.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_REACTIVE_WATER.get(), RenderType.translucent());
 
-            AzItemRendererRegistry.register(BidentItemRenderer::new, CCItems.LIGHTNING_BIDENT.get());
-            AzItemRendererRegistry.register(ChakramItemRenderer::new, CCItems.CHAKRAM.get());
+            AzItemRendererRegistry.register(LightningBidentItemRenderer::new, CCItems.LIGHTNING_BIDENT.get());
+            AzItemRendererRegistry.register(FireChakramItemRenderer::new, CCItems.FIRE_CHAKRAM.get());
             // AzItemRendererRegistry.register(GreatswordItemRenderer::new, CCItems.GREATSWORD.get()); /// REMOVED
-            AzItemRendererRegistry.register(HammerItemRenderer::new, CCItems.ICE_HAMMER.get());
-            AzItemRendererRegistry.register(PaladinItemRenderer::new, CCItems.PALADIN_SWORD.get());
-            AzItemRendererRegistry.register(ScytheItemRenderer::new, CCItems.BLOOD_SCYTHE.get());
-            AzItemRendererRegistry.register(SpearItemRenderer::new, CCItems.SPEAR.get());
-            AzItemRendererRegistry.register(StaffItemRenderer::new, CCItems.STAFF.get());
-            AzItemRendererRegistry.register(TwinbladeItemRenderer::new, CCItems.EVOCATION_TWINBLADE.get());
+            AzItemRendererRegistry.register(IceHammerItemRenderer::new, CCItems.ICE_HAMMER.get());
+            AzItemRendererRegistry.register(HolySwordItemRenderer::new, CCItems.HOLY_SWORD.get());
+            AzItemRendererRegistry.register(BloodScytheItemRenderer::new, CCItems.BLOOD_SCYTHE.get());
+            AzItemRendererRegistry.register(NatureSpearItemRenderer::new, CCItems.NATURE_SPEAR.get());
+            AzItemRendererRegistry.register(EnderStaffItemRenderer::new, CCItems.ENDER_STAFF.get());
+            AzItemRendererRegistry.register(EvocationTwinbladeItemRenderer::new, CCItems.EVOCATION_TWINBLADE.get());
             // AzItemRendererRegistry.register(SwordItemRenderer::new, CCItems.SWORD.get()); /// REMOVED
-            AzItemRendererRegistry.register(SickleItemRenderer::new, CCItems.VOID_SICKLE.get());
+            AzItemRendererRegistry.register(EnderSickleItemRenderer::new, CCItems.ENDER_SICKLE.get());
 
             //EntityRenderers.register(CCEntities.DIMENSIONAL_RIFT.get(), DimensionalRiftEntityRenderer::new);
 
-            AzArmorRendererRegistry.register(ElectromancerArmorRenderer::new,
-                    CCItems.ELECTROMANCER_HELMET.get(),
-                    CCItems.ELECTROMANCER_CHESTPLATE.get(),
-                    CCItems.ELECTROMANCER_LEGGINGS.get(),
-                    CCItems.ELECTROMANCER_BOOTS.get());
-            AzArmorRendererRegistry.register(EvokerArmorRenderer::new,
-                    CCItems.EVOKER_HELMET.get(),
-                    CCItems.EVOKER_CHESTPLATE.get(),
-                    CCItems.EVOKER_LEGGINGS.get(),
-                    CCItems.EVOKER_BOOTS.get());
-            AzArmorRendererRegistry.register(MageArmorRenderer::new,
-                    CCItems.MAGE_HELMET.get(),
-                    CCItems.MAGE_CHESTPLATE.get(),
-                    CCItems.MAGE_LEGGINGS.get(),
-                    CCItems.MAGE_BOOTS.get());
-            AzArmorRendererRegistry.register(PaladinArmorRenderer::new,
-                    CCItems.PALADIN_HELMET.get(),
-                    CCItems.PALADIN_CHESTPLATE.get(),
-                    CCItems.PALADIN_LEGGINGS.get(),
-                    CCItems.PALADIN_BOOTS.get());
-            AzArmorRendererRegistry.register(PyromancerArmorRenderer::new,
-                    CCItems.PYROMANCER_HELMET.get(),
-                    CCItems.PYROMANCER_CHESTPLATE.get(),
-                    CCItems.PYROMANCER_LEGGINGS.get(),
-                    CCItems.PYROMANCER_BOOTS.get());
-            AzArmorRendererRegistry.register(RogueArmorRenderer::new,
-                    CCItems.ROGUE_HELMET.get(),
-                    CCItems.ROGUE_CHESTPLATE.get(),
-                    CCItems.ROGUE_LEGGINGS.get(),
-                    CCItems.ROGUE_BOOTS.get());
-            AzArmorRendererRegistry.register(TankArmorRenderer::new,
-                    CCItems.TANK_HELMET.get(),
-                    CCItems.TANK_CHESTPLATE.get(),
-                    CCItems.TANK_LEGGINGS.get(),
-                    CCItems.TANK_BOOTS.get());
-            AzArmorRendererRegistry.register(ToxicArmorRenderer::new,
-                    CCItems.TOXIC_HELMET.get(),
-                    CCItems.TOXIC_CHESTPLATE.get(),
-                    CCItems.TOXIC_LEGGINGS.get(),
-                    CCItems.TOXIC_BOOTS.get());
+            AzArmorRendererRegistry.register(LightningKnightArmorRenderer::new,
+                    CCItems.LIGHTNING_KNIGHT_HELMET.get(),
+                    CCItems.LIGHTNING_KNIGHT_CHESTPLATE.get(),
+                    CCItems.LIGHTNING_KNIGHT_LEGGINGS.get(),
+                    CCItems.LIGHTNING_KNIGHT_BOOTS.get());
+            AzArmorRendererRegistry.register(EvocationKnightArmorRenderer::new,
+                    CCItems.EVOCATION_KNIGHT_HELMET.get(),
+                    CCItems.EVOCATION_KNIGHT_CHESTPLATE.get(),
+                    CCItems.EVOCATION_KNIGHT_LEGGINGS.get(),
+                    CCItems.EVOCATION_KNIGHT_BOOTS.get());
+            AzArmorRendererRegistry.register(EnderMageArmorRenderer::new,
+                    CCItems.ENDER_MAGE_HELMET.get(),
+                    CCItems.ENDER_MAGE_CHESTPLATE.get(),
+                    CCItems.ENDER_MAGE_LEGGINGS.get(),
+                    CCItems.ENDER_MAGE_BOOTS.get());
+            AzArmorRendererRegistry.register(HolyKnightArmorRenderer::new,
+                    CCItems.HOLY_KNIGHT_HELMET.get(),
+                    CCItems.HOLY_KNIGHT_CHESTPLATE.get(),
+                    CCItems.HOLY_KNIGHT_LEGGINGS.get(),
+                    CCItems.HOLY_KNIGHT_BOOTS.get());
+            AzArmorRendererRegistry.register(FireKnightArmorRenderer::new,
+                    CCItems.FIRE_KNIGHT_HELMET.get(),
+                    CCItems.FIRE_KNIGHT_CHESTPLATE.get(),
+                    CCItems.FIRE_KNIGHT_LEGGINGS.get(),
+                    CCItems.FIRE_KNIGHT_BOOTS.get());
+            AzArmorRendererRegistry.register(BloodKnightArmorRenderer::new,
+                    CCItems.BLOOD_KNIGHT_HELMET.get(),
+                    CCItems.BLOOD_KNIGHT_CHESTPLATE.get(),
+                    CCItems.BLOOD_KNIGHT_LEGGINGS.get(),
+                    CCItems.BLOOD_KNIGHT_BOOTS.get());
+            AzArmorRendererRegistry.register(IceKnightArmorRenderer::new,
+                    CCItems.ICE_KNIGHT_HELMET.get(),
+                    CCItems.ICE_KNIGHT_CHESTPLATE.get(),
+                    CCItems.ICE_KNIGHT_LEGGINGS.get(),
+                    CCItems.ICE_KNIGHT_BOOTS.get());
+            AzArmorRendererRegistry.register(NatureKnightArmorRenderer::new,
+                    CCItems.NATURE_KNIGHT_HELMET.get(),
+                    CCItems.NATURE_KNIGHT_CHESTPLATE.get(),
+                    CCItems.NATURE_KNIGHT_LEGGINGS.get(),
+                    CCItems.NATURE_KNIGHT_BOOTS.get());
         }
 
         @SubscribeEvent

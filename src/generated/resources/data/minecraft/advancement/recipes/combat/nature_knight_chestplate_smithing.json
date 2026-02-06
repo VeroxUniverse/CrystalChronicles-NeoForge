@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nature_rune": {
+      "conditions": {
+        "items": [
+          {
+            "items": "irons_spellbooks:nature_rune"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:nature_knight_chestplate_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nature_rune"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:nature_knight_chestplate_smithing"
+    ]
+  }
+}

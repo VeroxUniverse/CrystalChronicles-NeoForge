@@ -111,39 +111,39 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 Ingredient.of(ItemRegistry.PYROMANCER_HELMET.get()),
                 Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
                 RecipeCategory.COMBAT,
-                CCItems.PYROMANCER_HELMET.get()
+                CCItems.FIRE_KNIGHT_HELMET.get()
         )
                 .unlocks("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput, "pyromancer_helmet_smithing");
+                .save(pRecipeOutput, "fire_knight_helmet_smithing");
         SmithingTransformRecipeBuilder.smithing(
                 Ingredient.of(ItemRegistry.FIRE_RUNE.get()),
                 Ingredient.of(ItemRegistry.PYROMANCER_CHESTPLATE.get()),
                 Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
                 RecipeCategory.COMBAT,
-                CCItems.PYROMANCER_CHESTPLATE.get()
+                CCItems.FIRE_KNIGHT_CHESTPLATE.get()
         )
                 .unlocks("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput, "pyromancer_chestplate_smithing");
+                .save(pRecipeOutput, "fire_knight_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                 Ingredient.of(ItemRegistry.FIRE_RUNE.get()),
                 Ingredient.of(ItemRegistry.PYROMANCER_LEGGINGS.get()),
                 Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
                 RecipeCategory.COMBAT,
-                CCItems.PYROMANCER_LEGGINGS.get()
+                CCItems.FIRE_KNIGHT_LEGGINGS.get()
         )
                 .unlocks("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput, "pyromancer_leggings_smithing");
+                .save(pRecipeOutput, "fire_knight_leggings_smithing");
         SmithingTransformRecipeBuilder.smithing(
                 Ingredient.of( ItemRegistry.FIRE_RUNE.get()),
                 Ingredient.of(ItemRegistry.PYROMANCER_BOOTS.get()),
                 Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
                 RecipeCategory.COMBAT,
-                CCItems.PYROMANCER_BOOTS.get()
+                CCItems.FIRE_KNIGHT_BOOTS.get()
         )
                 .unlocks("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput, "pyromancer_boots_smithing");
+                .save(pRecipeOutput, "fire_knight_boots_smithing");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.CHAKRAM.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.FIRE_CHAKRAM.get())
                 .pattern(" S ")
                 .pattern("SNS")
                 .pattern(" S ")
@@ -164,39 +164,39 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         Ingredient.of(ItemRegistry.PRIEST_HELMET.get()),
                         Ingredient.of(CCItems.DIVINITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.PALADIN_HELMET.get()
+                        CCItems.HOLY_KNIGHT_HELMET.get()
                 )
                 .unlocks("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput, "paladin_helmet_smithing");
+                .save(pRecipeOutput, "holy_knight_helmet_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.HOLY_RUNE.get()),
                         Ingredient.of(ItemRegistry.PRIEST_CHESTPLATE.get()),
                         Ingredient.of(CCItems.DIVINITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.PALADIN_CHESTPLATE.get()
+                        CCItems.HOLY_KNIGHT_CHESTPLATE.get()
                 )
                 .unlocks("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput, "paladin_chestplate_smithing");
+                .save(pRecipeOutput, "holy_knight_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.HOLY_RUNE.get()),
                         Ingredient.of(ItemRegistry.PRIEST_LEGGINGS.get()),
                         Ingredient.of(CCItems.DIVINITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.PALADIN_LEGGINGS.get()
+                        CCItems.HOLY_KNIGHT_LEGGINGS.get()
                 )
                 .unlocks("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput, "paladin_leggings_smithing");
+                .save(pRecipeOutput, "holy_knight_leggings_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.HOLY_RUNE.get()),
                         Ingredient.of(ItemRegistry.PRIEST_BOOTS.get()),
                         Ingredient.of(CCItems.DIVINITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.PALADIN_BOOTS.get()
+                        CCItems.HOLY_KNIGHT_BOOTS.get()
                 )
                 .unlocks("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput, "paladin_boots_smithing");
+                .save(pRecipeOutput, "holy_knight_boots_smithing");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.PALADIN_SWORD.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.HOLY_SWORD.get())
                 .pattern("S")
                 .pattern("S")
                 .pattern("N")
@@ -205,7 +205,7 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
                 .save(pRecipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCItems.PALADIN_SHIELD.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCItems.HOLY_SHIELD.get())
                 .pattern("ISI")
                 .pattern("ISI")
                 .pattern(" I ")
@@ -226,37 +226,37 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         Ingredient.of(ItemRegistry.CRYOMANCER_HELMET.get()),
                         Ingredient.of(CCItems.ICE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.TANK_HELMET.get()
+                        CCItems.ICE_KNIGHT_HELMET.get()
                 )
                 .unlocks("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput, "tank_helmet_smithing");
+                .save(pRecipeOutput, "ice_knight_helmet_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.ICE_RUNE.get()),
                         Ingredient.of(ItemRegistry.CRYOMANCER_CHESTPLATE.get()),
                         Ingredient.of(CCItems.ICE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.TANK_CHESTPLATE.get()
+                        CCItems.ICE_KNIGHT_CHESTPLATE.get()
                 )
                 .unlocks("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput, "tank_chestplate_smithing");
+                .save(pRecipeOutput, "ice_knight_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.ICE_RUNE.get()),
                         Ingredient.of(ItemRegistry.CRYOMANCER_LEGGINGS.get()),
                         Ingredient.of(CCItems.ICE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.TANK_LEGGINGS.get()
+                        CCItems.ICE_KNIGHT_LEGGINGS.get()
                 )
                 .unlocks("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput, "tank_leggings_smithing");
+                .save(pRecipeOutput, "ice_knight_leggings_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.ICE_RUNE.get()),
                         Ingredient.of(ItemRegistry.CRYOMANCER_BOOTS.get()),
                         Ingredient.of(CCItems.ICE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.TANK_BOOTS.get()
+                        CCItems.ICE_KNIGHT_BOOTS.get()
                 )
                 .unlocks("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput, "tank_boots_smithing");
+                .save(pRecipeOutput, "ice_knight_boots_smithing");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCItems.ICE_HAMMER.get())
                 .pattern("SSS")
@@ -279,39 +279,39 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         Ingredient.of(ItemRegistry.SHADOWWALKER_HELMET.get()),
                         Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.MAGE_HELMET.get()
+                        CCItems.ENDER_MAGE_HELMET.get()
                 )
                 .unlocks("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput, "mage_helmet_smithing");
+                .save(pRecipeOutput, "ender_mage_helmet_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.ENDER_RUNE.get()),
                         Ingredient.of(ItemRegistry.SHADOWWALKER_CHESTPLATE.get()),
                         Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.MAGE_CHESTPLATE.get()
+                        CCItems.ENDER_MAGE_CHESTPLATE.get()
                 )
                 .unlocks("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput, "mage_chestplate_smithing");
+                .save(pRecipeOutput, "ender_mage_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.ENDER_RUNE.get()),
                         Ingredient.of(ItemRegistry.SHADOWWALKER_LEGGINGS.get()),
                         Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.MAGE_LEGGINGS.get()
+                        CCItems.ENDER_MAGE_LEGGINGS.get()
                 )
                 .unlocks("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput, "mage_leggings_smithing");
+                .save(pRecipeOutput, "ender_mage_leggings_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.ENDER_RUNE.get()),
                         Ingredient.of(ItemRegistry.SHADOWWALKER_BOOTS.get()),
                         Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.MAGE_BOOTS.get()
+                        CCItems.ENDER_MAGE_BOOTS.get()
                 )
                 .unlocks("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput, "mage_boots_smithing");
+                .save(pRecipeOutput, "ender_mage_boots_smithing");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.STAFF.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.ENDER_STAFF.get())
                 .pattern("S")
                 .pattern("N")
                 .pattern("N")
@@ -332,37 +332,37 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         Ingredient.of(ItemRegistry.CULTIST_HELMET.get()),
                         Ingredient.of(CCItems.HEMALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.ROGUE_HELMET.get()
+                        CCItems.BLOOD_KNIGHT_HELMET.get()
                 )
                 .unlocks("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput, "rogue_helmet_smithing");
+                .save(pRecipeOutput, "blood_knight_helmet_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.BLOOD_RUNE.get()),
                         Ingredient.of(ItemRegistry.CULTIST_CHESTPLATE.get()),
                         Ingredient.of(CCItems.HEMALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.ROGUE_CHESTPLATE.get()
+                        CCItems.BLOOD_KNIGHT_CHESTPLATE.get()
                 )
                 .unlocks("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput, "rogue_chestplate_smithing");
+                .save(pRecipeOutput, "blood_knight_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.BLOOD_RUNE.get()),
                         Ingredient.of(ItemRegistry.CULTIST_LEGGINGS.get()),
                         Ingredient.of(CCItems.HEMALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.ROGUE_LEGGINGS.get()
+                        CCItems.BLOOD_KNIGHT_LEGGINGS.get()
                 )
                 .unlocks("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput, "rogue_leggings_smithing");
+                .save(pRecipeOutput, "blood_knight_leggings_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.BLOOD_RUNE.get()),
                         Ingredient.of(ItemRegistry.CULTIST_BOOTS.get()),
                         Ingredient.of(CCItems.HEMALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.ROGUE_BOOTS.get()
+                        CCItems.BLOOD_KNIGHT_BOOTS.get()
                 )
                 .unlocks("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput, "rogue_boots_smithing");
+                .save(pRecipeOutput, "blood_knight_boots_smithing");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.BLOOD_SCYTHE.get())
                 .pattern("SS")
@@ -387,39 +387,39 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         Ingredient.of(ItemRegistry.PLAGUED_HELMET.get()),
                         Ingredient.of(CCItems.FLORALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.TOXIC_HELMET.get()
+                        CCItems.NATURE_KNIGHT_HELMET.get()
                 )
                 .unlocks("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "toxic_helmet_smithing");
+                .save(pRecipeOutput, "nature_knight_helmet_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.NATURE_RUNE.get()),
                         Ingredient.of(ItemRegistry.PLAGUED_CHESTPLATE.get()),
                         Ingredient.of(CCItems.FLORALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.TOXIC_CHESTPLATE.get()
+                        CCItems.NATURE_KNIGHT_CHESTPLATE.get()
                 )
                 .unlocks("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "toxic_chestplate_smithing");
+                .save(pRecipeOutput, "nature_knight_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.NATURE_RUNE.get()),
                         Ingredient.of(ItemRegistry.PLAGUED_LEGGINGS.get()),
                         Ingredient.of(CCItems.FLORALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.TOXIC_LEGGINGS.get()
+                        CCItems.NATURE_KNIGHT_LEGGINGS.get()
                 )
                 .unlocks("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "toxic_leggings_smithing");
+                .save(pRecipeOutput, "nature_knight_leggings_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.NATURE_RUNE.get()),
                         Ingredient.of(ItemRegistry.PLAGUED_BOOTS.get()),
                         Ingredient.of(CCItems.FLORALITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.TOXIC_BOOTS.get()
+                        CCItems.NATURE_KNIGHT_BOOTS.get()
                 )
                 .unlocks("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "toxic_boots_smithing");
+                .save(pRecipeOutput, "nature_knight_boots_smithing");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.SPEAR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.NATURE_SPEAR.get())
                 .pattern(" SS")
                 .pattern(" NS")
                 .pattern("N  ")
@@ -449,37 +449,37 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         Ingredient.of(ItemRegistry.ELECTROMANCER_HELMET.get()),
                         Ingredient.of(CCItems.VOLTITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.ELECTROMANCER_HELMET.get()
+                        CCItems.LIGHTNING_KNIGHT_HELMET.get()
                 )
                 .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "electromancer_helmet_smithing");
+                .save(pRecipeOutput, "lightning_knight_helmet_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
                         Ingredient.of(ItemRegistry.ELECTROMANCER_CHESTPLATE.get()),
                         Ingredient.of(CCItems.VOLTITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.ELECTROMANCER_CHESTPLATE.get()
+                        CCItems.LIGHTNING_KNIGHT_CHESTPLATE.get()
                 )
                 .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "electromancer_chestplate_smithing");
+                .save(pRecipeOutput, "lightning_knight_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
                         Ingredient.of(ItemRegistry.ELECTROMANCER_LEGGINGS.get()),
                         Ingredient.of(CCItems.VOLTITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.ELECTROMANCER_LEGGINGS.get()
+                        CCItems.LIGHTNING_KNIGHT_LEGGINGS.get()
                 )
                 .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "electromancer_leggings_smithing");
+                .save(pRecipeOutput, "lightning_knight_leggings_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
                         Ingredient.of(ItemRegistry.ELECTROMANCER_BOOTS.get()),
                         Ingredient.of(CCItems.VOLTITE_SHARD.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.ELECTROMANCER_BOOTS.get()
+                        CCItems.LIGHTNING_KNIGHT_BOOTS.get()
                 )
                 .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "electromancer_boots_smithing");
+                .save(pRecipeOutput, "lightning_knight_boots_smithing");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.VOLTITE_SHARD.get(), 1)
                 .requires(ItemRegistry.LIGHTNING_BOTTLE.get())
@@ -503,37 +503,37 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         Ingredient.of(ItemRegistry.ARCHEVOKER_HELMET.get()),
                         Ingredient.of(Items.TOTEM_OF_UNDYING),
                         RecipeCategory.COMBAT,
-                        CCItems.EVOKER_HELMET.get()
+                        CCItems.EVOCATION_KNIGHT_HELMET.get()
                 )
                 .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput, "evoker_helmet_smithing");
+                .save(pRecipeOutput, "evocation_knight_helmet_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
                         Ingredient.of(ItemRegistry.ARCHEVOKER_CHESTPLATE.get()),
                         Ingredient.of(Items.TOTEM_OF_UNDYING),
                         RecipeCategory.COMBAT,
-                        CCItems.EVOKER_CHESTPLATE.get()
+                        CCItems.EVOCATION_KNIGHT_CHESTPLATE.get()
                 )
                 .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput, "evoker_chestplate_smithing");
+                .save(pRecipeOutput, "evocation_knight_chestplate_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
                         Ingredient.of(ItemRegistry.ARCHEVOKER_LEGGINGS.get()),
                         Ingredient.of(Items.TOTEM_OF_UNDYING),
                         RecipeCategory.COMBAT,
-                        CCItems.EVOKER_LEGGINGS.get()
+                        CCItems.EVOCATION_KNIGHT_LEGGINGS.get()
                 )
                 .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput, "evoker_leggings_smithing");
+                .save(pRecipeOutput, "evocation_knight_leggings_smithing");
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
                         Ingredient.of(ItemRegistry.ARCHEVOKER_BOOTS.get()),
                         Ingredient.of(Items.TOTEM_OF_UNDYING),
                         RecipeCategory.COMBAT,
-                        CCItems.EVOKER_BOOTS.get()
+                        CCItems.EVOCATION_KNIGHT_BOOTS.get()
                 )
                 .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput, "evoker_boots_smithing");
+                .save(pRecipeOutput, "evocation_knight_boots_smithing");
 
         slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_SLAB.get(), CCBlocks.HOLY_MARBLE);
         stairBuilder(CCBlocks.HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.HOLY_MARBLE.get())).group("holy_marble")
