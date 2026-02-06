@@ -1,0 +1,77 @@
+{
+    "feature": {
+        "type": "minecraft:block_column",
+        "config": {
+            "allowed_placement": {
+                "type": "minecraft:solid"
+            },
+            "direction": "down",
+            "prioritize_tip": true,
+            "layers": [
+                {
+                    "height": 1,
+                    "provider": {
+                        "type": "simple_state_provider",
+                        "state": {
+                            "Name": "minecraft:air"
+                        }
+                    }
+                },
+                {
+                    "height": 2,
+                    "provider": {
+                        "type": "simple_state_provider",
+                        "state": {
+                            "Name": "minecraft:lava"
+                        }
+                    }
+                },
+                {
+                    "height": 1,
+                    "provider": {
+                        "type": "simple_state_provider",
+                        "state": {
+                            "Name": "minecraft:magma_block"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "placement": [
+        {
+            "type": "minecraft:count",
+            "count": 4
+        },
+        {
+            "type": "minecraft:count_on_every_layer",
+            "count": 256
+        },
+        {
+            "type": "minecraft:biome"
+        },
+        {
+            "type": "minecraft:environment_scan",
+            "direction_of_search": "down",
+            "max_steps": 4,
+            "allowed_search_condition": {
+                "type": "matching_blocks",
+                "blocks": "air"
+            },
+            "target_condition": {
+                "type": "minecraft:all_of",
+                "predicates": [
+                    {
+                        "type": "matching_blocks",
+                        "blocks": "minecraft:polished_basalt"
+                    },
+                    {
+                        "type": "matching_block_tag",
+                        "tag": "minecraft:air",
+                        "offset": [0,1,0]
+                    }
+                ]
+            }
+        }
+    ]
+}

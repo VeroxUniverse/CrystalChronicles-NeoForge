@@ -1,0 +1,414 @@
+{
+  "type": "random_patch",
+  "config": {
+    "tries": 96,
+    "xz_spread": 8,
+    "y_spread": 4,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_random_selector",
+        "config": {
+          "features": [
+            {
+              "feature": {
+                "type": "minecraft:random_selector",
+                "config": {
+                  "default": {
+                    "feature": {
+                      "type": "minecraft:no_op",
+                      "config": {}
+                    },
+                    "placement": []
+                  },
+                  "features": [
+                    {
+                      "chance": 0.3,
+                      "feature": {
+                        "feature": {
+                          "type": "minecraft:waterlogged_vegetation_patch",
+                          "config": {
+                            "depth": 1,
+                            "extra_bottom_block_chance": 1,
+                            "extra_edge_column_chance": 1,
+                            "ground_state": {
+                              "type": "minecraft:simple_state_provider",
+                              "state": {
+                                "Name": "crystal_chronicles:sulphuric_soil"
+                              }
+                            },
+                            "replaceable": "#crystal_chronicles:fire/sulphuric_soil_replaceable",
+                            "surface": "floor",
+                            "vertical_range": 1,
+                            "xz_radius": 1,
+                            "vegetation_chance": 0.1,
+                            "vegetation_feature": {
+                              "feature": {
+                                "type": "block_column",
+                                "config": {
+                                  "direction": "up",
+                                  "allowed_placement": {
+                                    "type": "matching_block_tag",
+                                    "tag": "minecraft:replaceable"
+                                  },
+                                  "prioritize_tip": false,
+                                  "layers": [
+                                    {
+                                      "height": {
+                                        "type": "minecraft:uniform",
+                                        "min_inclusive": 1,
+                                        "max_inclusive": 2
+                                      },
+                                      "provider": {
+                                        "type": "simple_state_provider",
+                                        "state": {
+                                          "Name": "crystal_chronicles:sulphuric_soil"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "height": 1,
+                                      "provider": {
+                                        "type": "simple_state_provider",
+                                        "state": {
+                                          "Name": "crystal_chronicles:red_sulphur_water_vent_top"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              "placement": []
+                            }
+                          }
+                        },
+                        "placement": []
+                      }
+                    }
+                  ]
+                }
+              },
+              "placement": [
+                {
+                  "type": "minecraft:block_predicate_filter",
+                  "predicate": {
+                    "type": "matching_blocks",
+                    "offset": [0,-1,0],
+                    "blocks": "crystal_chronicles:sulphuric_soil"
+                  }
+                }
+              ]
+            },
+            {
+              "feature": {
+                "type": "minecraft:simple_block",
+                "config": {
+                  "to_place": {
+                    "type": "minecraft:simple_state_provider",
+                    "state": {
+                      "Name": "crystal_chronicles:tall_sulphur_cluster",
+                      "Properties": {
+                        "half": "lower"
+                      }
+                    }
+                  }
+                }
+              },
+              "placement": [
+                {
+                  "type": "minecraft:block_predicate_filter",
+                  "predicate": {
+                    "type": "matching_blocks",
+                    "offset": [0,-1,0],
+                    "blocks": "crystal_chronicles:orange_sulphur_pool"
+                  }
+                },
+                {
+                  "type": "minecraft:block_predicate_filter",
+                  "predicate": {
+                    "type": "minecraft:any_of",
+                    "predicates": [
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,-1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [-1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [-1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,-1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "feature": {
+                "type": "minecraft:simple_block",
+                "config": {
+                  "to_place": {
+                    "type": "minecraft:simple_state_provider",
+                    "state": {
+                      "Name": "crystal_chronicles:medium_sulphur_cluster"
+                    }
+                  }
+                }
+              },
+              "placement": [
+                {
+                  "type": "minecraft:block_predicate_filter",
+                  "predicate": {
+                    "type": "matching_blocks",
+                    "offset": [0,-1,0],
+                    "blocks": "crystal_chronicles:yellow_sulphur_pool"
+                  }
+                },
+                {
+                  "type": "minecraft:block_predicate_filter",
+                  "predicate": {
+                    "type": "minecraft:any_of",
+                    "predicates": [
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,-1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [-1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [-1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,-1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "feature": {
+                "type": "block_column",
+                "config": {
+                  "direction": "up",
+                  "prioritize_tip": true,
+                  "allowed_placement": {
+                    "type": "minecraft:replaceable"
+                  },
+                  "layers": [
+                    {
+                      "height": {
+                        "type": "minecraft:biased_to_bottom",
+                        "max_inclusive": 2,
+                        "min_inclusive": 1
+                      },
+                      "provider": {
+                        "type": "simple_state_provider",
+                        "state": {
+                          "Name": "crystal_chronicles:sulphur_water_vent_base"
+                        }
+                      }
+                    },
+                    {
+                      "height": 1,
+                      "provider": {
+                        "type": "simple_state_provider",
+                        "state": {
+                          "Name": "crystal_chronicles:sulphur_water_vent_top"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "placement": [
+                {
+                  "type": "minecraft:block_predicate_filter",
+                  "predicate": {
+                    "type": "matching_blocks",
+                    "offset": [0,-1,0],
+                    "blocks": "crystal_chronicles:yellow_sulphur_pool"
+                  }
+                },
+                {
+                  "type": "minecraft:block_predicate_filter",
+                  "predicate": {
+                    "type": "minecraft:any_of",
+                    "predicates": [
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,-1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [-1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [-1,0,0],
+                            "blocks": "minecraft:air"
+                          },
+                          {
+                            "type": "minecraft:matching_blocks",
+                            "offset": [0,0,-1],
+                            "blocks": "minecraft:air"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "placement": [
+        {
+          "type": "block_predicate_filter",
+          "predicate": {
+            "type": "matching_block_tag",
+            "tag": "air"
+          }
+        }
+      ]
+    }
+  }
+}

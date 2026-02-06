@@ -1,14 +1,14 @@
 {
-  "feature": "crystal_chronicles:flesh/artree",
+  "feature": "crystal_chronicles:flesh/bronchal_tree",
   "placement": [
     {
       "type": "count_on_every_layer",
-      "count": 1
+      "count": 5
     },
     {
       "type": "minecraft:noise_threshold_count",
-      "above_noise": 0,
-      "below_noise": 1,
+      "above_noise": 1,
+      "below_noise": 0,
       "noise_level": 0.5
     },
     {

@@ -5,10 +5,10 @@
 	"effects": {
 		"sky_color": 0,
 		"fog_color": 0,
-		"water_color": 16759296,
-		"water_fog_color": 16759296,
-		"grass_color": 12081920,
-		"foliage_color": 12088064
+		"water_color": 6542328,
+		"water_fog_color": 6542328,
+		"grass_color": 16762880,
+		"foliage_color": 16752896
 	},
 	"spawn_costs": {},
 	"spawners": {},
@@ -26,7 +26,7 @@
 		[],
 		[],
 		[
-			"crystal_chronicles:holy/holy_light",
+			
 			"crystal_chronicles:holy/marble_pillars"
 		],
 		[]

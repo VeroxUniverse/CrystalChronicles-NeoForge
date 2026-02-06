@@ -21,7 +21,7 @@
         }
       ]
     },
-    "replaceable": "#crystal_chronicles:terrain/sulphuric",
+    "replaceable": "#crystal_chronicles:fire/sulphuric_floor",
     "surface": "floor",
     "vegetation_chance": 0.2,
     "vegetation_feature": {
