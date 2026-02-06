@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:random_boolean_selector",
+  "config": {
+    "feature_false": {
+      "feature": {
+        "type": "minecraft:spring_feature",
+        "config": {
+          "hole_count": 1,
+          "requires_block_below": false,
+          "rock_count": 4,
+          "state": {
+            "Name": "crystal_chronicles:blood_block",
+            "Properties": {
+              "falling": "true"
+            }
+          },
+          "valid_blocks": "crystal_chronicles:flesh_block"
+        }
+      },
+      "placement": []
+    },
+    "feature_true": {
+      "feature": {
+        "type": "minecraft:spring_feature",
+        "config": {
+          "hole_count": 1,
+          "requires_block_below": false,
+          "rock_count": 4,
+          "state": {
+            "Name": "minecraft:water",
+            "Properties": {
+              "falling": "true"
+            }
+          },
+          "valid_blocks": "crystal_chronicles:flesh_block"
+        }
+      },
+      "placement": []
+    }
+  }
+}

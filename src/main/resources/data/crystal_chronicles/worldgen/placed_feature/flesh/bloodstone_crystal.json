@@ -1,0 +1,8 @@
+{
+  "feature": "crystal_chronicles:flesh/bloodstone_crystal",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

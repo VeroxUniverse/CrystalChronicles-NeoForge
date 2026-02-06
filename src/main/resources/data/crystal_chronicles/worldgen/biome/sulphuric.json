@@ -5,10 +5,10 @@
 	"effects": {
 		"sky_color": 0,
 		"fog_color": 0,
-		"water_color": 16759296,
-		"water_fog_color": 16759296,
-		"grass_color": 12081920,
-		"foliage_color": 12088064
+		"water_color": 41169,
+		"water_fog_color": 41169,
+		"grass_color": 10395294,
+		"foliage_color": 5395026
 	},
 	"spawn_costs": {},
 	"spawners": {},
@@ -21,15 +21,23 @@
 		[],
 		[],
 		[
-			"crystal_chronicles:fire/sulphur_pool"
+
 		],
 		[],
 		[],
 		[
-			"crystal_chronicles:fire/pyrite"
+			"crystal_chronicles:fire/pyrite",
+			"crystal_chronicles:fire/sulphur_deposits",
+			"crystal_chronicles:fire/tall_sulphur_deposits"
 		],
-		[],
-		[],
+		[
+			"crystal_chronicles:fire/brine_pools",
+			"crystal_chronicles:fire/lava_river"
+		],
+		[
+			"crystal_chronicles:fire/lava_river_edges",
+			"crystal_chronicles:fire/sulphur_deposit_decoration"
+		],
 		[]
 	]
 }

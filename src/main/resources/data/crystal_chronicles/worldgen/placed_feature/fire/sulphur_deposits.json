@@ -1,0 +1,24 @@
+{
+  "feature": "crystal_chronicles:fire/sulphur_deposit",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 255
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 24
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "matching_block_tag",
+        "tag": "crystal_chronicles:fire/sulphur_deposit",
+        "offset": [0,-1,0]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

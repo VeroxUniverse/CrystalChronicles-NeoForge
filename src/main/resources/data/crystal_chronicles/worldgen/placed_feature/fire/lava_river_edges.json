@@ -1,0 +1,91 @@
+{
+    "feature": {
+        "type": "minecraft:block_column",
+        "config": {
+            "allowed_placement": {
+                "type": "any_of",
+                "predicates": [
+                    {
+                        "type": "minecraft:solid"
+                    },
+                    {
+                        "type": "minecraft:matching_block_tag",
+                        "tag": "minecraft:air"
+                    }
+                ]
+            },
+            "direction": "up", 
+            "prioritize_tip": false,
+            "layers": [
+                {
+                    "height": {
+                        "type": "biased_to_bottom",
+                        "min_inclusive": 2,
+                        "max_inclusive": 4
+                    },
+                    "provider": {
+                        "type": "simple_state_provider",
+                        "state": {
+                            "Name": "minecraft:basalt"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "placement": [
+        {
+            "type": "minecraft:count",
+            "count": 4
+        },
+        {
+            "type": "minecraft:count_on_every_layer",
+            "count": 256
+        },
+        {
+            "type": "minecraft:biome"
+        },
+        {
+            "type": "minecraft:environment_scan",
+            "direction_of_search": "down",
+            "max_steps": 4,
+            "allowed_search_condition": {
+                "type": "inside_world_bounds"
+            },
+            "target_condition": {
+                "type": "minecraft:all_of",
+                "predicates": [
+                    {
+                        "type": "matching_blocks",
+                        "blocks": "minecraft:smooth_basalt"
+                    },
+                    {
+                        "type": "any_of",
+                        "predicates": [
+                            {
+                                "type": "matching_blocks",
+                                "blocks": "minecraft:lava",
+                                "offset": [1,0,0]
+                            },
+                            {
+                                "type": "matching_blocks",
+                                "blocks": "minecraft:lava",
+                                "offset": [-1,0,0]
+                            },
+                            {
+                                "type": "matching_blocks",
+                                "blocks": "minecraft:lava",
+                                "offset": [0,0,1]
+                            },
+                            {
+                                "type": "matching_blocks",
+                                "blocks": "minecraft:lava",
+                                "offset": [0,0,-1]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

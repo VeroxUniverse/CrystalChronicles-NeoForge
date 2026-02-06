@@ -1,0 +1,265 @@
+{
+    "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+            "to_place": {
+                "type": "minecraft:simple_state_provider",
+                "state": {
+                    "Name": "crystal_chronicles:sulphuric_water_block"
+                }
+            }
+        }
+    },
+    "placement": [
+        {
+            "type": "minecraft:count",
+            "count": 4
+        },
+        {
+            "type": "minecraft:count_on_every_layer",
+            "count": 256
+        },
+        {
+            "type": "minecraft:biome"
+        },
+        {
+            "type": "minecraft:environment_scan",
+            "direction_of_search": "down",
+            "max_steps": 4,
+            "allowed_search_condition": {
+                "type": "matching_blocks",
+                "blocks": "air"
+            },
+            "target_condition": {
+                "type": "minecraft:matching_block_tag",
+                "tag": "crystal_chronicles:fire/sulphur_deposit"
+            }
+        },
+        {
+            "type": "minecraft:block_predicate_filter",
+            "predicate": {
+                "type": "matching_block_tag",
+                "offset": [0,-1,0],
+                "tag": "crystal_chronicles:fire/sulphur_deposit"
+            }
+        },
+        {
+            "type": "minecraft:block_predicate_filter",
+            "predicate": {
+                "type": "minecraft:any_of",
+                "predicates": [
+                    {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,0],
+                                "blocks": "crystal_chronicles:green_sulphur_pool"
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:green_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,1],
+                                "blocks": [
+                                    "crystal_chronicles:green_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [-1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:green_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,-1],
+                                "blocks": [
+                                    "crystal_chronicles:green_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,0],
+                                "blocks": "crystal_chronicles:yellow_sulphur_pool"
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:yellow_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,1],
+                                "blocks": [
+                                    "crystal_chronicles:yellow_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [-1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:yellow_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,-1],
+                                "blocks": [
+                                    "crystal_chronicles:yellow_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,0],
+                                "blocks": "crystal_chronicles:orange_sulphur_pool"
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:orange_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,1],
+                                "blocks": [
+                                    "crystal_chronicles:orange_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [-1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:orange_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,-1],
+                                "blocks": [
+                                    "crystal_chronicles:orange_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,0],
+                                "blocks": "crystal_chronicles:red_sulphur_pool"
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:red_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,1],
+                                "blocks": [
+                                    "crystal_chronicles:red_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [-1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:red_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,-1],
+                                "blocks": [
+                                    "crystal_chronicles:red_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "minecraft:all_of",
+                        "predicates": [
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,0],
+                                "blocks": "crystal_chronicles:vermillion_sulphur_pool"
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:vermillion_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,1],
+                                "blocks": [
+                                    "crystal_chronicles:vermillion_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [-1,0,0],
+                                "blocks": [
+                                    "crystal_chronicles:vermillion_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            },
+                            {
+                                "type": "minecraft:matching_blocks",
+                                "offset": [0,0,-1],
+                                "blocks": [
+                                    "crystal_chronicles:vermillion_sulphur_pool",
+                                    "crystal_chronicles:sulphuric_water_block"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
