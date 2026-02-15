@@ -103,7 +103,7 @@ public class CCArmorMaterials {
                     List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "evocation"))),
                     3, 0.2F));
     public static final Holder<ArmorMaterial> PRISMATIC =
-            ARMOR_MATERIALS.register("PRISMATIC", () -> new ArmorMaterial(
+            ARMOR_MATERIALS.register("prismatic", () -> new ArmorMaterial(
                     Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                         map.put(ArmorItem.Type.BOOTS, 6);
                         map.put(ArmorItem.Type.LEGGINGS, 9);

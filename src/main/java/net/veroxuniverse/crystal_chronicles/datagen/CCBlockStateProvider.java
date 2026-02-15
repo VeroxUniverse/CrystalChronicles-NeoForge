@@ -207,8 +207,8 @@ public class CCBlockStateProvider extends BlockStateProvider {
         saplingBlock(CCBlocks.ALVEOLUS);
 
 
-        simpleBlock(CCBlocks.BLOOD_BASES.get(),
-                models().cross(blockTexture(CCBlocks.BLOOD_BASES.get()).getPath(), blockTexture(CCBlocks.BLOOD_BASES.get())).renderType("cutout"));
+        simpleBlock(CCBlocks.VILLI.get(),
+                models().cross(blockTexture(CCBlocks.VILLI.get()).getPath(), blockTexture(CCBlocks.VILLI.get())).renderType("cutout"));
 
         simpleBlock(CCBlocks.HANGING_VEINS.get(),
                 models().cross(blockTexture(CCBlocks.HANGING_VEINS.get()).getPath(), blockTexture(CCBlocks.HANGING_VEINS.get())).renderType("cutout"));
@@ -297,10 +297,10 @@ public class CCBlockStateProvider extends BlockStateProvider {
         blockItem(CCBlocks.POLISHED_PUMICE_STAIRS);
         blockItem(CCBlocks.POLISHED_PUMICE_SLAB);
 
-        blockWithItem(CCBlocks.PYRITE_BLOCK);
-        stairsBlock(((StairBlock) CCBlocks.PYRITE_STAIRS.get()), blockTexture(CCBlocks.PYRITE_BLOCK.get()));
-        slabBlock(((SlabBlock) CCBlocks.PYRITE_SLAB.get()), blockTexture(CCBlocks.PYRITE_BLOCK.get()), blockTexture(CCBlocks.PYRITE_BLOCK.get()));
-        wallBlock(((WallBlock) CCBlocks.PYRITE_WALL.get()), blockTexture(CCBlocks.PYRITE_BLOCK.get()));
+        blockWithItem(CCBlocks.PYRITE);
+        stairsBlock(((StairBlock) CCBlocks.PYRITE_STAIRS.get()), blockTexture(CCBlocks.PYRITE.get()));
+        slabBlock(((SlabBlock) CCBlocks.PYRITE_SLAB.get()), blockTexture(CCBlocks.PYRITE.get()), blockTexture(CCBlocks.PYRITE.get()));
+        wallBlock(((WallBlock) CCBlocks.PYRITE_WALL.get()), blockTexture(CCBlocks.PYRITE.get()));
         blockItem(CCBlocks.PYRITE_STAIRS);
         blockItem(CCBlocks.PYRITE_SLAB);
 
