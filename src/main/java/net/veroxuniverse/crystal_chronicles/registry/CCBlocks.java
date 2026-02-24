@@ -229,9 +229,9 @@ public class CCBlocks {
 
     // BLOOD //
 
-    public static final DeferredBlock<Block> BLOOD_BASES = registerBlock("blood_bases",
+    public static final DeferredBlock<Block> VILLI = registerBlock("villi",
             () -> new BloodFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)));
-    public static final DeferredBlock<Block> TALL_BLOOD_BASES = registerBlock("tall_blood_bases",
+    public static final DeferredBlock<Block> TALL_VILLI = registerBlock("tall_villi",
             () -> new TallBloodFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TALL_GRASS)));
     public static final DeferredBlock<Block> ALVEOLUS_BLOCK = registerBlock("alveolus_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
@@ -486,7 +486,7 @@ public class CCBlocks {
     public static final DeferredBlock<Block> VOLCANITE_BLOCK = registerBlock("volcanite_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
-    public static final DeferredBlock<Block> PYRITE_BLOCK = registerBlock("pyrite_block",
+    public static final DeferredBlock<Block> PYRITE = registerBlock("pyrite",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
     public static final DeferredBlock<Block> PUMICE = registerBlock("pumice",
@@ -552,7 +552,7 @@ public class CCBlocks {
     public static final DeferredBlock<Block> SULPHUR_WATER_VENT_TOP = registerBlock("sulphur_water_vent_top",
             () -> new VentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().randomTicks()));
 
-    public static final DeferredBlock<Block> SMALL_PYRITE_BLOCK = registerBlock("small_pyrite_block",
+    public static final DeferredBlock<Block> PYRITE_CHUNK = registerBlock("pyrite_chunk",
             () -> new SmallBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion().dynamicShape()));
 
     public static final DeferredBlock<Block> PUMICE_STAIRS = registerBlock("pumice_stairs",
@@ -595,12 +595,12 @@ public class CCBlocks {
     public static final DeferredBlock<Block> POLISHED_PUMICE_WALL = registerBlock("polished_pumice_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> PYRITE_STAIRS = registerBlock("pyrite_block_stairs",
-            () -> new StairBlock(CCBlocks.PYRITE_BLOCK.get().defaultBlockState(),
+    public static final DeferredBlock<Block> PYRITE_STAIRS = registerBlock("pyrite_stairs",
+            () -> new StairBlock(CCBlocks.PYRITE.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> PYRITE_SLAB = registerBlock("pyrite_block_slab",
+    public static final DeferredBlock<Block> PYRITE_SLAB = registerBlock("pyrite_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> PYRITE_WALL = registerBlock("pyrite_block_wall",
+    public static final DeferredBlock<Block> PYRITE_WALL = registerBlock("pyrite_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
 

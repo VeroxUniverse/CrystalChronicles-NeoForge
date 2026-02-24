@@ -65,7 +65,7 @@ public class CCItemModelProvider extends ItemModelProvider {
         basicItem(CCItems.EYE.get());
         basicItem(CCFluids.BLOOD_BUCKET.get());
 
-        flowerItem(CCBlocks.BLOOD_BASES);
+        flowerItem(CCBlocks.VILLI);
         flowerItem(CCBlocks.AXON);
         flowerItem(CCBlocks.HANGING_VEINS);
 
@@ -94,14 +94,14 @@ public class CCItemModelProvider extends ItemModelProvider {
         wallItem(CCBlocks.CHISELED_PUMICE_WALL, CCBlocks.CHISELED_PUMICE);
         wallItem(CCBlocks.CRACKED_PUMICE_WALL, CCBlocks.CRACKED_PUMICE);
         wallItem(CCBlocks.POLISHED_PUMICE_WALL, CCBlocks.POLISHED_PUMICE);
-        wallItem(CCBlocks.PYRITE_WALL, CCBlocks.PYRITE_BLOCK);
+        wallItem(CCBlocks.PYRITE_WALL, CCBlocks.PYRITE);
 
         wallItem(CCBlocks.PUMICE_WALL, CCBlocks.PUMICE);
         wallItem(CCBlocks.PUMICE_BRICKS_WALL, CCBlocks.PUMICE_BRICKS);
         wallItem(CCBlocks.CHISELED_PUMICE_WALL, CCBlocks.CHISELED_PUMICE);
         wallItem(CCBlocks.CRACKED_PUMICE_WALL, CCBlocks.CRACKED_PUMICE);
         wallItem(CCBlocks.POLISHED_PUMICE_WALL, CCBlocks.POLISHED_PUMICE);
-        wallItem(CCBlocks.PYRITE_WALL, CCBlocks.PYRITE_BLOCK);
+        wallItem(CCBlocks.PYRITE_WALL, CCBlocks.PYRITE);
 
         wallItem(CCBlocks.THUNDERSTONE_WALL, CCBlocks.THUNDERSTONE);
         wallItem(CCBlocks.CHISELED_THUNDERSTONE_WALL, CCBlocks.CHISELED_THUNDERSTONE);

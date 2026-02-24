@@ -590,10 +590,10 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_polished_pumice", has(CCBlocks.POLISHED_PUMICE.get())).save(pRecipeOutput);
         wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_WALL.get(), CCBlocks.POLISHED_PUMICE.get());
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE_BLOCK);
-        stairBuilder(CCBlocks.PYRITE_STAIRS.get(), Ingredient.of(CCBlocks.PYRITE_BLOCK.get())).group("pirite_block")
-                .unlockedBy("has_pirite_block", has(CCBlocks.PYRITE_BLOCK.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE_BLOCK.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE);
+        stairBuilder(CCBlocks.PYRITE_STAIRS.get(), Ingredient.of(CCBlocks.PYRITE.get())).group("pirite_block")
+                .unlockedBy("has_pirite_block", has(CCBlocks.PYRITE.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS.get(), 4)
                 .pattern("BB")
@@ -687,9 +687,9 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CHISELED_PUMICE.get(), 2);
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_WALL.get(), CCBlocks.CHISELED_PUMICE.get());
 
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_STAIRS.get(), CCBlocks.PYRITE_BLOCK.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE_BLOCK.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE_BLOCK.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_STAIRS.get(), CCBlocks.PYRITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE.get());
 
         slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_SLAB.get(), CCBlocks.THUNDERSTONE);
         stairBuilder(CCBlocks.THUNDERSTONE_STAIRS.get(), Ingredient.of(CCBlocks.THUNDERSTONE.get())).group("thunderstone").unlockedBy("has_thunderstone", has(CCBlocks.THUNDERSTONE.get())).save(pRecipeOutput);

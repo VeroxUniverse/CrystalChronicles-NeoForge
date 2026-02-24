@@ -4,6 +4,7 @@ import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.spells.*;
 import net.minecraft.resources.ResourceLocation;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.registry.CCSchools;
 
 @AutoSpellConfig
 public class PrismaticPortalSpell extends AbstractSpell {
@@ -24,7 +25,7 @@ public class PrismaticPortalSpell extends AbstractSpell {
 
     @Override
     public SchoolType getSchoolType() {
-        return PrismaticSchools.PRISMATIC;
+        return CCSchools.PRISMATIC.get();
     }
 
     @Override
@@ -38,7 +39,7 @@ public class PrismaticPortalSpell extends AbstractSpell {
         config.setMinRarity(SpellRarity.LEGENDARY);
         config.setMaxLevel(1);
         config.setCooldownSeconds(DEFAULT_COOLDOWN / 20.0);
-        config.setSchoolResource(PrismaticSchools.PRISMATIC_ID);
+        config.setSchoolResource(CCSchools.PRISMATIC_ID);
         return config.build();
     }
 

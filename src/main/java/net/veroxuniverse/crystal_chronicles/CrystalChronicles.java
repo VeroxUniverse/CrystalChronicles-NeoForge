@@ -50,11 +50,8 @@ import net.veroxuniverse.crystal_chronicles.item.weapon.nature.NatureSpearItemRe
 import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderStaffItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.evocation.EvocationTwinbladeItemRenderer;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
-import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
-import net.veroxuniverse.crystal_chronicles.registry.CCItems;
-import net.veroxuniverse.crystal_chronicles.registry.CCTabs;
+import net.veroxuniverse.crystal_chronicles.registry.*;
 import net.veroxuniverse.crystal_chronicles.spells.CCSpells;
-import net.veroxuniverse.crystal_chronicles.spells.PrismaticSchools;
 import net.veroxuniverse.crystal_chronicles.worldgen.CCFeatures;
 import org.slf4j.Logger;
 
@@ -69,6 +66,7 @@ public class CrystalChronicles {
         AzureLib.initialize();
         CCTabs.register(modEventBus);
         //CCEntityTypes.register(modEventBus);
+        CCAttributes.register(modEventBus);
         CCBlocks.register(modEventBus);
         CCItems.register(modEventBus);
         CCArmorMaterials.register(modEventBus);
@@ -76,7 +74,7 @@ public class CrystalChronicles {
         CCFluids.register(modEventBus);
         CCFluidTypes.register(modEventBus);
         CCFeatures.register(modEventBus);
-        PrismaticSchools.register(modEventBus);
+        CCSchools.register(modEventBus);
         CCSpells.register(modEventBus);
         //CCEntities.register(modEventBus);
         //CCBlockEntities.register(modEventBus);

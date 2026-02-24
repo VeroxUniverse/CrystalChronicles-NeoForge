@@ -78,8 +78,8 @@ public class CCTabs {
                 output.accept(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get());
                 output.accept(CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
                 output.accept(CCBlocks.YELLOW_BISMUTH_CRYSTAL.get());
-                output.accept(CCBlocks.BLOOD_BASES.get());
-                output.accept(CCBlocks.TALL_BLOOD_BASES.get());
+                output.accept(CCBlocks.VILLI.get());
+                output.accept(CCBlocks.TALL_VILLI.get());
                 output.accept(CCBlocks.VEINS.get());
                 output.accept(CCBlocks.FLESH_BLOCK.get());
                 output.accept(CCBlocks.MUSCLE_BLOCK.get());
@@ -179,11 +179,11 @@ public class CCTabs {
                 output.accept(CCBlocks.POLISHED_PUMICE_STAIRS.get());
                 output.accept(CCBlocks.POLISHED_PUMICE_SLAB.get());
                 output.accept(CCBlocks.POLISHED_PUMICE_WALL.get());
-                output.accept(CCBlocks.PYRITE_BLOCK.get());
+                output.accept(CCBlocks.PYRITE.get());
                 output.accept(CCBlocks.PYRITE_STAIRS.get());
                 output.accept(CCBlocks.PYRITE_SLAB.get());
                 output.accept(CCBlocks.PYRITE_WALL.get());
-                output.accept(CCBlocks.SMALL_PYRITE_BLOCK.get());
+                output.accept(CCBlocks.PYRITE_CHUNK.get());
                 output.accept(CCBlocks.GREEN_SULPHUR_POOL.get());
                 output.accept(CCBlocks.ORANGE_SULPHUR_POOL.get());
                 output.accept(CCBlocks.RED_SULPHUR_POOL.get());

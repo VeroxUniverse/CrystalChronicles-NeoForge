@@ -159,8 +159,8 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
 
         // BLOOD //
 
-        this.add(CCBlocks.BLOOD_BASES.get(),
-                block -> createShearsOnlyDrop(CCBlocks.BLOOD_BASES.get()));
+        this.add(CCBlocks.VILLI.get(),
+                block -> createShearsOnlyDrop(CCBlocks.VILLI.get()));
         this.dropSelf(CCBlocks.FLESH_BLOCK.get());
         this.dropSelf(CCBlocks.MUSCLE_BLOCK.get());
         this.dropSelf(CCBlocks.ARTREE_BASE.get());
@@ -235,8 +235,8 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.add(CCBlocks.BRONCHUS_DOOR.get(),
                 block -> createDoorTable(CCBlocks.BRONCHUS_DOOR.get()));
 
-        this.add(CCBlocks.TALL_BLOOD_BASES.get(),
-                block -> createTallShearsOnlyDrop(CCBlocks.TALL_BLOOD_BASES.get()));
+        this.add(CCBlocks.TALL_VILLI.get(),
+                block -> createTallShearsOnlyDrop(CCBlocks.TALL_VILLI.get()));
         //this.add(CCBlocks.TALL_BLOOD_BASES.get(),
         //        block -> createDoorTable(CCBlocks.TALL_BLOOD_BASES.get()));
 
@@ -319,7 +319,7 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.add(CCBlocks.POLISHED_PUMICE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.POLISHED_PUMICE_SLAB.get()));
 
-        this.dropSelf(CCBlocks.PYRITE_BLOCK.get());
+        this.dropSelf(CCBlocks.PYRITE.get());
         this.dropSelf(CCBlocks.PYRITE_STAIRS.get());
         this.dropSelf(CCBlocks.PYRITE_WALL.get());
         this.add(CCBlocks.PYRITE_SLAB.get(),
@@ -331,7 +331,7 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.RED_SULPHUR_POOL.get());
         this.dropSelf(CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get());
         this.dropSelf(CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get());
-        this.dropSelf(CCBlocks.SMALL_PYRITE_BLOCK.get());
+        this.dropSelf(CCBlocks.PYRITE_CHUNK.get());
         this.dropSelf(CCBlocks.SULPHUR_CRYSTAL.get());
         this.dropSelf(CCBlocks.SMALL_SULPHUR_CLUSTER.get());
         this.dropSelf(CCBlocks.MEDIUM_SULPHUR_CLUSTER.get());
