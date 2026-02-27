@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"render_type": "cutout",
 	"textures": {
-		"0": "crystal_chronicles:block/small_pyrite_block",
-		"particle": "crystal_chronicles:block/small_pyrite_block"
+		"0": "crystal_chronicles:block/pyrite_chunk",
+		"particle": "crystal_chronicles:block/pyrite_chunk"
 	},
 	"elements": [
 		{

@@ -10,7 +10,7 @@
         {
           "weight": 1,
           "data": {
-            "Name": "crystal_chronicles:pyrite_block"
+            "Name": "crystal_chronicles:pyrite"
           }
         },
         {
@@ -31,7 +31,7 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "crystal_chronicles:small_pyrite_block"
+              "Name": "crystal_chronicles:pyrite_chunk"
             }
           }
         }
