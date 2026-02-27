@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "cutout",
   "textures": {
-    "cross": "crystal_chronicles:block/tall_blood_bases_bottom"
+    "cross": "crystal_chronicles:block/tall_villi_top"
   }
 }

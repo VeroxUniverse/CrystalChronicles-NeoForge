@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "crystal_chronicles:block/tall_blood_bases_top"
+    "layer0": "crystal_chronicles:block/tall_villi_top"
   }
 }
