@@ -1,13 +1,9 @@
 {
-  "feature": "crystal_chronicles:flesh/blood_tall_grass",
+  "feature": "crystal_chronicles:flesh/patch_villi",
   "placement": [
     {
       "type": "minecraft:count_on_every_layer",
       "count": 6
-    },
-    {
-      "type": "minecraft:rarity_filter",
-      "chance": 32
     },
     {
       "type": "minecraft:biome"
