@@ -391,7 +391,7 @@ public class CCBlocks {
 
     public static final DeferredBlock<Block> HOLY_LIGHT_1 = registerBlock("holy_light_1",
             () -> new HolyLightSegmentBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
                             .noLootTable()
                             .noOcclusion()
                             .noCollission()
@@ -401,7 +401,7 @@ public class CCBlocks {
 
     public static final DeferredBlock<Block> HOLY_LIGHT_2 = registerBlock("holy_light_2",
             () -> new HolyLightSegmentBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
                             .noLootTable()
                             .noOcclusion()
                             .noCollission()
@@ -411,7 +411,7 @@ public class CCBlocks {
 
     public static final DeferredBlock<Block> HOLY_LIGHT_3 = registerBlock("holy_light_3",
             () -> new HolyLightSegmentBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
                             .noLootTable()
                             .noOcclusion()
                             .noCollission()
@@ -421,7 +421,7 @@ public class CCBlocks {
 
     public static final DeferredBlock<Block> HOLY_LIGHT_4 = registerBlock("holy_light_4",
             () -> new HolyLightSegmentBlock(
-                    BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)
                             .noLootTable()
                             .noOcclusion()
                             .noCollission()

@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 
 public class HolyLightBlock extends Block {
-
     private static final int TICK_RATE = 20;
 
     public HolyLightBlock(Properties props) {
@@ -23,8 +22,7 @@ public class HolyLightBlock extends Block {
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         super.onPlace(state, level, pos, oldState, isMoving);
         if (!level.isClientSide) {
-            updateSegments(level, pos, state);
-            level.scheduleTick(pos, this, TICK_RATE);
+            level.scheduleTick(pos, this, 1);
         }
     }
 
@@ -32,7 +30,7 @@ public class HolyLightBlock extends Block {
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos, boolean moved) {
         super.neighborChanged(state, level, pos, neighborBlock, neighborPos, moved);
         if (!level.isClientSide) {
-            if (neighborPos.getY() < pos.getY()) {
+            if (level.getServer() != null && neighborPos.getY() < pos.getY()) {
                 updateSegments(level, pos, state);
             }
         }
@@ -40,22 +38,24 @@ public class HolyLightBlock extends Block {
 
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        updateSegments(level, pos, state);
-        level.scheduleTick(pos, this, TICK_RATE);
+        if (level.getServer() != null) {
+            updateSegments(level, pos, state);
+            level.scheduleTick(pos, this, TICK_RATE);
+        }
     }
 
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
         if (!level.isClientSide && !state.is(newState.getBlock())) {
-            clearSegments(level, pos);
+            if (level.getServer() != null) {
+                clearSegments(level, pos);
+            }
         }
         super.onRemove(state, level, pos, newState, isMoving);
     }
 
     private void updateSegments(Level level, BlockPos pos, BlockState state) {
         int totalLength = computeLength(level, pos);
-
-        BlockPos currentPos = pos;
 
         for (int i = 1; i <= Math.min(3, totalLength); i++) {
             BlockPos belowPos = pos.below(i);
@@ -92,17 +92,14 @@ public class HolyLightBlock extends Block {
         }
 
         int cleanupY = pos.getY() - totalLength - 1;
-
         for (int y = cleanupY; y >= level.getMinBuildHeight(); y--) {
             BlockPos cleanupPos = new BlockPos(pos.getX(), y, pos.getZ());
             BlockState cleanupState = level.getBlockState(cleanupPos);
 
             if (isSegmentBlock(cleanupState)) {
                 level.setBlock(cleanupPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
-            } else {
-                if (!cleanupState.isAir()) {
-                    break;
-                }
+            } else if (!cleanupState.isAir()) {
+                break;
             }
         }
     }
@@ -111,7 +108,6 @@ public class HolyLightBlock extends Block {
         for (int i = 1; ; i++) {
             BlockPos belowPos = pos.below(i);
             BlockState belowState = level.getBlockState(belowPos);
-
             if (isSegmentBlock(belowState)) {
                 level.setBlock(belowPos, Blocks.AIR.defaultBlockState(), Block.UPDATE_ALL);
             } else {
@@ -121,35 +117,25 @@ public class HolyLightBlock extends Block {
     }
 
     private boolean isSegmentBlock(BlockState state) {
-        return state.is(CCBlocks.HOLY_LIGHT_1.get())
-                || state.is(CCBlocks.HOLY_LIGHT_2.get())
-                || state.is(CCBlocks.HOLY_LIGHT_3.get())
-                || state.is(CCBlocks.HOLY_LIGHT_4.get());
+        return state.is(CCBlocks.HOLY_LIGHT_1.get()) || state.is(CCBlocks.HOLY_LIGHT_2.get()) ||
+                state.is(CCBlocks.HOLY_LIGHT_3.get()) || state.is(CCBlocks.HOLY_LIGHT_4.get());
     }
 
     private int computeLength(Level level, BlockPos pos) {
         int length = 0;
-
         for (int y = pos.getY() - 1; y >= level.getMinBuildHeight(); y--) {
             BlockPos belowPos = new BlockPos(pos.getX(), y, pos.getZ());
             BlockState belowState = level.getBlockState(belowPos);
-
             if (isSegmentBlock(belowState)) {
                 length++;
                 continue;
             }
+            boolean isAllowedTransparent = belowState.isAir() ||
+                    belowState.is(BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "glass"))) ||
+                    belowState.is(BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "glass_panes"))) ||
+                    belowState.is(BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "transparent")));
 
-            boolean isAllowedTransparent =
-                    belowState.isAir()
-                            || belowState.is(BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "glass")))
-                            || belowState.is(BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "glass_panes")))
-                            || belowState.is(BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", "transparent")));
-
-            if (isAllowedTransparent) {
-                length++;
-            } else {
-                break;
-            }
+            if (isAllowedTransparent) { length++; } else { break; }
         }
         return length;
     }
