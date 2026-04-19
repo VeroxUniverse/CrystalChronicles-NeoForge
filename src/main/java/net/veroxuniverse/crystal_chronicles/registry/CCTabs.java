@@ -281,6 +281,7 @@ public class CCTabs {
                 output.accept(CCItems.LIGHTNING_KNIGHT_LEGGINGS.get());
                 output.accept(CCItems.LIGHTNING_KNIGHT_BOOTS.get());
                 output.accept(CCItems.LIGHTNING_BIDENT.get());
+                output.accept(CCItems.LIGHTNING_STAFF.get());
                 output.accept(CCItems.EVOCATION_KNIGHT_HELMET.get());
                 output.accept(CCItems.EVOCATION_KNIGHT_CHESTPLATE.get());
                 output.accept(CCItems.EVOCATION_KNIGHT_LEGGINGS.get());
@@ -291,6 +292,7 @@ public class CCTabs {
                 output.accept(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get());
                 output.accept(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get());
                 output.accept(CCItems.PRISMATIC_KNIGHT_BOOTS.get());
+                output.accept(CCItems.PRISMATIC_SCHOOL_RING.get());
             }).build());
 
     public static void register(IEventBus eventBus) {

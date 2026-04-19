@@ -150,6 +150,7 @@ dependencies {
     //compileOnly "io.redspace:irons_spellbooks:${irons_spells_version}:api"
     //runtimeOnly "io.redspace:irons_spellbooks:${irons_spells_version}"
     implementation "io.redspace:irons_spellbooks:${irons_spells_version}"
+    runtimeOnly "curse.maven:irons-lib-1492763:7907336"
 
 
     // JEI

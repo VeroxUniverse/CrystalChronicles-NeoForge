@@ -224,7 +224,7 @@
   "item.crystal_chronicles.ender_mage_chestplate": "Voidwalker Chestplate",
   "item.crystal_chronicles.ender_mage_leggings": "Voidwalker Leggings",
   "item.crystal_chronicles.ender_mage_boots": "Voidwalker Boots",
-  "item.crystal_chronicles.ender_staff": "Voidwalker Staff",
+  "item.crystal_chronicles.ender_staff": "Void's Grasp",
   "item.crystal_chronicles.ender_sickle": "Void Ripper",
   "item.crystal_chronicles.fire_knight_helmet": "Pyromancer Helmet",
   "item.crystal_chronicles.fire_knight_chestplate": "Pyromancer Chestplate",
@@ -241,11 +241,17 @@
   "item.crystal_chronicles.lightning_knight_leggings": "Electromancer Leggings",
   "item.crystal_chronicles.lightning_knight_boots": "Electromancer Boots",
   "item.crystal_chronicles.lightning_bident": "Volt Spear",
+  "item.crystal_chronicles.lightning_staff": "Tesla Rod",
   "item.crystal_chronicles.evocation_knight_helmet": "Battle-Evoker Helmet",
   "item.crystal_chronicles.evocation_knight_chestplate": "Battle-Evoker Tunic",
   "item.crystal_chronicles.evocation_knight_leggings": "Battle-Evoker Leggings",
   "item.crystal_chronicles.evocation_knight_boots": "Battle-Evoker Boots",
   "item.crystal_chronicles.evocation_twinblade": "Evoker's Twinblade",
+  "item.crystal_chronicles.prismatic_knight_helmet": "Prismatic Knight Helmet",
+  "item.crystal_chronicles.prismatic_knight_chestplate": "Prismatic Knight Chestplate",
+  "item.crystal_chronicles.prismatic_knight_leggings": "Prismatic Knight Leggings",
+  "item.crystal_chronicles.prismatic_knight_boots": "Prismatic Knight Boots",
+  "item.crystal_chronicles.prismatic_school_ring": "Prismatic School Ring",
 
   "item.crystal_chronicles.hemalite_shard": "Hemalite Shard",
   "item.crystal_chronicles.voltite_shard": "Voltite Shard",
@@ -272,5 +278,9 @@
 
   "itemGroup.items.crystal_chronicles": "CrystalChronicles Items",
   "itemGroup.blocks.crystal_chronicles": "CrystalChronicles Blocks",
-  "itemGroup.armory.crystal_chronicles": "CrystalChronicles Armory"
+  "itemGroup.armory.crystal_chronicles": "CrystalChronicles Armory",
+
+  "tooltip.crystal_chronicles.school_changed": "Prismatic Focus",
+  "tooltip.crystal_chronicles.current_school": "Current School",
+  "tooltip.crystal_chronicles.ring_description": "Right-click to attune to a magic school. While equipped, increases corresponding spell power by 20%."
 }

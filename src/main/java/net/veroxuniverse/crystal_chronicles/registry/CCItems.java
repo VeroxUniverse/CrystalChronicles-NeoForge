@@ -24,6 +24,7 @@ import net.veroxuniverse.crystal_chronicles.item.armor.blood.BloodKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.ice.IceKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.nature.NatureKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.prismatic.PrismaticKnightArmor;
+import net.veroxuniverse.crystal_chronicles.item.curios.PrismaticSchoolRing;
 import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedStaffItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedSwordItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderSickleItem;
@@ -32,6 +33,7 @@ import net.veroxuniverse.crystal_chronicles.item.weapon.lightning.LightningBiden
 import net.veroxuniverse.crystal_chronicles.item.weapon.fire.FireChakramItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.holy.HolySwordItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.blood.BloodScytheItem;
+import net.veroxuniverse.crystal_chronicles.item.weapon.lightning.LightningStaffItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.nature.NatureSpearItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderStaffItem;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
@@ -62,6 +64,11 @@ public class CCItems {
     public static final DeferredItem<Item> CLOUD_BUCKET = ITEMS.register("cloud_bucket",
             () -> new SolidBucketItem(CCBlocks.CLOUD_LAYER.get(), SoundEvents.BUCKET_EMPTY_POWDER_SNOW,new Item.Properties().stacksTo(1)));
 
+    // CURIOS
+
+    // CURIOS / ACCESSORIES
+    public static final DeferredItem<Item> PRISMATIC_SCHOOL_RING = ITEMS.register("prismatic_school_ring",
+            () -> new PrismaticSchoolRing(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant()));
 
     // ARMOR
 
@@ -223,6 +230,10 @@ public class CCItems {
                     ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.LIGHTNING_BIDENT)
                     ).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.VOLT_STRIKE_SPELL, 8))));
+    public static final DeferredHolder<Item, Item> LIGHTNING_STAFF = ITEMS.register("lightning_staff",
+            () -> new LightningStaffItem(ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes(CCStaffTiers.LIGHTNING_STAFF)).rarity(Rarity.UNCOMMON),
+                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.BALL_LIGHTNING_SPELL, 8))));
+
     public static final DeferredHolder<Item, Item> EVOCATION_TWINBLADE = ITEMS.register("evocation_twinblade",
             () -> new LightningBidentItem(CCWeaponTiers.EVOCATION_TWINBLADE,
                     ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.EVOCATION_TWINBLADE)

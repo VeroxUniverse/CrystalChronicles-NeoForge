@@ -8,6 +8,7 @@ import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
@@ -26,6 +27,8 @@ import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsE
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import net.veroxuniverse.crystal_chronicles.effect.CCEffects;
 import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
@@ -46,6 +49,7 @@ import net.veroxuniverse.crystal_chronicles.item.weapon.ice.IceHammerItemRendere
 import net.veroxuniverse.crystal_chronicles.item.weapon.holy.HolySwordItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.blood.BloodScytheItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderSickleItemRenderer;
+import net.veroxuniverse.crystal_chronicles.item.weapon.lightning.LightningStaffItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.nature.NatureSpearItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderStaffItemRenderer;
 import net.veroxuniverse.crystal_chronicles.item.weapon.evocation.EvocationTwinbladeItemRenderer;
@@ -76,6 +80,7 @@ public class CrystalChronicles {
         CCFeatures.register(modEventBus);
         CCSchools.register(modEventBus);
         CCSpells.register(modEventBus);
+        CCDataComponents.register(modEventBus);
         //CCEntities.register(modEventBus);
         //CCBlockEntities.register(modEventBus);
         modEventBus.addListener(this::registerResourcePack);
@@ -90,6 +95,7 @@ public class CrystalChronicles {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         AzIdentityRegistry.register(CCItems.ENDER_STAFF.get());
+        AzIdentityRegistry.register(CCItems.LIGHTNING_STAFF.get());
         AzIdentityRegistry.register(CCItems.PRISMATIC_KNIGHT_HELMET.get());
         AzIdentityRegistry.register(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get());
         AzIdentityRegistry.register(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get());
@@ -164,6 +170,7 @@ public class CrystalChronicles {
             AzItemRendererRegistry.register(BloodScytheItemRenderer::new, CCItems.BLOOD_SCYTHE.get());
             AzItemRendererRegistry.register(NatureSpearItemRenderer::new, CCItems.NATURE_SPEAR.get());
             AzItemRendererRegistry.register(EnderStaffItemRenderer::new, CCItems.ENDER_STAFF.get());
+            AzItemRendererRegistry.register(LightningStaffItemRenderer::new, CCItems.LIGHTNING_STAFF.get());
             AzItemRendererRegistry.register(EvocationTwinbladeItemRenderer::new, CCItems.EVOCATION_TWINBLADE.get());
             AzItemRendererRegistry.register(EnderSickleItemRenderer::new, CCItems.ENDER_SICKLE.get());
 
