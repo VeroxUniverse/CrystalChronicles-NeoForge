@@ -1,11 +1,8 @@
 package net.veroxuniverse.crystal_chronicles.registry;
 
-import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
-import io.redspace.ironsspellbooks.item.weapons.StaffItem;
-import io.redspace.ironsspellbooks.item.weapons.StaffTier;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -25,7 +22,6 @@ import net.veroxuniverse.crystal_chronicles.item.armor.ice.IceKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.nature.NatureKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.prismatic.PrismaticKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.curios.PrismaticSchoolRing;
-import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedStaffItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.AnimatedSwordItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ender.EnderSickleItem;
 import net.veroxuniverse.crystal_chronicles.item.weapon.ice.IceHammerItem;
@@ -67,7 +63,7 @@ public class CCItems {
     // CURIOS
 
     // CURIOS / ACCESSORIES
-    public static final DeferredItem<Item> PRISMATIC_SCHOOL_RING = ITEMS.register("prismatic_school_ring",
+    public static final DeferredItem<Item> DIFFRACTION_RING = ITEMS.register("diffraction_ring",
             () -> new PrismaticSchoolRing(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant()));
 
     // ARMOR

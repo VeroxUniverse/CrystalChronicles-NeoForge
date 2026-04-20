@@ -292,7 +292,7 @@ public class CCTabs {
                 output.accept(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get());
                 output.accept(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get());
                 output.accept(CCItems.PRISMATIC_KNIGHT_BOOTS.get());
-                output.accept(CCItems.PRISMATIC_SCHOOL_RING.get());
+                output.accept(CCItems.DIFFRACTION_RING.get());
             }).build());
 
     public static void register(IEventBus eventBus) {
