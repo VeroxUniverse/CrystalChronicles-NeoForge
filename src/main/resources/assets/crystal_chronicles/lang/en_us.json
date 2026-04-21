@@ -251,7 +251,7 @@
   "item.crystal_chronicles.prismatic_knight_chestplate": "Prismatic Knight Chestplate",
   "item.crystal_chronicles.prismatic_knight_leggings": "Prismatic Knight Leggings",
   "item.crystal_chronicles.prismatic_knight_boots": "Prismatic Knight Boots",
-  "item.crystal_chronicles.prismatic_school_ring": "Prismatic School Ring",
+  "item.crystal_chronicles.diffraction_ring": "Ring of Diffraction",
 
   "item.crystal_chronicles.hemalite_shard": "Hemalite Shard",
   "item.crystal_chronicles.voltite_shard": "Voltite Shard",
@@ -281,6 +281,17 @@
   "itemGroup.armory.crystal_chronicles": "CrystalChronicles Armory",
 
   "tooltip.crystal_chronicles.school_changed": "Prismatic Focus",
-  "tooltip.crystal_chronicles.current_school": "Current School",
-  "tooltip.crystal_chronicles.ring_description": "Right-click to attune to a magic school. While equipped, increases corresponding spell power by 20%."
+  "tooltip.crystal_chronicles.current_school": "Attuned School",
+  "tooltip.crystal_chronicles.shift_focus_header": "To shift your prismatic focus:",
+  "tooltip.crystal_chronicles.shift_focus_click": " - Right-click item to cycle",
+  "tooltip.crystal_chronicles.ring_hotkey_1": " - Press [",
+  "tooltip.crystal_chronicles.ring_hotkey_2": "] while equipped",
+  "tooltip.crystal_chronicles.ring_desc_3": "%s Mana Cost",
+  "tooltip.crystal_chronicles.requires_armor_set": "Requires Prismatic Armor!",
+  "tooltip.crystal_chronicles.not_enough_mana": "Not enough Mana to shift the Focus!",
+  "tooltip.crystal_chronicles.ring_dropped": "Inventory full! Ring dropped on the ground.",
+  "tooltip.crystal_chronicles.shift_for_info": "Press [SHIFT] to expand",
+
+  "key.crystal_chronicles.ring_swap": "Swap Prismatic School",
+  "category.crystal_chronicles": "Crystal Chronicles"
 }
