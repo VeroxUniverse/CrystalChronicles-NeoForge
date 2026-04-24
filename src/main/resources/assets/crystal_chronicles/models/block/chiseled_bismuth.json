@@ -1,9 +1,20 @@
 {
-  "parent": "minecraft:block/orientable_with_bottom",
+  "loader": "fusion:model",
+  "type": "fusion:connecting",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "bottom": "crystal_chronicles:block/bismuth_block",
-    "front": "crystal_chronicles:block/bismuth_block",
-    "side": "crystal_chronicles:block/bismuth_block",
-    "top": "crystal_chronicles:block/bismuth_block"
-  }
+    "particle": "crystal_chronicles:block/chiseled_bismuth",
+    "north": "crystal_chronicles:block/chiseled_bismuth",
+    "south": "crystal_chronicles:block/chiseled_bismuth",
+    "east": "crystal_chronicles:block/chiseled_bismuth",
+    "west": "crystal_chronicles:block/chiseled_bismuth",
+    "up": "crystal_chronicles:block/bismuth/bismuth_top",
+    "down": "crystal_chronicles:block/bismuth/bismuth_top"
+  },
+  "connections": [
+    {
+      "type": "fusion:is_same_block",
+      "textures": [ "up", "down" ]
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-/*package net.veroxuniverse.crystal_chronicles.block;
+package net.veroxuniverse.crystal_chronicles.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -34,28 +34,41 @@ public class PortalFrameBlockEntity extends BlockEntity {
     }
 
     public void activatePortal(ServerLevel world, Direction.Axis axis) {
-        if (world.isClientSide || this.riftEntityId != -1) return;
+        if (this.riftEntityId != -1) {
+            Entity existing = world.getEntity(this.riftEntityId);
+            if (existing != null && existing.isAlive()) {
+                return;
+            } else {
+                this.riftEntityId = -1;
+            }
+        }
 
         BlockPos masterPos = this.getBlockPos();
-
-        double entityX = masterPos.getX() + 1.5;
-        double entityY = masterPos.getY() + 1.5;
-        double entityZ = masterPos.getZ() + 0.5;
-
-        // TODO: Z-Koordinate basierend auf der FACING-Property des Blocks!
         Direction facing = this.getBlockState().getValue(PortalFrameBlock.FACING);
-        if (facing == Direction.EAST || facing == Direction.WEST) {
-            entityX = masterPos.getX() + 0.5;
-            entityZ = masterPos.getZ() + 1.5;
+
+        double spawnX = masterPos.getX() + 0.5;
+        double spawnY = masterPos.getY() + 2.0;
+        double spawnZ = masterPos.getZ() + 0.5;
+
+        switch (facing) {
+            case NORTH -> spawnX -= 1.5;
+            case SOUTH -> spawnX += 1.5;
+            case WEST -> spawnZ += 1.5;
+            case EAST -> spawnZ -= 1.5;
         }
 
         DimensionalRiftEntity rift = new DimensionalRiftEntity(CCEntities.DIMENSIONAL_RIFT.get(), world);
-        rift.setPos(entityX, entityY, entityZ);
-        rift.setPortalAxis(facing.getAxis());
+        rift.setPos(spawnX, spawnY, spawnZ);
+        rift.setPortalAxis(axis);
+        rift.setPortalFramePos(this.getBlockPos());
 
         world.addFreshEntity(rift);
-
         this.riftEntityId = rift.getId();
+        setChanged();
+    }
+
+    public void notifyEntityRemoved() {
+        this.riftEntityId = -1;
         setChanged();
     }
 
@@ -76,5 +89,3 @@ public class PortalFrameBlockEntity extends BlockEntity {
         }
     }
 }
-
- */

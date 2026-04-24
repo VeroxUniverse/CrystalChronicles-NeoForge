@@ -152,6 +152,8 @@ dependencies {
     implementation "io.redspace:irons_spellbooks:${irons_spells_version}"
     runtimeOnly "curse.maven:irons-lib-1492763:7907336"
 
+
+    runtimeOnly "curse.maven:fusion-connected-textures-854949:7471474"
     // JEI
     //compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
     //compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"

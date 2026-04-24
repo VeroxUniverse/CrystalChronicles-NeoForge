@@ -23,6 +23,11 @@ public class CCBlocks {
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(CrystalChronicles.MODID);
 
+    // Vanilla
+
+    public static final DeferredBlock<Block> POLISHED_STONE_BRICKS = registerBlock("polished_stone_bricks",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
     // LIGHTNING //
 
     public static final DeferredBlock<Block> THUNDERSTONE = registerBlock("thunderstone",
@@ -70,8 +75,8 @@ public class CCBlocks {
 
     // END - BISMUTH //
 
-    //public static final DeferredBlock<Block> PORTAL_FRAME_BLOCK = registerBlock("portal_frame_block",
-    //        () -> new PortalFrameBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+    public static final DeferredBlock<Block> PORTAL_FRAME_BLOCK = registerBlock("portal_frame_block",
+            () -> new PortalFrameBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
     public static final DeferredBlock<Block> BISMUTH_CRYSTAL = registerBlock("bismuth_crystal",
             () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(state -> 6)));
@@ -187,13 +192,13 @@ public class CCBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
     public static final DeferredBlock<Block> CHISELED_BISMUTH = registerBlock("chiseled_bismuth",
-            () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> PURPLE_CHISELED_BISMUTH = registerBlock("purple_chiseled_bismuth",
-            () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> VIOLET_CHISELED_BISMUTH = registerBlock("violet_chiseled_bismuth",
-            () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> YELLOW_CHISELED_BISMUTH = registerBlock("yellow_chiseled_bismuth",
-            () -> new FacingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
     public static final DeferredBlock<Block> CHISELED_BISMUTH_STAIRS = registerBlock("chiseled_bismuth_stairs",
             () -> new StairBlock(CCBlocks.CHISELED_BISMUTH.get().defaultBlockState(),

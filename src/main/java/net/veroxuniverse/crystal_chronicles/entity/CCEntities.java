@@ -1,4 +1,4 @@
-/*package net.veroxuniverse.crystal_chronicles.entity;
+package net.veroxuniverse.crystal_chronicles.entity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.Entity;
@@ -32,5 +32,3 @@ public class CCEntities {
     }
 
 }
-
- */

@@ -1,4 +1,4 @@
-/*package net.veroxuniverse.crystal_chronicles.entity.client;
+package net.veroxuniverse.crystal_chronicles.entity.client;
 
 import mod.azure.azurelib.common.animation.dispatch.command.AzCommand;
 import mod.azure.azurelib.common.animation.play_behavior.AzPlayBehaviors;
@@ -42,5 +42,3 @@ public class DimensionalRiftEntityDispatcher {
     }
 
 }
-
- */

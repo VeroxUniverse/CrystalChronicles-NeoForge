@@ -17,6 +17,8 @@ public class CCTabs {
             .title(Component.translatable("itemGroup.blocks." + CrystalChronicles.MODID))
             .icon(() -> CCBlocks.FAT_TISSUE_BLOCK.get().asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
+                output.accept(CCBlocks.POLISHED_STONE_BRICKS.get());
+                output.accept(CCBlocks.PORTAL_FRAME_BLOCK.get());
                 output.accept(CCBlocks.BISMITE.get());
                 output.accept(CCBlocks.BISMITE_STAIRS.get());
                 output.accept(CCBlocks.BISMITE_SLAB.get());

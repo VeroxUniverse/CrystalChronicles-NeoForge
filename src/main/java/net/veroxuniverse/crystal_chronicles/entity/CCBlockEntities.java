@@ -1,4 +1,4 @@
-/*package net.veroxuniverse.crystal_chronicles.entity;
+package net.veroxuniverse.crystal_chronicles.entity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -25,5 +25,3 @@ public class CCBlockEntities {
         BLOCK_ENTITIES.register(eventBus);
     }
 }
-
- */

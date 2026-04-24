@@ -37,6 +37,10 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
 
+        // VANILLA
+
+        this.dropSelf(CCBlocks.POLISHED_STONE_BRICKS.get());
+
         // LIGHTNING //
 
         this.dropSelf(CCBlocks.THUNDERSTONE.get());
@@ -67,6 +71,7 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         
         // BISMUTH //
 
+        this.dropSelf(CCBlocks.PORTAL_FRAME_BLOCK.get());
         this.dropSelf(CCBlocks.BISMITE.get());
         this.dropSelf(CCBlocks.BISMITE_BRICKS.get());
         this.dropSelf(CCBlocks.CHISELED_BISMITE.get());

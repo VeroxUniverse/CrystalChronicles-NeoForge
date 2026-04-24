@@ -19,6 +19,10 @@ public class CCBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
+        // VANILLA //
+
+        blockWithItem(CCBlocks.POLISHED_STONE_BRICKS);
+
         // LIGHTNING //
 
         blockWithItem(CCBlocks.THUNDERSTONE);

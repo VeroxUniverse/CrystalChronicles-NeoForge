@@ -1,10 +1,5 @@
 {
   "variants": {
-    "facing=up":    { "model": "crystal_chronicles:block/yellow_chiseled_bismuth" },
-    "facing=north": { "model": "crystal_chronicles:block/yellow_chiseled_bismuth", "x": 90 },
-    "facing=south": { "model": "crystal_chronicles:block/yellow_chiseled_bismuth", "x": 270 },
-    "facing=east":  { "model": "crystal_chronicles:block/yellow_chiseled_bismuth", "x": 90,"y": 90 },
-    "facing=west":  { "model": "crystal_chronicles:block/yellow_chiseled_bismuth", "x": 90,"y": 270 },
-    "facing=down":  { "model": "crystal_chronicles:block/yellow_chiseled_bismuth", "x": 180 }
+    "": { "model": "crystal_chronicles:block/yellow_chiseled_bismuth" }
   }
 }

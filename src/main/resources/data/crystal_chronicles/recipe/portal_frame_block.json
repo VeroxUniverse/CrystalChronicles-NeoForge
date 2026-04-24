@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "crystal_chronicles:polished_stone_bricks"
+    },
+    "P": {
+      "item": "irons_spellbooks:pyrium_ingot"
+    },
+    "B": {
+      "item": "crystal_chronicles:rainbow_bismuth_bricks"
+    }
+  },
+  "pattern": [
+    "XBX",
+    "BPB",
+    "XBX"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:portal_frame_block"
+  }
+}

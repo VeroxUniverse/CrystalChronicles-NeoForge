@@ -4,17 +4,21 @@ import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
 import mod.azure.azurelib.common.render.item.AzItemRendererRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.entity.CCEntities;
+import net.veroxuniverse.crystal_chronicles.entity.client.DimensionalRiftEntityRenderer;
 import net.veroxuniverse.crystal_chronicles.fluid.BaseFluidType;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
@@ -59,6 +63,11 @@ public class CrystalChroniclesClient {
     }
 
     @SubscribeEvent
+    public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(CCEntities.DIMENSIONAL_RIFT.get(), DimensionalRiftEntityRenderer::new);
+    }
+
+    @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         CrystalChronicles.LOGGER.info("HELLO FROM CLIENT SETUP");
 
@@ -87,8 +96,6 @@ public class CrystalChroniclesClient {
         AzItemRendererRegistry.register(LightningStaffItemRenderer::new, CCItems.LIGHTNING_STAFF.get());
         AzItemRendererRegistry.register(EvocationTwinbladeItemRenderer::new, CCItems.EVOCATION_TWINBLADE.get());
         AzItemRendererRegistry.register(EnderSickleItemRenderer::new, CCItems.ENDER_SICKLE.get());
-
-        //EntityRenderers.register(CCEntities.DIMENSIONAL_RIFT.get(), DimensionalRiftEntityRenderer::new);
 
         AzArmorRendererRegistry.register(LightningKnightArmorRenderer::new,
                 CCItems.LIGHTNING_KNIGHT_HELMET.get(),

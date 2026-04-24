@@ -22,6 +22,8 @@ public class CCBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(CCBlocks.PORTAL_FRAME_BLOCK.get())
+                .add(CCBlocks.POLISHED_STONE_BRICKS.get())
                 .add(CCBlocks.THUNDERSTONE.get())
                 .add(CCBlocks.CHARGED_THUNDERSTONE.get())
                 .add(CCBlocks.THUNDERSTONE_BRICKS.get())
