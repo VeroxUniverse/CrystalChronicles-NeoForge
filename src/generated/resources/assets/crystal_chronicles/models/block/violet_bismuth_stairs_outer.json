@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "crystal_chronicles:block/violet_bismuth",
+    "side": "crystal_chronicles:block/violet_bismuth",
+    "top": "crystal_chronicles:block/violet_bismuth"
+  }
+}
