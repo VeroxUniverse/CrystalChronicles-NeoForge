@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "X": {
-      "item": "crystal_chronicles:bismuth_bricks"
+      "item": "crystal_chronicles:blue_bismuth_bricks"
     },
     "P": {
       "item": "crystal_chronicles:purple_bismuth_bricks"

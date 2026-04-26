@@ -1,0 +1,20 @@
+{
+  "loader": "fusion:model",
+  "type": "fusion:connecting",
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "crystal_chronicles:block/purple_bismuth",
+    "north": "crystal_chronicles:block/bismuth/purple_bismuth_side",
+    "south": "crystal_chronicles:block/bismuth/purple_bismuth_side",
+    "east": "crystal_chronicles:block/bismuth/purple_bismuth_side",
+    "west": "crystal_chronicles:block/bismuth/purple_bismuth_side",
+    "up": "crystal_chronicles:block/bismuth/purple_bismuth_top",
+    "down": "crystal_chronicles:block/bismuth/purple_bismuth_top"
+  },
+  "connections": [
+    {
+      "type": "fusion:is_same_block",
+      "textures": [ "up", "down" ]
+    }
+  ]
+}

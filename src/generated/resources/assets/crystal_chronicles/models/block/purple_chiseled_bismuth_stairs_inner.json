@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "crystal_chronicles:block/purple_chiseled_bismuth",
-    "side": "crystal_chronicles:block/purple_chiseled_bismuth",
-    "top": "crystal_chronicles:block/purple_chiseled_bismuth"
-  }
-}

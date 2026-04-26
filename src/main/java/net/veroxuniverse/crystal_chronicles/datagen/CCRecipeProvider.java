@@ -784,19 +784,19 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_SLAB.get(), CCBlocks.CRACKED_BISMITE.get(), 2);
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_WALL.get(), CCBlocks.CRACKED_BISMITE.get());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS.get(), 4)
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_BRICKS.get(), 4)
                 .pattern("BB")
                 .pattern("BB")
-                .define('B', CCBlocks.BISMUTH_CRYSTAL.get())
-                .unlockedBy("has_bismuth_crystal", has(CCBlocks.BISMUTH_CRYSTAL.get()))
+                .define('B', CCBlocks.BLUE_BISMUTH_CRYSTAL.get())
+                .unlockedBy("has_bismuth_crystal", has(CCBlocks.BLUE_BISMUTH_CRYSTAL.get()))
                 .save(pRecipeOutput);
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_SLAB.get(), CCBlocks.BISMUTH_BRICKS);
-        stairBuilder(CCBlocks.BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.BISMUTH_BRICKS.get())).group("bismuth_bricks").unlockedBy("has_bismuth_bricks", has(CCBlocks.BISMUTH_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_WALL.get(), CCBlocks.BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_STAIRS.get(), CCBlocks.BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_SLAB.get(), CCBlocks.BISMUTH_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_WALL.get(), CCBlocks.BISMUTH_BRICKS.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_BRICKS_SLAB.get(), CCBlocks.BLUE_BISMUTH_BRICKS);
+        stairBuilder(CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.BLUE_BISMUTH_BRICKS.get())).group("bismuth_bricks").unlockedBy("has_bismuth_bricks", has(CCBlocks.BLUE_BISMUTH_BRICKS.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_BRICKS_WALL.get(), CCBlocks.BLUE_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.BLUE_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_BRICKS_SLAB.get(), CCBlocks.BLUE_BISMUTH_BRICKS.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_BRICKS_WALL.get(), CCBlocks.BLUE_BISMUTH_BRICKS.get());
 
         slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get(), CCBlocks.PURPLE_BISMUTH_BRICKS);
         stairBuilder(CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.PURPLE_BISMUTH_BRICKS.get())).group("purple_bismuth_bricks").unlockedBy("has_purple_bismuth_bricks", has(CCBlocks.PURPLE_BISMUTH_BRICKS.get())).save(pRecipeOutput);
@@ -826,37 +826,37 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get(), 2);
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_SLAB.get(), CCBlocks.CHISELED_BISMUTH);
-        stairBuilder(CCBlocks.CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_BISMUTH.get())).group("chiseled_bismuth").unlockedBy("has_chiseled_bismuth", has(CCBlocks.CHISELED_BISMUTH.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_WALL.get(), CCBlocks.CHISELED_BISMUTH.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_SLAB.get(), CCBlocks.BLUE_BISMUTH);
+        stairBuilder(CCBlocks.BLUE_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.BLUE_BISMUTH.get())).group("chiseled_bismuth").unlockedBy("has_chiseled_bismuth", has(CCBlocks.BLUE_BISMUTH.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_WALL.get(), CCBlocks.BLUE_BISMUTH.get());
 
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_STAIRS.get(), CCBlocks.CHISELED_BISMUTH.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_SLAB.get(), CCBlocks.CHISELED_BISMUTH.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_WALL.get(), CCBlocks.CHISELED_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_STAIRS.get(), CCBlocks.BLUE_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_SLAB.get(), CCBlocks.BLUE_BISMUTH.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH_WALL.get(), CCBlocks.BLUE_BISMUTH.get());
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_SLAB.get(), CCBlocks.PURPLE_CHISELED_BISMUTH);
-        stairBuilder(CCBlocks.PURPLE_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.PURPLE_CHISELED_BISMUTH.get())).group("purple_chiseled_bismuth").unlockedBy("has_purple_chiseled_bismuth", has(CCBlocks.PURPLE_CHISELED_BISMUTH.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_WALL.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_SLAB.get(), CCBlocks.PURPLE_BISMUTH);
+        stairBuilder(CCBlocks.PURPLE_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.PURPLE_BISMUTH.get())).group("purple_chiseled_bismuth").unlockedBy("has_purple_chiseled_bismuth", has(CCBlocks.PURPLE_BISMUTH.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_WALL.get(), CCBlocks.PURPLE_BISMUTH.get());
 
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_SLAB.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_WALL.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_STAIRS.get(), CCBlocks.PURPLE_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_SLAB.get(), CCBlocks.PURPLE_BISMUTH.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_WALL.get(), CCBlocks.PURPLE_BISMUTH.get());
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_SLAB.get(), CCBlocks.VIOLET_CHISELED_BISMUTH);
-        stairBuilder(CCBlocks.VIOLET_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.VIOLET_CHISELED_BISMUTH.get())).group("violet_chiseled_bismuth").unlockedBy("has_violet_chiseled_bismuth", has(CCBlocks.VIOLET_CHISELED_BISMUTH.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_WALL.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_SLAB.get(), CCBlocks.VIOLET_BISMUTH);
+        stairBuilder(CCBlocks.VIOLET_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.VIOLET_BISMUTH.get())).group("violet_chiseled_bismuth").unlockedBy("has_violet_chiseled_bismuth", has(CCBlocks.VIOLET_BISMUTH.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_WALL.get(), CCBlocks.VIOLET_BISMUTH.get());
 
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_SLAB.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_WALL.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_STAIRS.get(), CCBlocks.VIOLET_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_SLAB.get(), CCBlocks.VIOLET_BISMUTH.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_WALL.get(), CCBlocks.VIOLET_BISMUTH.get());
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_SLAB.get(), CCBlocks.YELLOW_CHISELED_BISMUTH);
-        stairBuilder(CCBlocks.YELLOW_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.YELLOW_CHISELED_BISMUTH.get())).group("yellow_chiseled_bismuth").unlockedBy("has_yellow_chiseled_bismuth", has(CCBlocks.YELLOW_CHISELED_BISMUTH.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_WALL.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_SLAB.get(), CCBlocks.YELLOW_BISMUTH);
+        stairBuilder(CCBlocks.YELLOW_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.YELLOW_BISMUTH.get())).group("yellow_chiseled_bismuth").unlockedBy("has_yellow_chiseled_bismuth", has(CCBlocks.YELLOW_BISMUTH.get())).save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_WALL.get(), CCBlocks.YELLOW_BISMUTH.get());
 
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_SLAB.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_WALL.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_STAIRS.get(), CCBlocks.YELLOW_BISMUTH.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_SLAB.get(), CCBlocks.YELLOW_BISMUTH.get(), 2);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_WALL.get(), CCBlocks.YELLOW_BISMUTH.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS.get(), 4)
                 .pattern("BB")
@@ -886,14 +886,14 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_yellow_bismuth_crystal", has(CCBlocks.YELLOW_BISMUTH_CRYSTAL.get()))
                 .save(pRecipeOutput, "yellow_bismuth_bricks_from_crystal");
 
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH.get(), CCBlocks.BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH.get(), CCBlocks.BISMUTH_CRYSTAL.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH_CRYSTAL.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH.get(), CCBlocks.BLUE_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BLUE_BISMUTH.get(), CCBlocks.BLUE_BISMUTH_CRYSTAL.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH_CRYSTAL.get());
 
     }
 }

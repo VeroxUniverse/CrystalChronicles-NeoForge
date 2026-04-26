@@ -1,8 +1,9 @@
 {
   "variants": {
-    "formed=false": {
-      "model": "crystal_chronicles:block/portal_frame_block"
-    },
+    "formed=false,facing=north": { "model": "crystal_chronicles:block/portal_frame_block" },
+    "formed=false,facing=south": { "model": "crystal_chronicles:block/portal_frame_block", "y": 180 },
+    "formed=false,facing=east":  { "model": "crystal_chronicles:block/portal_frame_block", "y": 90 },
+    "formed=false,facing=west":  { "model": "crystal_chronicles:block/portal_frame_block", "y": 270 },
 
     "formed=true,facing=north,part=bottom_left": { "model": "crystal_chronicles:block/portal_frame_bottom_left" },
     "formed=true,facing=south,part=bottom_left": { "model": "crystal_chronicles:block/portal_frame_bottom_left", "y": 180 },

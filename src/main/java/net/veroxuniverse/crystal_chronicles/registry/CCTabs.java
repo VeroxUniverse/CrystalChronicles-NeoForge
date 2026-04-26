@@ -15,7 +15,7 @@ public class CCTabs {
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_BLOCKS = CREATIVE_MODE_TABS.register("cc_tab_blocks", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.blocks." + CrystalChronicles.MODID))
-            .icon(() -> CCBlocks.FAT_TISSUE_BLOCK.get().asItem().getDefaultInstance())
+            .icon(() -> CCBlocks.RAINBOW_BISMUTH_BRICKS.get().asItem().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(CCBlocks.POLISHED_STONE_BRICKS.get());
                 output.accept(CCBlocks.PORTAL_FRAME_BLOCK.get());
@@ -39,10 +39,10 @@ public class CCTabs {
                 output.accept(CCBlocks.POLISHED_BISMITE_STAIRS.get());
                 output.accept(CCBlocks.POLISHED_BISMITE_SLAB.get());
                 output.accept(CCBlocks.POLISHED_BISMITE_WALL.get());
-                output.accept(CCBlocks.BISMUTH_BRICKS.get());
-                output.accept(CCBlocks.BISMUTH_BRICKS_STAIRS.get());
-                output.accept(CCBlocks.BISMUTH_BRICKS_SLAB.get());
-                output.accept(CCBlocks.BISMUTH_BRICKS_WALL.get());
+                output.accept(CCBlocks.BLUE_BISMUTH_BRICKS.get());
+                output.accept(CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS.get());
+                output.accept(CCBlocks.BLUE_BISMUTH_BRICKS_SLAB.get());
+                output.accept(CCBlocks.BLUE_BISMUTH_BRICKS_WALL.get());
                 output.accept(CCBlocks.PURPLE_BISMUTH_BRICKS.get());
                 output.accept(CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get());
                 output.accept(CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get());
@@ -59,23 +59,23 @@ public class CCTabs {
                 output.accept(CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS.get());
                 output.accept(CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get());
                 output.accept(CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get());
-                output.accept(CCBlocks.CHISELED_BISMUTH.get());
-                output.accept(CCBlocks.CHISELED_BISMUTH_STAIRS.get());
-                output.accept(CCBlocks.CHISELED_BISMUTH_SLAB.get());
-                output.accept(CCBlocks.CHISELED_BISMUTH_WALL.get());
-                output.accept(CCBlocks.PURPLE_CHISELED_BISMUTH.get());
-                output.accept(CCBlocks.PURPLE_CHISELED_BISMUTH_STAIRS.get());
-                output.accept(CCBlocks.PURPLE_CHISELED_BISMUTH_SLAB.get());
-                output.accept(CCBlocks.PURPLE_CHISELED_BISMUTH_WALL.get());
-                output.accept(CCBlocks.VIOLET_CHISELED_BISMUTH.get());
-                output.accept(CCBlocks.VIOLET_CHISELED_BISMUTH_STAIRS.get());
-                output.accept(CCBlocks.VIOLET_CHISELED_BISMUTH_SLAB.get());
-                output.accept(CCBlocks.VIOLET_CHISELED_BISMUTH_WALL.get());
-                output.accept(CCBlocks.YELLOW_CHISELED_BISMUTH.get());
-                output.accept(CCBlocks.YELLOW_CHISELED_BISMUTH_STAIRS.get());
-                output.accept(CCBlocks.YELLOW_CHISELED_BISMUTH_SLAB.get());
-                output.accept(CCBlocks.YELLOW_CHISELED_BISMUTH_WALL.get());
-                output.accept(CCBlocks.BISMUTH_CRYSTAL.get());
+                output.accept(CCBlocks.BLUE_BISMUTH.get());
+                output.accept(CCBlocks.BLUE_BISMUTH_STAIRS.get());
+                output.accept(CCBlocks.BLUE_BISMUTH_SLAB.get());
+                output.accept(CCBlocks.BLUE_BISMUTH_WALL.get());
+                output.accept(CCBlocks.PURPLE_BISMUTH.get());
+                output.accept(CCBlocks.PURPLE_BISMUTH_STAIRS.get());
+                output.accept(CCBlocks.PURPLE_BISMUTH_SLAB.get());
+                output.accept(CCBlocks.PURPLE_BISMUTH_WALL.get());
+                output.accept(CCBlocks.VIOLET_BISMUTH.get());
+                output.accept(CCBlocks.VIOLET_BISMUTH_STAIRS.get());
+                output.accept(CCBlocks.VIOLET_BISMUTH_SLAB.get());
+                output.accept(CCBlocks.VIOLET_BISMUTH_WALL.get());
+                output.accept(CCBlocks.YELLOW_BISMUTH.get());
+                output.accept(CCBlocks.YELLOW_BISMUTH_STAIRS.get());
+                output.accept(CCBlocks.YELLOW_BISMUTH_SLAB.get());
+                output.accept(CCBlocks.YELLOW_BISMUTH_WALL.get());
+                output.accept(CCBlocks.BLUE_BISMUTH_CRYSTAL.get());
                 output.accept(CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
                 output.accept(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get());
                 output.accept(CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
@@ -244,7 +244,7 @@ public class CCTabs {
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ARMORY = CREATIVE_MODE_TABS.register("cc_tab_armory", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.armory." + CrystalChronicles.MODID))
-            .icon(() -> CCItems.HOLY_KNIGHT_HELMET.get().getDefaultInstance())
+            .icon(() -> CCItems.PRISMATIC_KNIGHT_HELMET.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(CCItems.HOLY_KNIGHT_HELMET.get());
                 output.accept(CCItems.HOLY_KNIGHT_CHESTPLATE.get());
