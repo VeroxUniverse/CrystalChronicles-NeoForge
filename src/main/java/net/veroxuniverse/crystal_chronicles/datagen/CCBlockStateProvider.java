@@ -98,29 +98,29 @@ public class CCBlockStateProvider extends BlockStateProvider {
         blockItem(CCBlocks.BISMITE_BRICKS_STAIRS);
         blockItem(CCBlocks.BISMITE_BRICKS_SLAB);
 
-        stairsBlock(((StairBlock) CCBlocks.BLUE_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
-        slabBlock(((SlabBlock) CCBlocks.BLUE_BISMUTH_SLAB.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
+        //stairsBlock(((StairBlock) CCBlocks.BLUE_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
+        //slabBlock(((SlabBlock) CCBlocks.BLUE_BISMUTH_SLAB.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.BLUE_BISMUTH_WALL.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
-        blockItem(CCBlocks.BLUE_BISMUTH_STAIRS);
-        blockItem(CCBlocks.BLUE_BISMUTH_SLAB);
+        //blockItem(CCBlocks.BLUE_BISMUTH_STAIRS);
+        //blockItem(CCBlocks.BLUE_BISMUTH_SLAB);
 
-        stairsBlock(((StairBlock) CCBlocks.PURPLE_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
-        slabBlock(((SlabBlock) CCBlocks.PURPLE_BISMUTH_SLAB.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
+        //stairsBlock(((StairBlock) CCBlocks.PURPLE_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
+        //slabBlock(((SlabBlock) CCBlocks.PURPLE_BISMUTH_SLAB.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.PURPLE_BISMUTH_WALL.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
-        blockItem(CCBlocks.PURPLE_BISMUTH_STAIRS);
-        blockItem(CCBlocks.PURPLE_BISMUTH_SLAB);
+        //blockItem(CCBlocks.PURPLE_BISMUTH_STAIRS);
+        //blockItem(CCBlocks.PURPLE_BISMUTH_SLAB);
 
-        stairsBlock(((StairBlock) CCBlocks.YELLOW_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
-        slabBlock(((SlabBlock) CCBlocks.YELLOW_BISMUTH_SLAB.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
+        //stairsBlock(((StairBlock) CCBlocks.YELLOW_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
+        //slabBlock(((SlabBlock) CCBlocks.YELLOW_BISMUTH_SLAB.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.YELLOW_BISMUTH_WALL.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
-        blockItem(CCBlocks.YELLOW_BISMUTH_STAIRS);
-        blockItem(CCBlocks.YELLOW_BISMUTH_SLAB);
+        //blockItem(CCBlocks.YELLOW_BISMUTH_STAIRS);
+        //blockItem(CCBlocks.YELLOW_BISMUTH_SLAB);
 
-        stairsBlock(((StairBlock) CCBlocks.VIOLET_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
-        slabBlock(((SlabBlock) CCBlocks.VIOLET_BISMUTH_SLAB.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
+        //stairsBlock(((StairBlock) CCBlocks.VIOLET_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
+        //slabBlock(((SlabBlock) CCBlocks.VIOLET_BISMUTH_SLAB.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.VIOLET_BISMUTH_WALL.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
-        blockItem(CCBlocks.VIOLET_BISMUTH_STAIRS);
-        blockItem(CCBlocks.VIOLET_BISMUTH_SLAB);
+        //blockItem(CCBlocks.VIOLET_BISMUTH_STAIRS);
+        //blockItem(CCBlocks.VIOLET_BISMUTH_SLAB);
 
         stairsBlock(((StairBlock) CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS.get()), blockTexture(CCBlocks.BLUE_BISMUTH_BRICKS.get()));
         slabBlock(((SlabBlock) CCBlocks.BLUE_BISMUTH_BRICKS_SLAB.get()), blockTexture(CCBlocks.BLUE_BISMUTH_BRICKS.get()), blockTexture(CCBlocks.BLUE_BISMUTH_BRICKS.get()));
