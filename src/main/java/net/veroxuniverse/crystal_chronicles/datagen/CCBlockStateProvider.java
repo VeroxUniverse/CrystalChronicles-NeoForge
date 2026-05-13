@@ -4,10 +4,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 
 public class CCBlockStateProvider extends BlockStateProvider {
@@ -19,150 +21,66 @@ public class CCBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        // VANILLA //
+        ModelFile waterModel = models().getExistingFile(mcLoc("block/water"));
 
+        getVariantBuilder(CCFluids.SULPHURIC_WATER_BLOCK.get())
+                .partialState()
+                .setModels(new ConfiguredModel(waterModel));
+
+        // ==========================================================================================
+        // 1. LIGHTNING
+        // ==========================================================================================
+        generateStoneFamily(CCBlocks.THUNDERSTONE, CCBlocks.THUNDERSTONE_STAIRS, CCBlocks.THUNDERSTONE_SLAB, CCBlocks.THUNDERSTONE_WALL);
+        generateStoneFamily(CCBlocks.THUNDERSTONE_BRICKS, CCBlocks.THUNDERSTONE_BRICKS_STAIRS, CCBlocks.THUNDERSTONE_BRICKS_SLAB, CCBlocks.THUNDERSTONE_BRICKS_WALL);
+        generateStoneFamily(CCBlocks.CHISELED_THUNDERSTONE, CCBlocks.CHISELED_THUNDERSTONE_STAIRS, CCBlocks.CHISELED_THUNDERSTONE_SLAB, CCBlocks.CHISELED_THUNDERSTONE_WALL);
+        generateStoneFamily(CCBlocks.POLISHED_THUNDERSTONE, CCBlocks.POLISHED_THUNDERSTONE_STAIRS, CCBlocks.POLISHED_THUNDERSTONE_SLAB, CCBlocks.POLISHED_THUNDERSTONE_WALL);
+
+        // ==========================================================================================
+        // 2. BISMUTH (END)
+        // ==========================================================================================
         blockWithItem(CCBlocks.POLISHED_STONE_BRICKS);
 
-        // LIGHTNING //
-
-        blockWithItem(CCBlocks.THUNDERSTONE);
-        //blockWithItem(CCBlocks.CHARGED_THUNDERSTONE);
-        blockWithItem(CCBlocks.THUNDERSTONE_BRICKS);
-        blockWithItem(CCBlocks.CHISELED_THUNDERSTONE);
-        blockWithItem(CCBlocks.POLISHED_THUNDERSTONE);
-
-        stairsBlock(((StairBlock) CCBlocks.THUNDERSTONE_STAIRS.get()), blockTexture(CCBlocks.THUNDERSTONE.get()));
-        slabBlock(((SlabBlock) CCBlocks.THUNDERSTONE_SLAB.get()), blockTexture(CCBlocks.THUNDERSTONE.get()), blockTexture(CCBlocks.THUNDERSTONE.get()));
-        wallBlock(((WallBlock) CCBlocks.THUNDERSTONE_WALL.get()), blockTexture(CCBlocks.THUNDERSTONE.get()));
-        blockItem(CCBlocks.THUNDERSTONE_STAIRS);
-        blockItem(CCBlocks.THUNDERSTONE_SLAB);
-
-        stairsBlock(((StairBlock) CCBlocks.CHISELED_THUNDERSTONE_STAIRS.get()), blockTexture(CCBlocks.CHISELED_THUNDERSTONE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CHISELED_THUNDERSTONE_SLAB.get()), blockTexture(CCBlocks.CHISELED_THUNDERSTONE.get()), blockTexture(CCBlocks.CHISELED_THUNDERSTONE.get()));
-        wallBlock(((WallBlock) CCBlocks.CHISELED_THUNDERSTONE_WALL.get()), blockTexture(CCBlocks.CHISELED_THUNDERSTONE.get()));
-        blockItem(CCBlocks.CHISELED_THUNDERSTONE_STAIRS);
-        blockItem(CCBlocks.CHISELED_THUNDERSTONE_SLAB);
-
-        stairsBlock(((StairBlock) CCBlocks.THUNDERSTONE_BRICKS_STAIRS.get()), blockTexture(CCBlocks.THUNDERSTONE_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.THUNDERSTONE_BRICKS_SLAB.get()), blockTexture(CCBlocks.THUNDERSTONE_BRICKS.get()), blockTexture(CCBlocks.THUNDERSTONE_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.THUNDERSTONE_BRICKS_WALL.get()), blockTexture(CCBlocks.THUNDERSTONE_BRICKS.get()));
-        blockItem(CCBlocks.THUNDERSTONE_BRICKS_STAIRS);
-        blockItem(CCBlocks.THUNDERSTONE_BRICKS_SLAB);
-
-        stairsBlock(((StairBlock) CCBlocks.POLISHED_THUNDERSTONE_STAIRS.get()), blockTexture(CCBlocks.POLISHED_THUNDERSTONE.get()));
-        slabBlock(((SlabBlock) CCBlocks.POLISHED_THUNDERSTONE_SLAB.get()), blockTexture(CCBlocks.POLISHED_THUNDERSTONE.get()), blockTexture(CCBlocks.POLISHED_THUNDERSTONE.get()));
-        wallBlock(((WallBlock) CCBlocks.POLISHED_THUNDERSTONE_WALL.get()), blockTexture(CCBlocks.POLISHED_THUNDERSTONE.get()));
-        blockItem(CCBlocks.POLISHED_THUNDERSTONE_STAIRS);
-        blockItem(CCBlocks.POLISHED_THUNDERSTONE_SLAB);
-
-        // BISMUTH //
-
-        blockWithItem(CCBlocks.BISMITE_BRICKS);
-        blockWithItem(CCBlocks.CHISELED_BISMITE);
-        blockWithItem(CCBlocks.CRACKED_BISMITE);
-        blockWithItem(CCBlocks.POLISHED_BISMITE);
-
-        blockWithItem(CCBlocks.BLUE_BISMUTH_BRICKS);
-        blockWithItem(CCBlocks.PURPLE_BISMUTH_BRICKS);
-        blockWithItem(CCBlocks.RAINBOW_BISMUTH_BRICKS);
-        blockWithItem(CCBlocks.VIOLET_BISMUTH_BRICKS);
-        blockWithItem(CCBlocks.YELLOW_BISMUTH_BRICKS);
+        // Bismite
 
         stairsBlock(((StairBlock) CCBlocks.BISMITE_STAIRS.get()), blockTexture(CCBlocks.BISMITE.get()));
-        slabBlock(((SlabBlock) CCBlocks.BISMITE_SLAB.get()), blockTexture(CCBlocks.BISMITE.get()), blockTexture(CCBlocks.BISMITE.get()));
+        slabBlock(((SlabBlock) CCBlocks.BISMITE_SLAB.get()), CCBlocks.BISMITE.getId(), blockTexture(CCBlocks.BISMITE.get()));
         wallBlock(((WallBlock) CCBlocks.BISMITE_WALL.get()), blockTexture(CCBlocks.BISMITE.get()));
         blockItem(CCBlocks.BISMITE_STAIRS);
         blockItem(CCBlocks.BISMITE_SLAB);
 
-        stairsBlock(((StairBlock) CCBlocks.CHISELED_BISMITE_STAIRS.get()), blockTexture(CCBlocks.CHISELED_BISMITE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CHISELED_BISMITE_SLAB.get()), blockTexture(CCBlocks.CHISELED_BISMITE.get()), blockTexture(CCBlocks.CHISELED_BISMITE.get()));
-        wallBlock(((WallBlock) CCBlocks.CHISELED_BISMITE_WALL.get()), blockTexture(CCBlocks.CHISELED_BISMITE.get()));
-        blockItem(CCBlocks.CHISELED_BISMITE_STAIRS);
-        blockItem(CCBlocks.CHISELED_BISMITE_SLAB);
+        generateStoneFamily(CCBlocks.BISMITE_BRICKS, CCBlocks.BISMITE_BRICKS_STAIRS, CCBlocks.BISMITE_BRICKS_SLAB, CCBlocks.BISMITE_BRICKS_WALL);
+        generateStoneFamily(CCBlocks.CHISELED_BISMITE, CCBlocks.CHISELED_BISMITE_STAIRS, CCBlocks.CHISELED_BISMITE_SLAB, CCBlocks.CHISELED_BISMITE_WALL);
+        generateStoneFamily(CCBlocks.CRACKED_BISMITE, CCBlocks.CRACKED_BISMITE_STAIRS, CCBlocks.CRACKED_BISMITE_SLAB, CCBlocks.CRACKED_BISMITE_WALL);
+        generateStoneFamily(CCBlocks.POLISHED_BISMITE, CCBlocks.POLISHED_BISMITE_STAIRS, CCBlocks.POLISHED_BISMITE_SLAB, CCBlocks.POLISHED_BISMITE_WALL);
 
-        stairsBlock(((StairBlock) CCBlocks.CRACKED_BISMITE_STAIRS.get()), blockTexture(CCBlocks.CRACKED_BISMITE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CRACKED_BISMITE_SLAB.get()), blockTexture(CCBlocks.CRACKED_BISMITE.get()), blockTexture(CCBlocks.CRACKED_BISMITE.get()));
-        wallBlock(((WallBlock) CCBlocks.CRACKED_BISMITE_WALL.get()), blockTexture(CCBlocks.CRACKED_BISMITE.get()));
-        blockItem(CCBlocks.CRACKED_BISMITE_STAIRS);
-        blockItem(CCBlocks.CRACKED_BISMITE_SLAB);
+        // Bismuth Bricks
+        generateBismuthBrickFamily(CCBlocks.BLUE_BISMUTH_BRICKS, CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS, CCBlocks.BLUE_BISMUTH_BRICKS_SLAB, CCBlocks.BLUE_BISMUTH_BRICKS_WALL);
+        generateBismuthBrickFamily(CCBlocks.PURPLE_BISMUTH_BRICKS, CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS, CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB, CCBlocks.PURPLE_BISMUTH_BRICKS_WALL);
+        generateBismuthBrickFamily(CCBlocks.RAINBOW_BISMUTH_BRICKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS, CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB, CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL);
+        generateBismuthBrickFamily(CCBlocks.VIOLET_BISMUTH_BRICKS, CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS, CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB, CCBlocks.VIOLET_BISMUTH_BRICKS_WALL);
+        generateBismuthBrickFamily(CCBlocks.YELLOW_BISMUTH_BRICKS, CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS, CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB, CCBlocks.YELLOW_BISMUTH_BRICKS_WALL);
 
-        stairsBlock(((StairBlock) CCBlocks.POLISHED_BISMITE_STAIRS.get()), blockTexture(CCBlocks.POLISHED_BISMITE.get()));
-        slabBlock(((SlabBlock) CCBlocks.POLISHED_BISMITE_SLAB.get()), blockTexture(CCBlocks.POLISHED_BISMITE.get()), blockTexture(CCBlocks.POLISHED_BISMITE.get()));
-        wallBlock(((WallBlock) CCBlocks.POLISHED_BISMITE_WALL.get()), blockTexture(CCBlocks.POLISHED_BISMITE.get()));
-        blockItem(CCBlocks.POLISHED_BISMITE_STAIRS);
-        blockItem(CCBlocks.POLISHED_BISMITE_SLAB);
-
-        stairsBlock(((StairBlock) CCBlocks.BISMITE_BRICKS_STAIRS.get()), blockTexture(CCBlocks.BISMITE_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.BISMITE_BRICKS_SLAB.get()), blockTexture(CCBlocks.BISMITE_BRICKS.get()), blockTexture(CCBlocks.BISMITE_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.BISMITE_BRICKS_WALL.get()), blockTexture(CCBlocks.BISMITE_BRICKS.get()));
-        blockItem(CCBlocks.BISMITE_BRICKS_STAIRS);
-        blockItem(CCBlocks.BISMITE_BRICKS_SLAB);
-
-        //stairsBlock(((StairBlock) CCBlocks.BLUE_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
-        //slabBlock(((SlabBlock) CCBlocks.BLUE_BISMUTH_SLAB.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
+        // Bismuth Walls
         wallBlock(((WallBlock) CCBlocks.BLUE_BISMUTH_WALL.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
-        //blockItem(CCBlocks.BLUE_BISMUTH_STAIRS);
-        //blockItem(CCBlocks.BLUE_BISMUTH_SLAB);
-
-        //stairsBlock(((StairBlock) CCBlocks.PURPLE_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
-        //slabBlock(((SlabBlock) CCBlocks.PURPLE_BISMUTH_SLAB.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.PURPLE_BISMUTH_WALL.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
-        //blockItem(CCBlocks.PURPLE_BISMUTH_STAIRS);
-        //blockItem(CCBlocks.PURPLE_BISMUTH_SLAB);
-
-        //stairsBlock(((StairBlock) CCBlocks.YELLOW_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
-        //slabBlock(((SlabBlock) CCBlocks.YELLOW_BISMUTH_SLAB.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
-        wallBlock(((WallBlock) CCBlocks.YELLOW_BISMUTH_WALL.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
-        //blockItem(CCBlocks.YELLOW_BISMUTH_STAIRS);
-        //blockItem(CCBlocks.YELLOW_BISMUTH_SLAB);
-
-        //stairsBlock(((StairBlock) CCBlocks.VIOLET_BISMUTH_STAIRS.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
-        //slabBlock(((SlabBlock) CCBlocks.VIOLET_BISMUTH_SLAB.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.VIOLET_BISMUTH_WALL.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
-        //blockItem(CCBlocks.VIOLET_BISMUTH_STAIRS);
-        //blockItem(CCBlocks.VIOLET_BISMUTH_SLAB);
+        wallBlock(((WallBlock) CCBlocks.YELLOW_BISMUTH_WALL.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));
+        wallBlock(((WallBlock) CCBlocks.RAINBOW_BISMUTH_WALL.get()), blockTexture(CCBlocks.RAINBOW_BISMUTH.get()));
 
-        stairsBlock(((StairBlock) CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS.get()), blockTexture(CCBlocks.BLUE_BISMUTH_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.BLUE_BISMUTH_BRICKS_SLAB.get()), blockTexture(CCBlocks.BLUE_BISMUTH_BRICKS.get()), blockTexture(CCBlocks.BLUE_BISMUTH_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.BLUE_BISMUTH_BRICKS_WALL.get()), blockTexture(CCBlocks.BLUE_BISMUTH_BRICKS.get()));
-        blockItem(CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS);
-        blockItem(CCBlocks.BLUE_BISMUTH_BRICKS_SLAB);
-
-        stairsBlock(((StairBlock) CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get()), blockTexture(CCBlocks.PURPLE_BISMUTH_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get()), blockTexture(CCBlocks.PURPLE_BISMUTH_BRICKS.get()), blockTexture(CCBlocks.PURPLE_BISMUTH_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.PURPLE_BISMUTH_BRICKS_WALL.get()), blockTexture(CCBlocks.PURPLE_BISMUTH_BRICKS.get()));
-        blockItem(CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS);
-        blockItem(CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB);
-
-        stairsBlock(((StairBlock) CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS.get()), blockTexture(CCBlocks.RAINBOW_BISMUTH_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB.get()), blockTexture(CCBlocks.RAINBOW_BISMUTH_BRICKS.get()), blockTexture(CCBlocks.RAINBOW_BISMUTH_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get()), blockTexture(CCBlocks.RAINBOW_BISMUTH_BRICKS.get()));
-        blockItem(CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS);
-        blockItem(CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB);
-
-        stairsBlock(((StairBlock) CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS.get()), blockTexture(CCBlocks.VIOLET_BISMUTH_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB.get()), blockTexture(CCBlocks.VIOLET_BISMUTH_BRICKS.get()), blockTexture(CCBlocks.VIOLET_BISMUTH_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.VIOLET_BISMUTH_BRICKS_WALL.get()), blockTexture(CCBlocks.VIOLET_BISMUTH_BRICKS.get()));
-        blockItem(CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS);
-        blockItem(CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB);
-
-        stairsBlock(((StairBlock) CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS.get()), blockTexture(CCBlocks.YELLOW_BISMUTH_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get()), blockTexture(CCBlocks.YELLOW_BISMUTH_BRICKS.get()), blockTexture(CCBlocks.YELLOW_BISMUTH_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get()), blockTexture(CCBlocks.YELLOW_BISMUTH_BRICKS.get()));
-        blockItem(CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS);
-        blockItem(CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB);
-
-        // BLOOD //
-
+        // ==========================================================================================
+        // 3. BLOOD
+        // ==========================================================================================
         blockWithItem(CCBlocks.ALVEOLUS_BLOCK);
         blockWithItem(CCBlocks.FAT_TISSUE_BLOCK);
         blockWithItem(CCBlocks.ROTTEN_FLESH_BLOCK);
-        blockWithItem(CCBlocks.CRUSTONE);
-        blockWithItem(CCBlocks.CRUSTONE_BRICKS);
-        blockWithItem(CCBlocks.CRACKED_CRUSTONE_BRICKS);
-        blockWithItem(CCBlocks.POLISHED_CRUSTONE);
-        blockWithItem(CCBlocks.CHISELED_CRUSTONE);
         blockWithItem(CCBlocks.HEMALITE_BLOCK);
+        saplingBlock(CCBlocks.ALVEOLUS);
+
+        generateStoneFamily(CCBlocks.CRUSTONE, CCBlocks.CRUSTONE_STAIRS, CCBlocks.CRUSTONE_SLAB, CCBlocks.CRUSTONE_WALL);
+        generateStoneFamily(CCBlocks.CRUSTONE_BRICKS, CCBlocks.CRUSTONE_BRICKS_STAIRS, CCBlocks.CRUSTONE_BRICKS_SLAB, CCBlocks.CRUSTONE_BRICKS_WALL);
+        generateStoneFamily(CCBlocks.CRACKED_CRUSTONE_BRICKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS, CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB, CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL);
+        generateStoneFamily(CCBlocks.POLISHED_CRUSTONE, CCBlocks.POLISHED_CRUSTONE_STAIRS, CCBlocks.POLISHED_CRUSTONE_SLAB, CCBlocks.POLISHED_CRUSTONE_WALL);
+        generateStoneFamily(CCBlocks.CHISELED_CRUSTONE, CCBlocks.CHISELED_CRUSTONE_STAIRS, CCBlocks.CHISELED_CRUSTONE_SLAB, CCBlocks.CHISELED_CRUSTONE_WALL);
 
         blockWithItem(CCBlocks.BRONCHUS_PLANKS);
         stairsBlock(((StairBlock) CCBlocks.BRONCHUS_STAIRS.get()), blockTexture(CCBlocks.BRONCHUS_PLANKS.get()));
@@ -180,138 +98,38 @@ public class CCBlockStateProvider extends BlockStateProvider {
         blockItem(CCBlocks.BRONCHUS_FENCE_GATE);
         blockItem(CCBlocks.BRONCHUS_TRAPDOOR, "_bottom");
 
-        wallBlock(((WallBlock) CCBlocks.CRUSTONE_WALL.get()), blockTexture(CCBlocks.CRUSTONE.get()));
-        wallBlock(((WallBlock) CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get()), blockTexture(CCBlocks.CRACKED_CRUSTONE_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.CRUSTONE_BRICKS_WALL.get()), blockTexture(CCBlocks.CRUSTONE_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.POLISHED_CRUSTONE_WALL.get()), blockTexture(CCBlocks.POLISHED_CRUSTONE.get()));
-        wallBlock(((WallBlock) CCBlocks.CHISELED_CRUSTONE_WALL.get()), blockTexture(CCBlocks.CHISELED_CRUSTONE.get()));
+        simpleCross(CCBlocks.VILLI);
+        simpleCross(CCBlocks.HANGING_VEINS);
 
-        stairsBlock(((StairBlock) CCBlocks.CRUSTONE_STAIRS.get()), blockTexture(CCBlocks.CRUSTONE.get()));
-        stairsBlock(((StairBlock) CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get()), blockTexture(CCBlocks.CRACKED_CRUSTONE_BRICKS.get()));
-        stairsBlock(((StairBlock) CCBlocks.CRUSTONE_BRICKS_STAIRS.get()), blockTexture(CCBlocks.CRUSTONE_BRICKS.get()));
-        stairsBlock(((StairBlock) CCBlocks.POLISHED_CRUSTONE_STAIRS.get()), blockTexture(CCBlocks.POLISHED_CRUSTONE.get()));
-        stairsBlock(((StairBlock) CCBlocks.CHISELED_CRUSTONE_STAIRS.get()), blockTexture(CCBlocks.CHISELED_CRUSTONE.get()));
-        blockItem(CCBlocks.CRUSTONE_STAIRS);
-        blockItem(CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS);
-        blockItem(CCBlocks.CRUSTONE_BRICKS_STAIRS);
-        blockItem(CCBlocks.POLISHED_CRUSTONE_STAIRS);
-        blockItem(CCBlocks.CHISELED_CRUSTONE_STAIRS);
-
-        slabBlock(((SlabBlock) CCBlocks.CRUSTONE_SLAB.get()), blockTexture(CCBlocks.CRUSTONE.get()), blockTexture(CCBlocks.CRUSTONE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get()), blockTexture(CCBlocks.CRACKED_CRUSTONE_BRICKS.get()), blockTexture(CCBlocks.CRACKED_CRUSTONE_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.CRUSTONE_BRICKS_SLAB.get()), blockTexture(CCBlocks.CRUSTONE_BRICKS.get()), blockTexture(CCBlocks.CRUSTONE_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.POLISHED_CRUSTONE_SLAB.get()), blockTexture(CCBlocks.POLISHED_CRUSTONE.get()), blockTexture(CCBlocks.POLISHED_CRUSTONE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CHISELED_CRUSTONE_SLAB.get()), blockTexture(CCBlocks.CHISELED_CRUSTONE.get()), blockTexture(CCBlocks.CHISELED_CRUSTONE.get()));
-        blockItem(CCBlocks.CRUSTONE_SLAB);
-        blockItem(CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB);
-        blockItem(CCBlocks.CRUSTONE_BRICKS_SLAB);
-        blockItem(CCBlocks.POLISHED_CRUSTONE_SLAB);
-        blockItem(CCBlocks.CHISELED_CRUSTONE_SLAB);
-
-        saplingBlock(CCBlocks.ALVEOLUS);
-
-
-        simpleBlock(CCBlocks.VILLI.get(),
-                models().cross(blockTexture(CCBlocks.VILLI.get()).getPath(), blockTexture(CCBlocks.VILLI.get())).renderType("cutout"));
-
-        simpleBlock(CCBlocks.HANGING_VEINS.get(),
-                models().cross(blockTexture(CCBlocks.HANGING_VEINS.get()).getPath(), blockTexture(CCBlocks.HANGING_VEINS.get())).renderType("cutout"));
-
-        // HOLY //
-
+        // ==========================================================================================
+        // 4. HOLY
+        // ==========================================================================================
         blockWithItem(CCBlocks.CLOUD_BLOCK);
         blockWithItem(CCBlocks.DENSE_CLOUDS);
+        //blockWithItem(CCBlocks.GOLDSTONE);
 
-        blockWithItem(CCBlocks.HOLY_MARBLE);
-        stairsBlock(((StairBlock) CCBlocks.HOLY_MARBLE_STAIRS.get()), blockTexture(CCBlocks.HOLY_MARBLE.get()));
-        slabBlock(((SlabBlock) CCBlocks.HOLY_MARBLE_SLAB.get()), blockTexture(CCBlocks.HOLY_MARBLE.get()), blockTexture(CCBlocks.HOLY_MARBLE.get()));
-        wallBlock(((WallBlock) CCBlocks.HOLY_MARBLE_WALL.get()), blockTexture(CCBlocks.HOLY_MARBLE.get()));
-        blockItem(CCBlocks.HOLY_MARBLE_STAIRS);
-        blockItem(CCBlocks.HOLY_MARBLE_SLAB);
+        generateStoneFamily(CCBlocks.HOLY_MARBLE, CCBlocks.HOLY_MARBLE_STAIRS, CCBlocks.HOLY_MARBLE_SLAB, CCBlocks.HOLY_MARBLE_WALL);
+        generateStoneFamily(CCBlocks.HOLY_MARBLE_BRICKS, CCBlocks.HOLY_MARBLE_BRICKS_STAIRS, CCBlocks.HOLY_MARBLE_BRICKS_SLAB, CCBlocks.HOLY_MARBLE_BRICKS_WALL);
+        generateStoneFamily(CCBlocks.CHISELED_HOLY_MARBLE, CCBlocks.CHISELED_HOLY_MARBLE_STAIRS, CCBlocks.CHISELED_HOLY_MARBLE_SLAB, CCBlocks.CHISELED_HOLY_MARBLE_WALL);
+        generateStoneFamily(CCBlocks.CRACKED_HOLY_MARBLE, CCBlocks.CRACKED_HOLY_MARBLE_STAIRS, CCBlocks.CRACKED_HOLY_MARBLE_SLAB, CCBlocks.CRACKED_HOLY_MARBLE_WALL);
+        generateStoneFamily(CCBlocks.POLISHED_HOLY_MARBLE, CCBlocks.POLISHED_HOLY_MARBLE_STAIRS, CCBlocks.POLISHED_HOLY_MARBLE_SLAB, CCBlocks.POLISHED_HOLY_MARBLE_WALL);
+        generateStoneFamily(CCBlocks.GOLDSTONE, CCBlocks.GOLDSTONE_STAIRS, CCBlocks.GOLDSTONE_SLAB, CCBlocks.GOLDSTONE_WALL);
 
-        blockWithItem(CCBlocks.HOLY_MARBLE_BRICKS);
-        stairsBlock(((StairBlock) CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get()), blockTexture(CCBlocks.HOLY_MARBLE_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get()), blockTexture(CCBlocks.HOLY_MARBLE_BRICKS.get()), blockTexture(CCBlocks.HOLY_MARBLE_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.HOLY_MARBLE_BRICKS_WALL.get()), blockTexture(CCBlocks.HOLY_MARBLE_BRICKS.get()));
-        blockItem(CCBlocks.HOLY_MARBLE_BRICKS_STAIRS);
-        blockItem(CCBlocks.HOLY_MARBLE_BRICKS_SLAB);
-
-        blockWithItem(CCBlocks.CHISELED_HOLY_MARBLE);
-        stairsBlock(((StairBlock) CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get()), blockTexture(CCBlocks.CHISELED_HOLY_MARBLE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get()), blockTexture(CCBlocks.CHISELED_HOLY_MARBLE.get()), blockTexture(CCBlocks.CHISELED_HOLY_MARBLE.get()));
-        wallBlock(((WallBlock) CCBlocks.CHISELED_HOLY_MARBLE_WALL.get()), blockTexture(CCBlocks.CHISELED_HOLY_MARBLE.get()));
-        blockItem(CCBlocks.CHISELED_HOLY_MARBLE_STAIRS);
-        blockItem(CCBlocks.CHISELED_HOLY_MARBLE_SLAB);
-
-        blockWithItem(CCBlocks.CRACKED_HOLY_MARBLE);
-        stairsBlock(((StairBlock) CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get()), blockTexture(CCBlocks.CRACKED_HOLY_MARBLE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get()), blockTexture(CCBlocks.CRACKED_HOLY_MARBLE.get()), blockTexture(CCBlocks.CRACKED_HOLY_MARBLE.get()));
-        wallBlock(((WallBlock) CCBlocks.CRACKED_HOLY_MARBLE_WALL.get()), blockTexture(CCBlocks.CRACKED_HOLY_MARBLE.get()));
-        blockItem(CCBlocks.CRACKED_HOLY_MARBLE_STAIRS);
-        blockItem(CCBlocks.CRACKED_HOLY_MARBLE_SLAB);
-
-        blockWithItem(CCBlocks.POLISHED_HOLY_MARBLE);
-        stairsBlock(((StairBlock) CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get()), blockTexture(CCBlocks.POLISHED_HOLY_MARBLE.get()));
-        slabBlock(((SlabBlock) CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get()), blockTexture(CCBlocks.POLISHED_HOLY_MARBLE.get()), blockTexture(CCBlocks.POLISHED_HOLY_MARBLE.get()));
-        wallBlock(((WallBlock) CCBlocks.POLISHED_HOLY_MARBLE_WALL.get()), blockTexture(CCBlocks.POLISHED_HOLY_MARBLE.get()));
-        blockItem(CCBlocks.POLISHED_HOLY_MARBLE_STAIRS);
-        blockItem(CCBlocks.POLISHED_HOLY_MARBLE_SLAB);
-
-        blockWithItem(CCBlocks.GOLDSTONE);
-        stairsBlock(((StairBlock) CCBlocks.GOLDSTONE_STAIRS.get()), blockTexture(CCBlocks.GOLDSTONE.get()));
-        slabBlock(((SlabBlock) CCBlocks.GOLDSTONE_SLAB.get()), blockTexture(CCBlocks.GOLDSTONE.get()), blockTexture(CCBlocks.GOLDSTONE.get()));
-        wallBlock(((WallBlock) CCBlocks.GOLDSTONE_WALL.get()), blockTexture(CCBlocks.GOLDSTONE.get()));
-        blockItem(CCBlocks.GOLDSTONE_STAIRS);
-        blockItem(CCBlocks.GOLDSTONE_SLAB);
-
-        // FIRE //
-
-        blockWithItem(CCBlocks.PUMICE);
-        stairsBlock(((StairBlock) CCBlocks.PUMICE_STAIRS.get()), blockTexture(CCBlocks.PUMICE.get()));
-        slabBlock(((SlabBlock) CCBlocks.PUMICE_SLAB.get()), blockTexture(CCBlocks.PUMICE.get()), blockTexture(CCBlocks.PUMICE.get()));
-        wallBlock(((WallBlock) CCBlocks.PUMICE_WALL.get()), blockTexture(CCBlocks.PUMICE.get()));
-        blockItem(CCBlocks.PUMICE_STAIRS);
-        blockItem(CCBlocks.PUMICE_SLAB);
-
-        blockWithItem(CCBlocks.PUMICE_BRICKS);
-        stairsBlock(((StairBlock) CCBlocks.PUMICE_BRICKS_STAIRS.get()), blockTexture(CCBlocks.PUMICE_BRICKS.get()));
-        slabBlock(((SlabBlock) CCBlocks.PUMICE_BRICKS_SLAB.get()), blockTexture(CCBlocks.PUMICE_BRICKS.get()), blockTexture(CCBlocks.PUMICE_BRICKS.get()));
-        wallBlock(((WallBlock) CCBlocks.PUMICE_BRICKS_WALL.get()), blockTexture(CCBlocks.PUMICE_BRICKS.get()));
-        blockItem(CCBlocks.PUMICE_BRICKS_STAIRS);
-        blockItem(CCBlocks.PUMICE_BRICKS_SLAB);
-
-        blockWithItem(CCBlocks.CHISELED_PUMICE);
-        stairsBlock(((StairBlock) CCBlocks.CHISELED_PUMICE_STAIRS.get()), blockTexture(CCBlocks.CHISELED_PUMICE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CHISELED_PUMICE_SLAB.get()), blockTexture(CCBlocks.CHISELED_PUMICE.get()), blockTexture(CCBlocks.CHISELED_PUMICE.get()));
-        wallBlock(((WallBlock) CCBlocks.CHISELED_PUMICE_WALL.get()), blockTexture(CCBlocks.CHISELED_PUMICE.get()));
-        blockItem(CCBlocks.CHISELED_PUMICE_STAIRS);
-        blockItem(CCBlocks.CHISELED_PUMICE_SLAB);
-
-        blockWithItem(CCBlocks.CRACKED_PUMICE);
-        stairsBlock(((StairBlock) CCBlocks.CRACKED_PUMICE_STAIRS.get()), blockTexture(CCBlocks.CRACKED_PUMICE.get()));
-        slabBlock(((SlabBlock) CCBlocks.CRACKED_PUMICE_SLAB.get()), blockTexture(CCBlocks.CRACKED_PUMICE.get()), blockTexture(CCBlocks.CRACKED_PUMICE.get()));
-        wallBlock(((WallBlock) CCBlocks.CRACKED_PUMICE_WALL.get()), blockTexture(CCBlocks.CRACKED_PUMICE.get()));
-        blockItem(CCBlocks.CRACKED_PUMICE_STAIRS);
-        blockItem(CCBlocks.CRACKED_PUMICE_SLAB);
-
-        blockWithItem(CCBlocks.POLISHED_PUMICE);
-        stairsBlock(((StairBlock) CCBlocks.POLISHED_PUMICE_STAIRS.get()), blockTexture(CCBlocks.POLISHED_PUMICE.get()));
-        slabBlock(((SlabBlock) CCBlocks.POLISHED_PUMICE_SLAB.get()), blockTexture(CCBlocks.POLISHED_PUMICE.get()), blockTexture(CCBlocks.POLISHED_PUMICE.get()));
-        wallBlock(((WallBlock) CCBlocks.POLISHED_PUMICE_WALL.get()), blockTexture(CCBlocks.POLISHED_PUMICE.get()));
-        blockItem(CCBlocks.POLISHED_PUMICE_STAIRS);
-        blockItem(CCBlocks.POLISHED_PUMICE_SLAB);
-
-        blockWithItem(CCBlocks.PYRITE);
-        stairsBlock(((StairBlock) CCBlocks.PYRITE_STAIRS.get()), blockTexture(CCBlocks.PYRITE.get()));
-        slabBlock(((SlabBlock) CCBlocks.PYRITE_SLAB.get()), blockTexture(CCBlocks.PYRITE.get()), blockTexture(CCBlocks.PYRITE.get()));
-        wallBlock(((WallBlock) CCBlocks.PYRITE_WALL.get()), blockTexture(CCBlocks.PYRITE.get()));
-        blockItem(CCBlocks.PYRITE_STAIRS);
-        blockItem(CCBlocks.PYRITE_SLAB);
-
+        // ==========================================================================================
+        // 5. FIRE
+        // ==========================================================================================
         blockWithItem(CCBlocks.VOLCANITE_BLOCK);
         blockWithItem(CCBlocks.SULPHURIC_SOIL);
         blockWithItem(CCBlocks.SULPHUR_CRYSTAL);
         blockWithItem(CCBlocks.SULPHUR_DUST);
+
+        generateStoneFamily(CCBlocks.PUMICE, CCBlocks.PUMICE_STAIRS, CCBlocks.PUMICE_SLAB, CCBlocks.PUMICE_WALL);
+        generateStoneFamily(CCBlocks.PUMICE_BRICKS, CCBlocks.PUMICE_BRICKS_STAIRS, CCBlocks.PUMICE_BRICKS_SLAB, CCBlocks.PUMICE_BRICKS_WALL);
+        generateStoneFamily(CCBlocks.CHISELED_PUMICE, CCBlocks.CHISELED_PUMICE_STAIRS, CCBlocks.CHISELED_PUMICE_SLAB, CCBlocks.CHISELED_PUMICE_WALL);
+        generateStoneFamily(CCBlocks.CRACKED_PUMICE, CCBlocks.CRACKED_PUMICE_STAIRS, CCBlocks.CRACKED_PUMICE_SLAB, CCBlocks.CRACKED_PUMICE_WALL);
+        generateStoneFamily(CCBlocks.POLISHED_PUMICE, CCBlocks.POLISHED_PUMICE_STAIRS, CCBlocks.POLISHED_PUMICE_SLAB, CCBlocks.POLISHED_PUMICE_WALL);
+        generateStoneFamily(CCBlocks.PYRITE, CCBlocks.PYRITE_STAIRS, CCBlocks.PYRITE_SLAB, CCBlocks.PYRITE_WALL);
+
         directionalCluster(CCBlocks.SMALL_SULPHUR_CLUSTER);
         directionalCluster(CCBlocks.MEDIUM_SULPHUR_CLUSTER);
         pillarBlock(CCBlocks.GREEN_SULPHUR_POOL, "_top");
@@ -319,7 +137,32 @@ public class CCBlockStateProvider extends BlockStateProvider {
         pillarBlock(CCBlocks.RED_SULPHUR_POOL, "_top");
         pillarBlock(CCBlocks.YELLOW_SULPHUR_POOL, "_top");
         pillarBlock(CCBlocks.VERMILLION_SULPHUR_POOL, "_top");
+    }
 
+    // ==========================================================================================
+    // HELPERS
+    // ==========================================================================================
+
+    private void generateStoneFamily(DeferredBlock<Block> base, DeferredBlock<Block> stairs, DeferredBlock<Block> slab, DeferredBlock<Block> wall) {
+        simpleBlockWithItem(base.get(), cubeAll(base.get()));
+        stairsBlock(((StairBlock) stairs.get()), blockTexture(base.get()));
+        slabBlock(((SlabBlock) slab.get()), base.getId(), blockTexture(base.get()));
+        wallBlock(((WallBlock) wall.get()), blockTexture(base.get()));
+        blockItem(stairs);
+        blockItem(slab);
+    }
+
+    private void generateBismuthBrickFamily(DeferredBlock<Block> base, DeferredBlock<Block> stairs, DeferredBlock<Block> slab, DeferredBlock<Block> wall) {
+        simpleBlockWithItem(base.get(), cubeAll(base.get()));
+        stairsBlock(((StairBlock) stairs.get()), blockTexture(base.get()));
+        slabBlock(((SlabBlock) slab.get()), base.getId(), blockTexture(base.get()));
+        wallBlock(((WallBlock) wall.get()), blockTexture(base.get()));
+        blockItem(stairs);
+        blockItem(slab);
+    }
+
+    private void simpleCross(DeferredBlock<Block> block) {
+        simpleBlock(block.get(), models().cross(blockTexture(block.get()).getPath(), blockTexture(block.get())).renderType("cutout"));
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock) {
@@ -340,16 +183,13 @@ public class CCBlockStateProvider extends BlockStateProvider {
 
     private void pillarBlock(DeferredBlock<Block> deferredBlock, String topSuffix) {
         String name = deferredBlock.getId().getPath();
-        var side = blockTexture(deferredBlock.get());
-        var end = modLoc("block/" + name + topSuffix);
-        axisBlock((RotatedPillarBlock) deferredBlock.get(), side, end);
+        axisBlock((RotatedPillarBlock) deferredBlock.get(), blockTexture(deferredBlock.get()), modLoc("block/" + name + topSuffix));
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile("crystal_chronicles:block/" + name));
     }
 
     private void directionalCluster(DeferredBlock<Block> block) {
         String name = block.getId().getPath();
-        ModelFile model = models()
-                .getBuilder(name)
+        ModelFile model = models().getBuilder(name)
                 .parent(models().getExistingFile(mcLoc("block/amethyst_cluster")))
                 .texture("cross", blockTexture(block.get()))
                 .renderType("cutout");
@@ -361,5 +201,4 @@ public class CCBlockStateProvider extends BlockStateProvider {
         String name = block.getId().getPath();
         itemModels().getBuilder(name).parent(itemModels().getExistingFile(mcLoc("item/generated"))).texture("layer0", modLoc("block/" + name));
     }
-
 }

@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "polished_bismite",
+  "group": "block.crystal_chronicles.polished_bismite",
   "key": {
     "#": {
       "item": "crystal_chronicles:polished_bismite"

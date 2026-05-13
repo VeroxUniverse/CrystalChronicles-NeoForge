@@ -86,6 +86,7 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.PURPLE_BISMUTH.get());
         this.dropSelf(CCBlocks.VIOLET_BISMUTH.get());
         this.dropSelf(CCBlocks.YELLOW_BISMUTH.get());
+        this.dropSelf(CCBlocks.RAINBOW_BISMUTH.get());
         this.dropSelf(CCBlocks.BLUE_BISMUTH_CRYSTAL.get());
         this.dropSelf(CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
         this.dropSelf(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get());
@@ -161,6 +162,11 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.add(CCBlocks.VIOLET_BISMUTH_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.VIOLET_BISMUTH_SLAB.get()));
         this.dropSelf(CCBlocks.VIOLET_BISMUTH_WALL.get());
+
+        this.dropSelf(CCBlocks.RAINBOW_BISMUTH_STAIRS.get());
+        this.add(CCBlocks.RAINBOW_BISMUTH_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.RAINBOW_BISMUTH_SLAB.get()));
+        this.dropSelf(CCBlocks.RAINBOW_BISMUTH_WALL.get());
 
         // BLOOD //
 

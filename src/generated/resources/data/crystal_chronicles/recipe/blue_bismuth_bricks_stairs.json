@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "bismuth_bricks",
+  "group": "block.crystal_chronicles.blue_bismuth_bricks",
   "key": {
     "#": {
       "item": "crystal_chronicles:blue_bismuth_bricks"

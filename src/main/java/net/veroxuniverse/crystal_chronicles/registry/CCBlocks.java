@@ -199,6 +199,8 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> YELLOW_BISMUTH = registerBlock("yellow_bismuth",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH = registerBlock("rainbow_bismuth",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
     public static final DeferredBlock<Block> BLUE_BISMUTH_STAIRS = registerBlock("blue_bismuth_stairs",
             () -> new StairBlock(CCBlocks.BLUE_BISMUTH.get().defaultBlockState(),
@@ -231,6 +233,15 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
     public static final DeferredBlock<Block> VIOLET_BISMUTH_WALL = registerBlock("violet_bismuth_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_STAIRS = registerBlock("rainbow_bismuth_stairs",
+            () -> new StairBlock(CCBlocks.RAINBOW_BISMUTH.get().defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_SLAB = registerBlock("rainbow_bismuth_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_WALL = registerBlock("rainbow_bismuth_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
 
     // BLOOD //
 

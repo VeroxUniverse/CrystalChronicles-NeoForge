@@ -118,6 +118,7 @@ public class CCItemModelProvider extends ItemModelProvider {
         wallItem(CCBlocks.PURPLE_BISMUTH_WALL, CCBlocks.PURPLE_BISMUTH);
         wallItem(CCBlocks.VIOLET_BISMUTH_WALL, CCBlocks.VIOLET_BISMUTH);
         wallItem(CCBlocks.YELLOW_BISMUTH_WALL, CCBlocks.YELLOW_BISMUTH);
+        wallItem(CCBlocks.RAINBOW_BISMUTH_WALL, CCBlocks.RAINBOW_BISMUTH);
 
         wallItem(CCBlocks.BLUE_BISMUTH_BRICKS_WALL, CCBlocks.BLUE_BISMUTH_BRICKS);
         wallItem(CCBlocks.PURPLE_BISMUTH_BRICKS_WALL, CCBlocks.PURPLE_BISMUTH_BRICKS);

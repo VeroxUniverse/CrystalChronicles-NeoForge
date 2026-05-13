@@ -75,6 +75,10 @@ public class CCTabs {
                 output.accept(CCBlocks.YELLOW_BISMUTH_STAIRS.get());
                 output.accept(CCBlocks.YELLOW_BISMUTH_SLAB.get());
                 output.accept(CCBlocks.YELLOW_BISMUTH_WALL.get());
+                output.accept(CCBlocks.RAINBOW_BISMUTH.get());
+                output.accept(CCBlocks.RAINBOW_BISMUTH_STAIRS.get());
+                output.accept(CCBlocks.RAINBOW_BISMUTH_SLAB.get());
+                output.accept(CCBlocks.RAINBOW_BISMUTH_WALL.get());
                 output.accept(CCBlocks.BLUE_BISMUTH_CRYSTAL.get());
                 output.accept(CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
                 output.accept(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get());

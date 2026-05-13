@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y": { "model": "crystal_chronicles:block/rainbow_bismuth" },
+    "axis=z": { "model": "crystal_chronicles:block/rainbow_bismuth", "x": 90 },
+    "axis=x": { "model": "crystal_chronicles:block/rainbow_bismuth", "x": 90, "y": 90 }
+  }
+}

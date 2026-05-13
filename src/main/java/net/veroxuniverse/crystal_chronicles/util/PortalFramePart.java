@@ -9,10 +9,10 @@ public enum PortalFramePart implements StringRepresentable {
     BOTTOM_RIGHT("bottom_right"),
 
     MID_LOW_LEFT("mid_low_left"),
-    MID_LOW_RIGHT("mid_low_right"), // Die MID_MID Teile sind gelöscht
+    MID_LOW_RIGHT("mid_low_right"),
 
     MID_HIGH_LEFT("mid_high_left"),
-    MID_HIGH_RIGHT("mid_high_right"), // Die MID_MID Teile sind gelöscht
+    MID_HIGH_RIGHT("mid_high_right"),
 
     TOP_LEFT("top_left"),
     TOP_MID_LEFT("top_mid_left"),

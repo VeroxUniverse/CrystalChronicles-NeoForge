@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "violet_chiseled_bismuth",
+  "group": "block.crystal_chronicles.violet_bismuth",
   "key": {
     "#": {
       "item": "crystal_chronicles:violet_bismuth"

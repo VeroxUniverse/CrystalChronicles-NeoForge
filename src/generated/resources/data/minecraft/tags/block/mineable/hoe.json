@@ -2,6 +2,8 @@
   "values": [
     "crystal_chronicles:axon",
     "crystal_chronicles:neuron_block",
-    "crystal_chronicles:eye_block"
+    "crystal_chronicles:eye_block",
+    "crystal_chronicles:neuron_torch",
+    "crystal_chronicles:neuron_torch_wall"
   ]
 }

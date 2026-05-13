@@ -7,7 +7,7 @@
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_yellow_bismuth_crystal": {
+    "has_yellow_crystal": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_yellow_bismuth_crystal"
+      "has_yellow_crystal"
     ]
   ],
   "rewards": {

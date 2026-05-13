@@ -23,7 +23,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.veroxuniverse.crystal_chronicles.util.PortalFramePart;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBlock {
 
@@ -31,12 +34,12 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
     public static final BooleanProperty ACTIVATED = BooleanProperty.create("activated");
     public static final EnumProperty<PortalFramePart> PART = EnumProperty.create("part", PortalFramePart.class);
 
-    private boolean updatingStructure = false;
+    private static final Set<BlockPos> updatingPositions = Collections.newSetFromMap(new ConcurrentHashMap<>());
 
     private static final int[][] FRAME_OFFSETS = new int[][]{
             {0, 0, 0}, {1, 0, 0}, {2, 0, 0}, {3, 0, 0},
-            {0, 1, 0},                   {3, 1, 0},
-            {0, 2, 0},                   {3, 2, 0},
+            {0, 1, 0},                         {3, 1, 0},
+            {0, 2, 0},                         {3, 2, 0},
             {0, 3, 0}, {1, 3, 0}, {2, 3, 0}, {3, 3, 0}
     };
 
@@ -82,31 +85,27 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
 
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block blockIn, BlockPos fromPos, boolean isMoving) {
-        if (!level.isClientSide) {
-            if (state.getValue(FORMED)) {
-                checkAndForm(level, pos);
-            }
+        if (!level.isClientSide && state.getValue(FORMED)) {
+            checkAndForm(level, pos);
         }
     }
 
     private void checkAndForm(Level level, BlockPos currentPos) {
-        if (updatingStructure) return;
         BlockState state = level.getBlockState(currentPos);
+        if (!state.getValue(FORMED)) return;
 
-        if (state.getValue(FORMED)) {
-            Direction currentFacing = state.getValue(FACING);
-            boolean structureStillValid = false;
+        Direction currentFacing = state.getValue(FACING);
+        boolean structureStillValid = false;
 
-            for (BlockPos basePos : getPotentialBasePositions(currentPos, currentFacing)) {
-                if (canScanFrame(level, basePos, currentFacing, false)) {
-                    structureStillValid = true;
-                    break;
-                }
+        for (BlockPos basePos : getPotentialBasePositions(currentPos, currentFacing)) {
+            if (canScanFrame(level, basePos, currentFacing, false)) {
+                structureStillValid = true;
+                break;
             }
+        }
 
-            if (!structureStillValid) {
-                unformFrame(level, currentPos, currentFacing);
-            }
+        if (!structureStillValid) {
+            unformFrame(level, currentPos, currentFacing);
         }
     }
 
@@ -116,29 +115,20 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
             BlockPos checkPos = basePos.offset(rotatedOffset);
             BlockState state = level.getBlockState(checkPos);
 
-            if (!state.is(this) || state.getValue(FACING) != expectedFacing) {
-                return false;
-            }
-
-            if (isCheckingForNewPortal && state.getValue(FORMED)) {
-                return false;
-            }
+            if (!state.is(this) || state.getValue(FACING) != expectedFacing) return false;
+            if (isCheckingForNewPortal && state.getValue(FORMED)) return false;
         }
 
         for (int x = 1; x <= 2; x++) {
             for (int y = 1; y <= 2; y++) {
                 BlockPos innerPos = basePos.offset(getRotatedOffset(new int[]{x, y, 0}, expectedFacing));
-                if (!level.getBlockState(innerPos).isAir()) {
-                    return false;
-                }
+                if (!level.getBlockState(innerPos).isAir()) return false;
             }
         }
         return true;
     }
 
     private void unformFrame(Level level, BlockPos destroyedPos, Direction commonFacing) {
-        if (updatingStructure) return;
-
         for (BlockPos potentialBase : getPotentialBasePositions(destroyedPos, commonFacing)) {
             BlockState baseState = level.getBlockState(potentialBase);
 
@@ -154,9 +144,7 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
     }
 
     public void setFrameState(Level level, BlockPos basePos, Direction commonFacing, boolean formed, boolean activated) {
-        if (updatingStructure) return;
-        updatingStructure = true;
-
+        if (!updatingPositions.add(basePos)) return;
         try {
             for (int i = 0; i < FRAME_OFFSETS.length; i++) {
                 BlockPos rotatedOffset = getRotatedOffset(FRAME_OFFSETS[i], commonFacing);
@@ -176,7 +164,7 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
                 }
             }
         } finally {
-            updatingStructure = false;
+            updatingPositions.remove(basePos);
         }
     }
 
@@ -185,11 +173,11 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
         ItemStack itemInHand = player.getItemInHand(hand);
         Direction facing = state.getValue(FACING);
 
-        if (itemInHand.is(Items.DIAMOND) || itemInHand.is(Items.EMERALD)) {
-            if (level.isClientSide) return ItemInteractionResult.SUCCESS;
-        } else {
+        if (!itemInHand.is(Items.DIAMOND) && !itemInHand.is(Items.EMERALD)) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
+
+        if (level.isClientSide) return ItemInteractionResult.SUCCESS;
 
         if (itemInHand.is(Items.DIAMOND) && !state.getValue(FORMED)) {
             for (BlockPos basePos : getPotentialBasePositions(pos, facing)) {
@@ -209,7 +197,6 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
                 BlockState baseState = level.getBlockState(basePos);
 
                 if (baseState.is(this) && baseState.getValue(FORMED)) {
-
                     if (baseState.getValue(ACTIVATED)) {
                         player.sendSystemMessage(Component.literal("The Portal is active already!"));
                         return ItemInteractionResult.SUCCESS;
@@ -218,9 +205,7 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
                     BlockEntity be = level.getBlockEntity(basePos);
                     if (be instanceof PortalFrameBlockEntity master) {
                         master.activatePortal((ServerLevel) level, facing.getAxis());
-
                         setFrameState(level, basePos, facing, true, true);
-
                         if (!player.getAbilities().instabuild) itemInHand.shrink(1);
                         level.playSound(null, pos, SoundEvents.END_PORTAL_SPAWN, SoundSource.BLOCKS, 1f, 1f);
                         player.sendSystemMessage(Component.literal("Portal opened!"));
@@ -259,22 +244,10 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
         int worldDz = 0;
 
         switch (facing) {
-            case NORTH:
-                worldDx = -dx;
-                worldDz = -dz;
-                break;
-            case SOUTH:
-                worldDx = dx;
-                worldDz = dz;
-                break;
-            case WEST:
-                worldDx = -dz;
-                worldDz = dx;
-                break;
-            case EAST:
-                worldDx = dz;
-                worldDz = -dx;
-                break;
+            case NORTH -> { worldDx = -dx; worldDz = -dz; }
+            case SOUTH -> { worldDx = dx;  worldDz = dz;  }
+            case WEST  -> { worldDx = -dz; worldDz = dx;  }
+            case EAST  -> { worldDx = dz;  worldDz = -dx; }
         }
 
         return new BlockPos(worldDx, dy, worldDz);

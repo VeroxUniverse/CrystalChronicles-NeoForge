@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cracked_pumice": {
+    "has_block.crystal_chronicles.cracked_pumice": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cracked_pumice"
+      "has_block.crystal_chronicles.cracked_pumice"
     ]
   ],
   "rewards": {

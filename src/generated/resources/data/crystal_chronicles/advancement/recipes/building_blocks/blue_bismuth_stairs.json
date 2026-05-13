@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chiseled_bismuth": {
+    "has_block.crystal_chronicles.blue_bismuth": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_chiseled_bismuth"
+      "has_block.crystal_chronicles.blue_bismuth"
     ]
   ],
   "rewards": {

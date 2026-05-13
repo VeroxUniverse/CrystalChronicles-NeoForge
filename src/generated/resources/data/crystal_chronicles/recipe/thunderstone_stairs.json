@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "thunderstone",
+  "group": "block.crystal_chronicles.thunderstone",
   "key": {
     "#": {
       "item": "crystal_chronicles:thunderstone"

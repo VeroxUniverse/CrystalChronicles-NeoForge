@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "pumice",
+  "group": "block.crystal_chronicles.pumice",
   "key": {
     "#": {
       "item": "crystal_chronicles:pumice"

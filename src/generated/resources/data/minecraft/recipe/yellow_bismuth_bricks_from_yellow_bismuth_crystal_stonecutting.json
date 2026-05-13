@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "crystal_chronicles:yellow_bismuth_crystal"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:yellow_bismuth_bricks"
+  }
+}
