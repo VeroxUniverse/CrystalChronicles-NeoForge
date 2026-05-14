@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "irons_spellbooks:weapon_parts"
+    },
+    "S": {
+      "item": "minecraft:emerald_block"
+    },
+    "T": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "pattern": [
+    " TS",
+    "TPT",
+    "ST "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:evocation_twinblade"
+  }
+}

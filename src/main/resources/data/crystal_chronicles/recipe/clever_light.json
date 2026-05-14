@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "crystal_chronicles:crustone"
+    },
+    "N": {
+      "item": "crystal_chronicles:neuron"
+    },
+    "E": {
+      "item": "crystal_chronicles:eye"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "CNC",
+    "CEC",
+    "CRC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:clever_light"
+  }
+}

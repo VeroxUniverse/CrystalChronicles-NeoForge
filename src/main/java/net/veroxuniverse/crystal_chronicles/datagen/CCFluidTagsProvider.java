@@ -19,8 +19,6 @@ public class CCFluidTagsProvider extends FluidTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        tag(FluidTags.WATER)
-                .add(CCFluids.SOURCE_BLOOD.get())
-                .add(CCFluids.FLOWING_BLOOD.get());
+        tag(FluidTags.WATER);
     }
 }

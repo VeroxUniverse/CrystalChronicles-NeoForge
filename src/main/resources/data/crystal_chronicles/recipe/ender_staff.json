@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "D": {
+      "item": "irons_spellbooks:dragonskin"
+    },
+    "S": {
+      "item": "crystal_chronicles:voidstone_shard"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "  D",
+    " S ",
+    "N  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:ender_staff"
+  }
+}

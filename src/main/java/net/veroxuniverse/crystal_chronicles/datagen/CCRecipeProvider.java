@@ -9,13 +9,17 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
@@ -111,27 +115,12 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         // 4. SPECIALS
         // ==========================================================================================
         create4x4Recipe(pRecipeOutput, CCBlocks.FAT_TISSUE_BLOCK, CCItems.FAT_TISSUE_BALL, "has_fat_tissue_ball");
-        create4x4Recipe(pRecipeOutput, CCBlocks.EYE_BLOCK, CCItems.EYE, "has_eye");
         create4x4Recipe(pRecipeOutput, CCBlocks.ROTTEN_FLESH_BLOCK, () -> Items.ROTTEN_FLESH, "has_rotten_flesh");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ROTTEN_FLESH, 4)
                 .requires(CCBlocks.ROTTEN_FLESH_BLOCK.get())
-                .unlockedBy("has_rotten_flesh", has(CCBlocks.ROTTEN_FLESH_BLOCK.get())).save(pRecipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.CELVER_LIGHT.get())
-                .pattern("BBB").pattern("BAB").pattern("BBB")
-                .define('B', CCBlocks.CHISELED_CRUSTONE.get()).define('A', CCItems.EYE.get())
-                .unlockedBy("has_eye", has(CCItems.EYE.get())).save(pRecipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.NEURON_BLOCK.get())
-                .pattern("BBB").pattern("BAB").pattern("BBB")
-                .define('B', CCItems.NEURON.get()).define('A', Blocks.GLOWSTONE)
-                .unlockedBy("has_neuron", has(CCItems.NEURON.get())).save(pRecipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.NEURON_TORCH.get())
-                .pattern("B").pattern("A")
-                .define('B', CCItems.NEURON.get()).define('A', CCBlocks.AXON.get())
-                .unlockedBy("has_neuron", has(CCItems.NEURON.get())).save(pRecipeOutput);
+                .unlockedBy("has_rotten_flesh", has(CCBlocks.ROTTEN_FLESH_BLOCK.get()))
+                .save(pRecipeOutput,  CrystalChronicles.MODID + ":rotten_flesh_block_uncrafting");
 
         // ==========================================================================================
         // 5. SMITHING
@@ -141,89 +130,35 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_LEGGINGS, CCItems.FIRE_KNIGHT_LEGGINGS, "fire");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_BOOTS, CCItems.FIRE_KNIGHT_BOOTS, "fire");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.FIRE_CHAKRAM.get())
-                .pattern(" S ").pattern("SNS").pattern(" S ")
-                .define('S', CCItems.VOLCANITE_SHARD.get()).define('N', Items.STICK)
-                .unlockedBy("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get())).save(pRecipeOutput);
-
-        registerShardRecipe(pRecipeOutput, CCItems.VOLCANITE_SHARD, () -> Items.BLAZE_ROD, ItemRegistry.FIRE_RUNE);
-
         registerKnightSmithing(pRecipeOutput, ItemRegistry.HOLY_RUNE, CCItems.DIVINITE_SHARD, ItemRegistry.PRIEST_HELMET, CCItems.HOLY_KNIGHT_HELMET, "holy");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.HOLY_RUNE, CCItems.DIVINITE_SHARD, ItemRegistry.PRIEST_CHESTPLATE, CCItems.HOLY_KNIGHT_CHESTPLATE, "holy");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.HOLY_RUNE, CCItems.DIVINITE_SHARD, ItemRegistry.PRIEST_LEGGINGS, CCItems.HOLY_KNIGHT_LEGGINGS, "holy");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.HOLY_RUNE, CCItems.DIVINITE_SHARD, ItemRegistry.PRIEST_BOOTS, CCItems.HOLY_KNIGHT_BOOTS, "holy");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.HOLY_SWORD.get())
-                .pattern("S").pattern("S").pattern("N")
-                .define('S', CCItems.DIVINITE_SHARD.get()).define('N', Items.STICK)
-                .unlockedBy("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get())).save(pRecipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCItems.HOLY_SHIELD.get())
-                .pattern("ISI").pattern("ISI").pattern(" I ")
-                .define('S', CCItems.DIVINITE_SHARD.get()).define('I', Items.IRON_INGOT)
-                .unlockedBy("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get())).save(pRecipeOutput);
-
-        registerShardRecipe(pRecipeOutput, CCItems.DIVINITE_SHARD, ItemRegistry.DIVINE_PEARL, ItemRegistry.HOLY_RUNE);
 
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_HELMET, CCItems.ICE_KNIGHT_HELMET, "ice");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_CHESTPLATE, CCItems.ICE_KNIGHT_CHESTPLATE, "ice");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_LEGGINGS, CCItems.ICE_KNIGHT_LEGGINGS, "ice");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_BOOTS, CCItems.ICE_KNIGHT_BOOTS, "ice");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCItems.ICE_HAMMER.get())
-                .pattern("SSS").pattern("SIS").pattern(" I ")
-                .define('S', CCItems.ICE_SHARD.get()).define('I', Items.STICK)
-                .unlockedBy("has_ice_rune", has(ItemRegistry.ICE_RUNE.get())).save(pRecipeOutput);
-
-        registerShardRecipe(pRecipeOutput, CCItems.ICE_SHARD, ItemRegistry.FROZEN_BONE_SHARD, ItemRegistry.ICE_RUNE);
-
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_HELMET, CCItems.ENDER_MAGE_HELMET, "ender");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_CHESTPLATE, CCItems.ENDER_MAGE_CHESTPLATE, "ender");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_LEGGINGS, CCItems.ENDER_MAGE_LEGGINGS, "ender");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_BOOTS, CCItems.ENDER_MAGE_BOOTS, "ender");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.ENDER_STAFF.get())
-                .pattern("S").pattern("N").pattern("N")
-                .define('S', CCItems.VOIDSTONE_SHARD.get()).define('N', Items.STICK)
-                .unlockedBy("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get())).save(pRecipeOutput);
-
-        registerShardRecipe(pRecipeOutput, CCItems.VOIDSTONE_SHARD, () -> Items.ENDER_PEARL, ItemRegistry.ENDER_RUNE);
 
         registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_HELMET, CCItems.BLOOD_KNIGHT_HELMET, "blood");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_CHESTPLATE, CCItems.BLOOD_KNIGHT_CHESTPLATE, "blood");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_LEGGINGS, CCItems.BLOOD_KNIGHT_LEGGINGS, "blood");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_BOOTS, CCItems.BLOOD_KNIGHT_BOOTS, "blood");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.BLOOD_SCYTHE.get())
-                .pattern("SS").pattern("SN").pattern(" N")
-                .define('S', CCItems.HEMALITE_SHARD.get()).define('N', Items.STICK)
-                .unlockedBy("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get())).save(pRecipeOutput);
-
-        registerShardRecipe(pRecipeOutput, CCItems.HEMALITE_SHARD, ItemRegistry.BLOOD_VIAL, ItemRegistry.BLOOD_RUNE);
-
         registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_HELMET, CCItems.NATURE_KNIGHT_HELMET, "nature");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_CHESTPLATE, CCItems.NATURE_KNIGHT_CHESTPLATE, "nature");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_LEGGINGS, CCItems.NATURE_KNIGHT_LEGGINGS, "nature");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_BOOTS, CCItems.NATURE_KNIGHT_BOOTS, "nature");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.NATURE_SPEAR.get())
-                .pattern(" SS").pattern(" NS").pattern("N  ")
-                .define('S', CCItems.FLORALITE_SHARD.get()).define('N', Items.STICK)
-                .unlockedBy("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get())).save(pRecipeOutput);
-
-        registerShardRecipe(pRecipeOutput, CCItems.FLORALITE_SHARD, () -> Items.POISONOUS_POTATO, ItemRegistry.NATURE_RUNE);
-
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_HELMET, CCItems.LIGHTNING_KNIGHT_HELMET, "lightning");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_CHESTPLATE, CCItems.LIGHTNING_KNIGHT_CHESTPLATE, "lightning");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_LEGGINGS, CCItems.LIGHTNING_KNIGHT_LEGGINGS, "lightning");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_BOOTS, CCItems.LIGHTNING_KNIGHT_BOOTS, "lightning");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.LIGHTNING_BIDENT.get())
-                .pattern(" SS").pattern(" NS").pattern("N  ")
-                .define('S', CCItems.VOLTITE_SHARD.get()).define('N', Items.STICK)
-                .unlockedBy("has_lightning_rune", has(ItemRegistry.LIGHTNING_RUNE.get())).save(pRecipeOutput);
-
-        registerShardRecipe(pRecipeOutput, CCItems.VOLTITE_SHARD, ItemRegistry.LIGHTNING_BOTTLE, ItemRegistry.LIGHTNING_RUNE);
 
         registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_HELMET, CCItems.EVOCATION_KNIGHT_HELMET, "evocation");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_CHESTPLATE, CCItems.EVOCATION_KNIGHT_CHESTPLATE, "evocation");
@@ -250,7 +185,7 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("BB").pattern("BB")
                 .define('B', crystal.get())
                 .unlockedBy("has_" + color + "_crystal", has(crystal.get()))
-                .save(output, color + "_bismuth_bricks_from_crystal");
+                .save(output, ResourceLocation.fromNamespaceAndPath("crystal_chronicles", color + "_bismuth_bricks_from_crystal"));
 
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, chiseled.get(), bricks.get());
         stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, chiseled.get(), crystal.get());
@@ -261,7 +196,8 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result.get(), 4)
                 .pattern("BB").pattern("BB")
                 .define('B', ingredient.get())
-                .unlockedBy(criterionName, has(ingredient.get())).save(output);
+                .unlockedBy(criterionName, has(ingredient.get()))
+                .save(output);
     }
 
     private void registerKnightSmithing(RecipeOutput output, Supplier<? extends Item> rune,
@@ -281,9 +217,18 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
                         resultName + "_smithing"));
     }
 
-    private void registerShardRecipe(RecipeOutput output, Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> core, Supplier<? extends ItemLike> rune) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result.get(), 1)
-                .requires(core.get()).requires(ItemRegistry.MITHRIL_INGOT.get()).requires(Items.AMETHYST_SHARD)
-                .unlockedBy("has_rune", has(rune.get())).save(output);
+    protected static void stonecutterResultFromBase(RecipeOutput recipeOutput, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial) {
+        stonecutterResultFromBase(recipeOutput, pCategory, pResult, pMaterial, 1);
+    }
+
+    protected static void stonecutterResultFromBase(RecipeOutput recipeOutput, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int resultCount) {
+        SingleItemRecipeBuilder bismuthItemRecipeBuilder = SingleItemRecipeBuilder.stonecutting(Ingredient.of(new ItemLike[]{pMaterial}), pCategory, pResult, resultCount).unlockedBy(getHasName(pMaterial), has(pMaterial));
+        String conversionRecipeName = getConversionRecipeName(pResult, pMaterial);
+        bismuthItemRecipeBuilder.save(recipeOutput, CrystalChronicles.MODID + ":stonecutting/" + conversionRecipeName + "_stonecutting");
+    }
+
+    protected static String getConversionRecipeName(ItemLike pResult, ItemLike pIngredient) {
+        String conversionOutput = getItemName(pResult);
+        return conversionOutput + "_from_" + getItemName(pIngredient);
     }
 }

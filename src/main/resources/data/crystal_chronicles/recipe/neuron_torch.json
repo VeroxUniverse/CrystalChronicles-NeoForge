@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "O": {
+      "item": "crystal_chronicles:neuron"
+    },
+    "I": {
+      "item": "crystal_chronicles:axon"
+    }
+  },
+  "pattern": [
+    "O",
+    "I"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:neuron_torch"
+  }
+}
