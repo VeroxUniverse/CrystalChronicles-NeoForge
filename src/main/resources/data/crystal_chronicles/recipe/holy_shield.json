@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "crystal_chronicles:divinite_shard"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "ISI",
+    "ISI",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:holy_shield"
+  }
+}

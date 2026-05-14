@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "p": {
+      "item": "irons_spellbooks:weapon_parts"
+    },
+    "S": {
+      "item": "crystal_chronicles:volcanite_shard"
+    },
+    "P": {
+      "item": "irons_spellbooks:pyrium_ingot"
+    }
+  },
+  "pattern": [
+    " P ",
+    "SpS",
+    " P "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:fire_chakram"
+  }
+}

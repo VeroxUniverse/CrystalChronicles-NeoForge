@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rainbow_bismuth_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crystal_chronicles:rainbow_bismuth_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crystal_chronicles:stonecutting/rainbow_bismuth_bricks_slab_from_rainbow_bismuth_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_rainbow_bismuth_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crystal_chronicles:stonecutting/rainbow_bismuth_bricks_slab_from_rainbow_bismuth_bricks_stonecutting"
+    ]
+  }
+}

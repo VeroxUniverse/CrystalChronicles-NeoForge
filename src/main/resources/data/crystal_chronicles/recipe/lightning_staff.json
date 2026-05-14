@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "irons_spellbooks:energized_core"
+    },
+    "S": {
+      "item": "crystal_chronicles:voltite_shard"
+    },
+    "N": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "pattern": [
+    "  C",
+    " S ",
+    "N  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:lightning_staff"
+  }
+}

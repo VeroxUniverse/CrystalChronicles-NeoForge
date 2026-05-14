@@ -248,8 +248,6 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
 
         this.add(CCBlocks.TALL_VILLI.get(),
                 block -> createTallShearsOnlyDrop(CCBlocks.TALL_VILLI.get()));
-        //this.add(CCBlocks.TALL_BLOOD_BASES.get(),
-        //        block -> createDoorTable(CCBlocks.TALL_BLOOD_BASES.get()));
 
         // HOLY //
 

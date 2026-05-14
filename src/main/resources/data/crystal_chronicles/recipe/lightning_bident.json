@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "irons_spellbooks:weapon_parts"
+    },
+    "S": {
+      "item": "crystal_chronicles:voltite_shard"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    " S ",
+    " PS",
+    "N  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:lightning_bident"
+  }
+}

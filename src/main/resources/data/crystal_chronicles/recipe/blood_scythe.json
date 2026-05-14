@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "irons_spellbooks:weapon_parts"
+    },
+    "S": {
+      "item": "crystal_chronicles:hemalite_shard"
+    },
+    "B": {
+      "item": "minecraft:bone"
+    }
+  },
+  "pattern": [
+    "SSP",
+    " B ",
+    "B  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:blood_scythe"
+  }
+}
