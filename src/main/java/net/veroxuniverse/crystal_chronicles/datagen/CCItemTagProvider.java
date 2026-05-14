@@ -55,7 +55,11 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.BLOOD_KNIGHT_BOOTS.get())
                 .add(CCItems.BLOOD_KNIGHT_LEGGINGS.get())
                 .add(CCItems.BLOOD_KNIGHT_CHESTPLATE.get())
-                .add(CCItems.BLOOD_KNIGHT_HELMET.get());
+                .add(CCItems.BLOOD_KNIGHT_HELMET.get())
+                .add(CCItems.PRISMATIC_KNIGHT_BOOTS.get())
+                .add(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get())
+                .add(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get())
+                .add(CCItems.PRISMATIC_KNIGHT_HELMET.get());
 
         tag(ItemTags.HEAD_ARMOR)
                 .add(CCItems.HOLY_KNIGHT_HELMET.get())
@@ -65,7 +69,8 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.NATURE_KNIGHT_HELMET.get())
                 .add(CCItems.LIGHTNING_KNIGHT_HELMET.get())
                 .add(CCItems.EVOCATION_KNIGHT_HELMET.get())
-                .add(CCItems.BLOOD_KNIGHT_HELMET.get());
+                .add(CCItems.BLOOD_KNIGHT_HELMET.get())
+                .add(CCItems.PRISMATIC_KNIGHT_HELMET.get());
 
         tag(ItemTags.CHEST_ARMOR)
                 .add(CCItems.HOLY_KNIGHT_CHESTPLATE.get())
@@ -75,7 +80,8 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.NATURE_KNIGHT_CHESTPLATE.get())
                 .add(CCItems.LIGHTNING_KNIGHT_CHESTPLATE.get())
                 .add(CCItems.EVOCATION_KNIGHT_CHESTPLATE.get())
-                .add(CCItems.BLOOD_KNIGHT_CHESTPLATE.get());
+                .add(CCItems.BLOOD_KNIGHT_CHESTPLATE.get())
+                .add(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get());
 
         tag(ItemTags.LEG_ARMOR)
                 .add(CCItems.HOLY_KNIGHT_LEGGINGS.get())
@@ -85,7 +91,8 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.NATURE_KNIGHT_LEGGINGS.get())
                 .add(CCItems.LIGHTNING_KNIGHT_LEGGINGS.get())
                 .add(CCItems.EVOCATION_KNIGHT_LEGGINGS.get())
-                .add(CCItems.BLOOD_KNIGHT_LEGGINGS.get());
+                .add(CCItems.BLOOD_KNIGHT_LEGGINGS.get())
+                .add(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get());
 
         tag(ItemTags.FOOT_ARMOR)
                 .add(CCItems.HOLY_KNIGHT_BOOTS.get())
@@ -95,7 +102,8 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.NATURE_KNIGHT_BOOTS.get())
                 .add(CCItems.LIGHTNING_KNIGHT_BOOTS.get())
                 .add(CCItems.EVOCATION_KNIGHT_BOOTS.get())
-                .add(CCItems.BLOOD_KNIGHT_BOOTS.get());
+                .add(CCItems.BLOOD_KNIGHT_BOOTS.get())
+                .add(CCItems.PRISMATIC_KNIGHT_BOOTS.get());
 
         tag(ItemTags.SWORDS)
                 .add(CCItems.HOLY_SWORD.get())
