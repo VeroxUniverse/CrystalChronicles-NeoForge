@@ -1,10 +1,13 @@
-/*package net.veroxuniverse.crystal_chronicles.entity.custom;
+package net.veroxuniverse.crystal_chronicles.entity.custom;
 
 import mod.azure.azurelib.common.util.MoveAnalysis;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtUtils;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -13,32 +16,43 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.block.PortalFrameBlock;
+import net.veroxuniverse.crystal_chronicles.block.PortalFrameBlockEntity;
 import net.veroxuniverse.crystal_chronicles.entity.client.DimensionalRiftEntityDispatcher;
 
 import java.util.List;
 
 public class DimensionalRiftEntity extends Entity {
 
+    private static final String IDLE_TICKS_TAG = "IdleTicks";
+    private static final String TRANSITION_TICKS_TAG = "TransitionTicks";
+    private static final String IS_IDLE_ACTIVE_TAG = "IsIdleActive";
+    private static final String IS_CLOSING_TAG = "IsClosing";
+    private static final String PORTAL_AXIS_TAG = "PortalAxis";
+    private static final String FRAME_POS_TAG = "FramePos";
+
+    private static final EntityDataAccessor<Boolean> DATA_IDLE = SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> DATA_CLOSING = SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<String> DATA_AXIS = SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.STRING);
+
     public final DimensionalRiftEntityDispatcher dispatcher;
     public final MoveAnalysis moveAnalysis;
 
     private static final ResourceKey<Level> TARGET_DIMENSION_KEY = ResourceKey.create(
             Registries.DIMENSION,
-            ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "crystal_cave_dimension")
+            ResourceLocation.fromNamespaceAndPath(CrystalChronicles.MODID, "alpha")
     );
 
     private int idleTicks = 0;
-    private static final int IDLE_DURATION = 20 * 60; // 1 minute
-    private int closingTicks = 0;
-    private static final int CLOSING_DURATION = 20 * 3; // 3 seconds
-    private static final int OPENING_DURATION = 20 * 3; // 3 seconds
-    private boolean isClosing = false;
-    private boolean isIdleActive = false;
-    private Direction.Axis portalAxis = Direction.Axis.Z;
+    private static final int IDLE_DURATION = 300;
+    private int transitionTicks = 0;
+    private static final int ANIMATION_TIME = 60;
 
-    private static final String AXIS_TAG = "PortalAxis";
+    private BlockPos portalFramePos;
 
     public DimensionalRiftEntity(EntityType<? extends DimensionalRiftEntity> entityType, Level level) {
         super(entityType, level);
@@ -47,125 +61,200 @@ public class DimensionalRiftEntity extends Entity {
         this.moveAnalysis = new MoveAnalysis(this);
     }
 
+    public void setPortalFramePos(BlockPos pos) {
+        this.portalFramePos = pos;
+    }
+
     @Override
     public void onAddedToLevel() {
         super.onAddedToLevel();
-        if (!this.level().isClientSide) {
+        if (this.level().isClientSide) {
             dispatcher.open();
-            this.isIdleActive = false;
-            this.closingTicks = 0;
         }
     }
 
     @Override
     protected void readAdditionalSaveData(CompoundTag tag) {
-        this.portalAxis = Direction.Axis.valueOf(tag.getString(AXIS_TAG));
+        if (tag.contains(PORTAL_AXIS_TAG)) {
+            setPortalAxis(Direction.Axis.valueOf(tag.getString(PORTAL_AXIS_TAG).toUpperCase()));
+        }
+        if (tag.contains(FRAME_POS_TAG)) {
+            this.portalFramePos = NbtUtils.readBlockPos(tag, FRAME_POS_TAG).orElse(null);
+        }
+
+        this.idleTicks = tag.getInt(IDLE_TICKS_TAG);
+        this.transitionTicks = tag.getInt(TRANSITION_TICKS_TAG);
+        setIdleActive(tag.getBoolean(IS_IDLE_ACTIVE_TAG));
+        setIsClosing(tag.getBoolean(IS_CLOSING_TAG));
     }
 
     @Override
     protected void addAdditionalSaveData(CompoundTag tag) {
-        tag.putString(AXIS_TAG, this.portalAxis.getName());
+        tag.putString(PORTAL_AXIS_TAG, getPortalAxis().getName().toUpperCase());
+        if (this.portalFramePos != null) {
+            tag.put(FRAME_POS_TAG, NbtUtils.writeBlockPos(portalFramePos));
+        }
+        tag.putInt(IDLE_TICKS_TAG, this.idleTicks);
+        tag.putInt(TRANSITION_TICKS_TAG, this.transitionTicks);
+        tag.putBoolean(IS_IDLE_ACTIVE_TAG, this.isIdleActive());
+        tag.putBoolean(IS_CLOSING_TAG, this.isClosing());
     }
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        builder.define(DATA_AXIS, Direction.Axis.Z.getName());
+        builder.define(DATA_IDLE, false);
+        builder.define(DATA_CLOSING, false);
+    }
 
+    public boolean isIdleActive() {
+        return this.entityData.get(DATA_IDLE);
+    }
+
+    public void setIdleActive(boolean active) {
+        this.entityData.set(DATA_IDLE, active);
+    }
+
+    public boolean isClosing() {
+        return this.entityData.get(DATA_CLOSING);
+    }
+
+    public void setIsClosing(boolean closing) {
+        this.entityData.set(DATA_CLOSING, closing);
     }
 
     @Override
     public void tick() {
         super.tick();
+
+        if (this.level().isClientSide) {
+            handleClientAnimation();
+            return;
+        }
+
         if (this.level() instanceof ServerLevel serverWorld) {
+            handleServerLogic(serverWorld);
+        }
+    }
 
-            if (this.isClosing) {
-                closingTicks++;
-                if (closingTicks >= CLOSING_DURATION) {
-                    this.remove(RemovalReason.DISCARDED);
-                }
-
-            } else if (!this.isIdleActive) {
-                closingTicks++;
-                if (closingTicks >= OPENING_DURATION) {
-                    this.isIdleActive = true;
-                    this.idleTicks = 0;
-                    this.dispatcher.idle();
-                }
-
+    private void handleClientAnimation() {
+        if (this.tickCount == 1) {
+            if (isClosing()) {
+                dispatcher.close();
+            } else if (isIdleActive()) {
+                dispatcher.idle();
             } else {
-                idleTicks++;
-                if (idleTicks >= IDLE_DURATION) {
-                    startClosingSequence();
-                }
-                if (isAlive()) {
-                    teleportEntities(serverWorld);
-                }
+                dispatcher.open();
+            }
+        }
+
+        if (isClosing()) {
+            transitionTicks++;
+        } else if (!isIdleActive()) {
+            transitionTicks++;
+            if (transitionTicks >= ANIMATION_TIME) {
+                dispatcher.idle();
+            }
+        }
+    }
+
+    private void handleServerLogic(ServerLevel world) {
+        if (isClosing()) {
+            transitionTicks++;
+            if (transitionTicks >= ANIMATION_TIME - 5) {
+                resetPortalFrameState();
+                this.remove(RemovalReason.DISCARDED);
+            }
+            return;
+        }
+
+        transitionTicks++;
+
+        if (transitionTicks >= ANIMATION_TIME) {
+            if (!isIdleActive()) {
+                setIdleActive(true);
+            }
+
+            idleTicks++;
+
+            if (idleTicks >= IDLE_DURATION) {
+                startClosingSequence();
+                return;
+            }
+
+            if (isAlive()) {
+                teleportEntities(world);
             }
         }
     }
 
     public void startClosingSequence() {
-        if (!this.isClosing) {
-            this.isClosing = true;
-            idleTicks = 0;
-            if (!this.level().isClientSide) {
-                dispatcher.close();
+        if (!isClosing()) {
+            setIsClosing(true);
+            this.transitionTicks = 0;
+        }
+    }
+
+    private void resetPortalFrameState() {
+        if (portalFramePos == null || this.level().isClientSide) return;
+
+        Level level = this.level();
+        BlockState state = level.getBlockState(portalFramePos);
+
+        if (state.getBlock() instanceof PortalFrameBlock block) {
+            Direction facing = state.getValue(PortalFrameBlock.FACING);
+            block.setFrameState(level, portalFramePos, facing, true, false);
+
+            BlockEntity be = level.getBlockEntity(portalFramePos);
+            if (be instanceof PortalFrameBlockEntity master) {
+                master.notifyEntityRemoved();
             }
         }
     }
 
-    public void setPortalAxis(Direction.Axis axis) { this.portalAxis = axis; }
-    public Direction.Axis getPortalAxis() { return this.portalAxis; }
+    public void setPortalAxis(Direction.Axis axis) {
+        this.entityData.set(DATA_AXIS, axis.getName());
+    }
+
+    public Direction.Axis getPortalAxis() {
+        return Direction.Axis.valueOf(this.entityData.get(DATA_AXIS).toUpperCase());
+    }
 
     private BlockPos findSafeTeleportLocation(ServerLevel world, BlockPos initialTarget) {
-        int searchRadius = 10;
-        int maxSearchY = initialTarget.getY() + searchRadius;
-        int minSearchY = initialTarget.getY() - searchRadius;
+        int minY = world.getMinBuildHeight() + 5;
+        int maxY = world.getMaxBuildHeight() - 2;
 
-        for (int y = maxSearchY; y >= minSearchY; y--) {
+        for (int y = minY; y < maxY; y++) {
             BlockPos checkPos = new BlockPos(initialTarget.getX(), y, initialTarget.getZ());
-
-            if (world.getBlockState(checkPos.below()).isSolid()) {
-                if (world.getBlockState(checkPos).isAir() && world.getBlockState(checkPos.above()).isAir()) {
-                    return checkPos;
-                }
+            if (world.getBlockState(checkPos).isAir()
+                    && world.getBlockState(checkPos.above()).isAir()
+                    && world.getBlockState(checkPos.below()).isSolid()) {
+                return checkPos;
             }
         }
-
         return world.getSharedSpawnPos();
     }
 
     private void teleportEntities(ServerLevel world) {
-        AABB teleportBox = this.getBoundingBox().inflate(1.0, 1.0, 0.1);
+        double cx = this.getX();
+        double cy = this.getY();
+        double cz = this.getZ();
 
-        List<ServerPlayer> players = world.getEntitiesOfClass(ServerPlayer.class, teleportBox,
-                player -> !player.isPassenger()
-        );
+        Direction.Axis axis = this.getPortalAxis();
+
+        AABB checkZone = axis == Direction.Axis.X
+                ? new AABB(cx - 1.0, cy - 1.0, cz - 0.1, cx + 1.0, cy + 1.0, cz + 0.1)
+                : new AABB(cx - 0.1, cy - 1.0, cz - 1.0, cx + 0.1, cy + 1.0, cz + 1.0);
 
         ServerLevel targetWorld = world.getServer().getLevel(TARGET_DIMENSION_KEY);
+        if (targetWorld == null) return;
 
-        if (targetWorld == null) {
-            return;
-        }
+        List<ServerPlayer> players = world.getEntitiesOfClass(ServerPlayer.class, checkZone, player -> !player.isPassenger());
 
         for (ServerPlayer player : players) {
-
-
-            BlockPos initialTarget = targetWorld.getSharedSpawnPos();
-            BlockPos safePos = findSafeTeleportLocation(targetWorld, initialTarget);
-
-            if (safePos != null) {
-
-                player.teleportTo(targetWorld,
-                        safePos.getX() + 0.5,
-                        safePos.getY(),
-                        safePos.getZ() + 0.5,
-                        player.getYRot(),
-                        player.getXRot());
-
-                player.setPortalCooldown();
-            }
+            BlockPos spawn = findSafeTeleportLocation(targetWorld, player.blockPosition());
+            player.teleportTo(targetWorld, spawn.getX() + 0.5, spawn.getY(), spawn.getZ() + 0.5, player.getYRot(), player.getXRot());
+            player.setPortalCooldown();
         }
     }
 }
-
- */

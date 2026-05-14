@@ -2,16 +2,22 @@ package net.veroxuniverse.crystal_chronicles.datagen;
 
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 public class CCRecipeProvider extends RecipeProvider implements IConditionBuilder {
     public CCRecipeProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pRegistries) {
@@ -21,879 +27,263 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
     @Override
     protected void buildRecipes(RecipeOutput pRecipeOutput) {
 
+        // ==========================================================================================
+        // 1. WOOD
+        // ==========================================================================================
         slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BRONCHUS_SLAB.get(), CCBlocks.BRONCHUS_PLANKS);
         stairBuilder(CCBlocks.BRONCHUS_STAIRS.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("bronchus_planks")
                 .unlockedBy("has_bronchus_planks", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
-        doorBuilder(CCBlocks.BRONCHUS_DOOR.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("black_opal")
-                .unlockedBy("has_black_opal", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
-        trapdoorBuilder(CCBlocks.BRONCHUS_TRAPDOOR.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("black_opal")
-                .unlockedBy("has_black_opal", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
+        doorBuilder(CCBlocks.BRONCHUS_DOOR.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("bronchus")
+                .unlockedBy("has_bronchus_planks", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
+        trapdoorBuilder(CCBlocks.BRONCHUS_TRAPDOOR.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("bronchus")
+                .unlockedBy("has_bronchus_planks", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
         pressurePlate(pRecipeOutput, CCBlocks.BRONCHUS_PRESSURE_PLATE.get(), CCBlocks.BRONCHUS_PLANKS.get());
-        buttonBuilder(CCBlocks.BRONCHUS_BUTTON.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("black_opal")
-                .unlockedBy("has_black_opal", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
-        fenceBuilder(CCBlocks.BRONCHUS_FENCE.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("black_opal")
-                .unlockedBy("has_black_opal", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
-        fenceGateBuilder(CCBlocks.BRONCHUS_FENCE_GATE.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("black_opal")
-                .unlockedBy("has_black_opal", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
+        buttonBuilder(CCBlocks.BRONCHUS_BUTTON.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("bronchus")
+                .unlockedBy("has_bronchus_planks", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
+        fenceBuilder(CCBlocks.BRONCHUS_FENCE.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("bronchus")
+                .unlockedBy("has_bronchus_planks", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
+        fenceGateBuilder(CCBlocks.BRONCHUS_FENCE_GATE.get(), Ingredient.of(CCBlocks.BRONCHUS_PLANKS.get())).group("bronchus")
+                .unlockedBy("has_bronchus_planks", has(CCBlocks.BRONCHUS_PLANKS.get())).save(pRecipeOutput);
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_SLAB.get(), CCBlocks.CRUSTONE);
-        stairBuilder(CCBlocks.CRUSTONE_STAIRS.get(), Ingredient.of(CCBlocks.CRUSTONE.get())).group("crustone")
-                .unlockedBy("has_crustone", has(CCBlocks.CRUSTONE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_WALL.get(), CCBlocks.CRUSTONE.get());
+        // ==========================================================================================
+        // 2. STONE
+        // ==========================================================================================
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRUSTONE, CCBlocks.CRUSTONE_STAIRS, CCBlocks.CRUSTONE_SLAB, CCBlocks.CRUSTONE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRUSTONE_BRICKS, CCBlocks.CRUSTONE_BRICKS_STAIRS, CCBlocks.CRUSTONE_BRICKS_SLAB, CCBlocks.CRUSTONE_BRICKS_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRACKED_CRUSTONE_BRICKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS, CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB, CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_CRUSTONE, CCBlocks.POLISHED_CRUSTONE_STAIRS, CCBlocks.POLISHED_CRUSTONE_SLAB, CCBlocks.POLISHED_CRUSTONE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_CRUSTONE, CCBlocks.CHISELED_CRUSTONE_STAIRS, CCBlocks.CHISELED_CRUSTONE_SLAB, CCBlocks.CHISELED_CRUSTONE_WALL);
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS_SLAB.get(), CCBlocks.CRUSTONE_BRICKS);
-        stairBuilder(CCBlocks.CRUSTONE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.CRUSTONE_BRICKS.get())).group("crustone_bricks")
-                .unlockedBy("has_crustone_bricks", has(CCBlocks.CRUSTONE_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS_WALL.get(), CCBlocks.CRUSTONE_BRICKS.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS.get(), CCBlocks.CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE.get(), CCBlocks.CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE.get(), CCBlocks.POLISHED_CRUSTONE.get());
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS);
-        stairBuilder(CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.CRUSTONE.get())).group("cracked_crustone_bricks")
-                .unlockedBy("has_cracked_crustone_bricks", has(CCBlocks.CRUSTONE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS.get());
+        generateStoneFamily(pRecipeOutput, CCBlocks.THUNDERSTONE, CCBlocks.THUNDERSTONE_STAIRS, CCBlocks.THUNDERSTONE_SLAB, CCBlocks.THUNDERSTONE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.THUNDERSTONE_BRICKS, CCBlocks.THUNDERSTONE_BRICKS_STAIRS, CCBlocks.THUNDERSTONE_BRICKS_SLAB, CCBlocks.THUNDERSTONE_BRICKS_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_THUNDERSTONE, CCBlocks.POLISHED_THUNDERSTONE_STAIRS, CCBlocks.POLISHED_THUNDERSTONE_SLAB, CCBlocks.POLISHED_THUNDERSTONE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_THUNDERSTONE, CCBlocks.CHISELED_THUNDERSTONE_STAIRS, CCBlocks.CHISELED_THUNDERSTONE_SLAB, CCBlocks.CHISELED_THUNDERSTONE_WALL);
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE_SLAB.get(), CCBlocks.POLISHED_CRUSTONE);
-        stairBuilder(CCBlocks.POLISHED_CRUSTONE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_CRUSTONE.get())).group("polished_crustone")
-                .unlockedBy("has_polished_crustone", has(CCBlocks.POLISHED_CRUSTONE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE_WALL.get(), CCBlocks.POLISHED_CRUSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS.get(), CCBlocks.THUNDERSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE.get(), CCBlocks.THUNDERSTONE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
+        create4x4Recipe(pRecipeOutput, CCBlocks.THUNDERSTONE_BRICKS, CCBlocks.THUNDERSTONE, "has_thunderstone");
 
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE_SLAB.get(), CCBlocks.CHISELED_CRUSTONE);
-        stairBuilder(CCBlocks.CHISELED_CRUSTONE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_CRUSTONE.get())).group("chiseled_crustone")
-                .unlockedBy("chiseled_crustone_crustone", has(CCBlocks.CHISELED_CRUSTONE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE_WALL.get(), CCBlocks.CHISELED_CRUSTONE.get());
+        generateStoneFamily(pRecipeOutput, CCBlocks.BISMITE, CCBlocks.BISMITE_STAIRS, CCBlocks.BISMITE_SLAB, CCBlocks.BISMITE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.BISMITE_BRICKS, CCBlocks.BISMITE_BRICKS_STAIRS, CCBlocks.BISMITE_BRICKS_SLAB, CCBlocks.BISMITE_BRICKS_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_BISMITE, CCBlocks.POLISHED_BISMITE_STAIRS, CCBlocks.POLISHED_BISMITE_SLAB, CCBlocks.POLISHED_BISMITE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_BISMITE, CCBlocks.CHISELED_BISMITE_STAIRS, CCBlocks.CHISELED_BISMITE_SLAB, CCBlocks.CHISELED_BISMITE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRACKED_BISMITE, CCBlocks.CRACKED_BISMITE_STAIRS, CCBlocks.CRACKED_BISMITE_SLAB, CCBlocks.CRACKED_BISMITE_WALL);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.FAT_TISSUE_BLOCK.get())
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCItems.FAT_TISSUE_BALL.get())
-                .unlockedBy("has_fat_tissue_ball", has(CCItems.FAT_TISSUE_BALL.get())).save(pRecipeOutput);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS.get(), CCBlocks.BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE.get(), CCBlocks.BISMITE.get());
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE.get(), CCBlocks.POLISHED_BISMITE.get());
+        create4x4Recipe(pRecipeOutput, CCBlocks.BISMITE_BRICKS, CCBlocks.BISMITE, "has_bismite");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.EYE_BLOCK.get())
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCItems.EYE.get())
-                .unlockedBy("has_eye", has(CCItems.EYE.get())).save(pRecipeOutput);
+        generateStoneFamily(pRecipeOutput, CCBlocks.HOLY_MARBLE, CCBlocks.HOLY_MARBLE_STAIRS, CCBlocks.HOLY_MARBLE_SLAB, CCBlocks.HOLY_MARBLE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.HOLY_MARBLE_BRICKS, CCBlocks.HOLY_MARBLE_BRICKS_STAIRS, CCBlocks.HOLY_MARBLE_BRICKS_SLAB, CCBlocks.HOLY_MARBLE_BRICKS_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_HOLY_MARBLE, CCBlocks.CHISELED_HOLY_MARBLE_STAIRS, CCBlocks.CHISELED_HOLY_MARBLE_SLAB, CCBlocks.CHISELED_HOLY_MARBLE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRACKED_HOLY_MARBLE, CCBlocks.CRACKED_HOLY_MARBLE_STAIRS, CCBlocks.CRACKED_HOLY_MARBLE_SLAB, CCBlocks.CRACKED_HOLY_MARBLE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_HOLY_MARBLE, CCBlocks.POLISHED_HOLY_MARBLE_STAIRS, CCBlocks.POLISHED_HOLY_MARBLE_SLAB, CCBlocks.POLISHED_HOLY_MARBLE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.GOLDSTONE, CCBlocks.GOLDSTONE_STAIRS, CCBlocks.GOLDSTONE_SLAB, CCBlocks.GOLDSTONE_WALL);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.CELVER_LIGHT.get())
-                .pattern("BBB")
-                .pattern("BAB")
-                .pattern("BBB")
-                .define('B', CCBlocks.CHISELED_CRUSTONE.get())
-                .define('A', CCItems.EYE.get())
-                .unlockedBy("has_eye", has(CCItems.EYE.get())).save(pRecipeOutput);
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_PILLAR.get(), CCBlocks.HOLY_MARBLE.get());
+        create4x4Recipe(pRecipeOutput, CCBlocks.HOLY_MARBLE_BRICKS, CCBlocks.HOLY_MARBLE, "has_holy_marble");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.NEURON_BLOCK.get())
-                .pattern("BBB")
-                .pattern("BAB")
-                .pattern("BBB")
-                .define('B', CCItems.NEURON.get())
-                .define('A', Blocks.GLOWSTONE)
-                .unlockedBy("has_neuron", has(CCItems.NEURON.get())).save(pRecipeOutput);
+        generateStoneFamily(pRecipeOutput, CCBlocks.PUMICE, CCBlocks.PUMICE_STAIRS, CCBlocks.PUMICE_SLAB, CCBlocks.PUMICE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.PUMICE_BRICKS, CCBlocks.PUMICE_BRICKS_STAIRS, CCBlocks.PUMICE_BRICKS_SLAB, CCBlocks.PUMICE_BRICKS_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_PUMICE, CCBlocks.CHISELED_PUMICE_STAIRS, CCBlocks.CHISELED_PUMICE_SLAB, CCBlocks.CHISELED_PUMICE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRACKED_PUMICE, CCBlocks.CRACKED_PUMICE_STAIRS, CCBlocks.CRACKED_PUMICE_SLAB, CCBlocks.CRACKED_PUMICE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_PUMICE, CCBlocks.POLISHED_PUMICE_STAIRS, CCBlocks.POLISHED_PUMICE_SLAB, CCBlocks.POLISHED_PUMICE_WALL);
+        generateStoneFamily(pRecipeOutput, CCBlocks.PYRITE, CCBlocks.PYRITE_STAIRS, CCBlocks.PYRITE_SLAB, CCBlocks.PYRITE_WALL);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.NEURON_TORCH.get())
-                .pattern("B")
-                .pattern("A")
-                .define('B', CCItems.NEURON.get())
-                .define('A', CCBlocks.AXON)
-                .unlockedBy("has_neuron", has(CCItems.NEURON.get())).save(pRecipeOutput);
+        create4x4Recipe(pRecipeOutput, CCBlocks.PUMICE_BRICKS, CCBlocks.PUMICE, "has_pumice");
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.ROTTEN_FLESH_BLOCK.get())
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', Items.ROTTEN_FLESH)
-                .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH)).save(pRecipeOutput);
+        // ==========================================================================================
+        // 3. BISMUTH
+        // ==========================================================================================
+        generateBismuthFamily(pRecipeOutput, CCBlocks.BLUE_BISMUTH, CCBlocks.BLUE_BISMUTH_STAIRS, CCBlocks.BLUE_BISMUTH_SLAB, CCBlocks.BLUE_BISMUTH_WALL, CCBlocks.BLUE_BISMUTH_BRICKS, CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS, CCBlocks.BLUE_BISMUTH_BRICKS_SLAB, CCBlocks.BLUE_BISMUTH_BRICKS_WALL, CCBlocks.BLUE_BISMUTH_CRYSTAL, "blue");
+        generateBismuthFamily(pRecipeOutput, CCBlocks.PURPLE_BISMUTH, CCBlocks.PURPLE_BISMUTH_STAIRS, CCBlocks.PURPLE_BISMUTH_SLAB, CCBlocks.PURPLE_BISMUTH_WALL, CCBlocks.PURPLE_BISMUTH_BRICKS, CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS, CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB, CCBlocks.PURPLE_BISMUTH_BRICKS_WALL, CCBlocks.PURPLE_BISMUTH_CRYSTAL, "purple");
+        generateBismuthFamily(pRecipeOutput, CCBlocks.VIOLET_BISMUTH, CCBlocks.VIOLET_BISMUTH_STAIRS, CCBlocks.VIOLET_BISMUTH_SLAB, CCBlocks.VIOLET_BISMUTH_WALL, CCBlocks.VIOLET_BISMUTH_BRICKS, CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS, CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB, CCBlocks.VIOLET_BISMUTH_BRICKS_WALL, CCBlocks.VIOLET_BISMUTH_CRYSTAL, "violet");
+        generateBismuthFamily(pRecipeOutput, CCBlocks.YELLOW_BISMUTH, CCBlocks.YELLOW_BISMUTH_STAIRS, CCBlocks.YELLOW_BISMUTH_SLAB, CCBlocks.YELLOW_BISMUTH_WALL, CCBlocks.YELLOW_BISMUTH_BRICKS, CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS, CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB, CCBlocks.YELLOW_BISMUTH_BRICKS_WALL, CCBlocks.YELLOW_BISMUTH_CRYSTAL, "yellow");
+        generateBismuthFamily(pRecipeOutput, CCBlocks.RAINBOW_BISMUTH, CCBlocks.RAINBOW_BISMUTH_STAIRS, CCBlocks.RAINBOW_BISMUTH_SLAB, CCBlocks.RAINBOW_BISMUTH_WALL, CCBlocks.RAINBOW_BISMUTH_BRICKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS, CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB, CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL, CCBlocks.RAINBOW_BISMUTH_CRYSTAL, "rainbow");
+
+        // ==========================================================================================
+        // 4. SPECIALS
+        // ==========================================================================================
+        create4x4Recipe(pRecipeOutput, CCBlocks.FAT_TISSUE_BLOCK, CCItems.FAT_TISSUE_BALL, "has_fat_tissue_ball");
+        create4x4Recipe(pRecipeOutput, CCBlocks.EYE_BLOCK, CCItems.EYE, "has_eye");
+        create4x4Recipe(pRecipeOutput, CCBlocks.ROTTEN_FLESH_BLOCK, () -> Items.ROTTEN_FLESH, "has_rotten_flesh");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ROTTEN_FLESH, 4)
                 .requires(CCBlocks.ROTTEN_FLESH_BLOCK.get())
                 .unlockedBy("has_rotten_flesh", has(CCBlocks.ROTTEN_FLESH_BLOCK.get())).save(pRecipeOutput);
 
-        SmithingTransformRecipeBuilder.smithing(
-                Ingredient.of(ItemRegistry.FIRE_RUNE.get()),
-                Ingredient.of(ItemRegistry.PYROMANCER_HELMET.get()),
-                Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
-                RecipeCategory.COMBAT,
-                CCItems.FIRE_KNIGHT_HELMET.get()
-        )
-                .unlocks("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput, "fire_knight_helmet_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                Ingredient.of(ItemRegistry.FIRE_RUNE.get()),
-                Ingredient.of(ItemRegistry.PYROMANCER_CHESTPLATE.get()),
-                Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
-                RecipeCategory.COMBAT,
-                CCItems.FIRE_KNIGHT_CHESTPLATE.get()
-        )
-                .unlocks("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput, "fire_knight_chestplate_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                Ingredient.of(ItemRegistry.FIRE_RUNE.get()),
-                Ingredient.of(ItemRegistry.PYROMANCER_LEGGINGS.get()),
-                Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
-                RecipeCategory.COMBAT,
-                CCItems.FIRE_KNIGHT_LEGGINGS.get()
-        )
-                .unlocks("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput, "fire_knight_leggings_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                Ingredient.of( ItemRegistry.FIRE_RUNE.get()),
-                Ingredient.of(ItemRegistry.PYROMANCER_BOOTS.get()),
-                Ingredient.of(CCItems.VOLCANITE_SHARD.get()),
-                RecipeCategory.COMBAT,
-                CCItems.FIRE_KNIGHT_BOOTS.get()
-        )
-                .unlocks("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput, "fire_knight_boots_smithing");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.CELVER_LIGHT.get())
+                .pattern("BBB").pattern("BAB").pattern("BBB")
+                .define('B', CCBlocks.CHISELED_CRUSTONE.get()).define('A', CCItems.EYE.get())
+                .unlockedBy("has_eye", has(CCItems.EYE.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.NEURON_BLOCK.get())
+                .pattern("BBB").pattern("BAB").pattern("BBB")
+                .define('B', CCItems.NEURON.get()).define('A', Blocks.GLOWSTONE)
+                .unlockedBy("has_neuron", has(CCItems.NEURON.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCBlocks.NEURON_TORCH.get())
+                .pattern("B").pattern("A")
+                .define('B', CCItems.NEURON.get()).define('A', CCBlocks.AXON.get())
+                .unlockedBy("has_neuron", has(CCItems.NEURON.get())).save(pRecipeOutput);
+
+        // ==========================================================================================
+        // 5. SMITHING
+        // ==========================================================================================
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_HELMET, CCItems.FIRE_KNIGHT_HELMET, "fire");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_CHESTPLATE, CCItems.FIRE_KNIGHT_CHESTPLATE, "fire");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_LEGGINGS, CCItems.FIRE_KNIGHT_LEGGINGS, "fire");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_BOOTS, CCItems.FIRE_KNIGHT_BOOTS, "fire");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.FIRE_CHAKRAM.get())
-                .pattern(" S ")
-                .pattern("SNS")
-                .pattern(" S ")
-                .define('S', CCItems.VOLCANITE_SHARD.get())
-                .define('N', Items.STICK)
-                .unlockedBy("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput);
+                .pattern(" S ").pattern("SNS").pattern(" S ")
+                .define('S', CCItems.VOLCANITE_SHARD.get()).define('N', Items.STICK)
+                .unlockedBy("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get())).save(pRecipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.VOLCANITE_SHARD.get(), 1)
-                .requires(Items.BLAZE_ROD)
-                .requires(ItemRegistry.MITHRIL_INGOT.get())
-                .requires(Items.AMETHYST_SHARD)
-                .unlockedBy("has_fire_rune", has(ItemRegistry.FIRE_RUNE.get()))
-                .save(pRecipeOutput);
+        registerShardRecipe(pRecipeOutput, CCItems.VOLCANITE_SHARD, () -> Items.BLAZE_ROD, ItemRegistry.FIRE_RUNE);
 
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.HOLY_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PRIEST_HELMET.get()),
-                        Ingredient.of(CCItems.DIVINITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.HOLY_KNIGHT_HELMET.get()
-                )
-                .unlocks("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput, "holy_knight_helmet_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.HOLY_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PRIEST_CHESTPLATE.get()),
-                        Ingredient.of(CCItems.DIVINITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.HOLY_KNIGHT_CHESTPLATE.get()
-                )
-                .unlocks("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput, "holy_knight_chestplate_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.HOLY_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PRIEST_LEGGINGS.get()),
-                        Ingredient.of(CCItems.DIVINITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.HOLY_KNIGHT_LEGGINGS.get()
-                )
-                .unlocks("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput, "holy_knight_leggings_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.HOLY_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PRIEST_BOOTS.get()),
-                        Ingredient.of(CCItems.DIVINITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.HOLY_KNIGHT_BOOTS.get()
-                )
-                .unlocks("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput, "holy_knight_boots_smithing");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.HOLY_RUNE, CCItems.DIVINITE_SHARD, ItemRegistry.PRIEST_HELMET, CCItems.HOLY_KNIGHT_HELMET, "holy");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.HOLY_RUNE, CCItems.DIVINITE_SHARD, ItemRegistry.PRIEST_CHESTPLATE, CCItems.HOLY_KNIGHT_CHESTPLATE, "holy");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.HOLY_RUNE, CCItems.DIVINITE_SHARD, ItemRegistry.PRIEST_LEGGINGS, CCItems.HOLY_KNIGHT_LEGGINGS, "holy");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.HOLY_RUNE, CCItems.DIVINITE_SHARD, ItemRegistry.PRIEST_BOOTS, CCItems.HOLY_KNIGHT_BOOTS, "holy");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.HOLY_SWORD.get())
-                .pattern("S")
-                .pattern("S")
-                .pattern("N")
-                .define('S', CCItems.DIVINITE_SHARD.get())
-                .define('N', Items.STICK)
-                .unlockedBy("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput);
+                .pattern("S").pattern("S").pattern("N")
+                .define('S', CCItems.DIVINITE_SHARD.get()).define('N', Items.STICK)
+                .unlockedBy("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get())).save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCItems.HOLY_SHIELD.get())
-                .pattern("ISI")
-                .pattern("ISI")
-                .pattern(" I ")
-                .define('S', CCItems.DIVINITE_SHARD.get())
-                .define('I', Items.IRON_INGOT)
-                .unlockedBy("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput);
+                .pattern("ISI").pattern("ISI").pattern(" I ")
+                .define('S', CCItems.DIVINITE_SHARD.get()).define('I', Items.IRON_INGOT)
+                .unlockedBy("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get())).save(pRecipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.DIVINITE_SHARD.get(), 1)
-                .requires(ItemRegistry.DIVINE_PEARL.get())
-                .requires(ItemRegistry.MITHRIL_INGOT.get())
-                .requires(Items.AMETHYST_SHARD)
-                .unlockedBy("has_holy_rune", has(ItemRegistry.HOLY_RUNE.get()))
-                .save(pRecipeOutput);
+        registerShardRecipe(pRecipeOutput, CCItems.DIVINITE_SHARD, ItemRegistry.DIVINE_PEARL, ItemRegistry.HOLY_RUNE);
 
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.ICE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.CRYOMANCER_HELMET.get()),
-                        Ingredient.of(CCItems.ICE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.ICE_KNIGHT_HELMET.get()
-                )
-                .unlocks("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput, "ice_knight_helmet_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.ICE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.CRYOMANCER_CHESTPLATE.get()),
-                        Ingredient.of(CCItems.ICE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.ICE_KNIGHT_CHESTPLATE.get()
-                )
-                .unlocks("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput, "ice_knight_chestplate_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.ICE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.CRYOMANCER_LEGGINGS.get()),
-                        Ingredient.of(CCItems.ICE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.ICE_KNIGHT_LEGGINGS.get()
-                )
-                .unlocks("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput, "ice_knight_leggings_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.ICE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.CRYOMANCER_BOOTS.get()),
-                        Ingredient.of(CCItems.ICE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.ICE_KNIGHT_BOOTS.get()
-                )
-                .unlocks("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput, "ice_knight_boots_smithing");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_HELMET, CCItems.ICE_KNIGHT_HELMET, "ice");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_CHESTPLATE, CCItems.ICE_KNIGHT_CHESTPLATE, "ice");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_LEGGINGS, CCItems.ICE_KNIGHT_LEGGINGS, "ice");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_BOOTS, CCItems.ICE_KNIGHT_BOOTS, "ice");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, CCItems.ICE_HAMMER.get())
-                .pattern("SSS")
-                .pattern("SIS")
-                .pattern(" I ")
-                .define('S', CCItems.ICE_SHARD.get())
-                .define('I', Items.STICK)
-                .unlockedBy("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput);
+                .pattern("SSS").pattern("SIS").pattern(" I ")
+                .define('S', CCItems.ICE_SHARD.get()).define('I', Items.STICK)
+                .unlockedBy("has_ice_rune", has(ItemRegistry.ICE_RUNE.get())).save(pRecipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.ICE_SHARD.get(), 1)
-                .requires(ItemRegistry.FROZEN_BONE_SHARD.get())
-                .requires(ItemRegistry.MITHRIL_INGOT.get())
-                .requires(Items.AMETHYST_SHARD)
-                .unlockedBy("has_ice_rune", has(ItemRegistry.ICE_RUNE.get()))
-                .save(pRecipeOutput);
+        registerShardRecipe(pRecipeOutput, CCItems.ICE_SHARD, ItemRegistry.FROZEN_BONE_SHARD, ItemRegistry.ICE_RUNE);
 
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.ENDER_RUNE.get()),
-                        Ingredient.of(ItemRegistry.SHADOWWALKER_HELMET.get()),
-                        Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.ENDER_MAGE_HELMET.get()
-                )
-                .unlocks("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput, "ender_mage_helmet_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.ENDER_RUNE.get()),
-                        Ingredient.of(ItemRegistry.SHADOWWALKER_CHESTPLATE.get()),
-                        Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.ENDER_MAGE_CHESTPLATE.get()
-                )
-                .unlocks("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput, "ender_mage_chestplate_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.ENDER_RUNE.get()),
-                        Ingredient.of(ItemRegistry.SHADOWWALKER_LEGGINGS.get()),
-                        Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.ENDER_MAGE_LEGGINGS.get()
-                )
-                .unlocks("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput, "ender_mage_leggings_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.ENDER_RUNE.get()),
-                        Ingredient.of(ItemRegistry.SHADOWWALKER_BOOTS.get()),
-                        Ingredient.of(CCItems.VOIDSTONE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.ENDER_MAGE_BOOTS.get()
-                )
-                .unlocks("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput, "ender_mage_boots_smithing");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_HELMET, CCItems.ENDER_MAGE_HELMET, "ender");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_CHESTPLATE, CCItems.ENDER_MAGE_CHESTPLATE, "ender");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_LEGGINGS, CCItems.ENDER_MAGE_LEGGINGS, "ender");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_BOOTS, CCItems.ENDER_MAGE_BOOTS, "ender");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.ENDER_STAFF.get())
-                .pattern("S")
-                .pattern("N")
-                .pattern("N")
-                .define('S', CCItems.VOIDSTONE_SHARD.get())
-                .define('N', Items.STICK)
-                .unlockedBy("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput);
+                .pattern("S").pattern("N").pattern("N")
+                .define('S', CCItems.VOIDSTONE_SHARD.get()).define('N', Items.STICK)
+                .unlockedBy("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get())).save(pRecipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.VOIDSTONE_SHARD.get(), 1)
-                .requires(Items.ENDER_PEARL)
-                .requires(ItemRegistry.MITHRIL_INGOT.get())
-                .requires(Items.AMETHYST_SHARD)
-                .unlockedBy("has_ender_rune", has(ItemRegistry.ENDER_RUNE.get()))
-                .save(pRecipeOutput);
+        registerShardRecipe(pRecipeOutput, CCItems.VOIDSTONE_SHARD, () -> Items.ENDER_PEARL, ItemRegistry.ENDER_RUNE);
 
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.BLOOD_RUNE.get()),
-                        Ingredient.of(ItemRegistry.CULTIST_HELMET.get()),
-                        Ingredient.of(CCItems.HEMALITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.BLOOD_KNIGHT_HELMET.get()
-                )
-                .unlocks("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput, "blood_knight_helmet_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.BLOOD_RUNE.get()),
-                        Ingredient.of(ItemRegistry.CULTIST_CHESTPLATE.get()),
-                        Ingredient.of(CCItems.HEMALITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.BLOOD_KNIGHT_CHESTPLATE.get()
-                )
-                .unlocks("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput, "blood_knight_chestplate_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.BLOOD_RUNE.get()),
-                        Ingredient.of(ItemRegistry.CULTIST_LEGGINGS.get()),
-                        Ingredient.of(CCItems.HEMALITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.BLOOD_KNIGHT_LEGGINGS.get()
-                )
-                .unlocks("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput, "blood_knight_leggings_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.BLOOD_RUNE.get()),
-                        Ingredient.of(ItemRegistry.CULTIST_BOOTS.get()),
-                        Ingredient.of(CCItems.HEMALITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.BLOOD_KNIGHT_BOOTS.get()
-                )
-                .unlocks("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput, "blood_knight_boots_smithing");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_HELMET, CCItems.BLOOD_KNIGHT_HELMET, "blood");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_CHESTPLATE, CCItems.BLOOD_KNIGHT_CHESTPLATE, "blood");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_LEGGINGS, CCItems.BLOOD_KNIGHT_LEGGINGS, "blood");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_BOOTS, CCItems.BLOOD_KNIGHT_BOOTS, "blood");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.BLOOD_SCYTHE.get())
-                .pattern("SS")
-                .pattern("SN")
-                .pattern(" N")
-                .define('S', CCItems.HEMALITE_SHARD.get())
-                .define('N', Items.STICK)
-                .unlockedBy("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput);
+                .pattern("SS").pattern("SN").pattern(" N")
+                .define('S', CCItems.HEMALITE_SHARD.get()).define('N', Items.STICK)
+                .unlockedBy("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get())).save(pRecipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.HEMALITE_SHARD.get(), 1)
-                .requires(ItemRegistry.BLOOD_VIAL.get())
-                .requires(ItemRegistry.MITHRIL_INGOT.get())
-                .requires(Items.AMETHYST_SHARD)
-                .unlockedBy("has_blood_rune", has(ItemRegistry.BLOOD_RUNE.get()))
-                .save(pRecipeOutput);
+        registerShardRecipe(pRecipeOutput, CCItems.HEMALITE_SHARD, ItemRegistry.BLOOD_VIAL, ItemRegistry.BLOOD_RUNE);
 
-        //
-
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.NATURE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PLAGUED_HELMET.get()),
-                        Ingredient.of(CCItems.FLORALITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.NATURE_KNIGHT_HELMET.get()
-                )
-                .unlocks("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "nature_knight_helmet_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.NATURE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PLAGUED_CHESTPLATE.get()),
-                        Ingredient.of(CCItems.FLORALITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.NATURE_KNIGHT_CHESTPLATE.get()
-                )
-                .unlocks("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "nature_knight_chestplate_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.NATURE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PLAGUED_LEGGINGS.get()),
-                        Ingredient.of(CCItems.FLORALITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.NATURE_KNIGHT_LEGGINGS.get()
-                )
-                .unlocks("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "nature_knight_leggings_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.NATURE_RUNE.get()),
-                        Ingredient.of(ItemRegistry.PLAGUED_BOOTS.get()),
-                        Ingredient.of(CCItems.FLORALITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.NATURE_KNIGHT_BOOTS.get()
-                )
-                .unlocks("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "nature_knight_boots_smithing");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_HELMET, CCItems.NATURE_KNIGHT_HELMET, "nature");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_CHESTPLATE, CCItems.NATURE_KNIGHT_CHESTPLATE, "nature");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_LEGGINGS, CCItems.NATURE_KNIGHT_LEGGINGS, "nature");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_BOOTS, CCItems.NATURE_KNIGHT_BOOTS, "nature");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.NATURE_SPEAR.get())
-                .pattern(" SS")
-                .pattern(" NS")
-                .pattern("N  ")
-                .define('S', CCItems.FLORALITE_SHARD.get())
-                .define('N', Items.STICK)
-                .unlockedBy("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput);
+                .pattern(" SS").pattern(" NS").pattern("N  ")
+                .define('S', CCItems.FLORALITE_SHARD.get()).define('N', Items.STICK)
+                .unlockedBy("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get())).save(pRecipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.FLORALITE_SHARD.get(), 1)
-                .requires(Items.POISONOUS_POTATO)
-                .requires(ItemRegistry.MITHRIL_INGOT.get())
-                .requires(Items.AMETHYST_SHARD)
-                .unlockedBy("has_nature_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput);
+        registerShardRecipe(pRecipeOutput, CCItems.FLORALITE_SHARD, () -> Items.POISONOUS_POTATO, ItemRegistry.NATURE_RUNE);
+
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_HELMET, CCItems.LIGHTNING_KNIGHT_HELMET, "lightning");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_CHESTPLATE, CCItems.LIGHTNING_KNIGHT_CHESTPLATE, "lightning");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_LEGGINGS, CCItems.LIGHTNING_KNIGHT_LEGGINGS, "lightning");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_BOOTS, CCItems.LIGHTNING_KNIGHT_BOOTS, "lightning");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.LIGHTNING_BIDENT.get())
-                .pattern(" SS")
-                .pattern(" NS")
-                .pattern("N  ")
-                .define('S', CCItems.VOLTITE_SHARD.get())
-                .define('N', Items.STICK)
-                .unlockedBy("has_lightning_rune", has(ItemRegistry.LIGHTNING_RUNE.get()))
-                .save(pRecipeOutput);
+                .pattern(" SS").pattern(" NS").pattern("N  ")
+                .define('S', CCItems.VOLTITE_SHARD.get()).define('N', Items.STICK)
+                .unlockedBy("has_lightning_rune", has(ItemRegistry.LIGHTNING_RUNE.get())).save(pRecipeOutput);
+
+        registerShardRecipe(pRecipeOutput, CCItems.VOLTITE_SHARD, ItemRegistry.LIGHTNING_BOTTLE, ItemRegistry.LIGHTNING_RUNE);
+
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_HELMET, CCItems.EVOCATION_KNIGHT_HELMET, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_CHESTPLATE, CCItems.EVOCATION_KNIGHT_CHESTPLATE, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_LEGGINGS, CCItems.EVOCATION_KNIGHT_LEGGINGS, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_BOOTS, CCItems.EVOCATION_KNIGHT_BOOTS, "evocation");
+    }
+
+    private void generateStoneFamily(RecipeOutput output, Supplier<? extends Block> base, Supplier<? extends Block> stairs, Supplier<? extends Block> slab, Supplier<? extends Block> wall) {
+        String name = base.get().getName().getString().toLowerCase().replace(" ", "_");
+        slab(output, RecipeCategory.BUILDING_BLOCKS, slab.get(), base.get());
+        stairBuilder(stairs.get(), Ingredient.of(base.get())).group(name).unlockedBy("has_" + name, has(base.get())).save(output);
+        wall(output, RecipeCategory.BUILDING_BLOCKS, wall.get(), base.get());
+
+        stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, stairs.get(), base.get());
+        stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, slab.get(), base.get(), 2);
+        stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, wall.get(), base.get());
+    }
+
+    private void generateBismuthFamily(RecipeOutput output, Supplier<? extends Block> chiseled, Supplier<? extends Block> cStairs, Supplier<? extends Block> cSlab, Supplier<? extends Block> cWall, Supplier<? extends Block> bricks, Supplier<? extends Block> bStairs, Supplier<? extends Block> bSlab, Supplier<? extends Block> bWall, Supplier<? extends Block> crystal, String color) {
+        generateStoneFamily(output, chiseled, cStairs, cSlab, cWall);
+        generateStoneFamily(output, bricks, bStairs, bSlab, bWall);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bricks.get(), 4)
+                .pattern("BB").pattern("BB")
+                .define('B', crystal.get())
+                .unlockedBy("has_" + color + "_crystal", has(crystal.get()))
+                .save(output, color + "_bismuth_bricks_from_crystal");
+
+        stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, chiseled.get(), bricks.get());
+        stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, chiseled.get(), crystal.get());
+        stonecutterResultFromBase(output, RecipeCategory.BUILDING_BLOCKS, bricks.get(), crystal.get());
+    }
+
+    private void create4x4Recipe(RecipeOutput output, Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> ingredient, String criterionName) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result.get(), 4)
+                .pattern("BB").pattern("BB")
+                .define('B', ingredient.get())
+                .unlockedBy(criterionName, has(ingredient.get())).save(output);
+    }
+
+    private void registerKnightSmithing(RecipeOutput output, Supplier<? extends Item> rune,
+                                        Supplier<? extends Item> shard, Supplier<? extends Item> baseItem,
+                                        Supplier<? extends Item> result, String name) {
+
+        String resultName = BuiltInRegistries.ITEM.getKey(result.get()).getPath();
 
         SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
-                        Ingredient.of(ItemRegistry.ELECTROMANCER_HELMET.get()),
-                        Ingredient.of(CCItems.VOLTITE_SHARD.get()),
+                        Ingredient.of(rune.get()),
+                        Ingredient.of(baseItem.get()),
+                        Ingredient.of(shard.get()),
                         RecipeCategory.COMBAT,
-                        CCItems.LIGHTNING_KNIGHT_HELMET.get()
-                )
-                .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "lightning_knight_helmet_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
-                        Ingredient.of(ItemRegistry.ELECTROMANCER_CHESTPLATE.get()),
-                        Ingredient.of(CCItems.VOLTITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.LIGHTNING_KNIGHT_CHESTPLATE.get()
-                )
-                .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "lightning_knight_chestplate_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
-                        Ingredient.of(ItemRegistry.ELECTROMANCER_LEGGINGS.get()),
-                        Ingredient.of(CCItems.VOLTITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.LIGHTNING_KNIGHT_LEGGINGS.get()
-                )
-                .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "lightning_knight_leggings_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.LIGHTNING_RUNE.get()),
-                        Ingredient.of(ItemRegistry.ELECTROMANCER_BOOTS.get()),
-                        Ingredient.of(CCItems.VOLTITE_SHARD.get()),
-                        RecipeCategory.COMBAT,
-                        CCItems.LIGHTNING_KNIGHT_BOOTS.get()
-                )
-                .unlocks("has_lightning_rune", has(ItemRegistry.NATURE_RUNE.get()))
-                .save(pRecipeOutput, "lightning_knight_boots_smithing");
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, CCItems.VOLTITE_SHARD.get(), 1)
-                .requires(ItemRegistry.LIGHTNING_BOTTLE.get())
-                .requires(ItemRegistry.MITHRIL_INGOT.get())
-                .requires(Items.AMETHYST_SHARD)
-                .unlockedBy("has_lightning_rune", has(ItemRegistry.LIGHTNING_RUNE.get()))
-                .save(pRecipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CCItems.EVOCATION_TWINBLADE.get())
-                .pattern(" SE")
-                .pattern(" N ")
-                .pattern("ES ")
-                .define('S', Items.TOTEM_OF_UNDYING)
-                .define('E', Items.EMERALD)
-                .define('N', Items.STICK)
-                .unlockedBy("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput);
-
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
-                        Ingredient.of(ItemRegistry.ARCHEVOKER_HELMET.get()),
-                        Ingredient.of(Items.TOTEM_OF_UNDYING),
-                        RecipeCategory.COMBAT,
-                        CCItems.EVOCATION_KNIGHT_HELMET.get()
-                )
-                .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput, "evocation_knight_helmet_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
-                        Ingredient.of(ItemRegistry.ARCHEVOKER_CHESTPLATE.get()),
-                        Ingredient.of(Items.TOTEM_OF_UNDYING),
-                        RecipeCategory.COMBAT,
-                        CCItems.EVOCATION_KNIGHT_CHESTPLATE.get()
-                )
-                .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput, "evocation_knight_chestplate_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
-                        Ingredient.of(ItemRegistry.ARCHEVOKER_LEGGINGS.get()),
-                        Ingredient.of(Items.TOTEM_OF_UNDYING),
-                        RecipeCategory.COMBAT,
-                        CCItems.EVOCATION_KNIGHT_LEGGINGS.get()
-                )
-                .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput, "evocation_knight_leggings_smithing");
-        SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(ItemRegistry.EVOCATION_RUNE.get()),
-                        Ingredient.of(ItemRegistry.ARCHEVOKER_BOOTS.get()),
-                        Ingredient.of(Items.TOTEM_OF_UNDYING),
-                        RecipeCategory.COMBAT,
-                        CCItems.EVOCATION_KNIGHT_BOOTS.get()
-                )
-                .unlocks("has_evocation_rune", has(ItemRegistry.EVOCATION_RUNE.get()))
-                .save(pRecipeOutput, "evocation_knight_boots_smithing");
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_SLAB.get(), CCBlocks.HOLY_MARBLE);
-        stairBuilder(CCBlocks.HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.HOLY_MARBLE.get())).group("holy_marble")
-                .unlockedBy("has_holy_marble", has(CCBlocks.HOLY_MARBLE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_WALL.get(), CCBlocks.HOLY_MARBLE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get(), CCBlocks.HOLY_MARBLE_BRICKS);
-        stairBuilder(CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.HOLY_MARBLE_BRICKS.get())).group("holy_marble_bricks")
-                .unlockedBy("has_holy_marble_bricks", has(CCBlocks.HOLY_MARBLE_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_WALL.get(), CCBlocks.HOLY_MARBLE_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get(), CCBlocks.CHISELED_HOLY_MARBLE);
-        stairBuilder(CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_HOLY_MARBLE.get())).group("chiseled_holy_marble")
-                .unlockedBy("has_chiseled_holy_marble", has(CCBlocks.CHISELED_HOLY_MARBLE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_WALL.get(), CCBlocks.CHISELED_HOLY_MARBLE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get(), CCBlocks.CRACKED_HOLY_MARBLE);
-        stairBuilder(CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.CRACKED_HOLY_MARBLE.get())).group("cracked_holy_marble")
-                .unlockedBy("has_cracked_holy_marble", has(CCBlocks.CRACKED_HOLY_MARBLE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_WALL.get(), CCBlocks.CRACKED_HOLY_MARBLE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get(), CCBlocks.POLISHED_HOLY_MARBLE);
-        stairBuilder(CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_HOLY_MARBLE.get())).group("polished_holy_marble")
-                .unlockedBy("has_polished_holy_marble", has(CCBlocks.POLISHED_HOLY_MARBLE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_WALL.get(), CCBlocks.POLISHED_HOLY_MARBLE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_SLAB.get(), CCBlocks.GOLDSTONE);
-        stairBuilder(CCBlocks.GOLDSTONE_STAIRS.get(), Ingredient.of(CCBlocks.GOLDSTONE.get())).group("goldstone")
-                .unlockedBy("has_goldstone", has(CCBlocks.GOLDSTONE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_WALL.get(), CCBlocks.GOLDSTONE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_SLAB.get(), CCBlocks.PUMICE);
-        stairBuilder(CCBlocks.PUMICE_STAIRS.get(), Ingredient.of(CCBlocks.PUMICE.get())).group("pumice")
-                .unlockedBy("has_pumice", has(CCBlocks.PUMICE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_WALL.get(), CCBlocks.PUMICE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_SLAB.get(), CCBlocks.PUMICE_BRICKS);
-        stairBuilder(CCBlocks.PUMICE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.PUMICE_BRICKS.get())).group("pumice_bricks")
-                .unlockedBy("has_pumice_bricks", has(CCBlocks.PUMICE_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_WALL.get(), CCBlocks.PUMICE_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CHISELED_PUMICE);
-        stairBuilder(CCBlocks.CHISELED_PUMICE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_PUMICE.get())).group("chiseled_pumice")
-                .unlockedBy("has_chiseled_pumice", has(CCBlocks.CHISELED_PUMICE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_WALL.get(), CCBlocks.CHISELED_PUMICE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_SLAB.get(), CCBlocks.CRACKED_PUMICE);
-        stairBuilder(CCBlocks.CRACKED_PUMICE_STAIRS.get(), Ingredient.of(CCBlocks.CRACKED_PUMICE.get())).group("cracked_pumice")
-                .unlockedBy("has_cracked_pumice", has(CCBlocks.CRACKED_PUMICE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_WALL.get(), CCBlocks.CRACKED_PUMICE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_SLAB.get(), CCBlocks.POLISHED_PUMICE);
-        stairBuilder(CCBlocks.POLISHED_PUMICE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_PUMICE.get())).group("polished_pumice")
-                .unlockedBy("has_polished_pumice", has(CCBlocks.POLISHED_PUMICE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_WALL.get(), CCBlocks.POLISHED_PUMICE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE);
-        stairBuilder(CCBlocks.PYRITE_STAIRS.get(), Ingredient.of(CCBlocks.PYRITE.get())).group("pirite_block")
-                .unlockedBy("has_pirite_block", has(CCBlocks.PYRITE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE.get());
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.HOLY_MARBLE.get())
-                .unlockedBy("has_holy_marble", has(CCBlocks.HOLY_MARBLE.get()))
-                .save(pRecipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.PUMICE.get())
-                .unlockedBy("has_pumice", has(CCBlocks.PUMICE.get()))
-                .save(pRecipeOutput);
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_STAIRS.get(), CCBlocks.CRUSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_SLAB.get(), CCBlocks.CRUSTONE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_WALL.get(), CCBlocks.CRUSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS.get(), CCBlocks.CRUSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE.get(), CCBlocks.CRUSTONE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS_STAIRS.get(), CCBlocks.CRUSTONE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS_SLAB.get(), CCBlocks.CRUSTONE_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS_WALL.get(), CCBlocks.CRUSTONE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS.get(), CCBlocks.CRUSTONE_BRICKS.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE_STAIRS.get(), CCBlocks.POLISHED_CRUSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE_SLAB.get(), CCBlocks.POLISHED_CRUSTONE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE_WALL.get(), CCBlocks.POLISHED_CRUSTONE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE.get(), CCBlocks.POLISHED_CRUSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE_STAIRS.get(), CCBlocks.CHISELED_CRUSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE_SLAB.get(), CCBlocks.CHISELED_CRUSTONE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE_WALL.get(), CCBlocks.CHISELED_CRUSTONE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_STAIRS.get(), CCBlocks.HOLY_MARBLE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_SLAB.get(), CCBlocks.HOLY_MARBLE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_WALL.get(), CCBlocks.HOLY_MARBLE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS.get(), CCBlocks.HOLY_MARBLE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE.get(), CCBlocks.HOLY_MARBLE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE.get(), CCBlocks.HOLY_MARBLE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get(), CCBlocks.HOLY_MARBLE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get(), CCBlocks.HOLY_MARBLE_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_BRICKS_WALL.get(), CCBlocks.HOLY_MARBLE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE.get(), CCBlocks.HOLY_MARBLE_BRICKS.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get(), CCBlocks.CRACKED_HOLY_MARBLE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get(), CCBlocks.CRACKED_HOLY_MARBLE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_HOLY_MARBLE_WALL.get(), CCBlocks.CRACKED_HOLY_MARBLE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get(), CCBlocks.POLISHED_HOLY_MARBLE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get(), CCBlocks.POLISHED_HOLY_MARBLE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_HOLY_MARBLE_WALL.get(), CCBlocks.POLISHED_HOLY_MARBLE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get(), CCBlocks.CHISELED_HOLY_MARBLE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get(), CCBlocks.CHISELED_HOLY_MARBLE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_HOLY_MARBLE_WALL.get(), CCBlocks.CHISELED_HOLY_MARBLE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_PILLAR.get(), CCBlocks.HOLY_MARBLE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_STAIRS.get(), CCBlocks.GOLDSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_SLAB.get(), CCBlocks.GOLDSTONE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.GOLDSTONE_WALL.get(), CCBlocks.GOLDSTONE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_STAIRS.get(), CCBlocks.PUMICE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_SLAB.get(), CCBlocks.PUMICE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_WALL.get(), CCBlocks.PUMICE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS.get(), CCBlocks.PUMICE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE.get(), CCBlocks.PUMICE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE.get(), CCBlocks.PUMICE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_STAIRS.get(), CCBlocks.PUMICE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_SLAB.get(), CCBlocks.PUMICE_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PUMICE_BRICKS_WALL.get(), CCBlocks.PUMICE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE.get(), CCBlocks.PUMICE_BRICKS.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_STAIRS.get(), CCBlocks.CRACKED_PUMICE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_SLAB.get(), CCBlocks.CRACKED_PUMICE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_PUMICE_WALL.get(), CCBlocks.CRACKED_PUMICE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_STAIRS.get(), CCBlocks.POLISHED_PUMICE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_SLAB.get(), CCBlocks.POLISHED_PUMICE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_PUMICE_WALL.get(), CCBlocks.POLISHED_PUMICE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_STAIRS.get(), CCBlocks.CHISELED_PUMICE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CHISELED_PUMICE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_PUMICE_WALL.get(), CCBlocks.CHISELED_PUMICE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_STAIRS.get(), CCBlocks.PYRITE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_SLAB.get(), CCBlocks.PYRITE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PYRITE_WALL.get(), CCBlocks.PYRITE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_SLAB.get(), CCBlocks.THUNDERSTONE);
-        stairBuilder(CCBlocks.THUNDERSTONE_STAIRS.get(), Ingredient.of(CCBlocks.THUNDERSTONE.get())).group("thunderstone").unlockedBy("has_thunderstone", has(CCBlocks.THUNDERSTONE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_WALL.get(), CCBlocks.THUNDERSTONE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_STAIRS.get(), CCBlocks.THUNDERSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_SLAB.get(), CCBlocks.THUNDERSTONE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_WALL.get(), CCBlocks.THUNDERSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS.get(), CCBlocks.THUNDERSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE.get(), CCBlocks.THUNDERSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.THUNDERSTONE.get())
-                .unlockedBy("has_thunderstone", has(CCBlocks.THUNDERSTONE.get()))
-                .save(pRecipeOutput);
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_SLAB.get(), CCBlocks.THUNDERSTONE_BRICKS);
-        stairBuilder(CCBlocks.THUNDERSTONE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.THUNDERSTONE_BRICKS.get())).group("thunderstone_bricks").unlockedBy("has_thunderstone_bricks", has(CCBlocks.THUNDERSTONE_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_WALL.get(), CCBlocks.THUNDERSTONE_BRICKS.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_STAIRS.get(), CCBlocks.THUNDERSTONE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_SLAB.get(), CCBlocks.THUNDERSTONE_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS_WALL.get(), CCBlocks.THUNDERSTONE_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_SLAB.get(), CCBlocks.POLISHED_THUNDERSTONE);
-        stairBuilder(CCBlocks.POLISHED_THUNDERSTONE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_THUNDERSTONE.get())).group("polished_thunderstone").unlockedBy("has_polished_thunderstone", has(CCBlocks.POLISHED_THUNDERSTONE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_WALL.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_STAIRS.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_SLAB.get(), CCBlocks.POLISHED_THUNDERSTONE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE_WALL.get(), CCBlocks.POLISHED_THUNDERSTONE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_SLAB.get(), CCBlocks.CHISELED_THUNDERSTONE);
-        stairBuilder(CCBlocks.CHISELED_THUNDERSTONE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_THUNDERSTONE.get())).group("chiseled_thunderstone").unlockedBy("has_chiseled_thunderstone", has(CCBlocks.CHISELED_THUNDERSTONE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_WALL.get(), CCBlocks.CHISELED_THUNDERSTONE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_STAIRS.get(), CCBlocks.CHISELED_THUNDERSTONE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_SLAB.get(), CCBlocks.CHISELED_THUNDERSTONE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE_WALL.get(), CCBlocks.CHISELED_THUNDERSTONE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_SLAB.get(), CCBlocks.BISMITE);
-        stairBuilder(CCBlocks.BISMITE_STAIRS.get(), Ingredient.of(CCBlocks.BISMITE.get())).group("bismite").unlockedBy("has_bismite", has(CCBlocks.BISMITE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_WALL.get(), CCBlocks.BISMITE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_STAIRS.get(), CCBlocks.BISMITE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_SLAB.get(), CCBlocks.BISMITE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_WALL.get(), CCBlocks.BISMITE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS.get(), CCBlocks.BISMITE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE.get(), CCBlocks.BISMITE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE.get(), CCBlocks.POLISHED_BISMITE.get());
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.BISMITE.get())
-                .unlockedBy("has_bismite", has(CCBlocks.BISMITE.get()))
-                .save(pRecipeOutput);
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_SLAB.get(), CCBlocks.BISMITE_BRICKS);
-        stairBuilder(CCBlocks.BISMITE_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.BISMITE_BRICKS.get())).group("bismite_bricks").unlockedBy("has_bismite_bricks", has(CCBlocks.BISMITE_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_WALL.get(), CCBlocks.BISMITE_BRICKS.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_STAIRS.get(), CCBlocks.BISMITE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_SLAB.get(), CCBlocks.BISMITE_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS_WALL.get(), CCBlocks.BISMITE_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE.get(), CCBlocks.BISMITE_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_SLAB.get(), CCBlocks.POLISHED_BISMITE);
-        stairBuilder(CCBlocks.POLISHED_BISMITE_STAIRS.get(), Ingredient.of(CCBlocks.POLISHED_BISMITE.get())).group("polished_bismite").unlockedBy("has_polished_bismite", has(CCBlocks.POLISHED_BISMITE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_WALL.get(), CCBlocks.POLISHED_BISMITE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_STAIRS.get(), CCBlocks.POLISHED_BISMITE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_SLAB.get(), CCBlocks.POLISHED_BISMITE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE_WALL.get(), CCBlocks.POLISHED_BISMITE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_SLAB.get(), CCBlocks.CHISELED_BISMITE);
-        stairBuilder(CCBlocks.CHISELED_BISMITE_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_BISMITE.get())).group("chiseled_bismite").unlockedBy("has_chiseled_bismite", has(CCBlocks.CHISELED_BISMITE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_WALL.get(), CCBlocks.CHISELED_BISMITE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_STAIRS.get(), CCBlocks.CHISELED_BISMITE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_SLAB.get(), CCBlocks.CHISELED_BISMITE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE_WALL.get(), CCBlocks.CHISELED_BISMITE.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_SLAB.get(), CCBlocks.CRACKED_BISMITE);
-        stairBuilder(CCBlocks.CRACKED_BISMITE_STAIRS.get(), Ingredient.of(CCBlocks.CRACKED_BISMITE.get())).group("cracked_bismite").unlockedBy("has_cracked_bismite", has(CCBlocks.CRACKED_BISMITE.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_WALL.get(), CCBlocks.CRACKED_BISMITE.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_STAIRS.get(), CCBlocks.CRACKED_BISMITE.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_SLAB.get(), CCBlocks.CRACKED_BISMITE.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRACKED_BISMITE_WALL.get(), CCBlocks.CRACKED_BISMITE.get());
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.BISMUTH_CRYSTAL.get())
-                .unlockedBy("has_bismuth_crystal", has(CCBlocks.BISMUTH_CRYSTAL.get()))
-                .save(pRecipeOutput);
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_SLAB.get(), CCBlocks.BISMUTH_BRICKS);
-        stairBuilder(CCBlocks.BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.BISMUTH_BRICKS.get())).group("bismuth_bricks").unlockedBy("has_bismuth_bricks", has(CCBlocks.BISMUTH_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_WALL.get(), CCBlocks.BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_STAIRS.get(), CCBlocks.BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_SLAB.get(), CCBlocks.BISMUTH_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMUTH_BRICKS_WALL.get(), CCBlocks.BISMUTH_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get(), CCBlocks.PURPLE_BISMUTH_BRICKS);
-        stairBuilder(CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.PURPLE_BISMUTH_BRICKS.get())).group("purple_bismuth_bricks").unlockedBy("has_purple_bismuth_bricks", has(CCBlocks.PURPLE_BISMUTH_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_WALL.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS_WALL.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS);
-        stairBuilder(CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.RAINBOW_BISMUTH_BRICKS.get())).group("rainbow_bismuth_bricks").unlockedBy("has_rainbow_bismuth_bricks", has(CCBlocks.RAINBOW_BISMUTH_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB.get(), CCBlocks.VIOLET_BISMUTH_BRICKS);
-        stairBuilder(CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.VIOLET_BISMUTH_BRICKS.get())).group("violet_bismuth_bricks").unlockedBy("has_violet_bismuth_bricks", has(CCBlocks.VIOLET_BISMUTH_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_WALL.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS_WALL.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.YELLOW_BISMUTH_BRICKS);
-        stairBuilder(CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS.get(), Ingredient.of(CCBlocks.YELLOW_BISMUTH_BRICKS.get())).group("yellow_bismuth_bricks").unlockedBy("has_yellow_bismuth_bricks", has(CCBlocks.YELLOW_BISMUTH_BRICKS.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_SLAB.get(), CCBlocks.CHISELED_BISMUTH);
-        stairBuilder(CCBlocks.CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.CHISELED_BISMUTH.get())).group("chiseled_bismuth").unlockedBy("has_chiseled_bismuth", has(CCBlocks.CHISELED_BISMUTH.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_WALL.get(), CCBlocks.CHISELED_BISMUTH.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_STAIRS.get(), CCBlocks.CHISELED_BISMUTH.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_SLAB.get(), CCBlocks.CHISELED_BISMUTH.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH_WALL.get(), CCBlocks.CHISELED_BISMUTH.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_SLAB.get(), CCBlocks.PURPLE_CHISELED_BISMUTH);
-        stairBuilder(CCBlocks.PURPLE_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.PURPLE_CHISELED_BISMUTH.get())).group("purple_chiseled_bismuth").unlockedBy("has_purple_chiseled_bismuth", has(CCBlocks.PURPLE_CHISELED_BISMUTH.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_WALL.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_SLAB.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH_WALL.get(), CCBlocks.PURPLE_CHISELED_BISMUTH.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_SLAB.get(), CCBlocks.VIOLET_CHISELED_BISMUTH);
-        stairBuilder(CCBlocks.VIOLET_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.VIOLET_CHISELED_BISMUTH.get())).group("violet_chiseled_bismuth").unlockedBy("has_violet_chiseled_bismuth", has(CCBlocks.VIOLET_CHISELED_BISMUTH.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_WALL.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_SLAB.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH_WALL.get(), CCBlocks.VIOLET_CHISELED_BISMUTH.get());
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_SLAB.get(), CCBlocks.YELLOW_CHISELED_BISMUTH);
-        stairBuilder(CCBlocks.YELLOW_CHISELED_BISMUTH_STAIRS.get(), Ingredient.of(CCBlocks.YELLOW_CHISELED_BISMUTH.get())).group("yellow_chiseled_bismuth").unlockedBy("has_yellow_chiseled_bismuth", has(CCBlocks.YELLOW_CHISELED_BISMUTH.get())).save(pRecipeOutput);
-        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_WALL.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_STAIRS.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_SLAB.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get(), 2);
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH_WALL.get(), CCBlocks.YELLOW_CHISELED_BISMUTH.get());
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_BISMUTH_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.PURPLE_BISMUTH_CRYSTAL.get())
-                .unlockedBy("has_purple_bismuth_crystal", has(CCBlocks.PURPLE_BISMUTH_CRYSTAL.get()))
-                .save(pRecipeOutput, "purple_bismuth_bricks_from_crystal");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.RAINBOW_BISMUTH_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get())
-                .unlockedBy("has_rainbow_bismuth_crystal", has(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get()))
-                .save(pRecipeOutput, "rainbow_bismuth_bricks_from_crystal");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_BISMUTH_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.VIOLET_BISMUTH_CRYSTAL.get())
-                .unlockedBy("has_violet_bismuth_crystal", has(CCBlocks.VIOLET_BISMUTH_CRYSTAL.get()))
-                .save(pRecipeOutput, "violet_bismuth_bricks_from_crystal");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_BISMUTH_BRICKS.get(), 4)
-                .pattern("BB")
-                .pattern("BB")
-                .define('B', CCBlocks.YELLOW_BISMUTH_CRYSTAL.get())
-                .unlockedBy("has_yellow_bismuth_crystal", has(CCBlocks.YELLOW_BISMUTH_CRYSTAL.get()))
-                .save(pRecipeOutput, "yellow_bismuth_bricks_from_crystal");
-
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH.get(), CCBlocks.BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMUTH.get(), CCBlocks.BISMUTH_CRYSTAL.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.PURPLE_CHISELED_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.VIOLET_CHISELED_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.YELLOW_CHISELED_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH_CRYSTAL.get());
-
+                        result.get())
+                .unlocks("has_" + name + "_rune", has(rune.get()))
+                .save(output, ResourceLocation.fromNamespaceAndPath("crystal_chronicles",
+                        resultName + "_smithing"));
+    }
+
+    private void registerShardRecipe(RecipeOutput output, Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> core, Supplier<? extends ItemLike> rune) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result.get(), 1)
+                .requires(core.get()).requires(ItemRegistry.MITHRIL_INGOT.get()).requires(Items.AMETHYST_SHARD)
+                .unlockedBy("has_rune", has(rune.get())).save(output);
     }
 }

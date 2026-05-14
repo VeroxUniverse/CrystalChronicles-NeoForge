@@ -21,7 +21,7 @@ public class EnderStaffItemRenderer extends AzItemRenderer {
         super(
                 AzItemRendererConfig.builder(GEO, TEX)
                         .addRenderLayer(new AzAutoGlowingLayer<>())
-                        .setAnimatorProvider(EnderStaffItemAnimation::new)
+                        //.setAnimatorProvider(EnderStaffItemAnimation::new)
                         .build()
         );
     }

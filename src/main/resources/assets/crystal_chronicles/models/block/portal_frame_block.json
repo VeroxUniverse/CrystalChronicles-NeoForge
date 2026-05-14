@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "crystal_chronicles:block/portal_frame_block",
+    "down": "crystal_chronicles:block/portal_frame_block",
+    "north": "crystal_chronicles:block/portal_frame_block_front",
+    "south": "crystal_chronicles:block/portal_frame_block",
+    "east": "crystal_chronicles:block/polished_stone_bricks",
+    "west": "crystal_chronicles:block/polished_stone_bricks",
+    "particle": "crystal_chronicles:block/portal_frame_block"
+  }
+}

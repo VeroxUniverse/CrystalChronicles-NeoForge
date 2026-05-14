@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:violet_bismuth_from_violet_bismuth_crystal_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_violet_bismuth_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crystal_chronicles:violet_bismuth_crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_violet_bismuth_crystal"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:violet_bismuth_from_violet_bismuth_crystal_stonecutting"
+    ]
+  }
+}

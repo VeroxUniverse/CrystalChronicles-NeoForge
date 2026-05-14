@@ -1,0 +1,19 @@
+{
+  "loader": "fusion:model",
+  "type": "fusion:connecting",
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "particle": "crystal_chronicles:block/bismuth/blue_bismuth_side",
+    "bottom": "crystal_chronicles:block/bismuth/blue_bismuth_top",
+    "top": "crystal_chronicles:block/bismuth/blue_bismuth_top",
+    "side": "crystal_chronicles:block/bismuth/blue_bismuth_side"
+  },
+  "connections": {
+    "top": {
+      "type": "fusion:is_same_block"
+    },
+    "bottom": {
+      "type": "fusion:is_same_block"
+    }
+  }
+}

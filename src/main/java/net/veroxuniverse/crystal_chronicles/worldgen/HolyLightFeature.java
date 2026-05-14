@@ -23,8 +23,6 @@ public class HolyLightFeature extends Feature<NoneFeatureConfiguration> {
         BlockState holyLight = CCBlocks.HOLY_LIGHT_BLOCK.get().defaultBlockState();
         level.setBlock(origin, holyLight, 3);
 
-        level.scheduleTick(origin, CCBlocks.HOLY_LIGHT_BLOCK.get(), 5);
-
         return true;
     }
 }

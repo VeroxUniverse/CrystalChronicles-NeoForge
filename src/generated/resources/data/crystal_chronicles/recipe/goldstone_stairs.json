@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "goldstone",
+  "group": "block.crystal_chronicles.goldstone",
   "key": {
     "#": {
       "item": "crystal_chronicles:goldstone"

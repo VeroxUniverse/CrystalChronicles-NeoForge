@@ -1,0 +1,68 @@
+{
+  "variants": {
+    "formed=false,facing=north": { "model": "crystal_chronicles:block/portal_frame_block" },
+    "formed=false,facing=south": { "model": "crystal_chronicles:block/portal_frame_block", "y": 180 },
+    "formed=false,facing=east":  { "model": "crystal_chronicles:block/portal_frame_block", "y": 90 },
+    "formed=false,facing=west":  { "model": "crystal_chronicles:block/portal_frame_block", "y": 270 },
+
+    "formed=true,facing=north,part=bottom_left": { "model": "crystal_chronicles:block/portal_frame_bottom_left" },
+    "formed=true,facing=south,part=bottom_left": { "model": "crystal_chronicles:block/portal_frame_bottom_left", "y": 180 },
+    "formed=true,facing=east,part=bottom_left":  { "model": "crystal_chronicles:block/portal_frame_bottom_left", "y": 90 },
+    "formed=true,facing=west,part=bottom_left":  { "model": "crystal_chronicles:block/portal_frame_bottom_left", "y": 270 },
+
+    "formed=true,facing=north,part=bottom_mid_left": { "model": "crystal_chronicles:block/portal_frame_bottom_mid_left" },
+    "formed=true,facing=south,part=bottom_mid_left": { "model": "crystal_chronicles:block/portal_frame_bottom_mid_left", "y": 180 },
+    "formed=true,facing=east,part=bottom_mid_left":  { "model": "crystal_chronicles:block/portal_frame_bottom_mid_left", "y": 90 },
+    "formed=true,facing=west,part=bottom_mid_left":  { "model": "crystal_chronicles:block/portal_frame_bottom_mid_left", "y": 270 },
+
+    "formed=true,facing=north,part=bottom_mid_right": { "model": "crystal_chronicles:block/portal_frame_bottom_mid_right" },
+    "formed=true,facing=south,part=bottom_mid_right": { "model": "crystal_chronicles:block/portal_frame_bottom_mid_right", "y": 180 },
+    "formed=true,facing=east,part=bottom_mid_right":  { "model": "crystal_chronicles:block/portal_frame_bottom_mid_right", "y": 90 },
+    "formed=true,facing=west,part=bottom_mid_right":  { "model": "crystal_chronicles:block/portal_frame_bottom_mid_right", "y": 270 },
+
+    "formed=true,facing=north,part=bottom_right": { "model": "crystal_chronicles:block/portal_frame_bottom_right" },
+    "formed=true,facing=south,part=bottom_right": { "model": "crystal_chronicles:block/portal_frame_bottom_right", "y": 180 },
+    "formed=true,facing=east,part=bottom_right":  { "model": "crystal_chronicles:block/portal_frame_bottom_right", "y": 90 },
+    "formed=true,facing=west,part=bottom_right":  { "model": "crystal_chronicles:block/portal_frame_bottom_right", "y": 270 },
+
+    "formed=true,facing=north,part=mid_low_left": { "model": "crystal_chronicles:block/portal_frame_mid_low_left" },
+    "formed=true,facing=south,part=mid_low_left": { "model": "crystal_chronicles:block/portal_frame_mid_low_left", "y": 180 },
+    "formed=true,facing=east,part=mid_low_left":  { "model": "crystal_chronicles:block/portal_frame_mid_low_left", "y": 90 },
+    "formed=true,facing=west,part=mid_low_left":  { "model": "crystal_chronicles:block/portal_frame_mid_low_left", "y": 270 },
+
+    "formed=true,facing=north,part=mid_low_right": { "model": "crystal_chronicles:block/portal_frame_mid_low_right" },
+    "formed=true,facing=south,part=mid_low_right": { "model": "crystal_chronicles:block/portal_frame_mid_low_right", "y": 180 },
+    "formed=true,facing=east,part=mid_low_right":  { "model": "crystal_chronicles:block/portal_frame_mid_low_right", "y": 90 },
+    "formed=true,facing=west,part=mid_low_right":  { "model": "crystal_chronicles:block/portal_frame_mid_low_right", "y": 270 },
+
+    "formed=true,facing=north,part=mid_high_left": { "model": "crystal_chronicles:block/portal_frame_mid_high_left" },
+    "formed=true,facing=south,part=mid_high_left": { "model": "crystal_chronicles:block/portal_frame_mid_high_left", "y": 180 },
+    "formed=true,facing=east,part=mid_high_left":  { "model": "crystal_chronicles:block/portal_frame_mid_high_left", "y": 90 },
+    "formed=true,facing=west,part=mid_high_left":  { "model": "crystal_chronicles:block/portal_frame_mid_high_left", "y": 270 },
+
+    "formed=true,facing=north,part=mid_high_right": { "model": "crystal_chronicles:block/portal_frame_mid_high_right" },
+    "formed=true,facing=south,part=mid_high_right": { "model": "crystal_chronicles:block/portal_frame_mid_high_right", "y": 180 },
+    "formed=true,facing=east,part=mid_high_right":  { "model": "crystal_chronicles:block/portal_frame_mid_high_right", "y": 90 },
+    "formed=true,facing=west,part=mid_high_right":  { "model": "crystal_chronicles:block/portal_frame_mid_high_right", "y": 270 },
+
+    "formed=true,facing=north,part=top_left": { "model": "crystal_chronicles:block/portal_frame_top_left" },
+    "formed=true,facing=south,part=top_left": { "model": "crystal_chronicles:block/portal_frame_top_left", "y": 180 },
+    "formed=true,facing=east,part=top_left":  { "model": "crystal_chronicles:block/portal_frame_top_left", "y": 90 },
+    "formed=true,facing=west,part=top_left":  { "model": "crystal_chronicles:block/portal_frame_top_left", "y": 270 },
+
+    "formed=true,facing=north,part=top_mid_left": { "model": "crystal_chronicles:block/portal_frame_top_mid_left" },
+    "formed=true,facing=south,part=top_mid_left": { "model": "crystal_chronicles:block/portal_frame_top_mid_left", "y": 180 },
+    "formed=true,facing=east,part=top_mid_left":  { "model": "crystal_chronicles:block/portal_frame_top_mid_left", "y": 90 },
+    "formed=true,facing=west,part=top_mid_left":  { "model": "crystal_chronicles:block/portal_frame_top_mid_left", "y": 270 },
+
+    "formed=true,facing=north,part=top_mid_right": { "model": "crystal_chronicles:block/portal_frame_top_mid_right" },
+    "formed=true,facing=south,part=top_mid_right": { "model": "crystal_chronicles:block/portal_frame_top_mid_right", "y": 180 },
+    "formed=true,facing=east,part=top_mid_right":  { "model": "crystal_chronicles:block/portal_frame_top_mid_right", "y": 90 },
+    "formed=true,facing=west,part=top_mid_right":  { "model": "crystal_chronicles:block/portal_frame_top_mid_right", "y": 270 },
+
+    "formed=true,facing=north,part=top_right": { "model": "crystal_chronicles:block/portal_frame_top_right" },
+    "formed=true,facing=south,part=top_right": { "model": "crystal_chronicles:block/portal_frame_top_right", "y": 180 },
+    "formed=true,facing=east,part=top_right":  { "model": "crystal_chronicles:block/portal_frame_top_right", "y": 90 },
+    "formed=true,facing=west,part=top_right":  { "model": "crystal_chronicles:block/portal_frame_top_right", "y": 270 }
+  }
+}

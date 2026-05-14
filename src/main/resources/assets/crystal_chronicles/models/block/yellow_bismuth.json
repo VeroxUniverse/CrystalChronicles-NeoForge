@@ -1,0 +1,16 @@
+{
+  "loader": "fusion:model",
+  "type": "fusion:connecting",
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "particle": "crystal_chronicles:block/bismuth/yellow_bismuth_side",
+    "end": "crystal_chronicles:block/bismuth/yellow_bismuth_top",
+    "side": "crystal_chronicles:block/bismuth/yellow_bismuth_side"
+  },
+  "connections": [
+    {
+      "type": "fusion:is_same_block",
+      "textures": [ "end", "side" ]
+    }
+  ]
+}

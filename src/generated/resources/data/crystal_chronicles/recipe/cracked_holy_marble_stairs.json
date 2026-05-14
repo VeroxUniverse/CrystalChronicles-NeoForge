@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "cracked_holy_marble",
+  "group": "block.crystal_chronicles.cracked_holy_marble",
   "key": {
     "#": {
       "item": "crystal_chronicles:cracked_holy_marble"

@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "bronchus",
 	"textures": {
 		"0": "crystal_chronicles:block/bronchus",
 		"1": "crystal_chronicles:block/bronchus_top",

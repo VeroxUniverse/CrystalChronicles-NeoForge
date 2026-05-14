@@ -1,4 +1,4 @@
-/*package net.veroxuniverse.crystal_chronicles.entity.client;
+package net.veroxuniverse.crystal_chronicles.entity.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -15,7 +15,7 @@ public class DimensionalRiftEntityRenderer extends AzEntityRenderer<DimensionalR
 
     private static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath(
             CrystalChronicles.MODID,
-            "geo/dimensionalrift.geo.json"
+            "geo/entity/dimensionalrift.geo.json"
     );
 
     private static final ResourceLocation TEX = ResourceLocation.fromNamespaceAndPath(
@@ -23,21 +23,19 @@ public class DimensionalRiftEntityRenderer extends AzEntityRenderer<DimensionalR
             "textures/entity/dimensionalrift.png"
     );
 
-
     @Override
     public void render(DimensionalRiftEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-
         poseStack.pushPose();
+
+        int lightOverride = 15728880;
+
         Direction.Axis axis = entity.getPortalAxis();
-        poseStack.scale(2.0f, 2.0f, 2.0f);
-
         if (axis == Direction.Axis.X) {
-
             poseStack.mulPose(Axis.YP.rotationDegrees(90));
-
         }
 
-        super.render(entity, entityYaw, partialTicks, poseStack, bufferSource, packedLight);
+        super.render(entity, entityYaw, partialTicks, poseStack, bufferSource, lightOverride);
+
         poseStack.popPose();
     }
 
@@ -50,7 +48,4 @@ public class DimensionalRiftEntityRenderer extends AzEntityRenderer<DimensionalR
                 context
         );
     }
-
 }
-
- */

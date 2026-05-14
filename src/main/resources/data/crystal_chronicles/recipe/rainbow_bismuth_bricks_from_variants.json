@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "crystal_chronicles:blue_bismuth_bricks"
+    },
+    "P": {
+      "item": "crystal_chronicles:purple_bismuth_bricks"
+    },
+    "V": {
+      "item": "crystal_chronicles:violet_bismuth_bricks"
+    },
+    "Y": {
+      "item": "crystal_chronicles:yellow_bismuth_bricks"
+    }
+  },
+  "pattern": [
+    "XP",
+    "YV"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:rainbow_bismuth_bricks"
+  }
+}

@@ -1,4 +1,4 @@
-/*package net.veroxuniverse.crystal_chronicles.entity.client;
+package net.veroxuniverse.crystal_chronicles.entity.client;
 
 import mod.azure.azurelib.common.animation.controller.AzAnimationController;
 import mod.azure.azurelib.common.animation.controller.AzAnimationControllerContainer;
@@ -28,5 +28,3 @@ public class DimensionalRiftEntityAnimator extends AzEntityAnimator<DimensionalR
         return ANIMATIONS;
     }
 }
-
- */

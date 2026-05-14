@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "chiseled_thunderstone",
+  "group": "block.crystal_chronicles.chiseled_thunderstone",
   "key": {
     "#": {
       "item": "crystal_chronicles:chiseled_thunderstone"

@@ -1,6 +1,5 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "axon",
 	"render_type": "cutout",
 	"render_type": "translucent",
 	"textures": {

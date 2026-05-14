@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "bottom": "crystal_chronicles:block/yellow_bismuth_block",
-    "front": "crystal_chronicles:block/yellow_bismuth_block",
-    "side": "crystal_chronicles:block/yellow_bismuth_block",
-    "top": "crystal_chronicles:block/yellow_bismuth_block"
-  }
-}

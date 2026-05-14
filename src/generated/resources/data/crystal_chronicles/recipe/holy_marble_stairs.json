@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "holy_marble",
+  "group": "block.crystal_chronicles.holy_marble",
   "key": {
     "#": {
       "item": "crystal_chronicles:holy_marble"

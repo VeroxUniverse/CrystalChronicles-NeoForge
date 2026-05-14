@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_goldstone": {
+    "has_block.crystal_chronicles.goldstone": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_goldstone"
+      "has_block.crystal_chronicles.goldstone"
     ]
   ],
   "rewards": {

@@ -1,10 +1,11 @@
-/*package net.veroxuniverse.crystal_chronicles.entity;
+package net.veroxuniverse.crystal_chronicles.entity;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.block.HolyLightBlockEntity;
 import net.veroxuniverse.crystal_chronicles.block.PortalFrameBlockEntity;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 
@@ -21,9 +22,13 @@ public class CCBlockEntities {
                                     CCBlocks.PORTAL_FRAME_BLOCK.get())
                             .build(null));
 
+    public static final Supplier<BlockEntityType<HolyLightBlockEntity>> HOLY_LIGHT_BE =
+            BLOCK_ENTITIES.register("holy_light_block_entity",
+                    () -> BlockEntityType.Builder.of(HolyLightBlockEntity::new,
+                                    CCBlocks.HOLY_LIGHT_BLOCK.get())
+                            .build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }
 }
-
- */

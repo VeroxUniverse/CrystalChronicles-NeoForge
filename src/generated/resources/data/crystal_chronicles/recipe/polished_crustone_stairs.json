@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "polished_crustone",
+  "group": "block.crystal_chronicles.polished_crustone",
   "key": {
     "#": {
       "item": "crystal_chronicles:polished_crustone"

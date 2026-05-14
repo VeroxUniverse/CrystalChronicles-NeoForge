@@ -1,13 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "crystal_chronicles:violet_bismuth_bricks_stairs"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_violet_bismuth_bricks": {
+    "has_block.crystal_chronicles.violet_bismuth_bricks": {
       "conditions": {
         "items": [
           {
@@ -16,12 +10,18 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crystal_chronicles:violet_bismuth_bricks_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_violet_bismuth_bricks"
+      "has_block.crystal_chronicles.violet_bismuth_bricks"
     ]
   ],
   "rewards": {

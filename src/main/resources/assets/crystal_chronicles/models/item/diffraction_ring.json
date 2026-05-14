@@ -1,0 +1,16 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "crystal_chronicles:item/diffraction_ring_fire"
+  },
+  "overrides": [
+    { "predicate": { "crystal_chronicles:spell_school": 1.0 }, "model": "crystal_chronicles:item/diffraction_ring_fire" },
+    { "predicate": { "crystal_chronicles:spell_school": 2.0 }, "model": "crystal_chronicles:item/diffraction_ring_ice" },
+    { "predicate": { "crystal_chronicles:spell_school": 3.0 }, "model": "crystal_chronicles:item/diffraction_ring_lightning" },
+    { "predicate": { "crystal_chronicles:spell_school": 4.0 }, "model": "crystal_chronicles:item/diffraction_ring_holy" },
+    { "predicate": { "crystal_chronicles:spell_school": 5.0 }, "model": "crystal_chronicles:item/diffraction_ring_ender" },
+    { "predicate": { "crystal_chronicles:spell_school": 6.0 }, "model": "crystal_chronicles:item/diffraction_ring_blood" },
+    { "predicate": { "crystal_chronicles:spell_school": 7.0 }, "model": "crystal_chronicles:item/diffraction_ring_evocation" },
+    { "predicate": { "crystal_chronicles:spell_school": 8.0 }, "model": "crystal_chronicles:item/diffraction_ring_nature" }
+  ]
+}

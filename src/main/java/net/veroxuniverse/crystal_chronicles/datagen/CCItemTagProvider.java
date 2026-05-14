@@ -183,6 +183,7 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.HOLY_SHIELD.get());
 
         tag(CCTags.Items.STAFF)
+                .add(CCItems.LIGHTNING_STAFF.get())
                 .add(CCItems.ENDER_STAFF.get());
 
     }

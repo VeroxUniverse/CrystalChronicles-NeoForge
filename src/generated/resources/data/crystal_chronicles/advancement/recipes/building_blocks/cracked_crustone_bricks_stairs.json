@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cracked_crustone_bricks": {
+    "has_block.crystal_chronicles.cracked_crustone_bricks": {
       "conditions": {
         "items": [
           {
-            "items": "crystal_chronicles:crustone"
+            "items": "crystal_chronicles:cracked_crustone_bricks"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cracked_crustone_bricks"
+      "has_block.crystal_chronicles.cracked_crustone_bricks"
     ]
   ],
   "rewards": {
