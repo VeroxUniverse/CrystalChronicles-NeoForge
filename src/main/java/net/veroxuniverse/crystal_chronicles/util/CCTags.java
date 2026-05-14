@@ -22,6 +22,7 @@ public class CCTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> ARMORS = createTag("armors");
         public static final TagKey<Item> CRYSTALS = createTag("crystals");
         public static final TagKey<Item> CRYSTAL_TOOL = createTag("crystal_tool");
         public static final TagKey<Item> STAFF = createTag("staff");
