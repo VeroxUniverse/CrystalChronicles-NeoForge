@@ -110,8 +110,8 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         // ==========================================================================================
         // 4. SPECIALS
         // ==========================================================================================
-        create4x4Recipe(pRecipeOutput, CCBlocks.FAT_TISSUE_BLOCK, CCItems.FAT_TISSUE_BALL, "has_fat_tissue_ball");
-        create4x4Recipe(pRecipeOutput, CCBlocks.ROTTEN_FLESH_BLOCK, () -> Items.ROTTEN_FLESH, "has_rotten_flesh");
+        create4x4StorageRecipe(pRecipeOutput, CCBlocks.FAT_TISSUE_BLOCK, CCItems.FAT_TISSUE_BALL, "has_fat_tissue_ball");
+        create4x4StorageRecipe(pRecipeOutput, CCBlocks.ROTTEN_FLESH_BLOCK, () -> Items.ROTTEN_FLESH, "has_rotten_flesh");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ROTTEN_FLESH, 4)
                 .requires(CCBlocks.ROTTEN_FLESH_BLOCK.get())
@@ -190,6 +190,14 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
 
     private void create4x4Recipe(RecipeOutput output, Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> ingredient, String criterionName) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result.get(), 4)
+                .pattern("BB").pattern("BB")
+                .define('B', ingredient.get())
+                .unlockedBy(criterionName, has(ingredient.get()))
+                .save(output);
+    }
+
+    private void create4x4StorageRecipe(RecipeOutput output, Supplier<? extends ItemLike> result, Supplier<? extends ItemLike> ingredient, String criterionName) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result.get(), 1)
                 .pattern("BB").pattern("BB")
                 .define('B', ingredient.get())
                 .unlockedBy(criterionName, has(ingredient.get()))
