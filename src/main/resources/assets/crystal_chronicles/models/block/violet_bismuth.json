@@ -3,9 +3,9 @@
   "type": "fusion:connecting",
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "particle": "crystal_chronicles:block/bismuth/yellow_bismuth_side",
-    "end": "crystal_chronicles:block/bismuth/yellow_bismuth_top",
-    "side": "crystal_chronicles:block/bismuth/yellow_bismuth_side"
+    "particle": "crystal_chronicles:block/bismuth/violet_bismuth_side",
+    "end": "crystal_chronicles:block/bismuth/violet_bismuth_top",
+    "side": "crystal_chronicles:block/bismuth/violet_bismuth_side"
   },
   "connections": {
     "end": {
