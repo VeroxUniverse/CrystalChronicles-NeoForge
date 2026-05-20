@@ -1,0 +1,15 @@
+{
+  "feature": "crystal_chronicles:end/small_bismuth_crystals",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

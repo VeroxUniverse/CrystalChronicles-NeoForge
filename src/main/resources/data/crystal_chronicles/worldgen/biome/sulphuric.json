@@ -12,9 +12,7 @@
 	},
 	"spawn_costs": {},
 	"spawners": {},
-	"carvers": {
-		"air": []
-	},
+	"carvers": {},
 	"features": [
 		[],
 		[],

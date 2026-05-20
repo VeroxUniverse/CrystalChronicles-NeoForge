@@ -1,0 +1,19 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 43430001,
+    "separation": 1,
+    "spacing": 2,
+    "spread_type": "triangular"
+  },
+  "structures": [
+    {
+      "structure": "crystal_chronicles:end/bismuth_crystal_2x2",
+      "weight": 1
+    },
+    {
+      "structure": "crystal_chronicles:end/bismuth_crystal_huge",
+      "weight": 1
+    }
+  ]
+}

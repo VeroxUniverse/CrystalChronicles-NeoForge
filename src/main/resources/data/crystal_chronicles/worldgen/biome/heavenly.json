@@ -12,9 +12,7 @@
 	},
 	"spawn_costs": {},
 	"spawners": {},
-	"carvers": {
-		"air": []
-	},
+	"carvers": {},
 	"features": [
 		[],
 		[],
@@ -26,7 +24,7 @@
 		[],
 		[],
 		[
-			
+			"crystal_chronicles:holy/holy_light",
 			"crystal_chronicles:holy/marble_pillars"
 		],
 		[]
