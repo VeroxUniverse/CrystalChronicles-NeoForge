@@ -1,0 +1,87 @@
+{
+  "name": "crystal_chronicles:end/bismuth_crystal_huge_piece",
+  "fallback": "crystal_chronicles:end/bismuth_crystal_huge_fallback",
+  "elements": [
+    {
+      "weight": 4,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_1",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_2",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_3",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_4",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_5",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/turn_1",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/turn_2",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/turn_3",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/turn_4",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

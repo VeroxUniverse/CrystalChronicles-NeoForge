@@ -1,0 +1,78 @@
+{
+  "name": "crystal_chronicles:end/bismuth_crystal_huge_fallback",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/fallback_l1",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/fallback_r1",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/fallback_l2",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/fallback_r2",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_stair_2",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_stair_3",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_stair_4",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_huge/straight_stair_5",
+        "processors": "crystal_chronicles:bismuth_crystal_huge",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

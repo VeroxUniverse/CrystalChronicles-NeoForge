@@ -1,0 +1,14 @@
+{
+  "sub_biomes": [
+    {
+      "dimension": "minecraft:the_end",
+      "target": "minecraft:end_highlands",
+      "biome": "crystal_chronicles:bismuth_formations",
+      "criterion": {
+        "type": "biolith:deviation",
+        "parameter": "weirdness",
+        "min": 0.05
+      }
+    }
+  ]
+}

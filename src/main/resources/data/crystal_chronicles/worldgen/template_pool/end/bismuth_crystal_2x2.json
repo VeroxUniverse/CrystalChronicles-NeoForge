@@ -1,0 +1,15 @@
+{
+  "name": "crystal_chronicles:end/bismuth_crystal_2x2",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "single_pool_element",
+        "location": "crystal_chronicles:end/bismuth_crystal_2x2",
+        "processors": "empty",
+        "projection": "rigid"
+      }
+    }
+  ]
+}
