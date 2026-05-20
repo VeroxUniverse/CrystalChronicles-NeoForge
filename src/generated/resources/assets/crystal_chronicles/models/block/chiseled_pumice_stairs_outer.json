@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "crystal_chronicles:block/chiseled_pumice",
-    "side": "crystal_chronicles:block/chiseled_pumice",
-    "top": "crystal_chronicles:block/chiseled_pumice"
-  }
-}

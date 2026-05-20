@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "crystal_chronicles:block/bismite_bricks",
-    "side": "crystal_chronicles:block/bismite_bricks",
-    "top": "crystal_chronicles:block/bismite_bricks"
-  }
-}

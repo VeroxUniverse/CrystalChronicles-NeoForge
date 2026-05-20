@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "crystal_chronicles:block/cracked_crustone_bricks",
-    "side": "crystal_chronicles:block/cracked_crustone_bricks",
-    "top": "crystal_chronicles:block/cracked_crustone_bricks"
-  }
-}

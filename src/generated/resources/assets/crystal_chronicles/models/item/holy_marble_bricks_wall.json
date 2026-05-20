@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "crystal_chronicles:block/holy_marble_bricks"
-  }
-}

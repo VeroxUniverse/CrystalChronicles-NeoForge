@@ -365,9 +365,21 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                         .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 
+    private static final Set<Block> EXCLUDED_LOOT_BLOCKS = Set.of(
+            CCBlocks.ALVEOLUS_BLOCK.get(),
+            CCBlocks.FAT_TISSUE_BLOCK.get(),
+            CCBlocks.NEURON_BLOCK.get(),
+            CCBlocks.ROTTEN_FLESH_BLOCK.get(),
+            CCBlocks.EYE_BLOCK.get(),
+            CCBlocks.HEMALITE_BLOCK.get()
+    );
+
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return CCBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+        return CCBlocks.BLOCKS.getEntries().stream()
+                .map(Holder::value)
+                .filter(block -> !EXCLUDED_LOOT_BLOCKS.contains(block))
+                ::iterator;
     }
 
 }

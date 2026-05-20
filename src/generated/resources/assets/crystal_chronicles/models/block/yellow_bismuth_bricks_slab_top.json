@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "crystal_chronicles:block/yellow_bismuth_bricks",
-    "side": "crystal_chronicles:block/yellow_bismuth_bricks",
-    "top": "crystal_chronicles:block/yellow_bismuth_bricks"
-  }
-}

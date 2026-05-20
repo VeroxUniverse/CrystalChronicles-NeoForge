@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "crystal_chronicles:block/yellow_sulphur_pool_top",
-    "side": "crystal_chronicles:block/yellow_sulphur_pool"
-  }
-}
