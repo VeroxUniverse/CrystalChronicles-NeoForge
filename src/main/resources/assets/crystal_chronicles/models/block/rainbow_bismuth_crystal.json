@@ -7,7 +7,7 @@
 		"3": "crystal_chronicles:block/rainbow_bismuth_crystal",
 		"4": "crystal_chronicles:block/purple_bismuth_crystal_top",
 		"5": "crystal_chronicles:block/violet_bismuth_crystal_top",
-		"6": "crystal_chronicles:block/bismuth_crystal_top",
+		"6": "crystal_chronicles:block/blue_bismuth_crystal_top",
 		"particle": "crystal_chronicles:block/purple_bismuth_crystal_top"
 	},
 	"elements": [
@@ -151,6 +151,7 @@
 		{
 			"name": "bismuth_cristal",
 			"origin": [8, 8, 8],
+			"scope": 0,
 			"color": 0,
 			"children": [0, 1, 2, 3, 4, 5, 6, 7]
 		}

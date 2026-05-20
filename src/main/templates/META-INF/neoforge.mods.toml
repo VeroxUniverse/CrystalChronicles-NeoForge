@@ -94,6 +94,14 @@ ordering="NONE"
 side="BOTH"
 
 [[dependencies."${mod_id}"]]
+modId="biolith"
+mandatory=true
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+versionRange="${biolith_version_range}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies."${mod_id}"]]
 modId="irons_spellbooks"
 mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
