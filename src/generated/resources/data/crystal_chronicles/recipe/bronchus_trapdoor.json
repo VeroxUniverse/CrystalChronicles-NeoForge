@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "bronchus",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:bronchus_planks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "crystal_chronicles:bronchus_trapdoor"
+  }
+}

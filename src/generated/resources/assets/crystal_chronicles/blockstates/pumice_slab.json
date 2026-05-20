@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/pumice_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/pumice"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/pumice_slab_top"
+    }
+  }
+}

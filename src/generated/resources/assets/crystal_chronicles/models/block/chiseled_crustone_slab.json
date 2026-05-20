@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "crystal_chronicles:block/chiseled_crustone",
+    "side": "crystal_chronicles:block/chiseled_crustone",
+    "top": "crystal_chronicles:block/chiseled_crustone"
+  }
+}

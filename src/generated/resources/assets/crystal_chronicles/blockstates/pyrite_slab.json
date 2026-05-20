@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/pyrite_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/pyrite"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/pyrite_slab_top"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/polished_crustone_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/polished_crustone"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/polished_crustone_slab_top"
+    }
+  }
+}

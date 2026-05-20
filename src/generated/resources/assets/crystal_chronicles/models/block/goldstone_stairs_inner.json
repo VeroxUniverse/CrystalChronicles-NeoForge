@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "crystal_chronicles:block/goldstone",
+    "side": "crystal_chronicles:block/goldstone",
+    "top": "crystal_chronicles:block/goldstone"
+  }
+}

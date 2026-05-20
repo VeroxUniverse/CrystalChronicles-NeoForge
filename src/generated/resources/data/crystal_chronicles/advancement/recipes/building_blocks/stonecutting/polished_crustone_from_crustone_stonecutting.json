@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crustone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crystal_chronicles:crustone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crystal_chronicles:stonecutting/polished_crustone_from_crustone_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crustone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crystal_chronicles:stonecutting/polished_crustone_from_crustone_stonecutting"
+    ]
+  }
+}

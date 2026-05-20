@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/bronchus_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/bronchus_planks"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/bronchus_slab_top"
+    }
+  }
+}

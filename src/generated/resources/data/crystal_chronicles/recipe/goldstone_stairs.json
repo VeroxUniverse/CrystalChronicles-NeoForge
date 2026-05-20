@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "block.crystal_chronicles.goldstone",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:goldstone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:goldstone_stairs"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "crystal_chronicles:goldstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:goldstone_stairs"
+  }
+}

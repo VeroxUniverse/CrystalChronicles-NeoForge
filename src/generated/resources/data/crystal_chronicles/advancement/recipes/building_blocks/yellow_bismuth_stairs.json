@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_block.crystal_chronicles.yellow_bismuth": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crystal_chronicles:yellow_bismuth"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crystal_chronicles:yellow_bismuth_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_block.crystal_chronicles.yellow_bismuth"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crystal_chronicles:yellow_bismuth_stairs"
+    ]
+  }
+}

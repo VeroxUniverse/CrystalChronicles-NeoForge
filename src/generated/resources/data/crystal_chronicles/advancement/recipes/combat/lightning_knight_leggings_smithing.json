@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lightning_rune": {
+      "conditions": {
+        "items": [
+          {
+            "items": "irons_spellbooks:lightning_rune"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crystal_chronicles:lightning_knight_leggings_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lightning_rune"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crystal_chronicles:lightning_knight_leggings_smithing"
+    ]
+  }
+}
