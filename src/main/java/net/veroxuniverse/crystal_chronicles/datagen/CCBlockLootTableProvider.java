@@ -170,16 +170,14 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
 
         // BLOOD //
 
-        this.add(CCBlocks.VILLI.get(),
-                block -> createShearsOnlyDrop(CCBlocks.VILLI.get()));
         this.dropSelf(CCBlocks.FLESH_BLOCK.get());
         this.dropSelf(CCBlocks.MUSCLE_BLOCK.get());
+        this.dropSelf(CCBlocks.TENDON_BLOCK.get());
+
         this.dropSelf(CCBlocks.ARTREE_BASE.get());
         this.dropSelf(CCBlocks.ARTREE_CAPILLARY.get());
         this.dropSelf(CCBlocks.ARTREE_VEIN.get());
-        this.dropSelf(CCBlocks.AXON.get());
-        this.dropSelf(CCBlocks.NEURON_TORCH.get());
-        this.dropOther(CCBlocks.NEURON_TORCH_WALL.get(), CCBlocks.NEURON_TORCH.get());
+
         this.dropSelf(CCBlocks.BRONCHUS.get());
         this.dropSelf(CCBlocks.BRONCHUS_PLANKS.get());
         this.dropSelf(CCBlocks.BRONCHUS_STAIRS.get());
@@ -190,9 +188,8 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.BRONCHUS_BUTTON.get());
         this.dropSelf(CCBlocks.BRONCHUS_PRESSURE_PLATE.get());
         this.dropSelf(CCBlocks.BRONCHUS_TRAPDOOR.get());
-
-        this.add(CCBlocks.VEINS.get(),
-                block -> createShearsOnlyDrop(CCBlocks.VEINS.get()));
+        this.add(CCBlocks.BRONCHUS_DOOR.get(),
+                block -> createDoorTable(CCBlocks.BRONCHUS_DOOR.get()));
 
         this.dropSelf(CCBlocks.CRUSTONE.get());
         this.dropSelf(CCBlocks.CRUSTONE_BRICKS.get());
@@ -209,8 +206,6 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get());
         this.dropSelf(CCBlocks.POLISHED_CRUSTONE_WALL.get());
         this.dropSelf(CCBlocks.CHISELED_CRUSTONE_WALL.get());
-        this.dropSelf(CCBlocks.ALVEOLUS.get());
-
         this.add(CCBlocks.CRUSTONE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.CRUSTONE_SLAB.get()));
         this.add(CCBlocks.CRUSTONE_BRICKS_SLAB.get(),
@@ -222,32 +217,20 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.add(CCBlocks.CHISELED_CRUSTONE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.CHISELED_CRUSTONE_SLAB.get()));
 
-        this.dropSelf(CCBlocks.TENDON_BLOCK.get());
-        this.dropSelf(CCBlocks.CELVER_LIGHT.get());
-        this.dropSelf(CCBlocks.SKIN_LAYER.get());
+        this.dropSelf(CCBlocks.AXON.get());
         this.dropSelf(CCBlocks.HANGING_VEINS.get());
-        this.add(CCBlocks.FAT_TISSUE_BLOCK.get(),
-                block -> createMultipleOreDrops(CCBlocks.FAT_TISSUE_BLOCK.get(), CCItems.FAT_TISSUE_BALL.get(), 2,4));
-        this.add(CCBlocks.NEURON_BLOCK.get(),
-                block -> createMultipleOreDrops(CCBlocks.NEURON_BLOCK.get(), CCItems.NEURON.get(), 2,4));
-        this.add(CCBlocks.ROTTEN_FLESH_BLOCK.get(),
-                block -> createMultipleOreDrops(CCBlocks.ROTTEN_FLESH_BLOCK.get(), Items.ROTTEN_FLESH, 2,4));
-        this.add(CCBlocks.EYE_BLOCK.get(),
-                block -> createMultipleOreDrops(CCBlocks.EYE_BLOCK.get(), CCItems.EYE.get(), 1,1));
-
-        this.add(CCBlocks.HEMALITE_BLOCK.get(),
-                block -> createMultipleOreDrops(CCBlocks.HEMALITE_BLOCK.get(), CCItems.HEMALITE_SHARD.get(), 1,4));
-
-        //this.dropSelf(CCBlocks.ALVEOLUS_BLOCK.get());
-
-        this.add(CCBlocks.ALVEOLUS_BLOCK.get(),
-                block -> createMultipleOreDrops(CCBlocks.ALVEOLUS_BLOCK.get(), Item.byBlock(CCBlocks.ALVEOLUS.get()), 0,1));
-
-        this.add(CCBlocks.BRONCHUS_DOOR.get(),
-                block -> createDoorTable(CCBlocks.BRONCHUS_DOOR.get()));
-
+        this.dropSelf(CCBlocks.SKIN_LAYER.get());
+        this.add(CCBlocks.VEINS.get(),
+                block -> createShearsOnlyDrop(CCBlocks.VEINS.get()));
+        this.add(CCBlocks.VILLI.get(),
+                block -> createShearsOnlyDrop(CCBlocks.VILLI.get()));
         this.add(CCBlocks.TALL_VILLI.get(),
                 block -> createTallShearsOnlyDrop(CCBlocks.TALL_VILLI.get()));
+
+        this.dropSelf(CCBlocks.ALVEOLUS.get());
+        this.dropSelf(CCBlocks.CELVER_LIGHT.get());
+        this.dropSelf(CCBlocks.NEURON_TORCH.get());
+        this.dropOther(CCBlocks.NEURON_TORCH_WALL.get(), CCBlocks.NEURON_TORCH.get());
 
         // HOLY //
 

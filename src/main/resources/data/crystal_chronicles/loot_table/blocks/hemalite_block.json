@@ -1,14 +1,16 @@
 {
   "type": "minecraft:block",
+  "random_sequence": "crystal_chronicles:blocks/hemalite_block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
+      "rolls": 1,
       "entries": [
         {
           "type": "minecraft:alternatives",
           "children": [
             {
               "type": "minecraft:item",
+              "name": "crystal_chronicles:hemalite_block",
               "conditions": [
                 {
                   "condition": "minecraft:match_tool",
@@ -25,37 +27,32 @@
                     }
                   }
                 }
-              ],
-              "name": "crystal_chronicles:fat_tissue_block"
+              ]
             },
             {
               "type": "minecraft:item",
+              "name": "crystal_chronicles:hemalite_shard",
               "functions": [
                 {
-                  "add": false,
+                  "function": "minecraft:set_count",
                   "count": {
-                    "type": "minecraft:uniform",
-                    "max": 4.0,
-                    "min": 2.0
-                  },
-                  "function": "minecraft:set_count"
+                    "min": 1,
+                    "max": 4
+                  }
                 },
                 {
+                  "function": "minecraft:apply_bonus",
                   "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops",
-                  "function": "minecraft:apply_bonus"
+                  "formula": "minecraft:ore_drops"
                 },
                 {
                   "function": "minecraft:explosion_decay"
                 }
-              ],
-              "name": "crystal_chronicles:fat_tissue_ball"
+              ]
             }
           ]
         }
-      ],
-      "rolls": 1.0
+      ]
     }
-  ],
-  "random_sequence": "crystal_chronicles:blocks/fat_tissue_block"
+  ]
 }
