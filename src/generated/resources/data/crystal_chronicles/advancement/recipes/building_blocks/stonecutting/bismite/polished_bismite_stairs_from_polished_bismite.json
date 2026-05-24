@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_bismite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crystal_chronicles:polished_bismite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crystal_chronicles:stonecutting/bismite/polished_bismite_stairs_from_polished_bismite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_bismite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crystal_chronicles:stonecutting/bismite/polished_bismite_stairs_from_polished_bismite"
+    ]
+  }
+}

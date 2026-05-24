@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.0,
+  "ingredient": {
+    "tag": "crystal_chronicles:bismuth/full_blocks"
+  },
+  "result": {
+    "id": "crystal_chronicles:rainbow_bismuth_crystal"
+  }
+}

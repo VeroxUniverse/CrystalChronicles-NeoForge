@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crustone_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crystal_chronicles:crustone_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crystal_chronicles:stonecutting/crustone/crustone_bricks_slab_from_crustone_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crustone_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crystal_chronicles:stonecutting/crustone/crustone_bricks_slab_from_crustone_bricks"
+    ]
+  }
+}
