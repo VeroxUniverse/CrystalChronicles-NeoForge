@@ -229,7 +229,7 @@ public class CCItems {
             () -> new EnderSickleItem(CCWeaponTiers.ENDER_SICKLE,
                     ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.ENDER_SICKLE)
                     ).fireResistant(),
-                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.TELEPORT_SPELL, 3))));
+                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.SHADOW_SLASH, 4))));
     public static final DeferredHolder<Item, Item> BLOOD_SCYTHE = ITEMS.register("blood_scythe",
             () -> new BloodScytheItem(CCWeaponTiers.BLOOD_SCYTHE,
                     ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.BLOOD_SCYTHE)
