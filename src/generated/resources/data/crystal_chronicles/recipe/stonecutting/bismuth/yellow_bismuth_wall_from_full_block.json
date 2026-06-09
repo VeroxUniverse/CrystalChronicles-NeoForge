@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "crystal_chronicles:bismuth/full_blocks/yellow"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:yellow_bismuth_wall"
+  }
+}
