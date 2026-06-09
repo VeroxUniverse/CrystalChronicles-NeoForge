@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "F": {
+      "tag": "irons_spellbooks:evocation_focus"
+    },
+    "S": {
+      "item": "irons_spellbooks:divine_soulshard"
+    }
+  },
+  "pattern": [
+    " F ",
+    "FSF",
+    " F "
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:perfected_emerald"
+  }
+}
