@@ -300,5 +300,8 @@
   "tooltip.crystal_chronicles.shift_for_info": "Press [SHIFT] to expand",
 
   "key.crystal_chronicles.ring_swap": "Swap Prismatic School",
-  "category.crystal_chronicles": "Crystal Chronicles"
+  "category.crystal_chronicles": "Crystal Chronicles",
+
+  "spell.crystal_chronicles.prismatic_portal": "Prismatic Portal",
+  "school.crystal_chronicles.prismatic": "Prismatic"
 }

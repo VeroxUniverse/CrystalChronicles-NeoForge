@@ -13,6 +13,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
+import net.veroxuniverse.crystal_chronicles.item.BismuthChiselItem;
 import net.veroxuniverse.crystal_chronicles.item.armor.lightning.LightningKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.evocation.EvocationKnightArmor;
 import net.veroxuniverse.crystal_chronicles.item.armor.ender.EnderMageArmor;
@@ -42,6 +43,9 @@ public class CCItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CrystalChronicles.MODID);
 
     // SPELLS
+
+    public static final DeferredItem<Item> BISMUTH_CHISEL = ITEMS.register("bismuth_chisel",
+            () -> new BismuthChiselItem(new Item.Properties().stacksTo(1).durability(64)));
 
     // RESOURCES
 

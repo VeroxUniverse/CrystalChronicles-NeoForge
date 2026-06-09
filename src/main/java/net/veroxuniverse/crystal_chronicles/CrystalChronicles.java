@@ -24,6 +24,7 @@ import net.veroxuniverse.crystal_chronicles.entity.CCEntities;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
+import net.veroxuniverse.crystal_chronicles.network.CCPackets;
 import net.veroxuniverse.crystal_chronicles.network.RingSwapPayload;
 import net.veroxuniverse.crystal_chronicles.registry.*;
 import net.veroxuniverse.crystal_chronicles.spells.CCSpells;
@@ -39,6 +40,7 @@ public class CrystalChronicles {
         modEventBus.addListener(this::commonSetup);
         AzureLib.initialize();
         CCTabs.register(modEventBus);
+        CCPackets.register(modEventBus);
         //CCEntityTypes.register(modEventBus);
         CCAttributes.register(modEventBus);
         CCBlocks.register(modEventBus);
