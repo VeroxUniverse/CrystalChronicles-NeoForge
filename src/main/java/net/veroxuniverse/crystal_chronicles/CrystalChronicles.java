@@ -10,6 +10,7 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -23,6 +24,7 @@ import net.veroxuniverse.crystal_chronicles.entity.CCEntities;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluidTypes;
 import net.veroxuniverse.crystal_chronicles.fluid.CCFluids;
 import net.veroxuniverse.crystal_chronicles.lib.CCArmorMaterials;
+import net.veroxuniverse.crystal_chronicles.network.CCPackets;
 import net.veroxuniverse.crystal_chronicles.network.RingSwapPayload;
 import net.veroxuniverse.crystal_chronicles.registry.*;
 import net.veroxuniverse.crystal_chronicles.spells.CCSpells;
@@ -36,9 +38,9 @@ public class CrystalChronicles {
 
     public CrystalChronicles(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-
         AzureLib.initialize();
         CCTabs.register(modEventBus);
+        CCPackets.register(modEventBus);
         //CCEntityTypes.register(modEventBus);
         CCAttributes.register(modEventBus);
         CCBlocks.register(modEventBus);

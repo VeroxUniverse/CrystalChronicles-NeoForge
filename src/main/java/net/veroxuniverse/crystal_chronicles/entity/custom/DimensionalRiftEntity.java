@@ -22,6 +22,8 @@ import net.minecraft.world.phys.AABB;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.block.PortalFrameBlock;
 import net.veroxuniverse.crystal_chronicles.block.PortalFrameBlockEntity;
+import net.veroxuniverse.crystal_chronicles.dimension.AlphaDimensionData;
+import net.veroxuniverse.crystal_chronicles.dimension.AlphaSpawnStructure;
 import net.veroxuniverse.crystal_chronicles.entity.client.DimensionalRiftEntityDispatcher;
 
 import java.util.List;
@@ -35,9 +37,12 @@ public class DimensionalRiftEntity extends Entity {
     private static final String PORTAL_AXIS_TAG = "PortalAxis";
     private static final String FRAME_POS_TAG = "FramePos";
 
-    private static final EntityDataAccessor<Boolean> DATA_IDLE = SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> DATA_CLOSING = SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<String> DATA_AXIS = SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<Boolean> DATA_IDLE =
+            SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> DATA_CLOSING =
+            SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<String> DATA_AXIS =
+            SynchedEntityData.defineId(DimensionalRiftEntity.class, EntityDataSerializers.STRING);
 
     public final DimensionalRiftEntityDispatcher dispatcher;
     public final MoveAnalysis moveAnalysis;
@@ -54,6 +59,10 @@ public class DimensionalRiftEntity extends Entity {
 
     private BlockPos portalFramePos;
 
+    private boolean hasPlayedOpen = false;
+    private boolean hasStartedIdle = false;
+    private boolean hasPlayedClose = false;
+
     public DimensionalRiftEntity(EntityType<? extends DimensionalRiftEntity> entityType, Level level) {
         super(entityType, level);
         this.noPhysics = true;
@@ -68,9 +77,6 @@ public class DimensionalRiftEntity extends Entity {
     @Override
     public void onAddedToLevel() {
         super.onAddedToLevel();
-        if (this.level().isClientSide) {
-            dispatcher.open();
-        }
     }
 
     @Override
@@ -81,7 +87,6 @@ public class DimensionalRiftEntity extends Entity {
         if (tag.contains(FRAME_POS_TAG)) {
             this.portalFramePos = NbtUtils.readBlockPos(tag, FRAME_POS_TAG).orElse(null);
         }
-
         this.idleTicks = tag.getInt(IDLE_TICKS_TAG);
         this.transitionTicks = tag.getInt(TRANSITION_TICKS_TAG);
         setIdleActive(tag.getBoolean(IS_IDLE_ACTIVE_TAG));
@@ -138,23 +143,28 @@ public class DimensionalRiftEntity extends Entity {
     }
 
     private void handleClientAnimation() {
-        if (this.tickCount == 1) {
-            if (isClosing()) {
+        if (isClosing()) {
+            if (!hasPlayedClose) {
+                hasPlayedClose = true;
+                hasPlayedOpen = false;
+                hasStartedIdle = false;
                 dispatcher.close();
-            } else if (isIdleActive()) {
-                dispatcher.idle();
-            } else {
-                dispatcher.open();
             }
+            return;
         }
 
-        if (isClosing()) {
-            transitionTicks++;
-        } else if (!isIdleActive()) {
-            transitionTicks++;
-            if (transitionTicks >= ANIMATION_TIME) {
+        if (isIdleActive()) {
+            if (!hasStartedIdle) {
+                hasStartedIdle = true;
+                hasPlayedOpen = false;
                 dispatcher.idle();
             }
+            return;
+        }
+
+        if (!hasPlayedOpen) {
+            hasPlayedOpen = true;
+            dispatcher.open();
         }
     }
 
@@ -220,21 +230,6 @@ public class DimensionalRiftEntity extends Entity {
         return Direction.Axis.valueOf(this.entityData.get(DATA_AXIS).toUpperCase());
     }
 
-    private BlockPos findSafeTeleportLocation(ServerLevel world, BlockPos initialTarget) {
-        int minY = world.getMinBuildHeight() + 5;
-        int maxY = world.getMaxBuildHeight() - 2;
-
-        for (int y = minY; y < maxY; y++) {
-            BlockPos checkPos = new BlockPos(initialTarget.getX(), y, initialTarget.getZ());
-            if (world.getBlockState(checkPos).isAir()
-                    && world.getBlockState(checkPos.above()).isAir()
-                    && world.getBlockState(checkPos.below()).isSolid()) {
-                return checkPos;
-            }
-        }
-        return world.getSharedSpawnPos();
-    }
-
     private void teleportEntities(ServerLevel world) {
         double cx = this.getX();
         double cy = this.getY();
@@ -249,11 +244,21 @@ public class DimensionalRiftEntity extends Entity {
         ServerLevel targetWorld = world.getServer().getLevel(TARGET_DIMENSION_KEY);
         if (targetWorld == null) return;
 
-        List<ServerPlayer> players = world.getEntitiesOfClass(ServerPlayer.class, checkZone, player -> !player.isPassenger());
+        List<ServerPlayer> players = world.getEntitiesOfClass(ServerPlayer.class, checkZone,
+                player -> !player.isPassenger());
 
         for (ServerPlayer player : players) {
-            BlockPos spawn = findSafeTeleportLocation(targetWorld, player.blockPosition());
-            player.teleportTo(targetWorld, spawn.getX() + 0.5, spawn.getY(), spawn.getZ() + 0.5, player.getYRot(), player.getXRot());
+            AlphaDimensionData data = AlphaDimensionData.get(targetWorld);
+            if (!data.isStructureGenerated()) {
+                AlphaSpawnStructure.generate(targetWorld);
+                data.setStructureGenerated();
+            }
+
+            BlockPos spawnPos = AlphaSpawnStructure.getSafeSpawnPos(targetWorld);
+
+            player.teleportTo(targetWorld,
+                    spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5,
+                    player.getYRot(), player.getXRot());
             player.setPortalCooldown();
         }
     }

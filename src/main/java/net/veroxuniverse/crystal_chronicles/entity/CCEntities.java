@@ -26,7 +26,6 @@ public class CCEntities {
                     .setTrackingRange(20)
                     .setShouldReceiveVelocityUpdates(true));
 
-
     public static void register(IEventBus eventBus) {
         ENTITIES.register(eventBus);
     }

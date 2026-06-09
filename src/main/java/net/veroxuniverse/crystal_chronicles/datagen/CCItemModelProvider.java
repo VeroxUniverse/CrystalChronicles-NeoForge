@@ -58,7 +58,14 @@ public class CCItemModelProvider extends ItemModelProvider {
         basicItem(CCItems.LIGHTNING_KNIGHT_LEGGINGS.get());
         basicItem(CCItems.LIGHTNING_KNIGHT_BOOTS.get());
         basicItem(CCItems.CLOUD_BUCKET.get());
+        basicItem(CCItems.PRISMATIC_KNIGHT_HELMET.get());
+        basicItem(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get());
+        basicItem(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get());
+        basicItem(CCItems.PRISMATIC_KNIGHT_BOOTS.get());
 
+        basicItem(CCItems.BISMUTH_CHISEL.get());
+        basicItem(CCItems.PERFECTED_EMERALD.get());
+        basicItem(CCItems.BISMUTH_CANDY.get());
         basicItem(CCItems.FAT_TISSUE_BALL.get());
         basicItem(CCItems.ICE_SHARD.get());
         basicItem(CCItems.NEURON.get());

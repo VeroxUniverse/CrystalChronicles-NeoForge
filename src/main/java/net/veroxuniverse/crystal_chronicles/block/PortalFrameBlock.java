@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 import net.veroxuniverse.crystal_chronicles.util.PortalFramePart;
 
 import java.util.ArrayList;
@@ -173,24 +174,26 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
         ItemStack itemInHand = player.getItemInHand(hand);
         Direction facing = state.getValue(FACING);
 
-        if (!itemInHand.is(Items.DIAMOND) && !itemInHand.is(Items.EMERALD)) {
+        if (!itemInHand.is(CCItems.BISMUTH_CHISEL.get())) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
 
         if (level.isClientSide) return ItemInteractionResult.SUCCESS;
 
-        if (itemInHand.is(Items.DIAMOND) && !state.getValue(FORMED)) {
+        if (!state.getValue(FORMED)) {
             for (BlockPos basePos : getPotentialBasePositions(pos, facing)) {
                 if (canScanFrame(level, basePos, facing, true)) {
                     setFrameState(level, basePos, facing, true, false);
-                    if (!player.getAbilities().instabuild) itemInHand.shrink(1);
+                    if (!player.getAbilities().instabuild) {
+                        itemInHand.hurtAndBreak(1, (ServerLevel) level, player, item -> {});
+                    }
                     level.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS, 1f, 1f);
                     return ItemInteractionResult.SUCCESS;
                 }
             }
         }
 
-        if (itemInHand.is(Items.EMERALD) && state.getValue(FORMED)) {
+        if (state.getValue(FORMED)) {
             BlockPos basePos = findBaseFromCurrentPart(pos, state, facing);
 
             if (basePos != null) {
@@ -198,7 +201,7 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
 
                 if (baseState.is(this) && baseState.getValue(FORMED)) {
                     if (baseState.getValue(ACTIVATED)) {
-                        player.sendSystemMessage(Component.literal("The Portal is active already!"));
+                        player.sendSystemMessage(Component.literal("The Portal is already active!"));
                         return ItemInteractionResult.SUCCESS;
                     }
 
@@ -206,7 +209,9 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
                     if (be instanceof PortalFrameBlockEntity master) {
                         master.activatePortal((ServerLevel) level, facing.getAxis());
                         setFrameState(level, basePos, facing, true, true);
-                        if (!player.getAbilities().instabuild) itemInHand.shrink(1);
+                        if (!player.getAbilities().instabuild) {
+                            itemInHand.hurtAndBreak(2, (ServerLevel) level, player, item -> {});
+                        }
                         level.playSound(null, pos, SoundEvents.END_PORTAL_SPAWN, SoundSource.BLOCKS, 1f, 1f);
                         player.sendSystemMessage(Component.literal("Portal opened!"));
                         return ItemInteractionResult.SUCCESS;
@@ -214,7 +219,7 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
                 }
             }
 
-            player.sendSystemMessage(Component.literal("Click, but Master-Block not found!"));
+            player.sendSystemMessage(Component.literal("Master-Block not found!"));
             return ItemInteractionResult.SUCCESS;
         }
 
