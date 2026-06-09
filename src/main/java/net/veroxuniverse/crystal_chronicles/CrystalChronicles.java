@@ -10,6 +10,7 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -36,7 +37,6 @@ public class CrystalChronicles {
 
     public CrystalChronicles(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-
         AzureLib.initialize();
         CCTabs.register(modEventBus);
         //CCEntityTypes.register(modEventBus);

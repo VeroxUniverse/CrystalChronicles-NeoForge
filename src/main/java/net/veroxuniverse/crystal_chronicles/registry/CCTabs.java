@@ -238,12 +238,14 @@ public class CCTabs {
                 output.accept(CCItems.FLORALITE_SHARD.get());
                 output.accept(CCItems.VOLCANITE_SHARD.get());
                 output.accept(CCItems.ICE_SHARD.get());
+                output.accept(CCItems.PERFECTED_EMERALD.get());
                 output.accept(CCItems.FAT_TISSUE_BALL.get());
                 output.accept(CCItems.NEURON.get());
                 output.accept(CCItems.EYE.get());
                 output.accept(CCFluids.BLOOD_BUCKET.get());
                 output.accept(CCItems.CLOUD_BUCKET.get());
                 output.accept(CCFluids.SULPHURIC_WATER_BUCKET.get());
+                output.accept(CCItems.BISMUTH_CANDY.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ARMORY = CREATIVE_MODE_TABS.register("cc_tab_armory", () -> CreativeModeTab.builder()

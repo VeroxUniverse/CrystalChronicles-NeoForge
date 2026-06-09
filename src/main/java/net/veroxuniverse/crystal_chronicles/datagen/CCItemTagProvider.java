@@ -115,6 +115,16 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.EVOCATION_TWINBLADE.get())
                 .add(CCItems.BLOOD_SCYTHE.get());
 
+        tag(Tags.Items.GEMS)
+                .add(CCItems.PERFECTED_EMERALD.get())
+                .add(CCItems.ICE_SHARD.get())
+                .add(CCItems.VOLTITE_SHARD.get())
+                .add(CCItems.DIVINITE_SHARD.get())
+                .add(CCItems.VOLCANITE_SHARD.get())
+                .add(CCItems.VOIDSTONE_SHARD.get())
+                .add(CCItems.HEMALITE_SHARD.get())
+                .add(CCItems.FLORALITE_SHARD.get());
+
         tag(Tags.Items.TOOLS_SHIELD)
                 .add(CCItems.HOLY_SHIELD.get());
 

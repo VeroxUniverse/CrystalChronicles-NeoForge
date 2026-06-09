@@ -6,6 +6,7 @@ import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -51,9 +52,18 @@ public class CCItems {
     public static final DeferredItem<Item> FLORALITE_SHARD = ITEMS.registerSimpleItem("floralite_shard");
     public static final DeferredItem<Item> VOLCANITE_SHARD = ITEMS.registerSimpleItem("volcanite_shard");
     public static final DeferredItem<Item> ICE_SHARD = ITEMS.registerSimpleItem("ice_shard");
+    public static final DeferredItem<Item> PERFECTED_EMERALD = ITEMS.registerSimpleItem("perfected_emerald");
     public static final DeferredItem<Item> FAT_TISSUE_BALL = ITEMS.registerSimpleItem("fat_tissue_ball");
     public static final DeferredItem<Item> NEURON = ITEMS.registerSimpleItem("neuron");
     public static final DeferredItem<Item> EYE = ITEMS.registerSimpleItem("eye");
+
+    public static final DeferredItem<Item> BISMUTH_CANDY = ITEMS.register("bismuth_candy",
+            () -> new Item(new Item.Properties().food(
+                    new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build()
+            )));
 
     public static final DeferredItem<Item> NEURON_TORCH_ITEM = ITEMS.register("neuron_torch", () -> new StandingAndWallBlockItem(CCBlocks.NEURON_TORCH.get(), CCBlocks.NEURON_TORCH_WALL.get(), new Item.Properties(), Direction.DOWN));
 
