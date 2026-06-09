@@ -273,6 +273,7 @@
   "item.crystal_chronicles.blood_bucket": "Blood Bucket",
   "item.crystal_chronicles.cloud_bucket": "Cloud Bucket",
   "item.crystal_chronicles.sulphuric_water_bucket": "Acidic Brine Bucket",
+  "item.crystal_chronicles.bismuth_chisel": "Bismuth Portal Chisel",
 
   "fluid_type.crystal_chronicles.blood_fluid": "Blood",
   "fluid_type.crystal_chronicles.sulphuric_water": "Acidic Brine",
@@ -303,5 +304,6 @@
   "category.crystal_chronicles": "Crystal Chronicles",
 
   "spell.crystal_chronicles.prismatic_portal": "Prismatic Portal",
-  "school.crystal_chronicles.prismatic": "Prismatic"
+  "school.crystal_chronicles.prismatic": "Prismatic",
+  "spell.crystal_chronicles.prismatic_portal.guide": "Activate a formed Prismatic Portal by casting this spell at it. In the Cave dimension, teleports you back to your spawn point."
 }

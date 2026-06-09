@@ -22,6 +22,8 @@ import net.minecraft.world.phys.AABB;
 import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 import net.veroxuniverse.crystal_chronicles.block.PortalFrameBlock;
 import net.veroxuniverse.crystal_chronicles.block.PortalFrameBlockEntity;
+import net.veroxuniverse.crystal_chronicles.dimension.AlphaDimensionData;
+import net.veroxuniverse.crystal_chronicles.dimension.AlphaSpawnStructure;
 import net.veroxuniverse.crystal_chronicles.entity.client.DimensionalRiftEntityDispatcher;
 
 import java.util.List;
@@ -228,21 +230,6 @@ public class DimensionalRiftEntity extends Entity {
         return Direction.Axis.valueOf(this.entityData.get(DATA_AXIS).toUpperCase());
     }
 
-    private BlockPos findSafeTeleportLocation(ServerLevel world, BlockPos initialTarget) {
-        int minY = world.getMinBuildHeight() + 5;
-        int maxY = world.getMaxBuildHeight() - 2;
-
-        for (int y = minY; y < maxY; y++) {
-            BlockPos checkPos = new BlockPos(initialTarget.getX(), y, initialTarget.getZ());
-            if (world.getBlockState(checkPos).isAir()
-                    && world.getBlockState(checkPos.above()).isAir()
-                    && world.getBlockState(checkPos.below()).isSolid()) {
-                return checkPos;
-            }
-        }
-        return world.getSharedSpawnPos();
-    }
-
     private void teleportEntities(ServerLevel world) {
         double cx = this.getX();
         double cy = this.getY();
@@ -261,9 +248,16 @@ public class DimensionalRiftEntity extends Entity {
                 player -> !player.isPassenger());
 
         for (ServerPlayer player : players) {
-            BlockPos spawn = findSafeTeleportLocation(targetWorld, player.blockPosition());
+            AlphaDimensionData data = AlphaDimensionData.get(targetWorld);
+            if (!data.isStructureGenerated()) {
+                AlphaSpawnStructure.generate(targetWorld);
+                data.setStructureGenerated();
+            }
+
+            BlockPos spawnPos = AlphaSpawnStructure.getSafeSpawnPos(targetWorld);
+
             player.teleportTo(targetWorld,
-                    spawn.getX() + 0.5, spawn.getY(), spawn.getZ() + 0.5,
+                    spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5,
                     player.getYRot(), player.getXRot());
             player.setPortalCooldown();
         }

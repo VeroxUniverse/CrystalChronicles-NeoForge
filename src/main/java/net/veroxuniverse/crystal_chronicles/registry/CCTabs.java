@@ -246,6 +246,7 @@ public class CCTabs {
                 output.accept(CCItems.CLOUD_BUCKET.get());
                 output.accept(CCFluids.SULPHURIC_WATER_BUCKET.get());
                 output.accept(CCItems.BISMUTH_CANDY.get());
+                output.accept(CCItems.BISMUTH_CHISEL.get());
             }).build());
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CC_TAB_ARMORY = CREATIVE_MODE_TABS.register("cc_tab_armory", () -> CreativeModeTab.builder()
