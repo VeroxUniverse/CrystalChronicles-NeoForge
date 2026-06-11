@@ -8,6 +8,21 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
+          "biome": "crystal_chronicles:barrens",
+          "parameters": {
+            "temperature": [
+              -0.1,
+              0.1
+            ],
+            "humidity": 1,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0.95
+          }
+        },
+        {
           "biome": "crystal_chronicles:flesh",
           "parameters": {
             "temperature": 1,
@@ -17,6 +32,21 @@
             "weirdness": 0,
             "depth": 0,
             "offset": 0
+          }
+        },
+        {
+          "biome": "crystal_chronicles:barrens",
+          "parameters": {
+            "temperature": [
+              -0.1,
+              0.1
+            ],
+            "humidity": -1,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0.95
           }
         },
         {
@@ -32,6 +62,21 @@
           }
         },
         {
+          "biome": "crystal_chronicles:barrens",
+          "parameters": {
+            "temperature": -1,
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0.95
+          }
+        },
+        {
           "biome": "crystal_chronicles:sulphuric",
           "parameters": {
             "temperature": 1,
@@ -44,11 +89,26 @@
           }
         },
         {
+          "biome": "crystal_chronicles:barrens",
+          "parameters": {
+            "temperature": 1,
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0.95
+          }
+        },
+        {
           "biome": "crystal_chronicles:thunder",
           "parameters": {
             "temperature": -1,
             "humidity": -1,
-            "continentalness": 0, 
+            "continentalness": 0,
             "erosion": 0,
             "weirdness": 0,
             "depth": 0,
