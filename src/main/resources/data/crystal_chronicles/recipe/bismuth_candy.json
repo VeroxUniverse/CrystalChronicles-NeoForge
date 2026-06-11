@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "B": {
+      "item": "crystal_chronicles:rainbow_bismuth_crystal"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SBS",
+    "/S "
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:bismuth_candy"
+  }
+}
