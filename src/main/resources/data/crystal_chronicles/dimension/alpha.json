@@ -10,23 +10,8 @@
         {
           "biome": "crystal_chronicles:flesh",
           "parameters": {
-            "temperature": 0,
-            "humidity": 0,
-            "continentalness": 0,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "crystal_chronicles:barrens",
-          "parameters": {
-            "temperature": 0,
-            "humidity": [
-              0.249,
-              0.251
-            ],
+            "temperature": 1,
+            "humidity": 1,
             "continentalness": 0,
             "erosion": 0,
             "weirdness": 0,
@@ -37,23 +22,8 @@
         {
           "biome": "crystal_chronicles:heavenly",
           "parameters": {
-            "temperature": 0,
-            "humidity": 0.5,
-            "continentalness": 0,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "crystal_chronicles:barrens",
-          "parameters": {
-            "temperature": [
-              0.249,
-              0.251
-            ],
-            "humidity": 0,
+            "temperature": -1,
+            "humidity": 1,
             "continentalness": 0,
             "erosion": 0,
             "weirdness": 0,
@@ -64,9 +34,21 @@
         {
           "biome": "crystal_chronicles:sulphuric",
           "parameters": {
-            "temperature": 0.5,
-            "humidity": 0,
+            "temperature": 1,
+            "humidity": -1,
             "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "crystal_chronicles:thunder",
+          "parameters": {
+            "temperature": -1,
+            "humidity": -1,
+            "continentalness": 0, 
             "erosion": 0,
             "weirdness": 0,
             "depth": 0,

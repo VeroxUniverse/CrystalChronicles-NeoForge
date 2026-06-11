@@ -1,0 +1,430 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth",
+              "Properties": {
+                "axis": "x"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth",
+            "Properties": {
+              "axis": "x"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth",
+              "Properties": {
+                "axis": "y"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth",
+              "Properties": {
+                "axis": "z"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth",
+            "Properties": {
+              "axis": "z"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "north"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "north"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "east"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "east"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "south"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "south"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "west"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "west"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "north",
+                "shape": "inner_left"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "north",
+              "shape": "inner_left"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "east",
+                "shape": "inner_left"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "east",
+              "shape": "inner_left"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "south",
+                "shape": "inner_left"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "south",
+              "shape": "inner_left"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "west",
+                "shape": "inner_left"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "west",
+              "shape": "inner_left"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "north",
+                "shape": "inner_right"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "north",
+              "shape": "inner_right"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "east",
+                "shape": "inner_right"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "east",
+              "shape": "inner_right"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "south",
+                "shape": "inner_right"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "south",
+              "shape": "inner_right"
+            }
+          }
+        },
+        {
+          "position_predicate": {
+            "predicate_type": "minecraft:linear_pos",
+            "min_dist": 20,
+            "max_dist": 30,
+            "min_chance": 0,
+            "max_chance": 1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:blockstate_match",
+            "block_state": {
+              "Name": "crystal_chronicles:rainbow_bismuth_stairs",
+              "Properties": {
+                "facing": "west",
+                "shape": "inner_right"
+              }
+            }
+          },
+          "output_state": {
+            "Name": "crystal_chronicles:purple_bismuth_stairs",
+            "Properties": {
+              "facing": "west",
+              "shape": "inner_right"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
