@@ -238,7 +238,7 @@ public class CCTabs {
                 output.accept(CCItems.FLORALITE_SHARD.get());
                 output.accept(CCItems.VOLCANITE_SHARD.get());
                 output.accept(CCItems.ICE_SHARD.get());
-                output.accept(CCItems.PERFECTED_EMERALD.get());
+                output.accept(CCItems.AVARICITE_SHARD.get());
                 output.accept(CCItems.FAT_TISSUE_BALL.get());
                 output.accept(CCItems.NEURON.get());
                 output.accept(CCItems.EYE.get());

@@ -116,7 +116,7 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.BLOOD_SCYTHE.get());
 
         tag(Tags.Items.GEMS)
-                .add(CCItems.PERFECTED_EMERALD.get())
+                .add(CCItems.AVARICITE_SHARD.get())
                 .add(CCItems.ICE_SHARD.get())
                 .add(CCItems.VOLTITE_SHARD.get())
                 .add(CCItems.DIVINITE_SHARD.get())
