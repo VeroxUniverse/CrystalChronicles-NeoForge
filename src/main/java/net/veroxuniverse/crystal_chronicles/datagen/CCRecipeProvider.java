@@ -167,10 +167,10 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_LEGGINGS, CCItems.LIGHTNING_KNIGHT_LEGGINGS, "lightning");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_BOOTS, CCItems.LIGHTNING_KNIGHT_BOOTS, "lightning");
 
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_HELMET, CCItems.EVOCATION_KNIGHT_HELMET, "evocation");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_CHESTPLATE, CCItems.EVOCATION_KNIGHT_CHESTPLATE, "evocation");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_LEGGINGS, CCItems.EVOCATION_KNIGHT_LEGGINGS, "evocation");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, () -> Items.TOTEM_OF_UNDYING, ItemRegistry.ARCHEVOKER_BOOTS, CCItems.EVOCATION_KNIGHT_BOOTS, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_HELMET, CCItems.EVOCATION_KNIGHT_HELMET, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_CHESTPLATE, CCItems.EVOCATION_KNIGHT_CHESTPLATE, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_LEGGINGS, CCItems.EVOCATION_KNIGHT_LEGGINGS, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_BOOTS, CCItems.EVOCATION_KNIGHT_BOOTS, "evocation");
     }
 
     private void generateStoneFamily(RecipeOutput output, Supplier<? extends Block> base, Supplier<? extends Block> stairs, Supplier<? extends Block> slab, Supplier<? extends Block> wall, String folder) {

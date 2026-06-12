@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "minecraft:totem_of_undying"
+    "item": "crystal_chronicles:avaricite_shard"
   },
   "base": {
     "item": "irons_spellbooks:archevoker_helmet"
