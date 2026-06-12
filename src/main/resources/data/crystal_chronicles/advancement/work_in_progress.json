@@ -1,0 +1,25 @@
+{
+  "parent": "minecraft:story/enter_the_end",
+  "display": {
+    "icon": {
+      "id": "crystal_chronicles:portal_frame_block"
+    },
+    "title": {
+      "translate": "advancements.crystal_chronicles.work_in_progress.title"
+    },
+    "description": {
+      "translate": "advancements.crystal_chronicles.work_in_progress.description"
+    },
+    "announce_to_chat": true,
+    "show_toast": true,
+    "frame": "task"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "crystal_chronicles:alpha"
+      }
+    }
+  }
+}
