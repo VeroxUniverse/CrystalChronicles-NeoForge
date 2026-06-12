@@ -244,7 +244,7 @@ public class CCTabs {
                 output.accept(CCItems.EYE.get());
                 output.accept(CCFluids.BLOOD_BUCKET.get());
                 output.accept(CCItems.CLOUD_BUCKET.get());
-                output.accept(CCFluids.SULPHURIC_WATER_BUCKET.get());
+                output.accept(CCFluids.ACIDIC_BRINE_BUCKET.get());
                 output.accept(CCItems.BISMUTH_CANDY.get());
                 output.accept(CCItems.BISMUTH_CHISEL.get());
             }).build());

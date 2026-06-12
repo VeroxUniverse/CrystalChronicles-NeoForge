@@ -31,9 +31,9 @@ public class CCFluids {
     public static final Supplier<FlowingFluid> FLOWING_BLOOD = FLUIDS.register("flowing_blood",
             () -> new BaseFlowingFluid.Flowing(CCFluids.BLOOD_PROPERTIES));
 
-    public static final Supplier<FlowingFluid> SOURCE_SULPHURIC_WATER = FLUIDS.register("source_sulphuric_water",
+    public static final Supplier<FlowingFluid> SOURCE_ACIDIC_BRINE = FLUIDS.register("source_acidic_brine",
             () -> new BaseFlowingFluid.Source(CCFluids.SULPHURIC_WATER_PROPERTIES));
-    public static final Supplier<FlowingFluid> FLOWING_REACTIVE_WATER = FLUIDS.register("flowing_sulphuric_water",
+    public static final Supplier<FlowingFluid> FLOWING_ACIDIC_BRINE = FLUIDS.register("flowing_acidic_brine",
             () -> new BaseFlowingFluid.Flowing(CCFluids.SULPHURIC_WATER_PROPERTIES));
 
 
@@ -42,10 +42,10 @@ public class CCFluids {
     public static final DeferredItem<Item> BLOOD_BUCKET = CCItems.ITEMS.registerItem("blood_bucket",
             properties -> new BucketItem(CCFluids.SOURCE_BLOOD.get(), properties.craftRemainder(Items.BUCKET).stacksTo(1)));
 
-    public static final DeferredBlock<LiquidBlock> SULPHURIC_WATER_BLOCK = CCBlocks.BLOCKS.register("sulphuric_water_block",
-            () -> new ReactiveWaterBlock(SOURCE_SULPHURIC_WATER.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()));
-    public static final DeferredItem<Item> SULPHURIC_WATER_BUCKET = CCItems.ITEMS.registerItem("sulphuric_water_bucket",
-            properties -> new BucketItem(SOURCE_SULPHURIC_WATER.get(), properties.craftRemainder(Items.BUCKET).stacksTo(1)));
+    public static final DeferredBlock<LiquidBlock> ACIDIC_BRINE_BLOCK = CCBlocks.BLOCKS.register("acidic_brine_block",
+            () -> new ReactiveWaterBlock(SOURCE_ACIDIC_BRINE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()));
+    public static final DeferredItem<Item> ACIDIC_BRINE_BUCKET = CCItems.ITEMS.registerItem("acidic_brine_bucket",
+            properties -> new BucketItem(SOURCE_ACIDIC_BRINE.get(), properties.craftRemainder(Items.BUCKET).stacksTo(1)));
 
 
     public static final BaseFlowingFluid.Properties BLOOD_PROPERTIES = new BaseFlowingFluid.Properties(
@@ -58,11 +58,11 @@ public class CCFluids {
 
 
     public static final BaseFlowingFluid.Properties SULPHURIC_WATER_PROPERTIES = new BaseFlowingFluid.Properties(
-            CCFluidTypes.SULPHURIC_WATER_FLUID_TYPE, SOURCE_SULPHURIC_WATER, FLOWING_REACTIVE_WATER)
+            CCFluidTypes.SULPHURIC_WATER_FLUID_TYPE, SOURCE_ACIDIC_BRINE, FLOWING_ACIDIC_BRINE)
             .slopeFindDistance(4)
             .levelDecreasePerBlock(1)
-            .block(SULPHURIC_WATER_BLOCK)
-            .bucket(SULPHURIC_WATER_BUCKET)
+            .block(ACIDIC_BRINE_BLOCK)
+            .bucket(ACIDIC_BRINE_BUCKET)
             .explosionResistance(100);
 
 

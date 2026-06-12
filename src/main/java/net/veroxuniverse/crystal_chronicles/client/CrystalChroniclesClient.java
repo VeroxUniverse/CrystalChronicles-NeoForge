@@ -82,8 +82,8 @@ public class CrystalChroniclesClient {
         ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_BLOOD.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_BLOOD.get(), RenderType.translucent());
 
-        ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_SULPHURIC_WATER.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_REACTIVE_WATER.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(CCFluids.SOURCE_ACIDIC_BRINE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(CCFluids.FLOWING_ACIDIC_BRINE.get(), RenderType.translucent());
 
         AzItemRendererRegistry.register(LightningBidentItemRenderer::new, CCItems.LIGHTNING_BIDENT.get());
         AzItemRendererRegistry.register(FireChakramItemRenderer::new, CCItems.FIRE_CHAKRAM.get());

@@ -1,17 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "F": {
-      "tag": "irons_spellbooks:pyrium_ingot"
+    "P": {
+      "item": "irons_spellbooks:pyrium_ingot"
     },
     "S": {
       "item": "irons_spellbooks:divine_soulshard"
     }
   },
   "pattern": [
-    " F ",
-    "FSF",
-    " F "
+    "S ",
+    " P"
   ],
   "result": {
     "count": 1,

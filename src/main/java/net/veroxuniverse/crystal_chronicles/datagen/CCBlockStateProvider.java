@@ -23,7 +23,7 @@ public class CCBlockStateProvider extends BlockStateProvider {
 
         ModelFile waterModel = models().getExistingFile(mcLoc("block/water"));
 
-        getVariantBuilder(CCFluids.SULPHURIC_WATER_BLOCK.get())
+        getVariantBuilder(CCFluids.ACIDIC_BRINE_BLOCK.get())
                 .partialState()
                 .setModels(new ConfiguredModel(waterModel));
 
