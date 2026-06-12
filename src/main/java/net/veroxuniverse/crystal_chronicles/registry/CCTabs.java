@@ -131,7 +131,7 @@ public class CCTabs {
                 output.accept(CCBlocks.CHISELED_CRUSTONE_WALL.get());
                 output.accept(CCBlocks.EYE_BLOCK.get());
                 output.accept(CCBlocks.HANGING_VEINS.get());
-                output.accept(CCBlocks.CELVER_LIGHT.get());
+                output.accept(CCBlocks.PLAYER_SENSOR.get());
                 output.accept(CCBlocks.SKIN_LAYER.get());
                 output.accept(CCBlocks.ROTTEN_FLESH_BLOCK.get());
                 output.accept(CCBlocks.HEMALITE_BLOCK.get());

@@ -24,7 +24,6 @@ import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
-import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 
 import java.util.Set;
 
@@ -228,7 +227,7 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createTallShearsOnlyDrop(CCBlocks.TALL_VILLI.get()));
 
         this.dropSelf(CCBlocks.ALVEOLUS.get());
-        this.dropSelf(CCBlocks.CELVER_LIGHT.get());
+        this.dropSelf(CCBlocks.PLAYER_SENSOR.get());
         this.dropSelf(CCBlocks.NEURON_TORCH.get());
         this.dropOther(CCBlocks.NEURON_TORCH_WALL.get(), CCBlocks.NEURON_TORCH.get());
 

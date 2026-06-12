@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "crystal_chronicles:clever_light"
+          "name": "crystal_chronicles:player_sensor"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "crystal_chronicles:blocks/clever_light"
+  "random_sequence": "crystal_chronicles:blocks/player_sensor"
 }
