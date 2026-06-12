@@ -1,0 +1,72 @@
+{
+  "type": "block_column",
+  "config": {
+    "direction": "up",
+    "prioritize_tip": true,
+    "allowed_placement": {
+      "type": "minecraft:replaceable"
+    },
+    "layers": [
+      {
+        "height": 1,
+        "provider": {
+          "type": "simple_state_provider",
+          "state": {
+            "Name": "crystal_chronicles:holy_marble_pillar",
+            "Properties": {
+              "part": "bottom"
+            }
+          }
+        }
+      },
+      {
+        "height": {
+          "type": "minecraft:biased_to_bottom",
+          "max_inclusive": 3,
+          "min_inclusive": 1
+        },
+        "provider": {
+          "type": "simple_state_provider",
+          "state": {
+            "Name": "crystal_chronicles:holy_marble_pillar",
+            "Properties": {
+              "part": "middle"
+            }
+          }
+        }
+      },
+      {
+        "height": 1,
+        "provider": {
+          "type": "simple_state_provider",
+          "state": {
+            "Name": "crystal_chronicles:holy_marble_pillar",
+            "Properties": {
+              "part": "top"
+            }
+          }
+        }
+      },
+      {
+        "height": 1,
+        "provider": {
+          "type": "weighted_state_provider",
+          "entries": [
+            {
+              "weight": 1,
+              "data": {
+                "Name": "crystal_chronicles:holy_beacon"
+              }
+            },
+            {
+              "weight": 9,
+              "data": {
+                "Name": "minecraft:air"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
