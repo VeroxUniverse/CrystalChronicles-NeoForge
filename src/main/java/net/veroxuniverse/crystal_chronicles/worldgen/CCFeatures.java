@@ -2,7 +2,6 @@ package net.veroxuniverse.crystal_chronicles.worldgen;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.neoforged.bus.api.IEventBus;
@@ -38,6 +37,9 @@ public class CCFeatures {
 
     public static final DeferredHolder<Feature<?>, SkinLayerFeature> SKIN_LAYER_FEATURE =
             FEATURES.register("skin_layer_feature", () -> new SkinLayerFeature(NoneFeatureConfiguration.CODEC));
+
+    public static final DeferredHolder<Feature<?>, TallClusterFeature> TALL_CLUSTER_FEATURE =
+            FEATURES.register("tall_cluster_feature", () -> new TallClusterFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus modEventBus) {
         FEATURES.register(modEventBus);

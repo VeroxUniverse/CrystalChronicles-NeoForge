@@ -360,7 +360,7 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> SKIN_LAYER = registerBlock("skin_layer",
             () -> new SkinLayerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).randomTicks()));
     public static final DeferredBlock<Block> CELVER_LIGHT = registerBlock("clever_light",
-            () -> new CleverLightBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(CleverLightBlock.LIT) ? 15 : 0).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion()));
+            () -> new PlayerSensorBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PlayerSensorBlock.LIT) ? 15 : 0).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion()));
 
     public static final DeferredBlock<Block> HEMALITE_BLOCK = registerBlock("hemalite_block",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
@@ -545,10 +545,10 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
     public static final DeferredBlock<Block> SULPHUR_DUST = registerBlock("sulphur_dust",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND)));
 
     public static final DeferredBlock<Block> SULPHUR_DUST_LAYER = registerBlock("sulphur_dust_layer",
-            () -> new CarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK).noOcclusion()));
+            () -> new CarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND).noOcclusion()));
 
     public static final DeferredBlock<Block> SULPHURIC_SOIL = registerBlock("sulphuric_soil",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));

@@ -108,4 +108,31 @@ public class TallSulphurClusterBlock extends Block {
     public VoxelShape getCollisionShape(BlockState state, net.minecraft.world.level.BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
+
+    public static boolean placeAt(LevelAccessor level, BlockPos lowerPos, BlockState state, int flags) {
+        BlockPos upperPos = lowerPos.above();
+
+        if (!level.getBlockState(lowerPos).canBeReplaced()) {
+            return false;
+        }
+
+        if (!level.getBlockState(upperPos).canBeReplaced()) {
+            return false;
+        }
+
+        BlockState lowerState = state.setValue(
+                HALF,
+                DoubleBlockHalf.LOWER
+        );
+
+        BlockState upperState = state.setValue(
+                HALF,
+                DoubleBlockHalf.UPPER
+        );
+
+        level.setBlock(lowerPos, lowerState, flags);
+        level.setBlock(upperPos, upperState, flags);
+
+        return true;
+    }
 }

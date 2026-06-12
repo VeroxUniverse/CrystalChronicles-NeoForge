@@ -17,10 +17,10 @@ import net.minecraft.world.phys.AABB;
 
 import java.util.List;
 
-public class CleverLightBlock extends Block {
+public class PlayerSensorBlock extends Block {
     public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
 
-    public CleverLightBlock(BlockBehaviour.Properties pProperties) {
+    public PlayerSensorBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, Boolean.valueOf(false)));
     }
