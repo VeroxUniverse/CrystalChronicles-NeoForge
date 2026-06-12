@@ -12,9 +12,9 @@
     }
   },
   "pattern": [
-    " TS",
-    "TPT",
-    "ST "
+    "  T",
+    " P ",
+    "T  "
   ],
   "result": {
     "count": 1,
