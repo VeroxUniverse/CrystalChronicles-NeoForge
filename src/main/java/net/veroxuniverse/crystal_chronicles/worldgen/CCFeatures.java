@@ -41,6 +41,9 @@ public class CCFeatures {
     public static final DeferredHolder<Feature<?>, TallClusterFeature> TALL_CLUSTER_FEATURE =
             FEATURES.register("tall_cluster_feature", () -> new TallClusterFeature(NoneFeatureConfiguration.CODEC));
 
+    public static final DeferredHolder<Feature<?>, CloudPatchFeature> CLOUD_PATCH_FEATURE =
+            FEATURES.register("cloud_patch_feature", () -> new CloudPatchFeature(NoneFeatureConfiguration.CODEC));
+
     public static void register(IEventBus modEventBus) {
         FEATURES.register(modEventBus);
     }
