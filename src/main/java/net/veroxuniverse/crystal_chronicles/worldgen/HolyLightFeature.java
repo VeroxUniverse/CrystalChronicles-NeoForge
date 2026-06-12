@@ -3,7 +3,6 @@ package net.veroxuniverse.crystal_chronicles.worldgen;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -22,15 +21,8 @@ public class HolyLightFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos origin = ctx.origin();
 
         BlockState holyLight = CCBlocks.HOLY_LIGHT_BLOCK.get().defaultBlockState();
+        level.setBlock(origin, holyLight, 3);
 
-        if (!level.getBlockState(origin).canBeReplaced()) {
-            return false;
-        }
-
-        return level.setBlock(
-                origin,
-                holyLight,
-                Block.UPDATE_CLIENTS
-        );
+        return true;
     }
 }
