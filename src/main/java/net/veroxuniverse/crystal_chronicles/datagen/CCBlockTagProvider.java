@@ -63,7 +63,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.POLISHED_CRUSTONE_STAIRS.get(), CCBlocks.POLISHED_CRUSTONE_SLAB.get(), CCBlocks.POLISHED_CRUSTONE_WALL.get())
                 .add(CCBlocks.CHISELED_CRUSTONE_STAIRS.get(), CCBlocks.CHISELED_CRUSTONE_SLAB.get(), CCBlocks.CHISELED_CRUSTONE_WALL.get())
                 .add(CCBlocks.HEMALITE_BLOCK.get())
-                .add(CCBlocks.CELVER_LIGHT.get())
+                .add(CCBlocks.PLAYER_SENSOR.get())
                 // Holy
                 .add(CCBlocks.HOLY_MARBLE.get(), CCBlocks.CHISELED_HOLY_MARBLE.get(), CCBlocks.CRACKED_HOLY_MARBLE.get(), CCBlocks.POLISHED_HOLY_MARBLE.get(), CCBlocks.HOLY_MARBLE_BRICKS.get())
                 .add(CCBlocks.HOLY_MARBLE_PILLAR.get(), CCBlocks.GOLDSTONE.get(), CCBlocks.HOLY_BEACON.get())

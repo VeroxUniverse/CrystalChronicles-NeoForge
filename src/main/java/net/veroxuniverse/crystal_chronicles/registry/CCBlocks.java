@@ -359,7 +359,7 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
 
     public static final DeferredBlock<Block> SKIN_LAYER = registerBlock("skin_layer",
             () -> new SkinLayerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).randomTicks()));
-    public static final DeferredBlock<Block> CELVER_LIGHT = registerBlock("clever_light",
+    public static final DeferredBlock<Block> PLAYER_SENSOR = registerBlock("player_sensor",
             () -> new PlayerSensorBlock(BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(PlayerSensorBlock.LIT) ? 15 : 0).strength(0.3F).sound(SoundType.FROGLIGHT).isValidSpawn(Blocks::always).noOcclusion()));
 
     public static final DeferredBlock<Block> HEMALITE_BLOCK = registerBlock("hemalite_block",
