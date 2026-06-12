@@ -56,7 +56,7 @@ public class CCItems {
     public static final DeferredItem<Item> FLORALITE_SHARD = ITEMS.registerSimpleItem("floralite_shard");
     public static final DeferredItem<Item> VOLCANITE_SHARD = ITEMS.registerSimpleItem("volcanite_shard");
     public static final DeferredItem<Item> ICE_SHARD = ITEMS.registerSimpleItem("ice_shard");
-    public static final DeferredItem<Item> PERFECTED_EMERALD = ITEMS.registerSimpleItem("perfected_emerald");
+    public static final DeferredItem<Item> AVARICITE_SHARD = ITEMS.registerSimpleItem("avaricite_shard");
     public static final DeferredItem<Item> FAT_TISSUE_BALL = ITEMS.registerSimpleItem("fat_tissue_ball");
     public static final DeferredItem<Item> NEURON = ITEMS.registerSimpleItem("neuron");
     public static final DeferredItem<Item> EYE = ITEMS.registerSimpleItem("eye");
