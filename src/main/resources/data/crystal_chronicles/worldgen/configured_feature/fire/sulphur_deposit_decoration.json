@@ -100,18 +100,8 @@
             },
             {
               "feature": {
-                "type": "minecraft:simple_block",
-                "config": {
-                  "to_place": {
-                    "type": "minecraft:simple_state_provider",
-                    "state": {
-                      "Name": "crystal_chronicles:tall_sulphur_cluster",
-                      "Properties": {
-                        "half": "lower"
-                      }
-                    }
-                  }
-                }
+                "type": "crystal_chronicles:tall_cluster_feature",
+                "config": {}
               },
               "placement": [
                 {
