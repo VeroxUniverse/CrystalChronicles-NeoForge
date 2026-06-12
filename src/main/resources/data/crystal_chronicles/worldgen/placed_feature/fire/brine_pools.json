@@ -5,7 +5,7 @@
             "to_place": {
                 "type": "minecraft:simple_state_provider",
                 "state": {
-                    "Name": "crystal_chronicles:sulphuric_water_block"
+                    "Name": "crystal_chronicles:acidic_brine_block"
                 }
             }
         }
@@ -61,7 +61,7 @@
                                 "offset": [1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:green_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -69,7 +69,7 @@
                                 "offset": [0,0,1],
                                 "blocks": [
                                     "crystal_chronicles:green_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -77,7 +77,7 @@
                                 "offset": [-1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:green_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -85,7 +85,7 @@
                                 "offset": [0,0,-1],
                                 "blocks": [
                                     "crystal_chronicles:green_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             }
                         ]
@@ -103,7 +103,7 @@
                                 "offset": [1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:yellow_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -111,7 +111,7 @@
                                 "offset": [0,0,1],
                                 "blocks": [
                                     "crystal_chronicles:yellow_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -119,7 +119,7 @@
                                 "offset": [-1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:yellow_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -127,7 +127,7 @@
                                 "offset": [0,0,-1],
                                 "blocks": [
                                     "crystal_chronicles:yellow_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             }
                         ]
@@ -145,7 +145,7 @@
                                 "offset": [1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:orange_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -153,7 +153,7 @@
                                 "offset": [0,0,1],
                                 "blocks": [
                                     "crystal_chronicles:orange_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -161,7 +161,7 @@
                                 "offset": [-1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:orange_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -169,7 +169,7 @@
                                 "offset": [0,0,-1],
                                 "blocks": [
                                     "crystal_chronicles:orange_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             }
                         ]
@@ -187,7 +187,7 @@
                                 "offset": [1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:red_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -195,7 +195,7 @@
                                 "offset": [0,0,1],
                                 "blocks": [
                                     "crystal_chronicles:red_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -203,7 +203,7 @@
                                 "offset": [-1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:red_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -211,7 +211,7 @@
                                 "offset": [0,0,-1],
                                 "blocks": [
                                     "crystal_chronicles:red_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             }
                         ]
@@ -229,7 +229,7 @@
                                 "offset": [1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:vermillion_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -237,7 +237,7 @@
                                 "offset": [0,0,1],
                                 "blocks": [
                                     "crystal_chronicles:vermillion_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -245,7 +245,7 @@
                                 "offset": [-1,0,0],
                                 "blocks": [
                                     "crystal_chronicles:vermillion_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             },
                             {
@@ -253,7 +253,7 @@
                                 "offset": [0,0,-1],
                                 "blocks": [
                                     "crystal_chronicles:vermillion_sulphur_pool",
-                                    "crystal_chronicles:sulphuric_water_block"
+                                    "crystal_chronicles:acidic_brine_block"
                                 ]
                             }
                         ]

@@ -208,6 +208,7 @@
   "block.crystal_chronicles.yellow_bismuth_crystal": "Yellow Bismuth Crystal",
   "block.crystal_chronicles.portal_frame_block": "Bismuth Portal Frame",
   "block.crystal_chronicles.polished_stone_bricks": "Polished Stone Bricks",
+  "block.crystal_chronicles.acidic_brine_block": "Acidic Brine",
 
   "item.crystal_chronicles.holy_knight_helmet": "Paladin Helmet",
   "item.crystal_chronicles.holy_knight_chestplate": "Paladin Chestplate",
@@ -272,11 +273,11 @@
   "item.crystal_chronicles.eye": "Eye",
   "item.crystal_chronicles.blood_bucket": "Blood Bucket",
   "item.crystal_chronicles.cloud_bucket": "Cloud Bucket",
-  "item.crystal_chronicles.sulphuric_water_bucket": "Acidic Brine Bucket",
+  "item.crystal_chronicles.acidic_brine_bucket": "Acidic Brine Bucket",
   "item.crystal_chronicles.bismuth_chisel": "Bismuth Portal Chisel",
 
   "fluid_type.crystal_chronicles.blood_fluid": "Blood",
-  "fluid_type.crystal_chronicles.sulphuric_water": "Acidic Brine",
+  "fluid_type.crystal_chronicles.acidic_brine": "Acidic Brine",
 
   "advancements.crystal_chronicles.root.title": "Prismatic Arts",
   "advancements.crystal_chronicles.root.description": "Begin your journey into the Crystal Chronicles dimensions.",
