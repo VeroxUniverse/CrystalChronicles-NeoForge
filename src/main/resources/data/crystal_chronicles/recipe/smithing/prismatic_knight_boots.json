@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "irons_spellbooks:divine_soulshard"
+  },
+  "base": {
+    "tag": "crystal_chronicles:prismatic_boots_ingredients"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:prismatic_knight_boots"
+  },
+  "template": {
+    "item": "irons_spellbooks:arcane_rune"
+  }
+}
