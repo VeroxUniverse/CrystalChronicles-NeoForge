@@ -77,7 +77,7 @@
           }
         },
         {
-          "biome": "crystal_chronicles:sulphuric",
+          "biome": "crystal_chronicles:volcanic",
           "parameters": {
             "temperature": 1,
             "humidity": -1,
