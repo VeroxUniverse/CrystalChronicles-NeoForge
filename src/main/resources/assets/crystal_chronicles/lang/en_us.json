@@ -218,6 +218,13 @@
   "block.crystal_chronicles.portal_frame_block": "Bismuth Portal Frame",
   "block.crystal_chronicles.polished_stone_bricks": "Polished Stone Bricks",
 
+  "biome.crystal_chronicles.barrens": "Barrens",
+  "biome.crystal_chronicles.bismuth_formations": "Bismuth Formations",
+  "biome.crystal_chronicles.flesh": "Flesh",
+  "biome.crystal_chronicles.heavenly": "Heavenly",
+  "biome.crystal_chronicles.thunder": "Thunder",
+  "biome.crystal_chronicles.volcanic": "Volcanic",
+
   "item.crystal_chronicles.holy_knight_helmet": "Paladin Helmet",
   "item.crystal_chronicles.holy_knight_chestplate": "Paladin Chestplate",
   "item.crystal_chronicles.holy_knight_leggings": "Paladin Leggings",
