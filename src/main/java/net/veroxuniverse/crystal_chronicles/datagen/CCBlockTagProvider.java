@@ -66,13 +66,13 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.PLAYER_SENSOR.get())
                 // Holy
                 .add(CCBlocks.HOLY_MARBLE.get(), CCBlocks.CHISELED_HOLY_MARBLE.get(), CCBlocks.CRACKED_HOLY_MARBLE.get(), CCBlocks.POLISHED_HOLY_MARBLE.get(), CCBlocks.HOLY_MARBLE_BRICKS.get())
-                .add(CCBlocks.HOLY_MARBLE_PILLAR.get(), CCBlocks.GOLDSTONE.get(), CCBlocks.HOLY_BEACON.get())
+                .add(CCBlocks.HOLY_MARBLE_PILLAR.get(), CCBlocks.AURUM.get(), CCBlocks.HOLY_BEACON.get())
                 .add(CCBlocks.HOLY_MARBLE_STAIRS.get(), CCBlocks.HOLY_MARBLE_SLAB.get(), CCBlocks.HOLY_MARBLE_WALL.get())
                 .add(CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get(), CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get(), CCBlocks.HOLY_MARBLE_BRICKS_WALL.get())
                 .add(CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get(), CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get(), CCBlocks.CHISELED_HOLY_MARBLE_WALL.get())
                 .add(CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get(), CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get(), CCBlocks.CRACKED_HOLY_MARBLE_WALL.get())
                 .add(CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get(), CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get(), CCBlocks.POLISHED_HOLY_MARBLE_WALL.get())
-                .add(CCBlocks.GOLDSTONE_STAIRS.get(), CCBlocks.GOLDSTONE_SLAB.get(), CCBlocks.GOLDSTONE_WALL.get())
+                .add(CCBlocks.AURUM_STAIRS.get(), CCBlocks.AURUM_SLAB.get(), CCBlocks.AURUM_WALL.get())
                 // Fire / Volcanic
                 .add(CCBlocks.VOLCANITE_BLOCK.get(), CCBlocks.PYRITE.get(), CCBlocks.PUMICE.get(), CCBlocks.PUMICE_BRICKS.get(), CCBlocks.CHISELED_PUMICE.get(), CCBlocks.CRACKED_PUMICE.get(), CCBlocks.POLISHED_PUMICE.get())
                 .add(CCBlocks.GREEN_SALT_DEPOSIT.get(), CCBlocks.ORANGE_SALT_DEPOSIT.get(), CCBlocks.RED_SALT_DEPOSIT.get(), CCBlocks.YELLOW_SALT_DEPOSIT.get(), CCBlocks.VERMILION_SALT_DEPOSIT.get())
@@ -130,7 +130,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(CCBlocks.THUNDERSTONE.get(),
                         CCBlocks.CHARGED_THUNDERSTONE.get())
-                .add(CCBlocks.GOLDSTONE.get())
+                .add(CCBlocks.AURUM.get())
                 .add(CCBlocks.PYRITE.get());
 
         // --- CATEGORY TAGS ---
@@ -166,7 +166,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.CRUSTONE_BRICKS.get());
 
         this.tag(Tags.Blocks.STONES)
-                .add(CCBlocks.THUNDERSTONE.get(), CCBlocks.CRUSTONE.get(), CCBlocks.BISMITE.get(), CCBlocks.HOLY_MARBLE.get(), CCBlocks.PUMICE.get(), CCBlocks.PYRITE.get(), CCBlocks.GOLDSTONE.get());
+                .add(CCBlocks.THUNDERSTONE.get(), CCBlocks.CRUSTONE.get(), CCBlocks.BISMITE.get(), CCBlocks.HOLY_MARBLE.get(), CCBlocks.PUMICE.get(), CCBlocks.PYRITE.get(), CCBlocks.AURUM.get());
 
         this.tag(BlockTags.WALLS)
                 .add(CCBlocks.THUNDERSTONE_WALL.get(), CCBlocks.CHISELED_THUNDERSTONE_WALL.get(), CCBlocks.THUNDERSTONE_BRICKS_WALL.get(), CCBlocks.POLISHED_THUNDERSTONE_WALL.get())
@@ -175,7 +175,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.BLUE_BISMUTH_BRICKS_WALL.get(), CCBlocks.PURPLE_BISMUTH_BRICKS_WALL.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get(), CCBlocks.VIOLET_BISMUTH_BRICKS_WALL.get(), CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get())
                 .add(CCBlocks.CRUSTONE_WALL.get(), CCBlocks.CRUSTONE_BRICKS_WALL.get(), CCBlocks.POLISHED_CRUSTONE_WALL.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get(), CCBlocks.CHISELED_CRUSTONE_WALL.get())
                 .add(CCBlocks.HOLY_MARBLE_WALL.get(), CCBlocks.HOLY_MARBLE_BRICKS_WALL.get(), CCBlocks.CHISELED_HOLY_MARBLE_WALL.get(), CCBlocks.CRACKED_HOLY_MARBLE_WALL.get(), CCBlocks.POLISHED_HOLY_MARBLE_WALL.get())
-                .add(CCBlocks.GOLDSTONE_WALL.get())
+                .add(CCBlocks.AURUM_WALL.get())
                 .add(CCBlocks.PUMICE_WALL.get(), CCBlocks.PUMICE_BRICKS_WALL.get(), CCBlocks.CHISELED_PUMICE_WALL.get(), CCBlocks.CRACKED_PUMICE_WALL.get(), CCBlocks.POLISHED_PUMICE_WALL.get())
                 .add(CCBlocks.PYRITE_WALL.get());
 
@@ -187,7 +187,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.BRONCHUS_SLAB.get())
                 .add(CCBlocks.CRUSTONE_SLAB.get(), CCBlocks.CRUSTONE_BRICKS_SLAB.get(), CCBlocks.POLISHED_CRUSTONE_SLAB.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get(), CCBlocks.CHISELED_CRUSTONE_SLAB.get())
                 .add(CCBlocks.HOLY_MARBLE_SLAB.get(), CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get(), CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get(), CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get(), CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get())
-                .add(CCBlocks.GOLDSTONE_SLAB.get(), CCBlocks.PUMICE_SLAB.get(), CCBlocks.PUMICE_BRICKS_SLAB.get(), CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CRACKED_PUMICE_SLAB.get(), CCBlocks.POLISHED_PUMICE_SLAB.get(), CCBlocks.PYRITE_SLAB.get());
+                .add(CCBlocks.AURUM_SLAB.get(), CCBlocks.PUMICE_SLAB.get(), CCBlocks.PUMICE_BRICKS_SLAB.get(), CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CRACKED_PUMICE_SLAB.get(), CCBlocks.POLISHED_PUMICE_SLAB.get(), CCBlocks.PYRITE_SLAB.get());
 
         this.tag(BlockTags.STAIRS)
                 .add(CCBlocks.THUNDERSTONE_STAIRS.get(), CCBlocks.CHISELED_THUNDERSTONE_STAIRS.get(), CCBlocks.THUNDERSTONE_BRICKS_STAIRS.get(), CCBlocks.POLISHED_THUNDERSTONE_STAIRS.get())
@@ -197,7 +197,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.BRONCHUS_STAIRS.get())
                 .add(CCBlocks.CRUSTONE_STAIRS.get(), CCBlocks.CRUSTONE_BRICKS_STAIRS.get(), CCBlocks.POLISHED_CRUSTONE_STAIRS.get(), CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get(), CCBlocks.CHISELED_CRUSTONE_STAIRS.get())
                 .add(CCBlocks.HOLY_MARBLE_STAIRS.get(), CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get(), CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get(), CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get(), CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get())
-                .add(CCBlocks.GOLDSTONE_STAIRS.get(), CCBlocks.PUMICE_STAIRS.get(), CCBlocks.PUMICE_BRICKS_STAIRS.get(), CCBlocks.CHISELED_PUMICE_STAIRS.get(), CCBlocks.CRACKED_PUMICE_STAIRS.get(), CCBlocks.POLISHED_PUMICE_STAIRS.get(), CCBlocks.PYRITE_STAIRS.get());
+                .add(CCBlocks.AURUM_STAIRS.get(), CCBlocks.PUMICE_STAIRS.get(), CCBlocks.PUMICE_BRICKS_STAIRS.get(), CCBlocks.CHISELED_PUMICE_STAIRS.get(), CCBlocks.CRACKED_PUMICE_STAIRS.get(), CCBlocks.POLISHED_PUMICE_STAIRS.get(), CCBlocks.PYRITE_STAIRS.get());
 
         // --- CUSTOM MOD TAGS ---
         this.tag(CCTags.Blocks.CC_BLOOD_BLOCK)

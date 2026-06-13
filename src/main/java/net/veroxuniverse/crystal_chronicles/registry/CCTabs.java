@@ -159,10 +159,10 @@ public class CCTabs {
                 output.accept(CCBlocks.POLISHED_HOLY_MARBLE_SLAB.get());
                 output.accept(CCBlocks.POLISHED_HOLY_MARBLE_WALL.get());
                 output.accept(CCBlocks.HOLY_MARBLE_PILLAR.get());
-                output.accept(CCBlocks.GOLDSTONE.get());
-                output.accept(CCBlocks.GOLDSTONE_STAIRS.get());
-                output.accept(CCBlocks.GOLDSTONE_SLAB.get());
-                output.accept(CCBlocks.GOLDSTONE_WALL.get());
+                output.accept(CCBlocks.AURUM.get());
+                output.accept(CCBlocks.AURUM_STAIRS.get());
+                output.accept(CCBlocks.AURUM_SLAB.get());
+                output.accept(CCBlocks.AURUM_WALL.get());
                 output.accept(CCBlocks.HOLY_LIGHT_BLOCK.get());
                 output.accept(CCBlocks.HOLY_BEACON.get());
                 output.accept(CCBlocks.PUMICE.get());

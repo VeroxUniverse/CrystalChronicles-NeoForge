@@ -27,7 +27,7 @@
       "max_steps": 12,
       "target_condition": {
         "type": "matching_blocks",
-        "blocks": "crystal_chronicles:goldstone"
+        "blocks": "crystal_chronicles:aurum"
       }
     },
     {

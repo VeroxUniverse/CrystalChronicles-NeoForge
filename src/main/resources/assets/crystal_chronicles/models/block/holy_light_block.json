@@ -2,9 +2,9 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "crystal_chronicles:block/goldstone",
+		"0": "crystal_chronicles:block/aurum",
 		"1": "crystal_chronicles:block/holy_light_block",
-		"particle": "crystal_chronicles:block/goldstone"
+		"particle": "crystal_chronicles:block/aurum"
 	},
 	"elements": [
 		{

@@ -98,7 +98,7 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.HOLY_MARBLE_PILLAR.get(), CCBlocks.HOLY_MARBLE.get(), 1, "holy_marble/");
         create4x4Recipe(pRecipeOutput, CCBlocks.HOLY_MARBLE_BRICKS, CCBlocks.HOLY_MARBLE, "has_holy_marble");
 
-        generateStoneFamily(pRecipeOutput, CCBlocks.GOLDSTONE, CCBlocks.GOLDSTONE_STAIRS, CCBlocks.GOLDSTONE_SLAB, CCBlocks.GOLDSTONE_WALL, "goldstone/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.AURUM, CCBlocks.AURUM_STAIRS, CCBlocks.AURUM_SLAB, CCBlocks.AURUM_WALL, "aurum/");
 
         generateStoneFamily(pRecipeOutput, CCBlocks.PUMICE, CCBlocks.PUMICE_STAIRS, CCBlocks.PUMICE_SLAB, CCBlocks.PUMICE_WALL, "pumice/");
         generateStoneFamily(pRecipeOutput, CCBlocks.PUMICE_BRICKS, CCBlocks.PUMICE_BRICKS_STAIRS, CCBlocks.PUMICE_BRICKS_SLAB, CCBlocks.PUMICE_BRICKS_WALL, "pumice/");

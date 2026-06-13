@@ -106,14 +106,14 @@ public class CCBlockStateProvider extends BlockStateProvider {
         // ==========================================================================================
         blockWithItem(CCBlocks.CLOUD_BLOCK);
         blockWithItem(CCBlocks.DENSE_CLOUDS);
-        //blockWithItem(CCBlocks.GOLDSTONE);
+        //blockWithItem(CCBlocks.AURUM);
 
         generateStoneFamily(CCBlocks.HOLY_MARBLE, CCBlocks.HOLY_MARBLE_STAIRS, CCBlocks.HOLY_MARBLE_SLAB, CCBlocks.HOLY_MARBLE_WALL);
         generateStoneFamily(CCBlocks.HOLY_MARBLE_BRICKS, CCBlocks.HOLY_MARBLE_BRICKS_STAIRS, CCBlocks.HOLY_MARBLE_BRICKS_SLAB, CCBlocks.HOLY_MARBLE_BRICKS_WALL);
         generateStoneFamily(CCBlocks.CHISELED_HOLY_MARBLE, CCBlocks.CHISELED_HOLY_MARBLE_STAIRS, CCBlocks.CHISELED_HOLY_MARBLE_SLAB, CCBlocks.CHISELED_HOLY_MARBLE_WALL);
         generateStoneFamily(CCBlocks.CRACKED_HOLY_MARBLE, CCBlocks.CRACKED_HOLY_MARBLE_STAIRS, CCBlocks.CRACKED_HOLY_MARBLE_SLAB, CCBlocks.CRACKED_HOLY_MARBLE_WALL);
         generateStoneFamily(CCBlocks.POLISHED_HOLY_MARBLE, CCBlocks.POLISHED_HOLY_MARBLE_STAIRS, CCBlocks.POLISHED_HOLY_MARBLE_SLAB, CCBlocks.POLISHED_HOLY_MARBLE_WALL);
-        generateStoneFamily(CCBlocks.GOLDSTONE, CCBlocks.GOLDSTONE_STAIRS, CCBlocks.GOLDSTONE_SLAB, CCBlocks.GOLDSTONE_WALL);
+        generateStoneFamily(CCBlocks.AURUM, CCBlocks.AURUM_STAIRS, CCBlocks.AURUM_SLAB, CCBlocks.AURUM_WALL);
 
         // ==========================================================================================
         // 5. FIRE

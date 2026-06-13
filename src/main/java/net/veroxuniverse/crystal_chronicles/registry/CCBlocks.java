@@ -397,7 +397,7 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> HOLY_MARBLE_PILLAR = registerBlock("holy_marble_pillar",
             () -> new HolyMarblePillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
 
-    public static final DeferredBlock<Block> GOLDSTONE = registerBlock("goldstone",
+    public static final DeferredBlock<Block> AURUM = registerBlock("aurum",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_GOLD_BLOCK)));
 
     public static final DeferredBlock<Block> HOLY_LIGHT_BLOCK = registerBlock("holy_light_block",
@@ -488,12 +488,12 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> POLISHED_HOLY_MARBLE_WALL = registerBlock("polished_holy_marble_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> GOLDSTONE_STAIRS = registerBlock("goldstone_stairs",
-            () -> new StairBlock(CCBlocks.GOLDSTONE.get().defaultBlockState(),
+    public static final DeferredBlock<Block> AURUM_STAIRS = registerBlock("aurum_stairs",
+            () -> new StairBlock(CCBlocks.AURUM.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> GOLDSTONE_SLAB = registerBlock("goldstone_slab",
+    public static final DeferredBlock<Block> AURUM_SLAB = registerBlock("aurum_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> GOLDSTONE_WALL = registerBlock("goldstone_wall",
+    public static final DeferredBlock<Block> AURUM_WALL = registerBlock("aurum_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
 

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "block.crystal_chronicles.aurum",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:aurum"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:aurum_stairs"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "crystal_chronicles:block/aurum",
+    "side": "crystal_chronicles:block/aurum",
+    "top": "crystal_chronicles:block/aurum"
+  }
+}

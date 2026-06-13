@@ -268,11 +268,11 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
 
         this.dropSelf(CCBlocks.HOLY_MARBLE_PILLAR.get());
 
-        this.dropSelf(CCBlocks.GOLDSTONE.get());
-        this.dropSelf(CCBlocks.GOLDSTONE_STAIRS.get());
-        this.dropSelf(CCBlocks.GOLDSTONE_WALL.get());
-        this.add(CCBlocks.GOLDSTONE_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.GOLDSTONE_SLAB.get()));
+        this.dropSelf(CCBlocks.AURUM.get());
+        this.dropSelf(CCBlocks.AURUM_STAIRS.get());
+        this.dropSelf(CCBlocks.AURUM_WALL.get());
+        this.add(CCBlocks.AURUM_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.AURUM_SLAB.get()));
 
         this.dropSelf(CCBlocks.HOLY_LIGHT_BLOCK.get());
         this.dropSelf(CCBlocks.HOLY_BEACON.get());

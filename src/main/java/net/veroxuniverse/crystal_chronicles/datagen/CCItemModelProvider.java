@@ -94,7 +94,7 @@ public class CCItemModelProvider extends ItemModelProvider {
         wallItem(CCBlocks.CHISELED_HOLY_MARBLE_WALL, CCBlocks.CHISELED_HOLY_MARBLE);
         wallItem(CCBlocks.CRACKED_HOLY_MARBLE_WALL, CCBlocks.CRACKED_HOLY_MARBLE);
         wallItem(CCBlocks.POLISHED_HOLY_MARBLE_WALL, CCBlocks.POLISHED_HOLY_MARBLE);
-        wallItem(CCBlocks.GOLDSTONE_WALL, CCBlocks.GOLDSTONE);
+        wallItem(CCBlocks.AURUM_WALL, CCBlocks.AURUM);
 
         wallItem(CCBlocks.PUMICE_WALL, CCBlocks.PUMICE);
         wallItem(CCBlocks.PUMICE_BRICKS_WALL, CCBlocks.PUMICE_BRICKS);
