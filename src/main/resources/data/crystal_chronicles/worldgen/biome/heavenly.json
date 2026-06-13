@@ -15,7 +15,9 @@
 	"carvers": {},
 	"features": [
 		[],
-		[],
+		[
+			"crystal_chronicles:holy/cloud_layer_patch"
+		],
 		[],
 		[],
 		[],
