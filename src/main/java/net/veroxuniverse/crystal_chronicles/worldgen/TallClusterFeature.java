@@ -33,7 +33,7 @@ public class TallClusterFeature
             return false;
         }
 
-        BlockState state = CCBlocks.TALL_SULPHUR_CLUSTER.get()
+        BlockState state = CCBlocks.TALL_SALT_FORMATION.get()
                 .defaultBlockState();
 
         BlockState lowerState = state.setValue(

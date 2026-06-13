@@ -75,9 +75,9 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 .add(CCBlocks.GOLDSTONE_STAIRS.get(), CCBlocks.GOLDSTONE_SLAB.get(), CCBlocks.GOLDSTONE_WALL.get())
                 // Fire / Volcanic
                 .add(CCBlocks.VOLCANITE_BLOCK.get(), CCBlocks.PYRITE.get(), CCBlocks.PUMICE.get(), CCBlocks.PUMICE_BRICKS.get(), CCBlocks.CHISELED_PUMICE.get(), CCBlocks.CRACKED_PUMICE.get(), CCBlocks.POLISHED_PUMICE.get())
-                .add(CCBlocks.GREEN_SULPHUR_POOL.get(), CCBlocks.ORANGE_SULPHUR_POOL.get(), CCBlocks.RED_SULPHUR_POOL.get(), CCBlocks.YELLOW_SULPHUR_POOL.get(), CCBlocks.VERMILLION_SULPHUR_POOL.get())
-                .add(CCBlocks.SULPHUR_CRYSTAL.get(), CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get(), CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get(), CCBlocks.SULPHUR_WATER_VENT_BASE.get(), CCBlocks.SULPHUR_WATER_VENT_TOP.get())
-                .add(CCBlocks.PYRITE_CHUNK.get(), CCBlocks.SMALL_SULPHUR_CLUSTER.get(), CCBlocks.MEDIUM_SULPHUR_CLUSTER.get(), CCBlocks.TALL_SULPHUR_CLUSTER.get())
+                .add(CCBlocks.GREEN_SALT_DEPOSIT.get(), CCBlocks.ORANGE_SALT_DEPOSIT.get(), CCBlocks.RED_SALT_DEPOSIT.get(), CCBlocks.YELLOW_SALT_DEPOSIT.get(), CCBlocks.VERMILION_SALT_DEPOSIT.get())
+                .add(CCBlocks.SULPHUR_CRYSTAL.get(), CCBlocks.VERMILION_BRINE_VENT_BASE.get(), CCBlocks.VERMILION_BRINE_VENT_TOP.get(), CCBlocks.YELLOW_BRINE_VENT_BASE.get(), CCBlocks.YELLOW_BRINE_VENT_TOP.get())
+                .add(CCBlocks.PYRITE_CHUNK.get(), CCBlocks.SMALL_SULPHUR_CLUSTER.get(), CCBlocks.SALT_FORMATION.get(), CCBlocks.TALL_SALT_FORMATION.get())
                 .add(CCBlocks.PUMICE_STAIRS.get(), CCBlocks.PUMICE_SLAB.get(), CCBlocks.PUMICE_WALL.get())
                 .add(CCBlocks.PUMICE_BRICKS_STAIRS.get(), CCBlocks.PUMICE_BRICKS_SLAB.get(), CCBlocks.PUMICE_BRICKS_WALL.get())
                 .add(CCBlocks.CHISELED_PUMICE_STAIRS.get(), CCBlocks.CHISELED_PUMICE_SLAB.get(), CCBlocks.CHISELED_PUMICE_WALL.get())

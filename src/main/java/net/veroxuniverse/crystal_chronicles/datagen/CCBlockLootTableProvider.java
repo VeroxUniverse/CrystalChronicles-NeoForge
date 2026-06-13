@@ -317,24 +317,24 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(CCBlocks.PYRITE_SLAB.get()));
 
         this.dropSelf(CCBlocks.VOLCANITE_BLOCK.get());
-        this.dropSelf(CCBlocks.GREEN_SULPHUR_POOL.get());
-        this.dropSelf(CCBlocks.ORANGE_SULPHUR_POOL.get());
-        this.dropSelf(CCBlocks.RED_SULPHUR_POOL.get());
-        this.dropSelf(CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get());
-        this.dropSelf(CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get());
+        this.dropSelf(CCBlocks.GREEN_SALT_DEPOSIT.get());
+        this.dropSelf(CCBlocks.ORANGE_SALT_DEPOSIT.get());
+        this.dropSelf(CCBlocks.RED_SALT_DEPOSIT.get());
+        this.dropSelf(CCBlocks.VERMILION_BRINE_VENT_BASE.get());
+        this.dropSelf(CCBlocks.VERMILION_BRINE_VENT_TOP.get());
         this.dropSelf(CCBlocks.PYRITE_CHUNK.get());
         this.dropSelf(CCBlocks.SULPHUR_CRYSTAL.get());
         this.dropSelf(CCBlocks.SMALL_SULPHUR_CLUSTER.get());
-        this.dropSelf(CCBlocks.MEDIUM_SULPHUR_CLUSTER.get());
+        this.dropSelf(CCBlocks.SALT_FORMATION.get());
         this.dropSelf(CCBlocks.SULPHUR_POWDER.get());
         this.dropSelf(CCBlocks.SULPHUR_DUST_LAYER.get());
-        this.dropSelf(CCBlocks.SULPHUR_WATER_VENT_BASE.get());
-        this.dropSelf(CCBlocks.SULPHUR_WATER_VENT_TOP.get());
+        this.dropSelf(CCBlocks.YELLOW_BRINE_VENT_BASE.get());
+        this.dropSelf(CCBlocks.YELLOW_BRINE_VENT_TOP.get());
         this.dropSelf(CCBlocks.SULPHURIC_SOIL.get());
-        this.dropSelf(CCBlocks.VERMILLION_SULPHUR_POOL.get());
-        this.dropSelf(CCBlocks.YELLOW_SULPHUR_POOL.get());
-        this.add(CCBlocks.TALL_SULPHUR_CLUSTER.get(),
-                block -> createDoorTable(CCBlocks.TALL_SULPHUR_CLUSTER.get()));
+        this.dropSelf(CCBlocks.VERMILION_SALT_DEPOSIT.get());
+        this.dropSelf(CCBlocks.YELLOW_SALT_DEPOSIT.get());
+        this.add(CCBlocks.TALL_SALT_FORMATION.get(),
+                block -> createDoorTable(CCBlocks.TALL_SALT_FORMATION.get()));
 
 
     }

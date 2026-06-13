@@ -131,12 +131,12 @@ public class CCBlockStateProvider extends BlockStateProvider {
         generateStoneFamily(CCBlocks.PYRITE, CCBlocks.PYRITE_STAIRS, CCBlocks.PYRITE_SLAB, CCBlocks.PYRITE_WALL);
 
         directionalCluster(CCBlocks.SMALL_SULPHUR_CLUSTER);
-        directionalCluster(CCBlocks.MEDIUM_SULPHUR_CLUSTER);
-        pillarBlock(CCBlocks.GREEN_SULPHUR_POOL, "_top");
-        pillarBlock(CCBlocks.ORANGE_SULPHUR_POOL, "_top");
-        pillarBlock(CCBlocks.RED_SULPHUR_POOL, "_top");
-        pillarBlock(CCBlocks.YELLOW_SULPHUR_POOL, "_top");
-        pillarBlock(CCBlocks.VERMILLION_SULPHUR_POOL, "_top");
+        directionalCluster(CCBlocks.SALT_FORMATION);
+        pillarBlock(CCBlocks.GREEN_SALT_DEPOSIT, "_top");
+        pillarBlock(CCBlocks.ORANGE_SALT_DEPOSIT, "_top");
+        pillarBlock(CCBlocks.RED_SALT_DEPOSIT, "_top");
+        pillarBlock(CCBlocks.YELLOW_SALT_DEPOSIT, "_top");
+        pillarBlock(CCBlocks.VERMILION_SALT_DEPOSIT, "_top");
     }
 
     // ==========================================================================================

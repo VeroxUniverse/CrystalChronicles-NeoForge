@@ -70,7 +70,7 @@
                                       "provider": {
                                         "type": "simple_state_provider",
                                         "state": {
-                                          "Name": "crystal_chronicles:red_sulphur_water_vent_top"
+                                          "Name": "crystal_chronicles:vermilion_brine_vent_top"
                                         }
                                       }
                                     }
@@ -109,7 +109,7 @@
                   "predicate": {
                     "type": "matching_blocks",
                     "offset": [0,-1,0],
-                    "blocks": "crystal_chronicles:orange_sulphur_pool"
+                    "blocks": "crystal_chronicles:orange_salt_deposit"
                   }
                 },
                 {
@@ -189,7 +189,7 @@
                   "to_place": {
                     "type": "minecraft:simple_state_provider",
                     "state": {
-                      "Name": "crystal_chronicles:medium_sulphur_cluster"
+                      "Name": "crystal_chronicles:salt_formation"
                     }
                   }
                 }
@@ -200,7 +200,7 @@
                   "predicate": {
                     "type": "matching_blocks",
                     "offset": [0,-1,0],
-                    "blocks": "crystal_chronicles:yellow_sulphur_pool"
+                    "blocks": "crystal_chronicles:yellow_salt_deposit"
                   }
                 },
                 {
@@ -292,7 +292,7 @@
                       "provider": {
                         "type": "simple_state_provider",
                         "state": {
-                          "Name": "crystal_chronicles:sulphur_water_vent_base"
+                          "Name": "crystal_chronicles:yellow_brine_vent_base"
                         }
                       }
                     },
@@ -301,7 +301,7 @@
                       "provider": {
                         "type": "simple_state_provider",
                         "state": {
-                          "Name": "crystal_chronicles:sulphur_water_vent_top"
+                          "Name": "crystal_chronicles:yellow_brine_vent_top"
                         }
                       }
                     }
@@ -314,7 +314,7 @@
                   "predicate": {
                     "type": "matching_blocks",
                     "offset": [0,-1,0],
-                    "blocks": "crystal_chronicles:yellow_sulphur_pool"
+                    "blocks": "crystal_chronicles:yellow_salt_deposit"
                   }
                 },
                 {

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "cutout",
+  "textures": {
+    "cross": "crystal_chronicles:block/tall_salt_formation_bottom",
+    "particle": "crystal_chronicles:block/tall_salt_formation_bottom"
+  }
+}
