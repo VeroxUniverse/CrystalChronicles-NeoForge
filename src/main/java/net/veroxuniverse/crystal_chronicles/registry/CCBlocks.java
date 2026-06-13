@@ -523,13 +523,16 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> GREEN_SULPHUR_POOL = registerBlock("green_sulphur_pool",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
+    public static final DeferredBlock<Block> YELLOW_SULPHUR_POOL = registerBlock("yellow_sulphur_pool",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
+
     public static final DeferredBlock<Block> ORANGE_SULPHUR_POOL = registerBlock("orange_sulphur_pool",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
     public static final DeferredBlock<Block> RED_SULPHUR_POOL = registerBlock("red_sulphur_pool",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
-    public static final DeferredBlock<Block> YELLOW_SULPHUR_POOL = registerBlock("yellow_sulphur_pool",
+    public static final DeferredBlock<Block> VERMILLION_SULPHUR_POOL = registerBlock("vermillion_sulphur_pool",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
     public static final DeferredBlock<Block> SMALL_SULPHUR_CLUSTER = registerBlock("small_sulphur_cluster",
@@ -552,9 +555,6 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
 
     public static final DeferredBlock<Block> SULPHURIC_SOIL = registerBlock("sulphuric_soil",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)));
-
-    public static final DeferredBlock<Block> VERMILLION_SULPHUR_POOL = registerBlock("vermillion_sulphur_pool",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
     public static final DeferredBlock<Block> RED_SULPHUR_WATER_VENT_BASE = registerBlock("red_sulphur_water_vent_base",
             () -> new VentBaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()));
