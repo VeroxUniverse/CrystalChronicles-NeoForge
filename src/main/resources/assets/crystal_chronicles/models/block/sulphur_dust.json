@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/carpet",
   "textures": {
-    "wool": "crystal_chronicles:block/sulphur_dust"
+    "wool": "crystal_chronicles:block/sulphur_powder"
   }
 }

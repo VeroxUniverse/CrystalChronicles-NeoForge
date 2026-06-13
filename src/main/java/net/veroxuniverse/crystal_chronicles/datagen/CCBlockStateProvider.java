@@ -121,7 +121,7 @@ public class CCBlockStateProvider extends BlockStateProvider {
         blockWithItem(CCBlocks.VOLCANITE_BLOCK);
         blockWithItem(CCBlocks.SULPHURIC_SOIL);
         blockWithItem(CCBlocks.SULPHUR_CRYSTAL);
-        blockWithItem(CCBlocks.SULPHUR_DUST);
+        blockWithItem(CCBlocks.SULPHUR_POWDER);
 
         generateStoneFamily(CCBlocks.PUMICE, CCBlocks.PUMICE_STAIRS, CCBlocks.PUMICE_SLAB, CCBlocks.PUMICE_WALL);
         generateStoneFamily(CCBlocks.PUMICE_BRICKS, CCBlocks.PUMICE_BRICKS_STAIRS, CCBlocks.PUMICE_BRICKS_SLAB, CCBlocks.PUMICE_BRICKS_WALL);

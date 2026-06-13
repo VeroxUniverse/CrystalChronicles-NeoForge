@@ -1,7 +1,99 @@
 {
   "type": "minecraft:random_patch",
   "config": {
-    "feature": "crystal_chronicles:holy/marble_pillar",
+    "feature": {
+      "feature": {
+        "type": "block_column",
+        "config": {
+          "direction": "up",
+          "prioritize_tip": true,
+          "allowed_placement": {
+            "type": "minecraft:replaceable"
+          },
+          "layers": [
+            {
+              "height": 1,
+              "provider": {
+                "type": "simple_state_provider",
+                "state": {
+                  "Name": "crystal_chronicles:holy_marble_pillar",
+                  "Properties": {
+                    "part": "bottom"
+                  }
+                }
+              }
+            },
+            {
+              "height": {
+                "type": "minecraft:biased_to_bottom",
+                "max_inclusive": 3,
+                "min_inclusive": 1
+              },
+              "provider": {
+                "type": "simple_state_provider",
+                "state": {
+                  "Name": "crystal_chronicles:holy_marble_pillar",
+                  "Properties": {
+                    "part": "middle"
+                  }
+                }
+              }
+            },
+            {
+              "height": 1,
+              "provider": {
+                "type": "simple_state_provider",
+                "state": {
+                  "Name": "crystal_chronicles:holy_marble_pillar",
+                  "Properties": {
+                    "part": "top"
+                  }
+                }
+              }
+            },
+            {
+              "height": 1,
+              "provider": {
+                "type": "weighted_state_provider",
+                "entries": [
+                  {
+                    "weight": 1,
+                    "data": {
+                      "Name": "crystal_chronicles:holy_beacon"
+                    }
+                  },
+                  {
+                    "weight": 9,
+                    "data": {
+                      "Name": "minecraft:air"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:air"
+              },
+              {
+                "type": "matching_blocks",
+                "blocks": "crystal_chronicles:cloud_block",
+                "offset": [0,-1,0]
+              }
+            ]
+          }
+        }
+      ]
+    },
     "tries": 10,
     "xz_spread": 8,
     "y_spread": 4

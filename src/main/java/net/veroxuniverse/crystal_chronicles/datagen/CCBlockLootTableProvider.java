@@ -326,7 +326,7 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.SULPHUR_CRYSTAL.get());
         this.dropSelf(CCBlocks.SMALL_SULPHUR_CLUSTER.get());
         this.dropSelf(CCBlocks.MEDIUM_SULPHUR_CLUSTER.get());
-        this.dropSelf(CCBlocks.SULPHUR_DUST.get());
+        this.dropSelf(CCBlocks.SULPHUR_POWDER.get());
         this.dropSelf(CCBlocks.SULPHUR_DUST_LAYER.get());
         this.dropSelf(CCBlocks.SULPHUR_WATER_VENT_BASE.get());
         this.dropSelf(CCBlocks.SULPHUR_WATER_VENT_TOP.get());

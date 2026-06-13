@@ -467,7 +467,7 @@
                           "then_run": {
                             "type": "minecraft:block",
                             "result_state": {
-                              "Name": "crystal_chronicles:sulphur_dust"
+                              "Name": "crystal_chronicles:sulphur_powder"
                             }
                           }
                         },

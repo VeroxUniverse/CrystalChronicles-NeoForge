@@ -199,7 +199,7 @@ public class CCTabs {
                 output.accept(CCBlocks.SULPHUR_WATER_VENT_TOP.get());
                 output.accept(CCBlocks.RED_SULPHUR_WATER_VENT_BASE.get());
                 output.accept(CCBlocks.RED_SULPHUR_WATER_VENT_TOP.get());
-                output.accept(CCBlocks.SULPHUR_DUST.get());
+                output.accept(CCBlocks.SULPHUR_POWDER.get());
                 output.accept(CCBlocks.SULPHUR_DUST_LAYER.get());
                 output.accept(CCBlocks.SULPHURIC_SOIL.get());
                 output.accept(CCBlocks.SULPHUR_CRYSTAL.get());

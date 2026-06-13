@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "crystal_chronicles:sulphur_dust_layer"
+          "name": "crystal_chronicles:sulphur_powder"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "crystal_chronicles:blocks/sulphur_dust_layer"
+  "random_sequence": "crystal_chronicles:blocks/sulphur_powder"
 }

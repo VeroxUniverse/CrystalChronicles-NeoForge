@@ -544,10 +544,10 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> SULPHUR_CRYSTAL = registerBlock("sulphur_crystal",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
-    public static final DeferredBlock<Block> SULPHUR_DUST = registerBlock("sulphur_dust",
+    public static final DeferredBlock<Block> SULPHUR_POWDER = registerBlock("sulphur_powder",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND)));
 
-    public static final DeferredBlock<Block> SULPHUR_DUST_LAYER = registerBlock("sulphur_dust_layer",
+    public static final DeferredBlock<Block> SULPHUR_DUST_LAYER = registerBlock("sulphur_dust",
             () -> new CarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND).noOcclusion()));
 
     public static final DeferredBlock<Block> SULPHURIC_SOIL = registerBlock("sulphuric_soil",
