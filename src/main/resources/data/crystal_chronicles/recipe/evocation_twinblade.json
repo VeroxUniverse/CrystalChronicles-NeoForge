@@ -5,16 +5,13 @@
       "item": "irons_spellbooks:weapon_parts"
     },
     "S": {
-      "item": "minecraft:emerald_block"
-    },
-    "T": {
       "item": "crystal_chronicles:avaricite_shard"
     }
   },
   "pattern": [
-    "  T",
+    "  S",
     " P ",
-    "T  "
+    "S  "
   ],
   "result": {
     "count": 1,

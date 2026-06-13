@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:thunderstone"
+    },
+    "X": {
+      "item": "irons_spellbooks:lightning_bottle"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "crystal_chronicles:charged_thunderstone"
+  }
+}

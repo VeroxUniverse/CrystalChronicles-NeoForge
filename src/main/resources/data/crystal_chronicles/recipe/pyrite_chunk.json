@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "crystal_chronicles:pyrite"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:pyrite_chunk"
+  }
+}
