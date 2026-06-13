@@ -111,7 +111,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
 
         // --- MINEABLE WITH SHOVEL ---
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(CCBlocks.SULPHUR_DUST.get())
+                .add(CCBlocks.SULPHUR_POWDER.get())
                 .add(CCBlocks.SULPHUR_DUST_LAYER.get())
                 .add(CCBlocks.CLOUD_BLOCK.get())
                 .add(CCBlocks.DENSE_CLOUDS.get())
