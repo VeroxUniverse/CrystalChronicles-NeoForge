@@ -18,22 +18,18 @@ import java.util.Set;
 
 public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
 
-    // Stamm
     private static final int MIN_STEM_HEIGHT = 3;
     private static final int MAX_STEM_HEIGHT = 5;
 
-    // Seitenäste (Veins): 1–2 Blöcke vom Stamm weg
     private static final int MIN_BRANCH_LENGTH = 1;
     private static final int MAX_BRANCH_LENGTH = 2;
     private static final int MIN_BRANCHES = 2;
     private static final int MAX_BRANCHES = 4;
     private static final float BRANCH_CHANCE_PER_LEVEL = 0.4f;
 
-    // Capillary-Cluster
     private static final int MIN_CAP_CLUSTER = 3;
     private static final int MAX_CAP_CLUSTER = 4;
 
-    // “Dichte”-Limits
     private static final int MAX_NEIGHBOR_ARTREE = 4;
     private static final int MAX_NEIGHBOR_CAPILLARY = 1;
 
@@ -47,21 +43,18 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
         RandomSource random = ctx.random();
         BlockPos origin = ctx.origin();
 
-        // Nur auf Flesh generieren
         if (!level.getBlockState(origin.below()).is(CCBlocks.FLESH_BLOCK.get())) {
             return false;
         }
 
         Set<BlockPos> veinPositions = new HashSet<>();
         Set<BlockPos> capillaryPositions = new HashSet<>();
-        Set<BlockPos> capillaryCenters = new HashSet<>(); // Enden von Ästen + Stammspitze
+        Set<BlockPos> capillaryCenters = new HashSet<>();
 
-        // --- Base ---
         BlockPos basePos = origin;
         BlockState baseState = CCBlocks.ARTREE_BASE.get().defaultBlockState();
         level.setBlock(basePos, baseState, 3);
 
-        // --- Stamm (gerade nach oben) ---
         int stemHeight = MIN_STEM_HEIGHT + random.nextInt(MAX_STEM_HEIGHT - MIN_STEM_HEIGHT + 1);
         BlockPos stemPos = basePos.above();
         BlockPos topStemPos = stemPos;
@@ -81,7 +74,6 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
             veinPositions.add(stemPos);
             topStemPos = stemPos;
 
-            // nur solange wir noch Äste bauen dürfen
             if (madeBranches < maxBranches && random.nextFloat() < BRANCH_CHANCE_PER_LEVEL) {
                 Direction dir = horiz[random.nextInt(horiz.length)];
                 BlockPos branchEnd = growStraightBranch(level, random, stemPos, dir, veinPositions);
@@ -94,15 +86,12 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
             stemPos = stemPos.above();
         }
 
-        // Stammspitze bekommt auch einen Capillary-Cluster
         capillaryCenters.add(topStemPos);
 
-        // --- Capillary-Cluster an allen Endpunkten ---
         for (BlockPos center : capillaryCenters) {
             placeCapillaryCluster(level, random, center, capillaryPositions);
         }
 
-        // --- Verbindungsstates setzen ---
         for (BlockPos pos : veinPositions) {
             BlockState state = level.getBlockState(pos);
             if (state.is(CCBlocks.ARTREE_VEIN.get())) {
@@ -122,11 +111,6 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
         return true;
     }
 
-    /**
-     * Baut einen geraden Seitenast aus Veins in eine horizontale Richtung.
-     * Gibt die Position des letzten gesetzten Veins zurück, damit dort
-     * der Capillary-Cluster entstehen kann.
-     */
     private BlockPos growStraightBranch(WorldGenLevel level, RandomSource random,
                                         BlockPos start, Direction dir,
                                         Set<BlockPos> veins) {
@@ -153,9 +137,6 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
         return lastPlaced;
     }
 
-    /**
-     * Setzt nur Capillaries rund um einen Vein-Endpunkt.
-     */
     private void placeCapillaryCluster(WorldGenLevel level, RandomSource random,
                                        BlockPos center, Set<BlockPos> caps) {
 
@@ -174,7 +155,6 @@ public class ArtreeFeature extends Feature<NoneFeatureConfiguration> {
             if (canPlaceCapillaryAt(level, capPos)) {
                 placeCapillary(level, capPos, caps);
 
-                // kleine Chance, dass ein Kapillar noch einen "Finger" nach oben bekommt
                 if (d == Direction.UP && random.nextFloat() < 0.4f) {
                     BlockPos up2 = capPos.above();
                     if (canPlaceCapillaryAt(level, up2)) {
