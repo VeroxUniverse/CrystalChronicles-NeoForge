@@ -35,8 +35,8 @@ public class CloudPatchFeature extends Feature<NoneFeatureConfiguration> {
             return false;
         }
 
-        int radiusX = 2 + random.nextInt(3); // 2 bis 4
-        int radiusZ = 2 + random.nextInt(3); // 2 bis 4
+        int radiusX = 2 + random.nextInt(3);
+        int radiusZ = 2 + random.nextInt(3);
 
         boolean placedAny = false;
 
