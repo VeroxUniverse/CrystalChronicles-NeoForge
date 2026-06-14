@@ -1270,13 +1270,6 @@
         },
 
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1297,13 +1290,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1324,13 +1310,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1351,13 +1330,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1378,13 +1350,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1405,13 +1370,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1432,13 +1390,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1459,13 +1410,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1488,13 +1432,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1517,13 +1454,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1546,13 +1476,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1575,13 +1498,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1604,13 +1520,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1633,13 +1542,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
@@ -1662,13 +1564,6 @@
           }
         },
         {
-          "position_predicate": {
-            "predicate_type": "minecraft:linear_pos",
-            "min_dist": 0,
-            "max_dist": 10,
-            "min_chance": 0,
-            "max_chance": 1
-          },
           "location_predicate": {
             "predicate_type": "minecraft:always_true"
           },
