@@ -1,5 +1,5 @@
 {
-  "feature": "crystal_chronicles:fire/sulphur_deposit_decoration",
+  "feature": "crystal_chronicles:fire/salt_deposit_decoration",
   "placement": [
     {
       "type": "minecraft:count_on_every_layer",

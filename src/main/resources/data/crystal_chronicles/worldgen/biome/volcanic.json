@@ -25,8 +25,8 @@
 		[],
 		[
 			"crystal_chronicles:fire/pyrite",
-			"crystal_chronicles:fire/sulphur_deposits",
-			"crystal_chronicles:fire/tall_sulphur_deposits"
+			"crystal_chronicles:fire/salt_deposits",
+			"crystal_chronicles:fire/tall_salt_deposits"
 		],
 		[
 			"crystal_chronicles:fire/brine_pools",
@@ -34,7 +34,7 @@
 		],
 		[
 			"crystal_chronicles:fire/lava_river_edges",
-			"crystal_chronicles:fire/sulphur_deposit_decoration"
+			"crystal_chronicles:fire/salt_deposit_decoration"
 		],
 		[]
 	]

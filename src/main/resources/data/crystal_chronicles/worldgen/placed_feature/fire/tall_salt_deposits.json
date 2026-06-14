@@ -1,9 +1,15 @@
 {
-  "feature": "crystal_chronicles:fire/sulphur_deposit",
+  "feature": "crystal_chronicles:fire/salt_deposit",
   "placement": [
     {
       "type": "minecraft:count_on_every_layer",
-      "count": 255
+      "count": 125
+    },
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 10,
+      "noise_factor": 25,
+      "noise_offset": -0.15
     },
     {
       "type": "minecraft:rarity_filter",
@@ -13,7 +19,7 @@
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "matching_block_tag",
-        "tag": "crystal_chronicles:fire/sulphur_deposit",
+        "tag": "crystal_chronicles:fire/salt_deposit",
         "offset": [0,-1,0]
       }
     },

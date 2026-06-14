@@ -8,7 +8,7 @@
     "extra_edge_column_chance": 0.9,
     "vegetation_chance": 1,
     "xz_radius": 2,
-    "replaceable": "#crystal_chronicles:fire/sulphur_pool",
+    "replaceable": "#crystal_chronicles:fire/brine_pool",
     "ground_state": {
       "type": "minecraft:noise_provider",
       "seed": 55,

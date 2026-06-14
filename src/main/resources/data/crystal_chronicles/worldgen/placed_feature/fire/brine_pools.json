@@ -32,7 +32,7 @@
             },
             "target_condition": {
                 "type": "minecraft:matching_block_tag",
-                "tag": "crystal_chronicles:fire/sulphur_deposit"
+                "tag": "crystal_chronicles:fire/salt_deposit"
             }
         },
         {
@@ -40,7 +40,7 @@
             "predicate": {
                 "type": "matching_block_tag",
                 "offset": [0,-1,0],
-                "tag": "crystal_chronicles:fire/sulphur_deposit"
+                "tag": "crystal_chronicles:fire/salt_deposit"
             }
         },
         {
