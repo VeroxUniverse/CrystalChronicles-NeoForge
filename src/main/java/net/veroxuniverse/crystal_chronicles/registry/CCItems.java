@@ -6,6 +6,8 @@ import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -64,6 +66,8 @@ public class CCItems {
     public static final DeferredItem<Item> BISMUTH_CANDY = ITEMS.register("bismuth_candy",
             () -> new Item(new Item.Properties().food(
                     new FoodProperties.Builder()
+                            .alwaysEdible()
+                            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 600, 0), 1)
                             .nutrition(4)
                             .saturationModifier(0.3f)
                             .build()
