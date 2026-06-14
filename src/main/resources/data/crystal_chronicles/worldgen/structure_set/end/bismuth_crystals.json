@@ -4,7 +4,11 @@
     "salt": 43430001,
     "separation": 1,
     "spacing": 2,
-    "spread_type": "triangular"
+    "spread_type": "triangular",
+    "exclusion_zone": {
+      "other_set": "minecraft:end_cities",
+      "chunk_count": 7
+    }
   },
   "structures": [
     {
