@@ -54,14 +54,14 @@ public class CCBlockStateProvider extends BlockStateProvider {
         generateStoneFamily(CCBlocks.POLISHED_BISMITE, CCBlocks.POLISHED_BISMITE_STAIRS, CCBlocks.POLISHED_BISMITE_SLAB, CCBlocks.POLISHED_BISMITE_WALL);
 
         // Bismuth Bricks
-        generateBismuthBrickFamily(CCBlocks.BLUE_BISMUTH_BRICKS, CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS, CCBlocks.BLUE_BISMUTH_BRICKS_SLAB, CCBlocks.BLUE_BISMUTH_BRICKS_WALL);
+        generateBismuthBrickFamily(CCBlocks.CYAN_BISMUTH_BRICKS, CCBlocks.CYAN_BISMUTH_BRICKS_STAIRS, CCBlocks.CYAN_BISMUTH_BRICKS_SLAB, CCBlocks.CYAN_BISMUTH_BRICKS_WALL);
         generateBismuthBrickFamily(CCBlocks.PURPLE_BISMUTH_BRICKS, CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS, CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB, CCBlocks.PURPLE_BISMUTH_BRICKS_WALL);
         generateBismuthBrickFamily(CCBlocks.RAINBOW_BISMUTH_BRICKS, CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS, CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB, CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL);
         generateBismuthBrickFamily(CCBlocks.VIOLET_BISMUTH_BRICKS, CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS, CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB, CCBlocks.VIOLET_BISMUTH_BRICKS_WALL);
         generateBismuthBrickFamily(CCBlocks.YELLOW_BISMUTH_BRICKS, CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS, CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB, CCBlocks.YELLOW_BISMUTH_BRICKS_WALL);
 
         // Bismuth Walls
-        wallBlock(((WallBlock) CCBlocks.BLUE_BISMUTH_WALL.get()), blockTexture(CCBlocks.BLUE_BISMUTH.get()));
+        wallBlock(((WallBlock) CCBlocks.CYAN_BISMUTH_WALL.get()), blockTexture(CCBlocks.CYAN_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.PURPLE_BISMUTH_WALL.get()), blockTexture(CCBlocks.PURPLE_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.VIOLET_BISMUTH_WALL.get()), blockTexture(CCBlocks.VIOLET_BISMUTH.get()));
         wallBlock(((WallBlock) CCBlocks.YELLOW_BISMUTH_WALL.get()), blockTexture(CCBlocks.YELLOW_BISMUTH.get()));

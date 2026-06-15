@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_Block{crystal_chronicles:blue_bismuth}": {
+    "has_Block{crystal_chronicles:cyan_bismuth}": {
       "conditions": {
         "items": [
           {
-            "items": "crystal_chronicles:blue_bismuth"
+            "items": "crystal_chronicles:cyan_bismuth"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_Block{crystal_chronicles:blue_bismuth}"
+      "has_Block{crystal_chronicles:cyan_bismuth}"
     ]
   ],
   "rewards": {

@@ -1,0 +1,17 @@
+{
+  "loader": "fusion:model",
+  "type": "fusion:connecting",
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "particle": "crystal_chronicles:block/bismuth/cyan_bismuth_side",
+    "bottom": "crystal_chronicles:block/bismuth/cyan_bismuth_top",
+    "top": "crystal_chronicles:block/bismuth/cyan_bismuth_top",
+    "side": "crystal_chronicles:block/bismuth/cyan_bismuth_side"
+  },
+  "connections": [
+    {
+      "type": "crystal_chronicles:match_tag",
+      "tag": "crystal_chronicles:bismuth/stairs"
+    }
+  ]
+}

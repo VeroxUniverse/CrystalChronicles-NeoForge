@@ -76,17 +76,17 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.CHISELED_BISMITE.get());
         this.dropSelf(CCBlocks.CRACKED_BISMITE.get());
         this.dropSelf(CCBlocks.POLISHED_BISMITE.get());
-        this.dropSelf(CCBlocks.BLUE_BISMUTH_BRICKS.get());
+        this.dropSelf(CCBlocks.CYAN_BISMUTH_BRICKS.get());
         this.dropSelf(CCBlocks.PURPLE_BISMUTH_BRICKS.get());
         this.dropSelf(CCBlocks.RAINBOW_BISMUTH_BRICKS.get());
         this.dropSelf(CCBlocks.VIOLET_BISMUTH_BRICKS.get());
         this.dropSelf(CCBlocks.YELLOW_BISMUTH_BRICKS.get());
-        this.dropSelf(CCBlocks.BLUE_BISMUTH.get());
+        this.dropSelf(CCBlocks.CYAN_BISMUTH.get());
         this.dropSelf(CCBlocks.PURPLE_BISMUTH.get());
         this.dropSelf(CCBlocks.VIOLET_BISMUTH.get());
         this.dropSelf(CCBlocks.YELLOW_BISMUTH.get());
         this.dropSelf(CCBlocks.RAINBOW_BISMUTH.get());
-        this.dropSelf(CCBlocks.BLUE_BISMUTH_CRYSTAL.get());
+        this.dropSelf(CCBlocks.CYAN_BISMUTH_CRYSTAL.get());
         this.dropSelf(CCBlocks.PURPLE_BISMUTH_CRYSTAL.get());
         this.dropSelf(CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get());
         this.dropSelf(CCBlocks.VIOLET_BISMUTH_CRYSTAL.get());
@@ -117,10 +117,10 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(CCBlocks.BISMITE_BRICKS_SLAB.get()));
         this.dropSelf(CCBlocks.BISMITE_BRICKS_WALL.get());
 
-        this.dropSelf(CCBlocks.BLUE_BISMUTH_BRICKS_STAIRS.get());
-        this.add(CCBlocks.BLUE_BISMUTH_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.BLUE_BISMUTH_BRICKS_SLAB.get()));
-        this.dropSelf(CCBlocks.BLUE_BISMUTH_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.CYAN_BISMUTH_BRICKS_STAIRS.get());
+        this.add(CCBlocks.CYAN_BISMUTH_BRICKS_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.CYAN_BISMUTH_BRICKS_SLAB.get()));
+        this.dropSelf(CCBlocks.CYAN_BISMUTH_BRICKS_WALL.get());
 
         this.dropSelf(CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get());
         this.add(CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get(),
@@ -142,10 +142,10 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB.get()));
         this.dropSelf(CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get());
 
-        this.dropSelf(CCBlocks.BLUE_BISMUTH_STAIRS.get());
-        this.add(CCBlocks.BLUE_BISMUTH_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.BLUE_BISMUTH_SLAB.get()));
-        this.dropSelf(CCBlocks.BLUE_BISMUTH_WALL.get());
+        this.dropSelf(CCBlocks.CYAN_BISMUTH_STAIRS.get());
+        this.add(CCBlocks.CYAN_BISMUTH_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.CYAN_BISMUTH_SLAB.get()));
+        this.dropSelf(CCBlocks.CYAN_BISMUTH_WALL.get());
 
         this.dropSelf(CCBlocks.PURPLE_BISMUTH_STAIRS.get());
         this.add(CCBlocks.PURPLE_BISMUTH_SLAB.get(),

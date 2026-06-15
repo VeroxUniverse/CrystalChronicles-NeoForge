@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "B": {
-      "item": "crystal_chronicles:blue_bismuth_bricks"
+      "item": "crystal_chronicles:cyan_bismuth_bricks"
     }
   },
   "pattern": [
@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "crystal_chronicles:blue_bismuth_bricks_stairs"
+    "id": "crystal_chronicles:cyan_bismuth_bricks_stairs"
   }
 }

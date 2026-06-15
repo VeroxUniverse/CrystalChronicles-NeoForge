@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "crystal_chronicles:block/cyan_bismuth_slab"
+    },
+    "type=double": {
+      "model": "crystal_chronicles:block/cyan_bismuth"
+    },
+    "type=top": {
+      "model": "crystal_chronicles:block/cyan_bismuth_slab_top"
+    }
+  }
+}

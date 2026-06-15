@@ -78,7 +78,7 @@ public class CCBlocks {
     public static final DeferredBlock<Block> PORTAL_FRAME_BLOCK = registerBlock("portal_frame_block",
             () -> new PortalFrameBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
-    public static final DeferredBlock<Block> BLUE_BISMUTH_CRYSTAL = registerBlock("blue_bismuth_crystal",
+    public static final DeferredBlock<Block> CYAN_BISMUTH_CRYSTAL = registerBlock("cyan_bismuth_crystal",
             () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(state -> 6)));
     public static final DeferredBlock<Block> PURPLE_BISMUTH_CRYSTAL = registerBlock("purple_bismuth_crystal",
             () -> new HorizontalCrystalBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).noOcclusion().lightLevel(state -> 6)));
@@ -140,7 +140,7 @@ public class CCBlocks {
     public static final DeferredBlock<Block> BISMITE_BRICKS_WALL = registerBlock("bismite_bricks_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS = registerBlock("blue_bismuth_bricks",
+    public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS = registerBlock("cyan_bismuth_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS = registerBlock("purple_bismuth_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
@@ -151,12 +151,12 @@ public class CCBlocks {
     public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS = registerBlock("yellow_bismuth_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
-public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_STAIRS = registerBlock("blue_bismuth_bricks_stairs",
-            () -> new StairBlock(CCBlocks.BLUE_BISMUTH_BRICKS.get().defaultBlockState(),
+public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_STAIRS = registerBlock("cyan_bismuth_bricks_stairs",
+            () -> new StairBlock(CCBlocks.CYAN_BISMUTH_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_SLAB = registerBlock("blue_bismuth_bricks_slab",
+public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_SLAB = registerBlock("cyan_bismuth_bricks_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBlock("blue_bismuth_bricks_wall",
+public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBlock("cyan_bismuth_bricks_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
     public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS_STAIRS = registerBlock("purple_bismuth_bricks_stairs",
@@ -191,7 +191,7 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICKS_WALL = registerBlock("violet_bismuth_bricks_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
-    public static final DeferredBlock<Block> BLUE_BISMUTH = registerBlock("blue_bismuth",
+    public static final DeferredBlock<Block> CYAN_BISMUTH = registerBlock("cyan_bismuth",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> PURPLE_BISMUTH = registerBlock("purple_bismuth",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
@@ -202,12 +202,12 @@ public static final DeferredBlock<Block> BLUE_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> RAINBOW_BISMUTH = registerBlock("rainbow_bismuth",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
-    public static final DeferredBlock<Block> BLUE_BISMUTH_STAIRS = registerBlock("blue_bismuth_stairs",
-            () -> new StairBlock(CCBlocks.BLUE_BISMUTH.get().defaultBlockState(),
+    public static final DeferredBlock<Block> CYAN_BISMUTH_STAIRS = registerBlock("cyan_bismuth_stairs",
+            () -> new StairBlock(CCBlocks.CYAN_BISMUTH.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> BLUE_BISMUTH_SLAB = registerBlock("blue_bismuth_slab",
+    public static final DeferredBlock<Block> CYAN_BISMUTH_SLAB = registerBlock("cyan_bismuth_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> BLUE_BISMUTH_WALL = registerBlock("blue_bismuth_wall",
+    public static final DeferredBlock<Block> CYAN_BISMUTH_WALL = registerBlock("cyan_bismuth_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
     public static final DeferredBlock<Block> PURPLE_BISMUTH_STAIRS = registerBlock("purple_bismuth_stairs",

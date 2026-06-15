@@ -1283,7 +1283,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth",
+            "Name": "crystal_chronicles:cyan_bismuth",
             "Properties": {
               "axis": "x"
             }
@@ -1303,7 +1303,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth",
+            "Name": "crystal_chronicles:cyan_bismuth",
             "Properties": {
               "axis": "y"
             }
@@ -1323,7 +1323,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth",
+            "Name": "crystal_chronicles:cyan_bismuth",
             "Properties": {
               "axis": "z"
             }
@@ -1343,7 +1343,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "north"
             }
@@ -1363,7 +1363,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "east"
             }
@@ -1383,7 +1383,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "south"
             }
@@ -1403,7 +1403,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "west"
             }
@@ -1424,7 +1424,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "north",
               "shape": "inner_left"
@@ -1446,7 +1446,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "east",
               "shape": "inner_left"
@@ -1468,7 +1468,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "south",
               "shape": "inner_left"
@@ -1490,7 +1490,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "west",
               "shape": "inner_left"
@@ -1512,7 +1512,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "north",
               "shape": "inner_right"
@@ -1534,7 +1534,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "east",
               "shape": "inner_right"
@@ -1556,7 +1556,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "south",
               "shape": "inner_right"
@@ -1578,7 +1578,7 @@
             }
           },
           "output_state": {
-            "Name": "crystal_chronicles:blue_bismuth_stairs",
+            "Name": "crystal_chronicles:cyan_bismuth_stairs",
             "Properties": {
               "facing": "west",
               "shape": "inner_right"
