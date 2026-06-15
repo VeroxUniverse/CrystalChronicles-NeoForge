@@ -10,8 +10,8 @@
   },
   "connections": [
     {
-      "type": "fusion:is_same_block",
-      "textures": [ "top", "bottom" ]
+      "type": "crystal_chronicles:match_tag",
+      "tag": "crystal_chronicles:bismuth/stairs"
     }
   ]
 }

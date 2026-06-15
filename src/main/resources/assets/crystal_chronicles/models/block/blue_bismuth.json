@@ -1,6 +1,6 @@
 {
   "loader": "fusion:model",
-  "type": "fusion:connecting",
+  "type": "connecting",
   "parent": "minecraft:block/cube_column",
   "textures": {
     "particle": "crystal_chronicles:block/bismuth/blue_bismuth_side",
@@ -9,10 +9,12 @@
   },
   "connections": {
     "end": {
-      "type": "fusion:is_same_state"
+      "type": "crystal_chronicles:match_tag_and_properties",
+      "tag": "crystal_chronicles:bismuth/block"
     },
     "side": {
-      "type": "fusion:is_same_state"
+      "type": "crystal_chronicles:match_tag_and_properties",
+      "tag": "crystal_chronicles:bismuth/block"
     }
   }
 }

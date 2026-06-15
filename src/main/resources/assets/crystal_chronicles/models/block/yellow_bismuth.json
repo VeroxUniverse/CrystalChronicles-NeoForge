@@ -7,10 +7,14 @@
     "end": "crystal_chronicles:block/bismuth/yellow_bismuth_top",
     "side": "crystal_chronicles:block/bismuth/yellow_bismuth_side"
   },
-  "connections": [
-    {
-      "type": "fusion:is_same_block",
-      "textures": [ "end", "side" ]
+  "connections": {
+    "end": {
+      "type": "crystal_chronicles:match_tag_and_properties",
+      "tag": "crystal_chronicles:bismuth/block"
+    },
+    "side": {
+      "type": "crystal_chronicles:match_tag_and_properties",
+      "tag": "crystal_chronicles:bismuth/block"
     }
-  ]
+  }
 }

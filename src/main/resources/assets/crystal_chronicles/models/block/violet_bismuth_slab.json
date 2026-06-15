@@ -8,10 +8,30 @@
     "top": "crystal_chronicles:block/bismuth/violet_bismuth_top",
     "side": "crystal_chronicles:block/bismuth/violet_bismuth_side"
   },
-  "connections": [
-    {
-      "type": "fusion:is_same_block",
-      "textures": [ "top", "bottom" ]
+  "connections": {
+    "top": {
+      "type": "crystal_chronicles:match_tag_and_properties",
+      "tag": "crystal_chronicles:bismuth/slab"
+    },
+    "bottom": {
+      "type": "crystal_chronicles:match_tag_and_properties",
+      "tag": "crystal_chronicles:bismuth/slab"
+    },
+    "side": {
+      "type": "fusion:and",
+      "predicates": [
+        {
+          "type": "crystal_chronicles:match_tag_and_properties",
+          "tag": "crystal_chronicles:bismuth/slab"
+        },
+        {
+          "type": "fusion:is_direction",
+          "directions": [
+            "left",
+            "right"
+          ]
+        }
+      ]
     }
-  ]
+  }
 }
