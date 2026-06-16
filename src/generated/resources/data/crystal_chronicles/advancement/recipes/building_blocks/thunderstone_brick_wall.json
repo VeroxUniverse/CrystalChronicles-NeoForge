@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "crystal_chronicles:thunderstone_brick_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_thunderstone_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "crystal_chronicles:thunderstone_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_thunderstone_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "crystal_chronicles:thunderstone_brick_wall"
+    ]
+  }
+}

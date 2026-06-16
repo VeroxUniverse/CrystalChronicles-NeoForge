@@ -58,10 +58,10 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(CCBlocks.CHISELED_THUNDERSTONE_SLAB.get()));
         this.dropSelf(CCBlocks.CHISELED_THUNDERSTONE_WALL.get());
 
-        this.dropSelf(CCBlocks.THUNDERSTONE_BRICKS_STAIRS.get());
-        this.add(CCBlocks.THUNDERSTONE_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.THUNDERSTONE_BRICKS_SLAB.get()));
-        this.dropSelf(CCBlocks.THUNDERSTONE_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.THUNDERSTONE_BRICK_STAIRS.get());
+        this.add(CCBlocks.THUNDERSTONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.THUNDERSTONE_BRICK_SLAB.get()));
+        this.dropSelf(CCBlocks.THUNDERSTONE_BRICK_WALL.get());
 
         this.dropSelf(CCBlocks.POLISHED_THUNDERSTONE_STAIRS.get());
         this.add(CCBlocks.POLISHED_THUNDERSTONE_SLAB.get(),
@@ -102,45 +102,45 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(CCBlocks.CHISELED_BISMITE_SLAB.get()));
         this.dropSelf(CCBlocks.CHISELED_BISMITE_WALL.get());
 
-        this.dropSelf(CCBlocks.CRACKED_BISMITE_STAIRS.get());
-        this.add(CCBlocks.CRACKED_BISMITE_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.CRACKED_BISMITE_SLAB.get()));
-        this.dropSelf(CCBlocks.CRACKED_BISMITE_WALL.get());
+        this.dropSelf(CCBlocks.CRACKED_BISMITE_BRICK_STAIRS.get());
+        this.add(CCBlocks.CRACKED_BISMITE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.CRACKED_BISMITE_BRICK_SLAB.get()));
+        this.dropSelf(CCBlocks.CRACKED_BISMITE_BRICK_WALL.get());
 
         this.dropSelf(CCBlocks.POLISHED_BISMITE_STAIRS.get());
         this.add(CCBlocks.POLISHED_BISMITE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.POLISHED_BISMITE_SLAB.get()));
         this.dropSelf(CCBlocks.POLISHED_BISMITE_WALL.get());
 
-        this.dropSelf(CCBlocks.BISMITE_BRICKS_STAIRS.get());
-        this.add(CCBlocks.BISMITE_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.BISMITE_BRICKS_SLAB.get()));
-        this.dropSelf(CCBlocks.BISMITE_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.BISMITE_BRICK_STAIRS.get());
+        this.add(CCBlocks.BISMITE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.BISMITE_BRICK_SLAB.get()));
+        this.dropSelf(CCBlocks.BISMITE_BRICK_WALL.get());
 
-        this.dropSelf(CCBlocks.CYAN_BISMUTH_BRICKS_STAIRS.get());
-        this.add(CCBlocks.CYAN_BISMUTH_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.CYAN_BISMUTH_BRICKS_SLAB.get()));
-        this.dropSelf(CCBlocks.CYAN_BISMUTH_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.CYAN_BISMUTH_BRICK_STAIRS.get());
+        this.add(CCBlocks.CYAN_BISMUTH_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.CYAN_BISMUTH_BRICK_SLAB.get()));
+        this.dropSelf(CCBlocks.CYAN_BISMUTH_BRICK_WALL.get());
 
-        this.dropSelf(CCBlocks.PURPLE_BISMUTH_BRICKS_STAIRS.get());
-        this.add(CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.PURPLE_BISMUTH_BRICKS_SLAB.get()));
-        this.dropSelf(CCBlocks.PURPLE_BISMUTH_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.PURPLE_BISMUTH_BRICK_STAIRS.get());
+        this.add(CCBlocks.PURPLE_BISMUTH_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.PURPLE_BISMUTH_BRICK_SLAB.get()));
+        this.dropSelf(CCBlocks.PURPLE_BISMUTH_BRICK_WALL.get());
 
-        this.dropSelf(CCBlocks.YELLOW_BISMUTH_BRICKS_STAIRS.get());
-        this.add(CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.YELLOW_BISMUTH_BRICKS_SLAB.get()));
-        this.dropSelf(CCBlocks.YELLOW_BISMUTH_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.YELLOW_BISMUTH_BRICK_STAIRS.get());
+        this.add(CCBlocks.YELLOW_BISMUTH_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.YELLOW_BISMUTH_BRICK_SLAB.get()));
+        this.dropSelf(CCBlocks.YELLOW_BISMUTH_BRICK_WALL.get());
 
-        this.dropSelf(CCBlocks.VIOLET_BISMUTH_BRICKS_STAIRS.get());
-        this.add(CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.VIOLET_BISMUTH_BRICKS_SLAB.get()));
-        this.dropSelf(CCBlocks.VIOLET_BISMUTH_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.VIOLET_BISMUTH_BRICK_STAIRS.get());
+        this.add(CCBlocks.VIOLET_BISMUTH_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.VIOLET_BISMUTH_BRICK_SLAB.get()));
+        this.dropSelf(CCBlocks.VIOLET_BISMUTH_BRICK_WALL.get());
 
-        this.dropSelf(CCBlocks.RAINBOW_BISMUTH_BRICKS_STAIRS.get());
-        this.add(CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.RAINBOW_BISMUTH_BRICKS_SLAB.get()));
-        this.dropSelf(CCBlocks.RAINBOW_BISMUTH_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.RAINBOW_BISMUTH_BRICK_STAIRS.get());
+        this.add(CCBlocks.RAINBOW_BISMUTH_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.RAINBOW_BISMUTH_BRICK_SLAB.get()));
+        this.dropSelf(CCBlocks.RAINBOW_BISMUTH_BRICK_WALL.get());
 
         this.dropSelf(CCBlocks.CYAN_BISMUTH_STAIRS.get());
         this.add(CCBlocks.CYAN_BISMUTH_SLAB.get(),
@@ -196,21 +196,21 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.POLISHED_CRUSTONE.get());
         this.dropSelf(CCBlocks.CHISELED_CRUSTONE.get());
         this.dropSelf(CCBlocks.CRUSTONE_STAIRS.get());
-        this.dropSelf(CCBlocks.CRUSTONE_BRICKS_STAIRS.get());
-        this.dropSelf(CCBlocks.CRACKED_CRUSTONE_BRICKS_STAIRS.get());
+        this.dropSelf(CCBlocks.CRUSTONE_BRICK_STAIRS.get());
+        this.dropSelf(CCBlocks.CRACKED_CRUSTONE_BRICK_STAIRS.get());
         this.dropSelf(CCBlocks.POLISHED_CRUSTONE_STAIRS.get());
         this.dropSelf(CCBlocks.CHISELED_CRUSTONE_STAIRS.get());
         this.dropSelf(CCBlocks.CRUSTONE_WALL.get());
-        this.dropSelf(CCBlocks.CRUSTONE_BRICKS_WALL.get());
-        this.dropSelf(CCBlocks.CRACKED_CRUSTONE_BRICKS_WALL.get());
+        this.dropSelf(CCBlocks.CRUSTONE_BRICK_WALL.get());
+        this.dropSelf(CCBlocks.CRACKED_CRUSTONE_BRICK_WALL.get());
         this.dropSelf(CCBlocks.POLISHED_CRUSTONE_WALL.get());
         this.dropSelf(CCBlocks.CHISELED_CRUSTONE_WALL.get());
         this.add(CCBlocks.CRUSTONE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.CRUSTONE_SLAB.get()));
-        this.add(CCBlocks.CRUSTONE_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.CRUSTONE_BRICKS_SLAB.get()));
-        this.add(CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.CRACKED_CRUSTONE_BRICKS_SLAB.get()));
+        this.add(CCBlocks.CRUSTONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.CRUSTONE_BRICK_SLAB.get()));
+        this.add(CCBlocks.CRACKED_CRUSTONE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.CRACKED_CRUSTONE_BRICK_SLAB.get()));
         this.add(CCBlocks.POLISHED_CRUSTONE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.POLISHED_CRUSTONE_SLAB.get()));
         this.add(CCBlocks.CHISELED_CRUSTONE_SLAB.get(),
@@ -243,10 +243,10 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(CCBlocks.HOLY_MARBLE_SLAB.get()));
 
         this.dropSelf(CCBlocks.HOLY_MARBLE_BRICKS.get());
-        this.dropSelf(CCBlocks.HOLY_MARBLE_BRICKS_STAIRS.get());
-        this.dropSelf(CCBlocks.HOLY_MARBLE_BRICKS_WALL.get());
-        this.add(CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.HOLY_MARBLE_BRICKS_SLAB.get()));
+        this.dropSelf(CCBlocks.HOLY_MARBLE_BRICK_STAIRS.get());
+        this.dropSelf(CCBlocks.HOLY_MARBLE_BRICK_WALL.get());
+        this.add(CCBlocks.HOLY_MARBLE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.HOLY_MARBLE_BRICK_SLAB.get()));
 
         this.dropSelf(CCBlocks.CHISELED_HOLY_MARBLE.get());
         this.dropSelf(CCBlocks.CHISELED_HOLY_MARBLE_STAIRS.get());
@@ -254,11 +254,11 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.add(CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.CHISELED_HOLY_MARBLE_SLAB.get()));
 
-        this.dropSelf(CCBlocks.CRACKED_HOLY_MARBLE.get());
-        this.dropSelf(CCBlocks.CRACKED_HOLY_MARBLE_STAIRS.get());
-        this.dropSelf(CCBlocks.CRACKED_HOLY_MARBLE_WALL.get());
-        this.add(CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.CRACKED_HOLY_MARBLE_SLAB.get()));
+        this.dropSelf(CCBlocks.CRACKED_HOLY_MARBLE_BRICKS .get());
+        this.dropSelf(CCBlocks.CRACKED_HOLY_MARBLE_BRICK_STAIRS.get());
+        this.dropSelf(CCBlocks.CRACKED_HOLY_MARBLE_BRICK_WALL.get());
+        this.add(CCBlocks.CRACKED_HOLY_MARBLE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.CRACKED_HOLY_MARBLE_BRICK_SLAB.get()));
 
         this.dropSelf(CCBlocks.POLISHED_HOLY_MARBLE.get());
         this.dropSelf(CCBlocks.POLISHED_HOLY_MARBLE_STAIRS.get());
@@ -287,10 +287,10 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createSlabItemTable(CCBlocks.PUMICE_SLAB.get()));
 
         this.dropSelf(CCBlocks.PUMICE_BRICKS.get());
-        this.dropSelf(CCBlocks.PUMICE_BRICKS_STAIRS.get());
-        this.dropSelf(CCBlocks.PUMICE_BRICKS_WALL.get());
-        this.add(CCBlocks.PUMICE_BRICKS_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.PUMICE_BRICKS_SLAB.get()));
+        this.dropSelf(CCBlocks.PUMICE_BRICK_STAIRS.get());
+        this.dropSelf(CCBlocks.PUMICE_BRICK_WALL.get());
+        this.add(CCBlocks.PUMICE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.PUMICE_BRICK_SLAB.get()));
 
         this.dropSelf(CCBlocks.CHISELED_PUMICE.get());
         this.dropSelf(CCBlocks.CHISELED_PUMICE_STAIRS.get());
@@ -298,11 +298,11 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.add(CCBlocks.CHISELED_PUMICE_SLAB.get(),
                 block -> createSlabItemTable(CCBlocks.CHISELED_PUMICE_SLAB.get()));
 
-        this.dropSelf(CCBlocks.CRACKED_PUMICE.get());
-        this.dropSelf(CCBlocks.CRACKED_PUMICE_STAIRS.get());
-        this.dropSelf(CCBlocks.CRACKED_PUMICE_WALL.get());
-        this.add(CCBlocks.CRACKED_PUMICE_SLAB.get(),
-                block -> createSlabItemTable(CCBlocks.CRACKED_PUMICE_SLAB.get()));
+        this.dropSelf(CCBlocks.CRACKED_PUMICE_BRICKS.get());
+        this.dropSelf(CCBlocks.CRACKED_PUMICE_BRICK_STAIRS.get());
+        this.dropSelf(CCBlocks.CRACKED_PUMICE_BRICK_WALL.get());
+        this.add(CCBlocks.CRACKED_PUMICE_BRICK_SLAB.get(),
+                block -> createSlabItemTable(CCBlocks.CRACKED_PUMICE_BRICK_SLAB.get()));
 
         this.dropSelf(CCBlocks.POLISHED_PUMICE.get());
         this.dropSelf(CCBlocks.POLISHED_PUMICE_STAIRS.get());

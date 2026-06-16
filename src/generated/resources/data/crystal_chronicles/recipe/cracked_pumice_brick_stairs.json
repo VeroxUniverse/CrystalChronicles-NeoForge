@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "block.crystal_chronicles.cracked_pumice_bricks",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:cracked_pumice_bricks"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:cracked_pumice_brick_stairs"
+  }
+}

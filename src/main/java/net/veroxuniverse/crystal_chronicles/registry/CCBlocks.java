@@ -57,12 +57,12 @@ public class CCBlocks {
     public static final DeferredBlock<Block> CHISELED_THUNDERSTONE_WALL = registerBlock("chiseled_thunderstone_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> THUNDERSTONE_BRICKS_STAIRS = registerBlock("thunderstone_bricks_stairs",
+    public static final DeferredBlock<Block> THUNDERSTONE_BRICK_STAIRS = registerBlock("thunderstone_brick_stairs",
             () -> new StairBlock(CCBlocks.THUNDERSTONE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> THUNDERSTONE_BRICKS_SLAB = registerBlock("thunderstone_bricks_slab",
+    public static final DeferredBlock<Block> THUNDERSTONE_BRICK_SLAB = registerBlock("thunderstone_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> THUNDERSTONE_BRICKS_WALL = registerBlock("thunderstone_bricks_wall",
+    public static final DeferredBlock<Block> THUNDERSTONE_BRICK_WALL = registerBlock("thunderstone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> POLISHED_THUNDERSTONE_STAIRS = registerBlock("polished_thunderstone_stairs",
@@ -95,7 +95,7 @@ public class CCBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
     public static final DeferredBlock<Block> CHISELED_BISMITE = registerBlock("chiseled_bismite",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
-    public static final DeferredBlock<Block> CRACKED_BISMITE = registerBlock("cracked_bismite",
+    public static final DeferredBlock<Block> CRACKED_BISMITE = registerBlock("cracked_bismite_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
     public static final DeferredBlock<Block> POLISHED_BISMITE = registerBlock("polished_bismite",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
@@ -116,12 +116,12 @@ public class CCBlocks {
     public static final DeferredBlock<Block> CHISELED_BISMITE_WALL = registerBlock("chiseled_bismite_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> CRACKED_BISMITE_STAIRS = registerBlock("cracked_bismite_stairs",
+    public static final DeferredBlock<Block> CRACKED_BISMITE_BRICK_STAIRS = registerBlock("cracked_bismite_brick_stairs",
             () -> new StairBlock(CCBlocks.CRACKED_BISMITE.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRACKED_BISMITE_SLAB = registerBlock("cracked_bismite_slab",
+    public static final DeferredBlock<Block> CRACKED_BISMITE_BRICK_SLAB = registerBlock("cracked_bismite_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRACKED_BISMITE_WALL = registerBlock("cracked_bismite_wall",
+    public static final DeferredBlock<Block> CRACKED_BISMITE_BRICK_WALL = registerBlock("cracked_bismite_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> POLISHED_BISMITE_STAIRS = registerBlock("polished_bismite_stairs",
@@ -132,12 +132,12 @@ public class CCBlocks {
     public static final DeferredBlock<Block> POLISHED_BISMITE_WALL = registerBlock("polished_bismite_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> BISMITE_BRICKS_STAIRS = registerBlock("bismite_bricks_stairs",
+    public static final DeferredBlock<Block> BISMITE_BRICK_STAIRS = registerBlock("bismite_brick_stairs",
             () -> new StairBlock(CCBlocks.BISMITE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> BISMITE_BRICKS_SLAB = registerBlock("bismite_bricks_slab",
+    public static final DeferredBlock<Block> BISMITE_BRICK_SLAB = registerBlock("bismite_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> BISMITE_BRICKS_WALL = registerBlock("bismite_bricks_wall",
+    public static final DeferredBlock<Block> BISMITE_BRICK_WALL = registerBlock("bismite_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS = registerBlock("cyan_bismuth_bricks",
@@ -151,44 +151,44 @@ public class CCBlocks {
     public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS = registerBlock("yellow_bismuth_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)));
 
-public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_STAIRS = registerBlock("cyan_bismuth_bricks_stairs",
+public static final DeferredBlock<Block> CYAN_BISMUTH_BRICK_STAIRS = registerBlock("cyan_bismuth_brick_stairs",
             () -> new StairBlock(CCBlocks.CYAN_BISMUTH_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_SLAB = registerBlock("cyan_bismuth_bricks_slab",
+public static final DeferredBlock<Block> CYAN_BISMUTH_BRICK_SLAB = registerBlock("cyan_bismuth_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBlock("cyan_bismuth_bricks_wall",
+public static final DeferredBlock<Block> CYAN_BISMUTH_BRICK_WALL = registerBlock("cyan_bismuth_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
-    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS_STAIRS = registerBlock("purple_bismuth_bricks_stairs",
+    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICK_STAIRS = registerBlock("purple_bismuth_brick_stairs",
             () -> new StairBlock(CCBlocks.PURPLE_BISMUTH_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS_SLAB = registerBlock("purple_bismuth_bricks_slab",
+    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICK_SLAB = registerBlock("purple_bismuth_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICKS_WALL = registerBlock("purple_bismuth_bricks_wall",
+    public static final DeferredBlock<Block> PURPLE_BISMUTH_BRICK_WALL = registerBlock("purple_bismuth_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
-    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS_STAIRS = registerBlock("yellow_bismuth_bricks_stairs",
+    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICK_STAIRS = registerBlock("yellow_bismuth_brick_stairs",
             () -> new StairBlock(CCBlocks.YELLOW_BISMUTH_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS_SLAB = registerBlock("yellow_bismuth_bricks_slab",
+    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICK_SLAB = registerBlock("yellow_bismuth_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICKS_WALL = registerBlock("yellow_bismuth_bricks_wall",
+    public static final DeferredBlock<Block> YELLOW_BISMUTH_BRICK_WALL = registerBlock("yellow_bismuth_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
-    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICKS_STAIRS = registerBlock("rainbow_bismuth_bricks_stairs",
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICK_STAIRS = registerBlock("rainbow_bismuth_brick_stairs",
             () -> new StairBlock(CCBlocks.RAINBOW_BISMUTH_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICKS_SLAB = registerBlock("rainbow_bismuth_bricks_slab",
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICK_SLAB = registerBlock("rainbow_bismuth_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICKS_WALL = registerBlock("rainbow_bismuth_bricks_wall",
+    public static final DeferredBlock<Block> RAINBOW_BISMUTH_BRICK_WALL = registerBlock("rainbow_bismuth_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
-    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICKS_STAIRS = registerBlock("violet_bismuth_bricks_stairs",
+    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICK_STAIRS = registerBlock("violet_bismuth_brick_stairs",
             () -> new StairBlock(CCBlocks.VIOLET_BISMUTH_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICKS_SLAB = registerBlock("violet_bismuth_bricks_slab",
+    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICK_SLAB = registerBlock("violet_bismuth_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICKS_WALL = registerBlock("violet_bismuth_bricks_wall",
+    public static final DeferredBlock<Block> VIOLET_BISMUTH_BRICK_WALL = registerBlock("violet_bismuth_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
     public static final DeferredBlock<Block> CYAN_BISMUTH = registerBlock("cyan_bismuth",
@@ -316,22 +316,22 @@ public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBloc
 
     public static final DeferredBlock<Block> CRUSTONE_BRICKS = registerBlock("crustone_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
-    public static final DeferredBlock<Block> CRUSTONE_BRICKS_STAIRS = registerBlock("crustone_bricks_stairs",
+    public static final DeferredBlock<Block> CRUSTONE_BRICK_STAIRS = registerBlock("crustone_brick_stairs",
             () -> new StairBlock(CCBlocks.CRUSTONE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRUSTONE_BRICKS_SLAB = registerBlock("crustone_bricks_slab",
+    public static final DeferredBlock<Block> CRUSTONE_BRICK_SLAB = registerBlock("crustone_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRUSTONE_BRICKS_WALL = registerBlock("crustone_bricks_wall",
+    public static final DeferredBlock<Block> CRUSTONE_BRICK_WALL = registerBlock("crustone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICKS = registerBlock("cracked_crustone_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE)));
-    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICKS_STAIRS = registerBlock("cracked_crustone_bricks_stairs",
+    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICK_STAIRS = registerBlock("cracked_crustone_brick_stairs",
             () -> new StairBlock(CCBlocks.CRACKED_CRUSTONE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICKS_SLAB = registerBlock("cracked_crustone_bricks_slab",
+    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICK_SLAB = registerBlock("cracked_crustone_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICKS_WALL = registerBlock("cracked_crustone_bricks_wall",
+    public static final DeferredBlock<Block> CRACKED_CRUSTONE_BRICK_WALL = registerBlock("cracked_crustone_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> POLISHED_CRUSTONE = registerBlock("polished_crustone",
@@ -385,7 +385,7 @@ public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> CHISELED_HOLY_MARBLE = registerBlock("chiseled_holy_marble",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
-    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE = registerBlock("cracked_holy_marble",
+    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_BRICKS = registerBlock("cracked_holy_marble_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
     public static final DeferredBlock<Block> POLISHED_HOLY_MARBLE = registerBlock("polished_holy_marble",
@@ -456,12 +456,12 @@ public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> HOLY_MARBLE_WALL = registerBlock("holy_marble_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> HOLY_MARBLE_BRICKS_STAIRS = registerBlock("holy_marble_bricks_stairs",
+    public static final DeferredBlock<Block> HOLY_MARBLE_BRICK_STAIRS = registerBlock("holy_marble_brick_stairs",
             () -> new StairBlock(CCBlocks.HOLY_MARBLE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> HOLY_MARBLE_BRICKS_SLAB = registerBlock("holy_marble_bricks_slab",
+    public static final DeferredBlock<Block> HOLY_MARBLE_BRICK_SLAB = registerBlock("holy_marble_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> HOLY_MARBLE_BRICKS_WALL = registerBlock("holy_marble_bricks_wall",
+    public static final DeferredBlock<Block> HOLY_MARBLE_BRICK_WALL = registerBlock("holy_marble_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> CHISELED_HOLY_MARBLE_STAIRS = registerBlock("chiseled_holy_marble_stairs",
@@ -472,12 +472,12 @@ public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> CHISELED_HOLY_MARBLE_WALL = registerBlock("chiseled_holy_marble_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_STAIRS = registerBlock("cracked_holy_marble_stairs",
-            () -> new StairBlock(CCBlocks.CRACKED_HOLY_MARBLE.get().defaultBlockState(),
+    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_BRICK_STAIRS = registerBlock("cracked_holy_marble_brick_stairs",
+            () -> new StairBlock(CCBlocks.CRACKED_HOLY_MARBLE_BRICKS .get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_SLAB = registerBlock("cracked_holy_marble_slab",
+    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_BRICK_SLAB = registerBlock("cracked_holy_marble_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_WALL = registerBlock("cracked_holy_marble_wall",
+    public static final DeferredBlock<Block> CRACKED_HOLY_MARBLE_BRICK_WALL = registerBlock("cracked_holy_marble_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> POLISHED_HOLY_MARBLE_STAIRS = registerBlock("polished_holy_marble_stairs",
@@ -514,7 +514,7 @@ public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> CHISELED_PUMICE = registerBlock("chiseled_pumice",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
-    public static final DeferredBlock<Block> CRACKED_PUMICE = registerBlock("cracked_pumice",
+    public static final DeferredBlock<Block> CRACKED_PUMICE_BRICKS = registerBlock("cracked_pumice_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)));
 
     public static final DeferredBlock<Block> POLISHED_PUMICE = registerBlock("polished_pumice",
@@ -579,12 +579,12 @@ public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> PUMICE_WALL = registerBlock("pumice_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> PUMICE_BRICKS_STAIRS = registerBlock("pumice_bricks_stairs",
+    public static final DeferredBlock<Block> PUMICE_BRICK_STAIRS = registerBlock("pumice_brick_stairs",
             () -> new StairBlock(CCBlocks.PUMICE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> PUMICE_BRICKS_SLAB = registerBlock("pumice_bricks_slab",
+    public static final DeferredBlock<Block> PUMICE_BRICK_SLAB = registerBlock("pumice_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> PUMICE_BRICKS_WALL = registerBlock("pumice_bricks_wall",
+    public static final DeferredBlock<Block> PUMICE_BRICK_WALL = registerBlock("pumice_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> CHISELED_PUMICE_STAIRS = registerBlock("chiseled_pumice_stairs",
@@ -595,12 +595,12 @@ public static final DeferredBlock<Block> CYAN_BISMUTH_BRICKS_WALL = registerBloc
     public static final DeferredBlock<Block> CHISELED_PUMICE_WALL = registerBlock("chiseled_pumice_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
-    public static final DeferredBlock<Block> CRACKED_PUMICE_STAIRS = registerBlock("cracked_pumice_stairs",
-            () -> new StairBlock(CCBlocks.CRACKED_PUMICE.get().defaultBlockState(),
+    public static final DeferredBlock<Block> CRACKED_PUMICE_BRICK_STAIRS = registerBlock("cracked_pumice_brick_stairs",
+            () -> new StairBlock(CCBlocks.CRACKED_PUMICE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRACKED_PUMICE_SLAB = registerBlock("cracked_pumice_slab",
+    public static final DeferredBlock<Block> CRACKED_PUMICE_BRICK_SLAB = registerBlock("cracked_pumice_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
-    public static final DeferredBlock<Block> CRACKED_PUMICE_WALL = registerBlock("cracked_pumice_wall",
+    public static final DeferredBlock<Block> CRACKED_PUMICE_BRICK_WALL = registerBlock("cracked_pumice_brick_wall",
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> POLISHED_PUMICE_STAIRS = registerBlock("polished_pumice_stairs",
