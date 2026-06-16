@@ -37,7 +37,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
                 // Bismuth / End
                 .add(CCBlocks.PORTAL_FRAME_BLOCK.get())
                 .add(CCBlocks.CYAN_BISMUTH_CRYSTAL.get(), CCBlocks.PURPLE_BISMUTH_CRYSTAL.get(), CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get(), CCBlocks.VIOLET_BISMUTH_CRYSTAL.get(), CCBlocks.YELLOW_BISMUTH_CRYSTAL.get())
-                .add(CCBlocks.BISMITE.get(), CCBlocks.BISMITE_BRICKS.get(), CCBlocks.CHISELED_BISMITE.get(), CCBlocks.CRACKED_BISMITE.get(), CCBlocks.POLISHED_BISMITE.get())
+                .add(CCBlocks.BISMITE.get(), CCBlocks.BISMITE_BRICKS.get(), CCBlocks.CHISELED_BISMITE.get(), CCBlocks.CRACKED_BISMITE_BRICKS.get(), CCBlocks.POLISHED_BISMITE.get())
                 .add(CCBlocks.BISMITE_STAIRS.get(), CCBlocks.BISMITE_SLAB.get(), CCBlocks.BISMITE_WALL.get())
                 .add(CCBlocks.CHISELED_BISMITE_STAIRS.get(), CCBlocks.CHISELED_BISMITE_SLAB.get(), CCBlocks.CHISELED_BISMITE_WALL.get())
                 .add(CCBlocks.CRACKED_BISMITE_BRICK_STAIRS.get(), CCBlocks.CRACKED_BISMITE_BRICK_SLAB.get(), CCBlocks.CRACKED_BISMITE_BRICK_WALL.get())
@@ -121,7 +121,7 @@ public class CCBlockTagProvider extends BlockTagsProvider {
 
         // --- TOOL LEVELS ---
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(CCBlocks.BISMITE.get(), CCBlocks.BISMITE_BRICKS.get(), CCBlocks.CHISELED_BISMITE.get(), CCBlocks.CRACKED_BISMITE.get(), CCBlocks.POLISHED_BISMITE.get())
+                .add(CCBlocks.BISMITE.get(), CCBlocks.BISMITE_BRICKS.get(), CCBlocks.CHISELED_BISMITE.get(), CCBlocks.CRACKED_BISMITE_BRICKS.get(), CCBlocks.POLISHED_BISMITE.get())
                 .add(CCBlocks.CYAN_BISMUTH_BRICKS.get(), CCBlocks.PURPLE_BISMUTH_BRICKS.get(), CCBlocks.RAINBOW_BISMUTH_BRICKS.get(), CCBlocks.VIOLET_BISMUTH_BRICKS.get(), CCBlocks.YELLOW_BISMUTH_BRICKS.get())
                 .add(CCBlocks.CYAN_BISMUTH.get(), CCBlocks.PURPLE_BISMUTH.get(), CCBlocks.VIOLET_BISMUTH.get(), CCBlocks.YELLOW_BISMUTH.get(), CCBlocks.RAINBOW_BISMUTH.get())
                 .add(CCBlocks.CYAN_BISMUTH_CRYSTAL.get(), CCBlocks.PURPLE_BISMUTH_CRYSTAL.get(), CCBlocks.RAINBOW_BISMUTH_CRYSTAL.get(), CCBlocks.VIOLET_BISMUTH_CRYSTAL.get(), CCBlocks.YELLOW_BISMUTH_CRYSTAL.get())

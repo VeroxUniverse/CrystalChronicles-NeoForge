@@ -74,7 +74,7 @@ public class CCBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(CCBlocks.BISMITE.get());
         this.dropSelf(CCBlocks.BISMITE_BRICKS.get());
         this.dropSelf(CCBlocks.CHISELED_BISMITE.get());
-        this.dropSelf(CCBlocks.CRACKED_BISMITE.get());
+        this.dropSelf(CCBlocks.CRACKED_BISMITE_BRICKS.get());
         this.dropSelf(CCBlocks.POLISHED_BISMITE.get());
         this.dropSelf(CCBlocks.CYAN_BISMUTH_BRICKS.get());
         this.dropSelf(CCBlocks.PURPLE_BISMUTH_BRICKS.get());

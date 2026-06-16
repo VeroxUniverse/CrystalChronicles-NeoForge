@@ -4,9 +4,10 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "crystal_chronicles:holy_marble_bricks"
+    "item": "crystal_chronicles:pumice_bricks"
   },
   "result": {
-    "id": "crystal_chronicles:cracked_holy_marble_bricks"
+    "count": 1,
+    "id": "crystal_chronicles:cracked_pumice_bricks"
   }
 }

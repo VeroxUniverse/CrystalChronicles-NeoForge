@@ -18,6 +18,7 @@ import net.veroxuniverse.crystal_chronicles.registry.CCBlocks;
 import net.veroxuniverse.crystal_chronicles.registry.CCItems;
 import net.veroxuniverse.crystal_chronicles.util.CCTags;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
@@ -73,6 +74,7 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         create4x4Recipe(pRecipeOutput, CCBlocks.POLISHED_CRUSTONE, CCBlocks.CRUSTONE, "has_crustone");
         create4x4Recipe(pRecipeOutput, CCBlocks.CRUSTONE_BRICKS, CCBlocks.POLISHED_CRUSTONE, "has_crustone");
         createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_CRUSTONE, CCBlocks.CRUSTONE_SLAB, "has_crustone");
+        smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_CRUSTONE_BRICKS , CCBlocks.CRUSTONE_BRICKS);
 
         generateStoneFamily(pRecipeOutput, CCBlocks.THUNDERSTONE, CCBlocks.THUNDERSTONE_STAIRS, CCBlocks.THUNDERSTONE_SLAB, CCBlocks.THUNDERSTONE_WALL, "thunderstone/");
         generateStoneFamily(pRecipeOutput, CCBlocks.THUNDERSTONE_BRICKS, CCBlocks.THUNDERSTONE_BRICK_STAIRS, CCBlocks.THUNDERSTONE_BRICK_SLAB, CCBlocks.THUNDERSTONE_BRICK_WALL, "thunderstone/");
@@ -89,13 +91,14 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         generateStoneFamily(pRecipeOutput, CCBlocks.BISMITE_BRICKS, CCBlocks.BISMITE_BRICK_STAIRS, CCBlocks.BISMITE_BRICK_SLAB, CCBlocks.BISMITE_BRICK_WALL, "bismite/");
         generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_BISMITE, CCBlocks.POLISHED_BISMITE_STAIRS, CCBlocks.POLISHED_BISMITE_SLAB, CCBlocks.POLISHED_BISMITE_WALL, "bismite/");
         generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_BISMITE, CCBlocks.CHISELED_BISMITE_STAIRS, CCBlocks.CHISELED_BISMITE_SLAB, CCBlocks.CHISELED_BISMITE_WALL, "bismite/");
-        generateStoneFamily(pRecipeOutput, CCBlocks.CRACKED_BISMITE, CCBlocks.CRACKED_BISMITE_BRICK_STAIRS, CCBlocks.CRACKED_BISMITE_BRICK_SLAB, CCBlocks.CRACKED_BISMITE_BRICK_WALL, "bismite/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRACKED_BISMITE_BRICKS, CCBlocks.CRACKED_BISMITE_BRICK_STAIRS, CCBlocks.CRACKED_BISMITE_BRICK_SLAB, CCBlocks.CRACKED_BISMITE_BRICK_WALL, "bismite/");
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.BISMITE_BRICKS.get(), CCBlocks.BISMITE.get(), 1, "bismite/");
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_BISMITE.get(), CCBlocks.BISMITE.get(), 1,"bismite/");
         stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_BISMITE.get(), CCBlocks.POLISHED_BISMITE.get(), 1, "bismite/");
         create4x4Recipe(pRecipeOutput, CCBlocks.POLISHED_BISMITE, CCBlocks.BISMITE, "has_bismite");
         create4x4Recipe(pRecipeOutput, CCBlocks.BISMITE_BRICKS, CCBlocks.POLISHED_BISMITE, "has_bismite");
         createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_BISMITE, CCBlocks.BISMITE_SLAB, "has_bismite");
+        smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_BISMITE_BRICKS, CCBlocks.BISMITE_BRICKS);
 
         generateStoneFamily(pRecipeOutput, CCBlocks.HOLY_MARBLE, CCBlocks.HOLY_MARBLE_STAIRS, CCBlocks.HOLY_MARBLE_SLAB, CCBlocks.HOLY_MARBLE_WALL, "holy_marble/");
         generateStoneFamily(pRecipeOutput, CCBlocks.HOLY_MARBLE_BRICKS, CCBlocks.HOLY_MARBLE_BRICK_STAIRS, CCBlocks.HOLY_MARBLE_BRICK_SLAB, CCBlocks.HOLY_MARBLE_BRICK_WALL, "holy_marble/");
@@ -107,6 +110,7 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         create4x4Recipe(pRecipeOutput, CCBlocks.HOLY_MARBLE_BRICKS, CCBlocks.POLISHED_HOLY_MARBLE, "has_holy_marble");
         createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_HOLY_MARBLE, CCBlocks.HOLY_MARBLE_SLAB, "has_holy_marble");
         createPillarRecipe(pRecipeOutput, CCBlocks.HOLY_MARBLE_PILLAR, CCBlocks.HOLY_MARBLE, "has_holy_marble");
+        smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_HOLY_MARBLE_BRICKS , CCBlocks.HOLY_MARBLE_BRICKS);
 
         generateStoneFamily(pRecipeOutput, CCBlocks.AURUM, CCBlocks.AURUM_STAIRS, CCBlocks.AURUM_SLAB, CCBlocks.AURUM_WALL, "aurum/");
 
@@ -118,6 +122,7 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         create4x4Recipe(pRecipeOutput, CCBlocks.POLISHED_PUMICE, CCBlocks.PUMICE, "has_pumice");
         create4x4Recipe(pRecipeOutput, CCBlocks.PUMICE_BRICKS, CCBlocks.POLISHED_PUMICE, "has_pumice");
         createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_PUMICE, CCBlocks.PUMICE_SLAB, "has_pumice");
+        smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_PUMICE_BRICKS , CCBlocks.PUMICE_BRICKS);
 
         generateStoneFamily(pRecipeOutput, CCBlocks.PYRITE, CCBlocks.PYRITE_STAIRS, CCBlocks.PYRITE_SLAB, CCBlocks.PYRITE_WALL, "pyrite/");
 

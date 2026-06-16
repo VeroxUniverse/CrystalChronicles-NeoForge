@@ -36,7 +36,7 @@ public class CCTabs {
                 output.accept(CCBlocks.BISMITE_BRICK_STAIRS.get());
                 output.accept(CCBlocks.BISMITE_BRICK_SLAB.get());
                 output.accept(CCBlocks.BISMITE_BRICK_WALL.get());
-                output.accept(CCBlocks.CRACKED_BISMITE.get());
+                output.accept(CCBlocks.CRACKED_BISMITE_BRICKS.get());
                 output.accept(CCBlocks.CRACKED_BISMITE_BRICK_STAIRS.get());
                 output.accept(CCBlocks.CRACKED_BISMITE_BRICK_SLAB.get());
                 output.accept(CCBlocks.CRACKED_BISMITE_BRICK_WALL.get());

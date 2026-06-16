@@ -95,7 +95,7 @@ public class CCBlocks {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
     public static final DeferredBlock<Block> CHISELED_BISMITE = registerBlock("chiseled_bismite",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
-    public static final DeferredBlock<Block> CRACKED_BISMITE = registerBlock("cracked_bismite_bricks",
+    public static final DeferredBlock<Block> CRACKED_BISMITE_BRICKS = registerBlock("cracked_bismite_bricks",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
     public static final DeferredBlock<Block> POLISHED_BISMITE = registerBlock("polished_bismite",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE)));
@@ -117,7 +117,7 @@ public class CCBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
     public static final DeferredBlock<Block> CRACKED_BISMITE_BRICK_STAIRS = registerBlock("cracked_bismite_brick_stairs",
-            () -> new StairBlock(CCBlocks.CRACKED_BISMITE.get().defaultBlockState(),
+            () -> new StairBlock(CCBlocks.CRACKED_BISMITE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_STAIRS).requiresCorrectToolForDrops()));
     public static final DeferredBlock<Block> CRACKED_BISMITE_BRICK_SLAB = registerBlock("cracked_bismite_brick_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_SLAB).requiresCorrectToolForDrops()));
