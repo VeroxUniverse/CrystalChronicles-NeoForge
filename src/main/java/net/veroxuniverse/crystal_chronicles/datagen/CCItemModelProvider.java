@@ -23,54 +23,63 @@ public class CCItemModelProvider extends ItemModelProvider {
         basicItem(CCItems.ICE_KNIGHT_CHESTPLATE.get());
         basicItem(CCItems.ICE_KNIGHT_LEGGINGS.get());
         basicItem(CCItems.ICE_KNIGHT_BOOTS.get());
+
         basicItem(CCItems.BLOOD_KNIGHT_HELMET.get());
         basicItem(CCItems.BLOOD_KNIGHT_CHESTPLATE.get());
         basicItem(CCItems.BLOOD_KNIGHT_LEGGINGS.get());
         basicItem(CCItems.BLOOD_KNIGHT_BOOTS.get());
+
         basicItem(CCItems.ENDER_MAGE_HELMET.get());
         basicItem(CCItems.ENDER_MAGE_CHESTPLATE.get());
         basicItem(CCItems.ENDER_MAGE_LEGGINGS.get());
         basicItem(CCItems.ENDER_MAGE_BOOTS.get());
-        basicItem(CCItems.HOLY_KNIGHT_HELMET.get());
-        basicItem(CCItems.HOLY_KNIGHT_CHESTPLATE.get());
-        basicItem(CCItems.HOLY_KNIGHT_LEGGINGS.get());
-        basicItem(CCItems.HOLY_KNIGHT_BOOTS.get());
-        basicItem(CCItems.HEMALITE_SHARD.get());
-        basicItem(CCItems.VOIDSTONE_SHARD.get());
-        basicItem(CCItems.DIVINITE_SHARD.get());
-        basicItem(CCItems.VOLTITE_SHARD.get());
-        basicItem(CCItems.FLORALITE_SHARD.get());
-        basicItem(CCItems.VOLCANITE_SHARD.get());
-        basicItem(CCItems.NATURE_KNIGHT_HELMET.get());
-        basicItem(CCItems.NATURE_KNIGHT_CHESTPLATE.get());
-        basicItem(CCItems.NATURE_KNIGHT_LEGGINGS.get());
-        basicItem(CCItems.NATURE_KNIGHT_BOOTS.get());
-        basicItem(CCItems.FIRE_KNIGHT_HELMET.get());
-        basicItem(CCItems.FIRE_KNIGHT_CHESTPLATE.get());
-        basicItem(CCItems.FIRE_KNIGHT_LEGGINGS.get());
-        basicItem(CCItems.FIRE_KNIGHT_BOOTS.get());
+
         basicItem(CCItems.EVOCATION_KNIGHT_HELMET.get());
         basicItem(CCItems.EVOCATION_KNIGHT_CHESTPLATE.get());
         basicItem(CCItems.EVOCATION_KNIGHT_LEGGINGS.get());
         basicItem(CCItems.EVOCATION_KNIGHT_BOOTS.get());
+
+        basicItem(CCItems.FIRE_KNIGHT_HELMET.get());
+        basicItem(CCItems.FIRE_KNIGHT_CHESTPLATE.get());
+        basicItem(CCItems.FIRE_KNIGHT_LEGGINGS.get());
+        basicItem(CCItems.FIRE_KNIGHT_BOOTS.get());
+
+        basicItem(CCItems.HOLY_KNIGHT_HELMET.get());
+        basicItem(CCItems.HOLY_KNIGHT_CHESTPLATE.get());
+        basicItem(CCItems.HOLY_KNIGHT_LEGGINGS.get());
+        basicItem(CCItems.HOLY_KNIGHT_BOOTS.get());
+
         basicItem(CCItems.LIGHTNING_KNIGHT_HELMET.get());
         basicItem(CCItems.LIGHTNING_KNIGHT_CHESTPLATE.get());
         basicItem(CCItems.LIGHTNING_KNIGHT_LEGGINGS.get());
         basicItem(CCItems.LIGHTNING_KNIGHT_BOOTS.get());
-        basicItem(CCItems.CLOUD_BUCKET.get());
+
+        basicItem(CCItems.NATURE_KNIGHT_HELMET.get());
+        basicItem(CCItems.NATURE_KNIGHT_CHESTPLATE.get());
+        basicItem(CCItems.NATURE_KNIGHT_LEGGINGS.get());
+        basicItem(CCItems.NATURE_KNIGHT_BOOTS.get());
+
         basicItem(CCItems.PRISMATIC_KNIGHT_HELMET.get());
         basicItem(CCItems.PRISMATIC_KNIGHT_CHESTPLATE.get());
         basicItem(CCItems.PRISMATIC_KNIGHT_LEGGINGS.get());
         basicItem(CCItems.PRISMATIC_KNIGHT_BOOTS.get());
 
-        basicItem(CCItems.BISMUTH_CHISEL.get());
+        basicItem(CCItems.HEMALITE_SHARD.get());
+        basicItem(CCItems.VOIDSTONE_SHARD.get());
         basicItem(CCItems.AVARICITE_SHARD.get());
+        basicItem(CCItems.VOLCANITE_SHARD.get());
+        basicItem(CCItems.DIVINITE_SHARD.get());
+        basicItem(CCItems.ICE_SHARD.get());
+        basicItem(CCItems.VOLTITE_SHARD.get());
+        basicItem(CCItems.FLORALITE_SHARD.get());
+
+        basicItem(CCItems.BISMUTH_CHISEL.get());
         basicItem(CCItems.BISMUTH_CANDY.get());
         basicItem(CCItems.FAT_TISSUE_BALL.get());
-        basicItem(CCItems.ICE_SHARD.get());
         basicItem(CCItems.NEURON.get());
         basicItem(CCItems.EYE.get());
         basicItem(CCFluids.BLOOD_BUCKET.get());
+        basicItem(CCItems.CLOUD_BUCKET.get());
 
         flowerItem(CCBlocks.VILLI);
         flowerItem(CCBlocks.AXON);

@@ -63,29 +63,7 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         // ==========================================================================================
         // 2. STONE
         // ==========================================================================================
-        generateStoneFamily(pRecipeOutput, CCBlocks.CRUSTONE, CCBlocks.CRUSTONE_STAIRS, CCBlocks.CRUSTONE_SLAB, CCBlocks.CRUSTONE_WALL, "crustone/");
-        generateStoneFamily(pRecipeOutput, CCBlocks.CRUSTONE_BRICKS, CCBlocks.CRUSTONE_BRICK_STAIRS, CCBlocks.CRUSTONE_BRICK_SLAB, CCBlocks.CRUSTONE_BRICK_WALL, "crustone/");
-        generateStoneFamily(pRecipeOutput, CCBlocks.CRACKED_CRUSTONE_BRICKS, CCBlocks.CRACKED_CRUSTONE_BRICK_STAIRS, CCBlocks.CRACKED_CRUSTONE_BRICK_SLAB, CCBlocks.CRACKED_CRUSTONE_BRICK_WALL, "crustone/");
-        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_CRUSTONE, CCBlocks.POLISHED_CRUSTONE_STAIRS, CCBlocks.POLISHED_CRUSTONE_SLAB, CCBlocks.POLISHED_CRUSTONE_WALL, "crustone/");
-        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_CRUSTONE, CCBlocks.CHISELED_CRUSTONE_STAIRS, CCBlocks.CHISELED_CRUSTONE_SLAB, CCBlocks.CHISELED_CRUSTONE_WALL, "crustone/");
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS.get(), CCBlocks.CRUSTONE.get(), 1, "crustone/");
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE.get(), CCBlocks.CRUSTONE.get(), 1, "crustone/");
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE.get(), CCBlocks.POLISHED_CRUSTONE.get(), 1, "crustone/");
-        create4x4Recipe(pRecipeOutput, CCBlocks.POLISHED_CRUSTONE, CCBlocks.CRUSTONE, "has_crustone");
-        create4x4Recipe(pRecipeOutput, CCBlocks.CRUSTONE_BRICKS, CCBlocks.POLISHED_CRUSTONE, "has_crustone");
-        createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_CRUSTONE, CCBlocks.CRUSTONE_SLAB, "has_crustone");
-        smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_CRUSTONE_BRICKS , CCBlocks.CRUSTONE_BRICKS);
-
-        generateStoneFamily(pRecipeOutput, CCBlocks.THUNDERSTONE, CCBlocks.THUNDERSTONE_STAIRS, CCBlocks.THUNDERSTONE_SLAB, CCBlocks.THUNDERSTONE_WALL, "thunderstone/");
-        generateStoneFamily(pRecipeOutput, CCBlocks.THUNDERSTONE_BRICKS, CCBlocks.THUNDERSTONE_BRICK_STAIRS, CCBlocks.THUNDERSTONE_BRICK_SLAB, CCBlocks.THUNDERSTONE_BRICK_WALL, "thunderstone/");
-        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_THUNDERSTONE, CCBlocks.POLISHED_THUNDERSTONE_STAIRS, CCBlocks.POLISHED_THUNDERSTONE_SLAB, CCBlocks.POLISHED_THUNDERSTONE_WALL, "thunderstone/");
-        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_THUNDERSTONE, CCBlocks.CHISELED_THUNDERSTONE_STAIRS, CCBlocks.CHISELED_THUNDERSTONE_SLAB, CCBlocks.CHISELED_THUNDERSTONE_WALL, "thunderstone/");
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS.get(), CCBlocks.THUNDERSTONE.get(), 1, "thunderstone/");
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE.get(), CCBlocks.THUNDERSTONE.get(), 1, "thunderstone/");
-        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE.get(), CCBlocks.POLISHED_THUNDERSTONE.get(), 1, "thunderstone/");
-        create4x4Recipe(pRecipeOutput, CCBlocks.POLISHED_THUNDERSTONE, CCBlocks.THUNDERSTONE, "has_thunderstone");
-        create4x4Recipe(pRecipeOutput, CCBlocks.THUNDERSTONE_BRICKS, CCBlocks.POLISHED_THUNDERSTONE, "has_thunderstone");
-        createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_THUNDERSTONE, CCBlocks.THUNDERSTONE_SLAB, "has_thunderstone");
+        generateStoneFamily(pRecipeOutput, CCBlocks.AURUM, CCBlocks.AURUM_STAIRS, CCBlocks.AURUM_SLAB, CCBlocks.AURUM_WALL, "aurum/");
 
         generateStoneFamily(pRecipeOutput, CCBlocks.BISMITE, CCBlocks.BISMITE_STAIRS, CCBlocks.BISMITE_SLAB, CCBlocks.BISMITE_WALL, "bismite/");
         generateStoneFamily(pRecipeOutput, CCBlocks.BISMITE_BRICKS, CCBlocks.BISMITE_BRICK_STAIRS, CCBlocks.BISMITE_BRICK_SLAB, CCBlocks.BISMITE_BRICK_WALL, "bismite/");
@@ -100,6 +78,19 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_BISMITE, CCBlocks.BISMITE_SLAB, "has_bismite");
         smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_BISMITE_BRICKS, CCBlocks.BISMITE_BRICKS);
 
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRUSTONE, CCBlocks.CRUSTONE_STAIRS, CCBlocks.CRUSTONE_SLAB, CCBlocks.CRUSTONE_WALL, "crustone/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRUSTONE_BRICKS, CCBlocks.CRUSTONE_BRICK_STAIRS, CCBlocks.CRUSTONE_BRICK_SLAB, CCBlocks.CRUSTONE_BRICK_WALL, "crustone/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.CRACKED_CRUSTONE_BRICKS, CCBlocks.CRACKED_CRUSTONE_BRICK_STAIRS, CCBlocks.CRACKED_CRUSTONE_BRICK_SLAB, CCBlocks.CRACKED_CRUSTONE_BRICK_WALL, "crustone/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_CRUSTONE, CCBlocks.POLISHED_CRUSTONE_STAIRS, CCBlocks.POLISHED_CRUSTONE_SLAB, CCBlocks.POLISHED_CRUSTONE_WALL, "crustone/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_CRUSTONE, CCBlocks.CHISELED_CRUSTONE_STAIRS, CCBlocks.CHISELED_CRUSTONE_SLAB, CCBlocks.CHISELED_CRUSTONE_WALL, "crustone/");
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CRUSTONE_BRICKS.get(), CCBlocks.CRUSTONE.get(), 1, "crustone/");
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_CRUSTONE.get(), CCBlocks.CRUSTONE.get(), 1, "crustone/");
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_CRUSTONE.get(), CCBlocks.POLISHED_CRUSTONE.get(), 1, "crustone/");
+        create4x4Recipe(pRecipeOutput, CCBlocks.POLISHED_CRUSTONE, CCBlocks.CRUSTONE, "has_crustone");
+        create4x4Recipe(pRecipeOutput, CCBlocks.CRUSTONE_BRICKS, CCBlocks.POLISHED_CRUSTONE, "has_crustone");
+        createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_CRUSTONE, CCBlocks.CRUSTONE_SLAB, "has_crustone");
+        smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_CRUSTONE_BRICKS , CCBlocks.CRUSTONE_BRICKS);
+
         generateStoneFamily(pRecipeOutput, CCBlocks.HOLY_MARBLE, CCBlocks.HOLY_MARBLE_STAIRS, CCBlocks.HOLY_MARBLE_SLAB, CCBlocks.HOLY_MARBLE_WALL, "holy_marble/");
         generateStoneFamily(pRecipeOutput, CCBlocks.HOLY_MARBLE_BRICKS, CCBlocks.HOLY_MARBLE_BRICK_STAIRS, CCBlocks.HOLY_MARBLE_BRICK_SLAB, CCBlocks.HOLY_MARBLE_BRICK_WALL, "holy_marble/");
         generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_HOLY_MARBLE, CCBlocks.CHISELED_HOLY_MARBLE_STAIRS, CCBlocks.CHISELED_HOLY_MARBLE_SLAB, CCBlocks.CHISELED_HOLY_MARBLE_WALL, "holy_marble/");
@@ -112,8 +103,6 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         createPillarRecipe(pRecipeOutput, CCBlocks.HOLY_MARBLE_PILLAR, CCBlocks.HOLY_MARBLE, "has_holy_marble");
         smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_HOLY_MARBLE_BRICKS , CCBlocks.HOLY_MARBLE_BRICKS);
 
-        generateStoneFamily(pRecipeOutput, CCBlocks.AURUM, CCBlocks.AURUM_STAIRS, CCBlocks.AURUM_SLAB, CCBlocks.AURUM_WALL, "aurum/");
-
         generateStoneFamily(pRecipeOutput, CCBlocks.PUMICE, CCBlocks.PUMICE_STAIRS, CCBlocks.PUMICE_SLAB, CCBlocks.PUMICE_WALL, "pumice/");
         generateStoneFamily(pRecipeOutput, CCBlocks.PUMICE_BRICKS, CCBlocks.PUMICE_BRICK_STAIRS, CCBlocks.PUMICE_BRICK_SLAB, CCBlocks.PUMICE_BRICK_WALL, "pumice/");
         generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_PUMICE, CCBlocks.CHISELED_PUMICE_STAIRS, CCBlocks.CHISELED_PUMICE_SLAB, CCBlocks.CHISELED_PUMICE_WALL, "pumice/");
@@ -125,6 +114,17 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         smeltingResultFromBase(pRecipeOutput, CCBlocks.CRACKED_PUMICE_BRICKS , CCBlocks.PUMICE_BRICKS);
 
         generateStoneFamily(pRecipeOutput, CCBlocks.PYRITE, CCBlocks.PYRITE_STAIRS, CCBlocks.PYRITE_SLAB, CCBlocks.PYRITE_WALL, "pyrite/");
+
+        generateStoneFamily(pRecipeOutput, CCBlocks.THUNDERSTONE, CCBlocks.THUNDERSTONE_STAIRS, CCBlocks.THUNDERSTONE_SLAB, CCBlocks.THUNDERSTONE_WALL, "thunderstone/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.THUNDERSTONE_BRICKS, CCBlocks.THUNDERSTONE_BRICK_STAIRS, CCBlocks.THUNDERSTONE_BRICK_SLAB, CCBlocks.THUNDERSTONE_BRICK_WALL, "thunderstone/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.POLISHED_THUNDERSTONE, CCBlocks.POLISHED_THUNDERSTONE_STAIRS, CCBlocks.POLISHED_THUNDERSTONE_SLAB, CCBlocks.POLISHED_THUNDERSTONE_WALL, "thunderstone/");
+        generateStoneFamily(pRecipeOutput, CCBlocks.CHISELED_THUNDERSTONE, CCBlocks.CHISELED_THUNDERSTONE_STAIRS, CCBlocks.CHISELED_THUNDERSTONE_SLAB, CCBlocks.CHISELED_THUNDERSTONE_WALL, "thunderstone/");
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.THUNDERSTONE_BRICKS.get(), CCBlocks.THUNDERSTONE.get(), 1, "thunderstone/");
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.POLISHED_THUNDERSTONE.get(), CCBlocks.THUNDERSTONE.get(), 1, "thunderstone/");
+        stonecutterResultFromBase(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, CCBlocks.CHISELED_THUNDERSTONE.get(), CCBlocks.POLISHED_THUNDERSTONE.get(), 1, "thunderstone/");
+        create4x4Recipe(pRecipeOutput, CCBlocks.POLISHED_THUNDERSTONE, CCBlocks.THUNDERSTONE, "has_thunderstone");
+        create4x4Recipe(pRecipeOutput, CCBlocks.THUNDERSTONE_BRICKS, CCBlocks.POLISHED_THUNDERSTONE, "has_thunderstone");
+        createChiseledRecipe(pRecipeOutput, CCBlocks.CHISELED_THUNDERSTONE, CCBlocks.THUNDERSTONE_SLAB, "has_thunderstone");
 
         // ==========================================================================================
         // 3. BISMUTH
@@ -149,6 +149,21 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         // ==========================================================================================
         // 5. SMITHING
         // ==========================================================================================
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_HELMET, CCItems.BLOOD_KNIGHT_HELMET, "blood");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_CHESTPLATE, CCItems.BLOOD_KNIGHT_CHESTPLATE, "blood");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_LEGGINGS, CCItems.BLOOD_KNIGHT_LEGGINGS, "blood");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_BOOTS, CCItems.BLOOD_KNIGHT_BOOTS, "blood");
+
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_HELMET, CCItems.ENDER_MAGE_HELMET, "ender");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_CHESTPLATE, CCItems.ENDER_MAGE_CHESTPLATE, "ender");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_LEGGINGS, CCItems.ENDER_MAGE_LEGGINGS, "ender");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_BOOTS, CCItems.ENDER_MAGE_BOOTS, "ender");
+
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_HELMET, CCItems.EVOCATION_KNIGHT_HELMET, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_CHESTPLATE, CCItems.EVOCATION_KNIGHT_CHESTPLATE, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_LEGGINGS, CCItems.EVOCATION_KNIGHT_LEGGINGS, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_BOOTS, CCItems.EVOCATION_KNIGHT_BOOTS, "evocation");
+
         registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_HELMET, CCItems.FIRE_KNIGHT_HELMET, "fire");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_CHESTPLATE, CCItems.FIRE_KNIGHT_CHESTPLATE, "fire");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.FIRE_RUNE, CCItems.VOLCANITE_SHARD, ItemRegistry.PYROMANCER_LEGGINGS, CCItems.FIRE_KNIGHT_LEGGINGS, "fire");
@@ -164,30 +179,15 @@ public class CCRecipeProvider extends RecipeProvider implements IConditionBuilde
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_LEGGINGS, CCItems.ICE_KNIGHT_LEGGINGS, "ice");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.ICE_RUNE, CCItems.ICE_SHARD, ItemRegistry.CRYOMANCER_BOOTS, CCItems.ICE_KNIGHT_BOOTS, "ice");
 
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_HELMET, CCItems.ENDER_MAGE_HELMET, "ender");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_CHESTPLATE, CCItems.ENDER_MAGE_CHESTPLATE, "ender");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_LEGGINGS, CCItems.ENDER_MAGE_LEGGINGS, "ender");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.ENDER_RUNE, CCItems.VOIDSTONE_SHARD, ItemRegistry.SHADOWWALKER_BOOTS, CCItems.ENDER_MAGE_BOOTS, "ender");
-
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_HELMET, CCItems.BLOOD_KNIGHT_HELMET, "blood");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_CHESTPLATE, CCItems.BLOOD_KNIGHT_CHESTPLATE, "blood");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_LEGGINGS, CCItems.BLOOD_KNIGHT_LEGGINGS, "blood");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.BLOOD_RUNE, CCItems.HEMALITE_SHARD, ItemRegistry.CULTIST_BOOTS, CCItems.BLOOD_KNIGHT_BOOTS, "blood");
-
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_HELMET, CCItems.NATURE_KNIGHT_HELMET, "nature");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_CHESTPLATE, CCItems.NATURE_KNIGHT_CHESTPLATE, "nature");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_LEGGINGS, CCItems.NATURE_KNIGHT_LEGGINGS, "nature");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_BOOTS, CCItems.NATURE_KNIGHT_BOOTS, "nature");
-
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_HELMET, CCItems.LIGHTNING_KNIGHT_HELMET, "lightning");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_CHESTPLATE, CCItems.LIGHTNING_KNIGHT_CHESTPLATE, "lightning");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_LEGGINGS, CCItems.LIGHTNING_KNIGHT_LEGGINGS, "lightning");
         registerKnightSmithing(pRecipeOutput, ItemRegistry.LIGHTNING_RUNE, CCItems.VOLTITE_SHARD, ItemRegistry.ELECTROMANCER_BOOTS, CCItems.LIGHTNING_KNIGHT_BOOTS, "lightning");
 
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_HELMET, CCItems.EVOCATION_KNIGHT_HELMET, "evocation");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_CHESTPLATE, CCItems.EVOCATION_KNIGHT_CHESTPLATE, "evocation");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_LEGGINGS, CCItems.EVOCATION_KNIGHT_LEGGINGS, "evocation");
-        registerKnightSmithing(pRecipeOutput, ItemRegistry.EVOCATION_RUNE, CCItems.AVARICITE_SHARD, ItemRegistry.ARCHEVOKER_BOOTS, CCItems.EVOCATION_KNIGHT_BOOTS, "evocation");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_HELMET, CCItems.NATURE_KNIGHT_HELMET, "nature");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_CHESTPLATE, CCItems.NATURE_KNIGHT_CHESTPLATE, "nature");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_LEGGINGS, CCItems.NATURE_KNIGHT_LEGGINGS, "nature");
+        registerKnightSmithing(pRecipeOutput, ItemRegistry.NATURE_RUNE, CCItems.FLORALITE_SHARD, ItemRegistry.PLAGUED_BOOTS, CCItems.NATURE_KNIGHT_BOOTS, "nature");
     }
 
     private void generateStoneFamily(RecipeOutput output, Supplier<? extends Block> base, Supplier<? extends Block> stairs, Supplier<? extends Block> slab, Supplier<? extends Block> wall, String folder) {
