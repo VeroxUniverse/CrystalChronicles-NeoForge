@@ -26,7 +26,7 @@ public class CCTags {
         public static final TagKey<Item> CRYSTALS = createTag("crystals");
         public static final TagKey<Item> CRYSTAL_TOOL = createTag("crystal_tool");
         public static final TagKey<Item> STAFF = createTag("staff");
-        public static final TagKey<Item> BISMUTH_FULL_BLOCKS_BLUE= createTag("bismuth/full_blocks/blue");
+        public static final TagKey<Item> BISMUTH_FULL_BLOCKS_CYAN= createTag("bismuth/full_blocks/cyan");
         public static final TagKey<Item> BISMUTH_FULL_BLOCKS_PURPLE= createTag("bismuth/full_blocks/purple");
         public static final TagKey<Item> BISMUTH_FULL_BLOCKS_RAINBOW= createTag("bismuth/full_blocks/rainbow");
         public static final TagKey<Item> BISMUTH_FULL_BLOCKS_VIOLET= createTag("bismuth/full_blocks/violet");

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bluebismuth": {
+    "has_bismite": {
       "conditions": {
         "items": [
           {
-            "items": "#crystal_chronicles:bismuth/full_blocks/cyan"
+            "items": "crystal_chronicles:bismite_slab"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crystal_chronicles:stonecutting/bismuth/cyan_bismuth_bricks_from_full_block"
+        "recipe": "crystal_chronicles:chiseled_bismite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bluebismuth"
+      "has_bismite"
     ]
   ],
   "rewards": {
     "recipes": [
-      "crystal_chronicles:stonecutting/bismuth/cyan_bismuth_bricks_from_full_block"
+      "crystal_chronicles:chiseled_bismite"
     ]
   }
 }

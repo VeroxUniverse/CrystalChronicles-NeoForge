@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "crystal_chronicles:thunderstone_bricks"
+        "recipe": "crystal_chronicles:polished_thunderstone"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": "crystal_chronicles:polished_thunderstone"
+            "items": "crystal_chronicles:thunderstone"
           }
         ]
       },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "crystal_chronicles:thunderstone_bricks"
+      "crystal_chronicles:polished_thunderstone"
     ]
   }
 }

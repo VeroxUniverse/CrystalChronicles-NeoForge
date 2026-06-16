@@ -3,15 +3,15 @@
   "category": "misc",
   "key": {
     "B": {
-      "item": "crystal_chronicles:polished_bismite"
+      "item": "crystal_chronicles:holy_marble"
     }
   },
   "pattern": [
-    "BB",
-    "BB"
+    "B",
+    "B"
   ],
   "result": {
-    "count": 4,
-    "id": "crystal_chronicles:bismite_bricks"
+    "count": 2,
+    "id": "crystal_chronicles:holy_marble_pillar"
   }
 }

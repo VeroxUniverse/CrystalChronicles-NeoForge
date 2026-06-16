@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "B": {
-      "item": "crystal_chronicles:polished_bismite"
+      "item": "crystal_chronicles:bismite"
     }
   },
   "pattern": [
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "crystal_chronicles:bismite_bricks"
+    "id": "crystal_chronicles:polished_bismite"
   }
 }

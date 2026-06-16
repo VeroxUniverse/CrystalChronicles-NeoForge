@@ -1,13 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
   "key": {
-    "X": {
-      "item": "crystal_chronicles:crustone"
+    "B": {
+      "item": "crystal_chronicles:polished_crustone"
     }
   },
   "pattern": [
-    "XX",
-    "XX"
+    "BB",
+    "BB"
   ],
   "result": {
     "count": 4,
