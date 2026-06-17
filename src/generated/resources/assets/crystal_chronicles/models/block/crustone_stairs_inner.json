@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "crystal_chronicles:block/crustone",
-    "side": "crystal_chronicles:block/crustone",
-    "top": "crystal_chronicles:block/crustone"
-  }
-}

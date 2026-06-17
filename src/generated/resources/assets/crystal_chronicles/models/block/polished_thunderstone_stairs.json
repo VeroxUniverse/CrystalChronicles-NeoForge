@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "crystal_chronicles:block/polished_thunderstone",
-    "side": "crystal_chronicles:block/polished_thunderstone",
-    "top": "crystal_chronicles:block/polished_thunderstone"
-  }
-}

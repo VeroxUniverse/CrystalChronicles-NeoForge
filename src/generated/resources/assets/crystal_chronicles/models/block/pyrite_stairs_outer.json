@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "crystal_chronicles:block/pyrite",
-    "side": "crystal_chronicles:block/pyrite",
-    "top": "crystal_chronicles:block/pyrite"
-  }
-}

@@ -14,7 +14,7 @@ import net.veroxuniverse.crystal_chronicles.CrystalChronicles;
 
 import java.util.function.Supplier;
 
-@EventBusSubscriber(modid = CrystalChronicles.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = CrystalChronicles.MODID)
 public class CCAttributes {
 
     private static final DeferredRegister<Attribute> ATTRIBUTES =

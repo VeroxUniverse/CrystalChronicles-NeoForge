@@ -157,6 +157,7 @@ dependencies {
     runtimeOnly "curse.maven:irons-lib-1492763:7907336"
 
 
+    compileOnly "curse.maven:fusion-connected-textures-854949:7471474"
     runtimeOnly "curse.maven:fusion-connected-textures-854949:7471474"
     compileOnly "curse.maven:fusion-connected-textures-854949:7471474"
     // JEI

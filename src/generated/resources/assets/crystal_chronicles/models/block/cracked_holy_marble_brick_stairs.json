@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "crystal_chronicles:block/cracked_holy_marble_bricks",
-    "side": "crystal_chronicles:block/cracked_holy_marble_bricks",
-    "top": "crystal_chronicles:block/cracked_holy_marble_bricks"
-  }
-}
