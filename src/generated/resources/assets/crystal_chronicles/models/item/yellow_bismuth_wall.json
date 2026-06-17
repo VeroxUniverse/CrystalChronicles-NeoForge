@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "crystal_chronicles:block/yellow_bismuth"
+  }
+}

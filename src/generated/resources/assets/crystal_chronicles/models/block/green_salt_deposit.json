@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "crystal_chronicles:block/green_salt_deposit_top",
+    "side": "crystal_chronicles:block/green_salt_deposit"
+  }
+}

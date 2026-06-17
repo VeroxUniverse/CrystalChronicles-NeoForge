@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "block.crystal_chronicles.chiseled_crustone",
+  "key": {
+    "#": {
+      "item": "crystal_chronicles:chiseled_crustone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "crystal_chronicles:chiseled_crustone_stairs"
+  }
+}

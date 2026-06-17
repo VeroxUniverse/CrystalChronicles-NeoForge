@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "crystal_chronicles:ice_shard"
+  },
+  "base": {
+    "item": "irons_spellbooks:cryomancer_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "crystal_chronicles:ice_knight_helmet"
+  },
+  "template": {
+    "item": "irons_spellbooks:ice_rune"
+  }
+}

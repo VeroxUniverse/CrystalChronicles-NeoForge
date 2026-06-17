@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "crystal_chronicles:block/chiseled_pumice",
+    "side": "crystal_chronicles:block/chiseled_pumice",
+    "top": "crystal_chronicles:block/chiseled_pumice"
+  }
+}
