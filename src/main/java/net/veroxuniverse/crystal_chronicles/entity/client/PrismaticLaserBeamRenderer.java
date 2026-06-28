@@ -35,7 +35,8 @@ public class PrismaticLaserBeamRenderer {
         var syncedData = ClientMagicData.getSyncedSpellData(entity);
         if (!syncedData.isCasting()) return;
         if (!PrismaticPortalSpell.SPELL_ID.toString().equals(syncedData.getCastingSpellId())) return;
-        if (!entity.level().dimension().equals(Level.OVERWORLD)) return;
+        if (entity.level().dimension().equals(PrismaticPortalSpell.ALPHA_DIMENSION)) return;
+
 
         HitResult hit = RaycastBuilder.begin(entity.level(), entity)
                 .range(20)

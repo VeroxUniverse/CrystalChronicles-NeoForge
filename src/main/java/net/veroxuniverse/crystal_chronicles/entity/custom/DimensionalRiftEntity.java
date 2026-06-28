@@ -55,7 +55,7 @@ public class DimensionalRiftEntity extends Entity {
     private int idleTicks = 0;
     private static final int IDLE_DURATION = 300;
     private int transitionTicks = 0;
-    private static final int ANIMATION_TIME = 60;
+    private static final int ANIMATION_TIME = 63;
 
     private BlockPos portalFramePos;
 
@@ -171,7 +171,7 @@ public class DimensionalRiftEntity extends Entity {
     private void handleServerLogic(ServerLevel world) {
         if (isClosing()) {
             transitionTicks++;
-            if (transitionTicks >= ANIMATION_TIME - 5) {
+            if (transitionTicks >= 62) {
                 resetPortalFrameState();
                 this.remove(RemovalReason.DISCARDED);
             }

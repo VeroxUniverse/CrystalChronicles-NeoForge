@@ -10,7 +10,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -39,8 +38,8 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
 
     private static final int[][] FRAME_OFFSETS = new int[][]{
             {0, 0, 0}, {1, 0, 0}, {2, 0, 0}, {3, 0, 0},
-            {0, 1, 0},                         {3, 1, 0},
-            {0, 2, 0},                         {3, 2, 0},
+            {0, 1, 0},                       {3, 1, 0},
+            {0, 2, 0},                       {3, 2, 0},
             {0, 3, 0}, {1, 3, 0}, {2, 3, 0}, {3, 3, 0}
     };
 
@@ -180,6 +179,7 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
 
         if (level.isClientSide) return ItemInteractionResult.SUCCESS;
 
+        // Chisel kann NUR formen, nicht aktivieren
         if (!state.getValue(FORMED)) {
             for (BlockPos basePos : getPotentialBasePositions(pos, facing)) {
                 if (canScanFrame(level, basePos, facing, true)) {
@@ -191,36 +191,6 @@ public class PortalFrameBlock extends HorizontalCrystalBlock implements EntityBl
                     return ItemInteractionResult.SUCCESS;
                 }
             }
-        }
-
-        if (state.getValue(FORMED)) {
-            BlockPos basePos = findBaseFromCurrentPart(pos, state, facing);
-
-            if (basePos != null) {
-                BlockState baseState = level.getBlockState(basePos);
-
-                if (baseState.is(this) && baseState.getValue(FORMED)) {
-                    if (baseState.getValue(ACTIVATED)) {
-                        player.sendSystemMessage(Component.literal("The Portal is already active!"));
-                        return ItemInteractionResult.SUCCESS;
-                    }
-
-                    BlockEntity be = level.getBlockEntity(basePos);
-                    if (be instanceof PortalFrameBlockEntity master) {
-                        master.activatePortal((ServerLevel) level, facing.getAxis());
-                        setFrameState(level, basePos, facing, true, true);
-                        if (!player.getAbilities().instabuild) {
-                            itemInHand.hurtAndBreak(2, (ServerLevel) level, player, item -> {});
-                        }
-                        level.playSound(null, pos, SoundEvents.END_PORTAL_SPAWN, SoundSource.BLOCKS, 1f, 1f);
-                        player.sendSystemMessage(Component.literal("Portal opened!"));
-                        return ItemInteractionResult.SUCCESS;
-                    }
-                }
-            }
-
-            player.sendSystemMessage(Component.literal("Master-Block not found!"));
-            return ItemInteractionResult.SUCCESS;
         }
 
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;

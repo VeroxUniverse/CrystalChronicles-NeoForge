@@ -85,8 +85,6 @@ public class PrismaticPortalSpell extends AbstractSpell {
             return;
         }
 
-        if (!currentDim.equals(Level.OVERWORLD)) return;
-
         HitResult hit = player.pick(20.0, 0, false);
         if (hit.getType() != HitResult.Type.BLOCK) return;
 
