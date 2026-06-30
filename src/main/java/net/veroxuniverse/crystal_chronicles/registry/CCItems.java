@@ -204,55 +204,53 @@ public class CCItems {
     public static final DeferredHolder<Item, Item> HOLY_SWORD = ITEMS.register("holy_sword",
             () -> new HolySwordItem(
                     CCWeaponTiers.HOLY_SWORD,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.HOLY_SWORD)
-            ).fireResistant(),
-                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.HEALING_CIRCLE_SPELL, 8))));
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.HOLY_SWORD)).fireResistant(),
+                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.DIVINE_SMITE_SPELL, 4))));
     public static final DeferredItem<ShieldItem> HOLY_SHIELD = ITEMS.register("holy_shield",
             () -> new ShieldItem(new Item.Properties().durability(1200).fireResistant()));
+
     public static final DeferredHolder<Item, Item> ICE_HAMMER = ITEMS.register("ice_hammer",
             () -> new IceHammerItem(
                     CCWeaponTiers.ICE_HAMMER,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.ICE_HAMMER)
-                    ).fireResistant(),
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.ICE_HAMMER)).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.FROSTWAVE_SPELL, 8))));
+
     public static final DeferredHolder<Item, Item> FIRE_CHAKRAM = ITEMS.register("fire_chakram",
             () -> new FireChakramItem(
                     CCWeaponTiers.FIRE_CHAKRAM,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.FIRE_CHAKRAM)
-                    ).fireResistant(),
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.FIRE_CHAKRAM)).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.FLAMING_STRIKE_SPELL, 4))));
+
     public static final DeferredHolder<Item, Item> NATURE_SPEAR = ITEMS.register("nature_spear",
             () -> new NatureSpearItem(CCWeaponTiers.NATURE_SPEAR,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.NATURE_SPEAR)
-                    ).fireResistant(),
-                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.POISON_SPLASH_SPELL, 8))));
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.NATURE_SPEAR)).fireResistant(),
+                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.POISON_BREATH_SPELL, 8))));
+
     public static final DeferredHolder<Item, Item> ENDER_STAFF = ITEMS.register("ender_staff",
             () -> new EnderStaffItem(ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes(CCStaffTiers.ENDER_STAFF)).rarity(Rarity.UNCOMMON),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.MAGIC_MISSILE_SPELL, 8))));
     public static final DeferredHolder<Item, Item> ENDER_SICKLE = ITEMS.register("ender_sickle",
             () -> new EnderSickleItem(CCWeaponTiers.ENDER_SICKLE,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.ENDER_SICKLE)
-                    ).fireResistant(),
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.ENDER_SICKLE)).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.SHADOW_SLASH, 4))));
+
     public static final DeferredHolder<Item, Item> BLOOD_SCYTHE = ITEMS.register("blood_scythe",
             () -> new BloodScytheItem(CCWeaponTiers.BLOOD_SCYTHE,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.BLOOD_SCYTHE)
-                    ).fireResistant(),
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.BLOOD_SCYTHE)).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.BLOOD_SLASH_SPELL, 3))));
+
     public static final DeferredHolder<Item, Item> LIGHTNING_BIDENT = ITEMS.register("lightning_bident",
             () -> new LightningBidentItem(CCWeaponTiers.LIGHTNING_BIDENT,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.LIGHTNING_BIDENT)
-                    ).fireResistant(),
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.LIGHTNING_BIDENT)).fireResistant(),
                     SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.VOLT_STRIKE_SPELL, 8))));
     public static final DeferredHolder<Item, Item> LIGHTNING_STAFF = ITEMS.register("lightning_staff",
             () -> new LightningStaffItem(ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes(CCStaffTiers.LIGHTNING_STAFF)).rarity(Rarity.UNCOMMON),
-                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.BALL_LIGHTNING_SPELL, 8))));
+                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.CHAIN_LIGHTNING_SPELL, 8))));
 
     public static final DeferredHolder<Item, Item> EVOCATION_TWINBLADE = ITEMS.register("evocation_twinblade",
             () -> new LightningBidentItem(CCWeaponTiers.EVOCATION_TWINBLADE,
-                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.EVOCATION_TWINBLADE)
-                    ).fireResistant(),
-                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.SHIELD_SPELL, 6))));
+                    ItemPropertiesHelper.equipment(1).attributes(AnimatedSwordItem.createAttributes((IronsWeaponTier) CCWeaponTiers.EVOCATION_TWINBLADE)).fireResistant(),
+                    SpellDataRegistryHolder.of(new SpellDataRegistryHolder(SpellRegistry.THROW_SPELL, 4))));
 
 
     public static void register(IEventBus eventBus) {
