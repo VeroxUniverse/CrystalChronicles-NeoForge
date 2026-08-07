@@ -112,6 +112,7 @@ public class CCItemTagProvider extends ItemTagsProvider {
                 .add(CCItems.FIRE_CHAKRAM.get())
                 .add(CCItems.ICE_HAMMER.get())
                 .add(CCItems.ENDER_STAFF.get())
+                .add(CCItems.ENDER_SICKLE.get())
                 .add(CCItems.EVOCATION_TWINBLADE.get())
                 .add(CCItems.BLOOD_SCYTHE.get());
 
